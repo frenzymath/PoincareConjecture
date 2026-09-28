@@ -1,0 +1,13 @@
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizerAnchors
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceSuccessorOrientation
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceOrientedTransfer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeCommonOrientation
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizerEdgePacket
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceActualLaterCuts
+
+
+
+set_option autoImplicit false
+
+set_option linter.hashCommand false
+

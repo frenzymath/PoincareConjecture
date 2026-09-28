@@ -1,0 +1,16 @@
+import PoincareConjecture.Proofs.M28.Mathlib.CanonicalFlowRestriction
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.FixedCoordinateTerminalCoefficients
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CanonicalImageMetric
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CanonicalImageDistanceLimit
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFinalChartDistanceLimit
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+

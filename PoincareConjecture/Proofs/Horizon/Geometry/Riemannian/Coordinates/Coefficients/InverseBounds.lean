@@ -1,0 +1,11 @@
+import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseBounds
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transition.JetBounds
+import Mathlib.Analysis.InnerProductSpace.Dual
+import Mathlib.Analysis.Calculus.ContDiff.Operations
+
+
+
+
+
+
+

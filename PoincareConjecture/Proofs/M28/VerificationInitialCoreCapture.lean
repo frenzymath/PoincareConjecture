@@ -1,0 +1,20 @@
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialCapture
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+set_option linter.hashCommand false
+
+open PoincareConjecture.M28
+
+
+open CounterexampleNeckFamily
+

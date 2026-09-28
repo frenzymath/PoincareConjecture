@@ -1,0 +1,114 @@
+import PoincareConjecture.Proofs.M76.Rigidity.OriginalIsolatedCapCharts
+import PoincareConjecture.Proofs.M76.Rigidity.OriginalRelativeCutFrontier
+import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeConvexChartSides
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+open Set Metric Geometry
+
+namespace PoincareConjecture.M76
+
+local notation "V2" => (Fin 2 → ℝ)
+local notation "V3" => (Fin 3 → ℝ)
+local notation "C3" => ((ℝ × ℝ) × ℝ)
+local notation "D" => closedBall (0 : V2) 1
+local notation "I" => Icc (-1 : ℝ) 1
+
+variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
+  {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
+
+
+
+
+theorem OriginalDiskProduct.exists_cut_side_chart
+    (P : OriginalDiskProduct e R j) (hR : IsCompact R) (he : PLDomain e R)
+    (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip))
+    {t : ℝ} (ht : t ∈ ({-(1 / 2 : ℝ), 1 / 2} : Set ℝ)) (z : D) :
+    ∃ (H : OpenPartialHomeomorph X C3) (ε : ℝ),
+      (ε = 1 ∨ ε = -1) ∧ P.slice t z ∈ H.source ∧ H (P.slice t z) = 0 ∧
+      (∀ i,
+        LocallyPiecewiseAffineOn ((e i).symm.trans H) ((e i).symm.trans H).source ∧
+        LocallyPiecewiseAffineOn (H.symm.trans (e i)) (H.symm.trans (e i)).source) ∧
+      ((H.source ⊆ interior R ∧
+        (∀ x ∈ H.source, x ∈ P.cutCarrier ↔ 0 ≤ ε * (H x).2) ∧
+        ∀ x ∈ H.source, x ∈ P.slice t '' D ↔ (H x).2 = 0) ∨
+       ((∀ x ∈ H.source, x ∈ R ↔ 0 ≤ (H x).1.1) ∧
+        (∀ x ∈ H.source, x ∈ P.cutCarrier ↔
+          0 ≤ (H x).1.1 ∧ 0 ≤ ε * (H x).2) ∧
+        ∀ x ∈ H.source, x ∈ P.slice t '' D ↔ 0 ≤ (H x).1.1 ∧ (H x).2 = 0)) := by
+  have ht' : t = -(1 / 2 : ℝ) ∨ t = 1 / 2 := ht
+  have htI : t ∈ I := by rcases ht' with h | h <;> rw [h] <;> norm_num
+  have huI : -t ∈ I := by rcases ht' with h | h <;> rw [h] <;> norm_num
+  have htu : t ≠ -t := by rcases ht' with h | h <;> rw [h] <;> norm_num
+  obtain ⟨H, hzH, hHz, hcv, hdis, hcompat, hpair⟩ :=
+    P.exists_isolated_slice_pair_chart he htI huI htu z
+  have hmarks : ({-(1 / 2 : ℝ), 1 / 2} : Set ℝ) = {t} ∪ {-t} := by
+    rcases ht' with h | h <;> rw [h] <;> ext r <;> norm_num [or_comm]
+  have hends : P.endDisks = (P.slice t '' D) ∪ (P.slice (-t) '' D) := by
+    change P.map '' (D ×ˢ ({-(1 / 2 : ℝ), 1 / 2} : Set ℝ)) = _
+    rw [hmarks, prod_union, image_union, ← P.slice_image t, ← P.slice_image (-t)]
+  have hlocal (x : X) (hx : x ∈ H.source) :
+      x ∈ P.endDisks ↔ x ∈ P.slice t '' D := by
+    rw [hends]
+    exact or_iff_left (fun hy => disjoint_left.mp hdis hx hy)
+  have hpR : P.slice t z ∈ R := P.slice_inside htI z.property
+  have hpfront : (⟨P.slice t z, hpR⟩ : R) ∈
+      frontier ((Subtype.val : R → X) ⁻¹' P.cutCarrier) := by
+    rw [P.relative_frontier_cut hopen]
+    exact hends.symm.subset (Or.inl ⟨z, z.property, rfl⟩)
+  have hK : IsClosed ((Subtype.val : R → X) ⁻¹' P.cutCarrier) :=
+    (P.cut_geometry hR hopen).1.isClosed.preimage continuous_subtype_val
+  have hselect (M : Set C3) (himage : H.IsImage R M)
+      (hconvex : Convex ℝ (H.target ∩ M))
+      (hfront : ∀ x : R, (x : X) ∈ H.source →
+        (x ∈ frontier ((Subtype.val : R → X) ⁻¹' P.cutCarrier) ↔ (H x).2 = 0)) :
+      ∃ ε : ℝ, (ε = 1 ∨ ε = -1) ∧
+        ∀ x ∈ H.source, x ∈ P.cutCarrier ↔ x ∈ R ∧ 0 ≤ ε * (H x).2 := by
+    rcases relative_halfspace_of_convex_frontier_chart sdiff_subset hK
+        (P.relative_regular_closed_cut hR he hopen) hpfront H hzH
+        himage hconvex hfront with h | h
+    · exact ⟨1, Or.inl rfl, by simpa only [one_mul, OriginalDiskProduct.cutCarrier] using h⟩
+    · exact ⟨-1, Or.inr rfl, by
+        simpa only [neg_one_mul, neg_nonneg, OriginalDiskProduct.cutCarrier] using h⟩
+  rcases hpair with ⟨hinside, hcap⟩ | ⟨hregion, hcap⟩
+  · have himage : H.IsImage R univ := by
+      intro x hx
+      exact ⟨fun _ => interior_subset (hinside hx), fun _ => mem_univ _⟩
+    have hconvex : Convex ℝ (H.target ∩ (univ : Set C3)) := by
+      simpa only [inter_univ] using hcv
+    have hfront : ∀ x : R, (x : X) ∈ H.source →
+        (x ∈ frontier ((Subtype.val : R → X) ⁻¹' P.cutCarrier) ↔ (H x).2 = 0) := by
+      intro x hx
+      rw [P.relative_frontier_cut hopen]
+      exact (hlocal x hx).trans (hcap x hx)
+    obtain ⟨ε, hε, hside⟩ := hselect univ himage hconvex hfront
+    refine ⟨H, ε, hε, hzH, hHz, hcompat, Or.inl ⟨hinside, ?_, hcap⟩⟩
+    intro x hx
+    exact (hside x hx).trans (and_iff_right (interior_subset (hinside hx)))
+  · let a : C3 →ₗ[ℝ] ℝ :=
+      (LinearMap.fst ℝ ℝ ℝ).comp (LinearMap.fst ℝ (ℝ × ℝ) ℝ)
+    let M : Set C3 := {y | 0 ≤ y.1.1}
+    have himage : H.IsImage R M := fun _ hx => (hregion _ hx).symm
+    have hconvex : Convex ℝ (H.target ∩ M) :=
+      hcv.inter ((convex_Ici (0 : ℝ)).linear_preimage a)
+    have hfront : ∀ x : R, (x : X) ∈ H.source →
+        (x ∈ frontier ((Subtype.val : R → X) ⁻¹' P.cutCarrier) ↔ (H x).2 = 0) := by
+      intro x hx
+      rw [P.relative_frontier_cut hopen]
+      exact ((hlocal x hx).trans (hcap x hx)).trans
+        (and_iff_right ((hregion x hx).mp x.property))
+    obtain ⟨ε, hε, hside⟩ := hselect M himage hconvex hfront
+    refine ⟨H, ε, hε, hzH, hHz, hcompat, Or.inr ⟨hregion, ?_, hcap⟩⟩
+    intro x hx
+    exact (hside x hx).trans ((hregion x hx).and Iff.rfl)
+
+end PoincareConjecture.M76

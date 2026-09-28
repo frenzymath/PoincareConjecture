@@ -1,0 +1,29 @@
+Third-party notices
+===================
+
+The Lean sources include adaptations of code from Mathlib,
+ClassificationOfSurfaces, DifferentialGeometry, PoincareLib, Archon Horizon,
+AxelWorkspace, and Tau Ceti. The following existing notices apply to those
+contributions:
+
+Copyright (c) 2025 A Tucker. All rights reserved.
+Copyright (c) 2026 Archon Horizon. All rights reserved.
+Copyright (c) 2026 ClassificationOfSurfaces contributors. All rights reserved.
+Copyright (c) 2026 Lean FRO, LLC. All rights reserved.
+Copyright (c) 2026 The DifferentialGeometry contributors.
+Copyright (c) 2026 The PoincareLib contributors.
+Copyright (c) 2026 The Tau Ceti contributors. All rights reserved.
+
+Additional author notices: Kim Morrison; ClassificationOfSurfaces contributors;
+The Tau Ceti contributors.
+
+DifferentialGeometry
+Copyright 2026 The DifferentialGeometry contributors
+
+The Apache License, Version 2.0, applicable to the contributions that specify
+that license is reproduced in LICENSES/Apache-2.0.txt. These notices do not
+assign a license to other material in this repository.
+
+Adaptations include changes to module paths, namespaces, imports, theorem
+interfaces, proof organization, and comments. The delivery source tree uses
+the PoincareConjecture module prefix.

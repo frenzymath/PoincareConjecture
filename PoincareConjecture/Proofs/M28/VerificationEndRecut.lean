@@ -1,0 +1,8 @@
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.PositiveEndRecutModel
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.PositiveEndOrientation
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckRecutScalarModel
+
+
+
+set_option autoImplicit false
+

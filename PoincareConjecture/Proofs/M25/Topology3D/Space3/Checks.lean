@@ -1,0 +1,68 @@
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartUnion
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactChart
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowInvariants
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockSmoothFlow
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SardRegularValues
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothOpenChart
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.UniformTube
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowFirstIntegral
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelFlow
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightField
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldOpenChart
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarParameter
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockTracks
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarChart
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowTube
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCap
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapProfile
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapModel
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.LocalFieldIsotopy
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallExterior
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.StandardTube
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapBall
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarCoordinates
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallShrinking
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartedCapShrinking
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartedBallInvariance
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmallCap
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SharedBoundaryTangency
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SharedBoundaryFlow
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryDisc
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.GermIsotopy
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryChartLinearization
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryCap
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarRelativeCompression
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.RelativeBallCompression
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarOrientation
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyExtension
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactSmoothChart
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SchoenfliesFromBall
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.GenericHeight
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurfaceMorse
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelPeriod
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularInnermostDisc
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularBandTransport
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCirclePullback
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleDisc
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereDiscCoordinates
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereDiffeomorphRestriction
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceDiscBoundary
+import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularInnermostTube
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+
+set_option linter.hashCommand false
+
+
+

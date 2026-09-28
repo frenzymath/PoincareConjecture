@@ -1,0 +1,136 @@
+import PoincareConjecture.Proofs.M76.Dehn.OriginalSourcePairAffineCover
+import PoincareConjecture.Proofs.M76.Dehn.OriginalFaceDiskState
+import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FaceOrderIntersections
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+open Set Geometry
+
+namespace Geometry.OriginalPLTower
+
+local notation "V2" => (Fin 2 → ℝ)
+local notation "V3" => (Fin 3 → ℝ)
+
+variable {M ι : Type*} [TopologicalSpace M]
+  {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
+  {f : V2 → M} {r : M → ℝ} {C : Set M}
+
+
+
+
+
+
+theorem Step.exists_finite_history_affine_cover
+    {s t : Stage e S f r C} (step : Step s t)
+    {K : SimplicialComplex ℝ V2} (hK : K.faces.Finite)
+    (A : SimplicialComplex ℝ V2) (hA : A.space = Metric.sphere (0 : V2) 1)
+    {n : ℕ} (order : Fin n → K.faces) (horder : Function.Bijective order)
+    (hbefore : ∀ i k, (order k).val ⊂ (order i).val → k < i)
+    (hphase : ∀ i k, k < i → (order i).val ∈ A.faces → (order k).val ∈ A.faces)
+    (P : ℕ → SimplicialComplex ℝ V2)
+    (hP : ∀ k, P k ≤ K ∧
+      (P k).faces = {a | ∃ i : Fin n, i.val < k ∧ (order i).val = a})
+    (hsucc : ∀ i : Fin n, (P (i.val + 1)).space = (P i.val).space ∪
+      convexHull ℝ ((order i).val : Set V2))
+    (boundary : Fin n → Bool)
+    (hboundary : ∀ i, boundary i = true ↔ (order i).val ∈ A.faces)
+    (Q : Fin n → OpenPartialHomeomorph t.Carrier V3)
+    (B : Fin n → OpenPartialHomeomorph s.Carrier V3)
+    (J : Fin n → SimplicialComplex ℝ V3)
+    (hQ : ∀ i k, (t.charts k).symm.trans (Q i) ∈ piecewiseAffineGroupoid V3)
+    (hB : ∀ i k, (s.charts k).symm.trans (B i) ∈ piecewiseAffineGroupoid V3)
+    (hval : ∀ i z, Q i z = B i (step.projection (step.inclusion z)))
+    (hmaps : ∀ i, MapsTo (step.projection ∘ step.inclusion) (Q i).source (B i).source)
+    (U : K.faces → Set t.Carrier) (hUQ : ∀ i, U (order i) ⊆ (Q i).source)
+    {R Fmark : Set M} (states : ℕ → FaceDiskState t K U R Fmark)
+    (motions : ∀ i : Fin n,
+      FaceMotionData step K (P i.val) (P (i.val + 1)) (states i.val).map
+        (Q i) (B i) (J i) U R Fmark (boundary i))
+    (htransitions : ∀ i : Fin n,
+      (states (i.val + 1)).map = (motions i).ambient 1 ∘ (states i.val).map)
+    (hstable : ∀ i k, i ≤ k → k ≤ n →
+      EqOn (states k).map (states i).map (P i).space)
+    (hcell : ∀ a : K.faces, InjOn ((step.projection ∘ step.inclusion) ∘ (states n).map)
+      (convexHull ℝ (a.val : Set V2))) :
+    ∃ T : Finset (AffineSubspace ℝ (V2 × V2)),
+      (∀ L ∈ T, Module.finrank ℝ L.direction ≤ 1) ∧
+      ∀ z : V2 × V2, z.1 ∈ K.space → z.2 ∈ K.space → z.1 ≠ z.2 →
+        step.projection (step.inclusion ((states n).map z.1)) =
+          step.projection (step.inclusion ((states n).map z.2)) →
+        ∃ L ∈ T, z ∈ L := by
+  classical
+  let p : V2 → s.Carrier := (step.projection ∘ step.inclusion) ∘ (states n).map
+  let ordered (i k : Fin n) : Set (V2 × V2) :=
+    {z | k < i ∧ z.1 ∈ convexHull ℝ ((order i).val : Set V2) ∧
+      z.1 ∉ (P i.val).space ∧
+      z.2 ∈ convexHull ℝ ((order k).val : Set V2) ∧ p z.1 = p z.2}
+  have hinj (l : ℕ) : InjOn (states l).map K.space := by
+    intro x hx y hy hxy
+    have heq : (⟨x, hx⟩ : K.space) = ⟨y, hy⟩ := (states l).embedding.injective hxy
+    exact congrArg Subtype.val heq
+  have hordered (i k : Fin n) : ∃ T : Finset (AffineSubspace ℝ (V2 × V2)),
+      (∀ L ∈ T, Module.finrank ℝ L.direction ≤ 1) ∧
+      ∀ z ∈ ordered i k, ∃ L ∈ T, z ∈ L := by
+    by_cases hki : k < i
+    · have hkold : (order k).val ∈ (P i.val).faces :=
+        (hP i.val).2.symm.subset ⟨k, hki, rfl⟩
+      let old : (P i.val).faces := ⟨(order k).val, hkold⟩
+      have hmarked : boundary i = true →
+          (order i).val ∈ A.faces ∧ old.val ∈ A.faces := by
+        intro hb
+        have hiA := (hboundary i).mp hb
+        exact ⟨hiA, hphase i k hki hiA⟩
+      have hnext : EqOn (states n).map ((motions i).ambient 1 ∘ (states i.val).map)
+          (P (i.val + 1)).space := by
+        intro x hx
+        exact (hstable (i.val + 1) n (by omega) le_rfl hx).trans
+          (congrFun (htransitions i) x)
+      obtain ⟨T, hT, hTc⟩ := (motions i).exists_finite_original_pair_affine_cover
+        hK (hP i.val).1 (order i).property (hsucc i) (states i.val).original_PL
+        (hinj i.val) (states n).original_PL (hinj n) (hQ i)
+        (fun x hx => hUQ i ((states i.val).retained (order i) hx)) (hB i)
+        (hval i) (hmaps i) (hstable i.val n i.isLt.le le_rfl) hnext
+        A hA old hmarked (hcell (order k))
+      exact ⟨T, hT, fun z hz => hTc z hz.2.1 hz.2.2.1 hz.2.2.2.1 hz.2.2.2.2⟩
+    · exact ⟨∅, by simp, fun z hz => False.elim (hki hz.1)⟩
+  choose covers hdim hcover using hordered
+  let swap : V2 × V2 →ᵃ[ℝ] V2 × V2 :=
+    (LinearEquiv.prodComm ℝ V2 V2).toAffineEquiv.toAffineMap
+  let pool : Set (AffineSubspace ℝ (V2 × V2)) :=
+    ⋃ i, ⋃ k, (covers i k : Set (AffineSubspace ℝ (V2 × V2))) ∪
+      (fun L => L.map swap) '' (covers i k : Set (AffineSubspace ℝ (V2 × V2)))
+  have hpool : pool.Finite := Set.finite_iUnion fun i => Set.finite_iUnion fun k =>
+    (covers i k).finite_toSet.union ((covers i k).finite_toSet.image (fun L => L.map swap))
+  let T := hpool.toFinset
+  refine ⟨T, ?_, ?_⟩
+  · intro L hL
+    obtain ⟨i, k, hL⟩ := mem_iUnion₂.mp (hpool.mem_toFinset.mp hL)
+    rcases hL with hL | ⟨A', hA', rfl⟩
+    · exact hdim i k L hL
+    · rw [AffineSubspace.map_direction]
+      exact (Submodule.finrank_map_le _ _).trans (hdim i k A' hA')
+  · intro z hx hy hne hpair
+    obtain ⟨i, k, x, y, hki, hswap, hxface, hyface, hxold, _, hxy⟩ :=
+      SimplicialComplex.exists_ordered_faces_of_double_pair hK order horder hbefore P
+        (fun l => (hP l).2) hcell hx hy hne hpair
+    have hmem : (x, y) ∈ ordered i k :=
+      ⟨hki, intrinsicInterior_subset hxface, hxold, intrinsicInterior_subset hyface, hxy⟩
+    obtain ⟨L, hL, hxyL⟩ := hcover i k (x, y) hmem
+    rcases hswap with ⟨hxz, hyz⟩ | ⟨hxz, hyz⟩
+    · refine ⟨L, hpool.mem_toFinset.mpr (mem_iUnion₂.mpr ⟨i, k, Or.inl hL⟩), ?_⟩
+      exact (show (x, y) = z from Prod.ext hxz hyz) ▸ hxyL
+    · refine ⟨L.map swap, hpool.mem_toFinset.mpr
+        (mem_iUnion₂.mpr ⟨i, k, Or.inr (mem_image_of_mem (fun A' => A'.map swap) hL)⟩), ?_⟩
+      exact ⟨(x, y), hxyL, Prod.ext hyz hxz⟩
+
+end Geometry.OriginalPLTower

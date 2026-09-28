@@ -1,0 +1,164 @@
+import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
+import PoincareConjecture.Proofs.M28.Generalized.CanonicalAdapters
+import PoincareConjecture.Proofs.M28.Generalized.CylinderRestriction
+import PoincareConjecture.Proofs.M28.Generalized.CylinderFlow
+import PoincareConjecture.Proofs.M28.Generalized.CylinderRescaling
+import PoincareConjecture.Proofs.M28.Generalized.StrongNeckNormalizedFlow
+import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceNeck
+import PoincareConjecture.Proofs.M28.Generalized.QuantitativeBackwardWindow
+import PoincareConjecture.Proofs.M28.Generalized.Noncollapse
+import PoincareConjecture.Proofs.M28.Generalized.ShortPaths
+import PoincareConjecture.Proofs.M28.Generalized.Rescaling
+import PoincareConjecture.Proofs.M28.Thm10_2_Counterexamples
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CounterexamplePath
+import PoincareConjecture.Proofs.M28.Mathlib.SpatialJetsWithin
+import PoincareConjecture.Proofs.M28.Mathlib.SublevelExhaustion
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.ControlledCharts
+import PoincareConjecture.Proofs.M28.Generalized.ScalarContinuity
+import PoincareConjecture.Proofs.M28.Generalized.CompactTransportCylinder
+import PoincareConjecture.Proofs.M28.Thm10_2_DenseTime
+import PoincareConjecture.Proofs.M28.Mathlib.WithinSmoothCompactness
+import PoincareConjecture.Proofs.M28.Mathlib.TimeJetsWithin
+import PoincareConjecture.Proofs.M28.Mathlib.WithinJetPostcompose
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinFlowEquation
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricCoefficients
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinQuotientFlow
+import PoincareConjecture.Proofs.M28.Mathlib.WithinJetUniqueness
+import PoincareConjecture.Proofs.M28.Mathlib.WithinSpacetimePullback
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.EventualNormalCovers
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.QuantitativeWindowControl
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.QuantitativeShiBounds
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.ConvergentInitialBounds
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.CommonCollar
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.ChartFamilyCompactCover
+import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.Pullback
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.InnerAttachment
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.CoreClosure
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.CompactNeighborhood
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.ModelTransport
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinPartialFlow
+import PoincareConjecture.Proofs.M28.Mathlib.WithinBoundsFromInterior
+import PoincareConjecture.Proofs.M28.Mathlib.TensorPullbackRegularity
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinFlowJetBounds
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.LocalGeometryLimit
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.OpenRecut
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.AxialCompression
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.NeckRestriction
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckTransfer
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.PullbackSmooth
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.RawError
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.EmbeddingInverse
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.SourceNeckPullback
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.SelectionCoreProducer
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.ConditionalAssembly
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.QuantitativeRecut
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.ConditionalInputProducer
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutVolume
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutDiameter
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutExhaustion
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.AmbientQuantitativeProducer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundCoordinateBridge
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundMetricEllipticity
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundMetricDerivatives
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundGaussErrorSection
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundJetCompactEnvelope
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundGaussErrorJets
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundGaussJetReadout
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelCenterMetricJet
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundUniformScalar
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompetitors
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.StandardSpherePaths
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckLengthComparison
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialLength
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapExcursionSubarcs
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ScalarTrimming
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderCoefficientBounds
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderCoordinates
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderJetNorm
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckEndpointShortening
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapScalarBand
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ChainEndBarrier
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactRegions
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.Claim10_4Trimming
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CanonicalCarrierUnion
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderAnnulus
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompactSegment
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactDisplacement
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SmoothSphereIsotopy
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SphereEmbeddingRetraction
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderIsotopyCrossing
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.Claim10_4SourceCover
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNecks
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CanonicalOpenRegion
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactBranchMinimizers
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapCoreConnector
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderEndRegions
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapOverlapCompactEnd
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapAttachedEnd
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCoordinates
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.EndpointScalarSeparation
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ConfinementMinimizers
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereSides
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereOrder
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCrossings
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckCenterConnector
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.EndpointRecentering
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RecenteredCompetitor
+import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapSideCrossings
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactCapSideOrder
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedRegionMinimizers
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.TubeSourceMinimizer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedRegionReverseMinimizers
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedTwoNeckMinimizers
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedSourceMinimizer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedReverseSourceMinimizer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedTwoNeckSourceMinimizer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapRecutBoundary
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundNormalJetConversion
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundSecondJetConversion
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundCylinderChristoffelBound
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelPolarization
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelCurvature
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelJets
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelMetricJets
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelChristoffel
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalSuccessorThreeQuarter
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalForwardTransfer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceForwardTransfer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LiteralCarrierCapContact
+import PoincareConjecture.Proofs.M28.Sec10_6_Contradiction
+import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SmoothBridge
+import PoincareConjecture.Proofs.M28.Sec10_6_Cone.ConeAnnulusTransport
+import PoincareConjecture.Proofs.M28.Sec10_6_Cone.TensorLaplacianTransport
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SelectedParabolicApplication
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SharedExport
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SelectedParabolicProducer
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+set_option linter.style.longLine false
+
+
+set_option linter.hashCommand false
+
+open PoincareConjecture.Proofs.M28.NeckTransfer
+open PoincareConjecture.Proofs.M28.NeckAnalysis
+open PoincareConjecture.M28.NeckGeometry
+
+
+
+

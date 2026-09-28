@@ -1,0 +1,11 @@
+import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceSmooth
+import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceTransition
+import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
+import Mathlib.Geometry.Manifold.LocalDiffeomorph
+
+
+
+
+
+
+

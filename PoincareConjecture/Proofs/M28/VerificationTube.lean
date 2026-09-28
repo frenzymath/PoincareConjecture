@@ -1,0 +1,18 @@
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCertificate
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalReciprocalSign
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryEntryProducer
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalScaleComparison
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+set_option linter.hashCommand false
+

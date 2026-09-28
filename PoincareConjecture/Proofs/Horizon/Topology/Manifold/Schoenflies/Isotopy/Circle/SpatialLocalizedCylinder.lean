@@ -1,0 +1,126 @@
+import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.LocalizedCylinder
+import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.SpatialCylinder
+
+
+
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+
+open Set Metric
+open scoped Manifold ContDiff
+
+namespace Poincare.Manifold.Schoenflies
+
+private abbrev E2 := EuclideanSpace Real (Fin 2)
+private abbrev E3 := EuclideanSpace Real (Fin 3)
+private abbrev S1 := sphere (0 : E2) 1
+private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
+
+
+
+theorem exists_supported_ambient_cylinder_within
+    {v : E3} (hv : ‖v‖ = 1) (c : Real)
+    {r R : Real} (hr : 0 < r) (hrR : r < R)
+    {U : Set (Real ∙ v)ᗮ} (hU : IsOpen U)
+    (f : Real × S1 -> (Real ∙ v)ᗮ)
+    (hf : ContMDiff (𝓘(Real, Real).prod (𝓡 1)) 𝓘(Real, (Real ∙ v)ᗮ) ∞ f)
+    (hemb : ∀ t ∈ Icc (-r) r, _root_.Manifold.IsSmoothEmbedding
+      (𝓡 1) 𝓘(Real, (Real ∙ v)ᗮ) ∞ (fun p : S1 => f (t, p)))
+    (htrace : ∀ t ∈ Icc (-r) r, ∀ p : S1, f (t, p) ∈ U) :
+    ∃ K : Set E3, IsCompact K ∧
+      K ⊆ {x | |inner Real v x - c| ≤ R ∧
+        (Real ∙ v)ᗮ.orthogonalProjectionOnto x ∈ U} ∧
+      ∃ F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,
+        (∀ x, inner Real v (F x) = inner Real v x) ∧
+        (∀ x, inner Real v x = c -> F x = x) ∧
+        (∀ x ∉ K, F x = x) ∧
+        ∀ t ∈ Icc (-r) r, ∀ p : S1,
+          F ((c + t) • v + (f (0, p) : E3)) = (c + t) • v + (f (t, p) : E3) := by
+  let J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2 :=
+    (OrthonormalBasis.fromOrthogonalSpanSingleton 2 (by
+      intro heq
+      simp [heq] at hv)).repr
+  let g : Real × S1 -> E2 := fun z => J (f z)
+  have hg : ContMDiff (𝓘(Real, Real).prod (𝓡 1)) (𝓡 2) ∞ g :=
+    J.toContinuousLinearEquiv.contDiff.contMDiff.comp hf
+  have hgemb (t : Real) (ht : t ∈ Icc (-r) r) :
+      _root_.Manifold.IsSmoothEmbedding (𝓡 1) (𝓡 2) ∞ (fun p : S1 => g (t, p)) := by
+    have hs := (hemb t ht).contMDiff
+    apply Poincare.Geometry.Manifold.isSmoothEmbedding_of_injective_mfderiv
+      (J.toContinuousLinearEquiv.contDiff.contMDiff.comp hs)
+      (J.injective.comp (hemb t ht).isEmbedding.injective)
+    intro p
+    have hJ : ContMDiff 𝓘(Real, (Real ∙ v)ᗮ) (𝓡 2) ∞ J.toContinuousLinearEquiv :=
+      J.toContinuousLinearEquiv.contDiff.contMDiff
+    change Function.Injective (mfderiv (𝓡 1) (𝓡 2)
+      (J.toContinuousLinearEquiv ∘ (fun q => f (t, q))) p)
+    rw [mfderiv_comp p (hJ.mdifferentiable (by simp) _) (hs.mdifferentiable (by simp) p)]
+    exact (J.toContinuousLinearEquiv.toDiffeomorph.mfderivToContinuousLinearEquiv
+      (by simp) (f (t, p))).injective.comp
+      (((hemb t ht).isImmersion.isImmersionAt p).injective_mfderiv_modelWithCornersSelf
+        (by simp))
+  obtain ⟨S, hS, hSU, G, hGt, hGzero, hGfix, hG⟩ :=
+    exists_supported_cylinder_parametrization_within hr hrR
+      (J.toHomeomorph.isOpenMap _ hU) g hg hgemb
+      (fun t ht p => mem_image_of_mem J (htrace t ht p))
+  let A := ((ContinuousLinearEquiv.refl Real Real).prodCongr
+    J.symm.toContinuousLinearEquiv).trans (Poincare.Geometry.Euclidean.heightCoordinates hv)
+  let T : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ := {
+    toEquiv := Equiv.addRight (c • v)
+    contMDiff_toFun := (contDiff_id.add contDiff_const).contMDiff
+    contMDiff_invFun := (contDiff_id.add contDiff_const).contMDiff }
+  let D := A.toDiffeomorph.trans T
+  have hD (z : Real × E2) : D z = (c + z.1) • v + (J.symm z.2 : E3) := by
+    change z.1 • v + (J.symm z.2 : E3) + c • v = _
+    rw [add_smul]
+    abel
+  have hheight (z : Real × E2) : inner Real v (D z) = c + z.1 := by
+    rw [hD]
+    simp [inner_add_right, inner_smul_right, hv,
+      Submodule.mem_orthogonal_singleton_iff_inner_right.mp (J.symm z.2).property]
+  have hproj (z : Real × E2) :
+      (Real ∙ v)ᗮ.orthogonalProjectionOnto (D z) = J.symm z.2 := by
+    rw [hD, map_add, map_smul]
+    have hv0 : (Real ∙ v)ᗮ.orthogonalProjectionOnto v = 0 := by
+      apply Submodule.orthogonalProjectionOnto_eq_zero_iff.mpr
+      simpa only [Submodule.orthogonal_orthogonal] using Submodule.mem_span_singleton_self v
+    simp [hv0]
+  let K := D '' (closedBall (0 : Real) R ×ˢ S)
+  let F := (D.symm.trans G).trans D
+  refine ⟨K, ((isCompact_closedBall 0 R).prod hS).image D.contMDiff.continuous,
+    ?_, F, ?_, ?_, ?_, ?_⟩
+  · rintro x ⟨z, hz, rfl⟩
+    refine ⟨?_, ?_⟩
+    · rw [hheight, add_sub_cancel_left]
+      simpa only [mem_closedBall, Real.dist_eq, sub_zero] using hz.1
+    · rw [hproj]
+      obtain ⟨y, hy, heq⟩ := hSU hz.2
+      change J y = z.2 at heq
+      simpa only [← heq, J.symm_apply_apply] using hy
+  · intro x
+    change inner Real v (D (G (D.symm x))) = inner Real v x
+    rw [hheight, hGt, ← hheight, D.apply_symm_apply]
+  · intro x hx
+    have hz : (D.symm x).1 = 0 := by
+      have h := hheight (D.symm x)
+      rw [D.apply_symm_apply, hx] at h
+      linarith
+    change D (G (D.symm x)) = x
+    have hp : D.symm x = (0, (D.symm x).2) := Prod.ext hz rfl
+    rw [hp, hGzero, ← hp, D.apply_symm_apply]
+  · intro x hx
+    have hnot : D.symm x ∉ closedBall (0 : Real) R ×ˢ S := by
+      intro hin
+      exact hx ⟨D.symm x, hin, D.apply_symm_apply x⟩
+    change D (G (D.symm x)) = x
+    rw [hGfix _ hnot, D.apply_symm_apply]
+  · intro t ht p
+    have hDg (s : Real) : D (t, g (s, p)) = (c + t) • v + (f (s, p) : E3) := by
+      rw [hD]
+      simp [g]
+    rw [← hDg 0]
+    change D (G (D.symm (D (t, g (0, p))))) = _
+    rw [D.symm_apply_apply, hG t ht p, hDg t]
+
+end Poincare.Manifold.Schoenflies

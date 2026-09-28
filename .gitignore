@@ -1,0 +1,9 @@
+.lake/
+*.olean
+*.ilean
+*.trace
+*.c.o
+*.log
+.DS_Store
+.vscode/
+.idea/

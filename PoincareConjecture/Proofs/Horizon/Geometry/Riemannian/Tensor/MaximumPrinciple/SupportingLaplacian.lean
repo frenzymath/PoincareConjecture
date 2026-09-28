@@ -1,0 +1,13 @@
+import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.SupportingLaplacian
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.Contact
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
+import Mathlib.Geometry.Manifold.BumpFunction
+
+
+
+
+
+
+

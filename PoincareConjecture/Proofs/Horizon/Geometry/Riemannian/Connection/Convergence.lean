@@ -1,0 +1,9 @@
+import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Convergence
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidean
+
+
+
+
+
+
+

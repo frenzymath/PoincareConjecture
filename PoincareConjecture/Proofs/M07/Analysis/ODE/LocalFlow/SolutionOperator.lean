@@ -1,0 +1,18 @@
+
+
+
+
+
+
+
+
+
+import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.SolutionOperator
+import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.HigherRegularity.VariationalLinearMapSmoothness
+import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
+
+
+
+
+
+

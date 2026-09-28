@@ -1,0 +1,15 @@
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CoherentSphereOrder
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.PathCrossingDistance
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMatchingHighNeck
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+open PoincareConjecture.M28.CounterexampleNeckFamily
+

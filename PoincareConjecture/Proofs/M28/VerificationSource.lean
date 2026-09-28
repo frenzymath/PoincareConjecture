@@ -1,0 +1,39 @@
+import PoincareConjecture.Proofs.M28.Generalized.IndexedSourceGeometry
+import PoincareConjecture.Proofs.M28.Generalized.StrongNeckQuarterBounds
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.ActualSourceMetricLimit
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceSliceNormalization
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckRegion
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckOverlapCapture
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NormalCharts
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.VolumeCover
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ComponentDistances
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CurvatureJets
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.RescaledCharts
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CoordinateCore
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalRadius
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckNoReturn
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckRicciComparison
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizingGeodesicAssembly
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialBall
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFrontierSelection
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphIsotopy
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicDistanceUpperSupport
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckBalancedDistance
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckBalancedScale
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialTransition
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckFrontierSphere
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckQuarterOverlap
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckThreeQuarter
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OrientedNoReturn
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OffPathCapCore
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CountableCoefficients
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.QuotientConnectedness
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CompactExhaustion
+import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.GeometryLimit
+
+
+
+set_option autoImplicit false
+
+set_option linter.hashCommand false
+

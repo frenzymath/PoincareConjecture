@@ -1,0 +1,19 @@
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CoreCoefficientReadout
+import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CapturedCylinderErrors
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialCoefficients
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawChartBounds
+import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialNeck
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+open PoincareConjecture.M28.tube PoincareConjecture.M28.CounterexampleNeckFamily
+open PoincareConjecture.Proofs.M28.NeckTransfer
+

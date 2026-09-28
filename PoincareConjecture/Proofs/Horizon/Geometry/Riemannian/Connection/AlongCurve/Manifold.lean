@@ -1,0 +1,11 @@
+import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Manifold
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Transport
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Variation.Manifold
+import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
+
+
+
+
+
+
+

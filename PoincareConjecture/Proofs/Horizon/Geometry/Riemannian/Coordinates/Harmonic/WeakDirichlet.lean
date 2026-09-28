@@ -1,0 +1,10 @@
+import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.WeakDirichlet
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Resolvent
+import Mathlib.Analysis.InnerProductSpace.LaxMilgram
+
+
+
+
+
+
+

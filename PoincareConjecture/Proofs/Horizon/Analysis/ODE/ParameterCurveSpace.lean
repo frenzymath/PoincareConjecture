@@ -1,0 +1,18 @@
+import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterCurveSpace
+import Mathlib.Topology.ContinuousMap.Compact
+import Mathlib.Topology.UniformSpace.CompactConvergence
+import Mathlib.Topology.UniformSpace.HeineCantor
+import Mathlib.Topology.MetricSpace.Thickening
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import Mathlib.MeasureTheory.Integral.DominatedConvergence
+import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.Analysis.Calculus.ImplicitFunction.ProdDomain
+import Mathlib.Analysis.Calculus.ContDiff.Defs
+import Mathlib.Analysis.SpecificLimits.Normed
+
+
+
+
+
+
+

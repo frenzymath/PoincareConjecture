@@ -1,0 +1,12 @@
+import PoincareConjecture.Proofs.M01.ConnectionExistenceRegularity
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.KoszulFunctional
+import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.Riesz
+import Mathlib.Geometry.Manifold.VectorBundle.Hom
+import Mathlib.Geometry.Manifold.VectorBundle.Riemannian
+
+
+
+
+
+
+
