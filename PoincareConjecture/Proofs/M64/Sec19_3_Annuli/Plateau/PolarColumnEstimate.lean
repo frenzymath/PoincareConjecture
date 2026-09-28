@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarCircleColumn
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -16,8 +10,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
 
 theorem m64MorreyPolarAngularColumn_norm_sq_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

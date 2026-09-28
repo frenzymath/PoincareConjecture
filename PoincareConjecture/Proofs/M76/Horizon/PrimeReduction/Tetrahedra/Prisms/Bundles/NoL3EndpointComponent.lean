@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.OriginalSphericalComponentModel
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.PrismTrimComponentTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry CategoryTheory Limits
 universe u v
@@ -60,8 +51,6 @@ theorem endpoint_component_invariant_of_noL3
     H hH L hL hpair τ hτ hτends T hT p hp
   exact not_finitePL_spherical_product_containing_noL3_component K g hg hgi F hF hFg
     hQ hPL hno S sS hSdis hfront hNK hNint P hP U hU hx hcontain
-
-
 
 theorem endpoint_component_homology_retract_of_noL3
     {X : Type v} {E : Type u} {ι ν η : Type*} [TopologicalSpace X] [T2Space X] [Finite ν] [Finite η]

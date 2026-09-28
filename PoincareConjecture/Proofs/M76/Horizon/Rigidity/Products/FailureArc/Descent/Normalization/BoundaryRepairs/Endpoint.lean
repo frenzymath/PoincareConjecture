@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Images
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -20,7 +18,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {step : Step s t} {j : P2 → t.Carrier} {R Fmark : Set M}
   {a b : Ann} {W : Set s.Carrier} {ε : ℝ}
   (A : PlanarAnnulusBoundaryMotion step j R Fmark a b W ε)
-
 
 theorem endpoint_properties
     (K : SimplicialComplex ℝ P2) (hK : K.faces.Finite) (hKs : K.space = Ann)
@@ -52,7 +49,6 @@ theorem endpoint_properties
     rw [A.mark]
     exact hmark hz
 
-
 theorem compact_change_support :
     ∃ D : Set t.Carrier, IsCompact D ∧
       D ⊆ (step.projection ∘ step.inclusion) ⁻¹' W ∧
@@ -70,8 +66,6 @@ theorem compact_change_support :
     change (step.projection ∘ step.inclusion) (T.symm z) ∈ W
     rw [hproj]
     exact (A.chart_inside (A.chart.map_target hzQ)).1
-
-
 
 theorem exists_original_rim_homotopy
     (hj : PolyhedralPLInCharts t.charts j Ann)
@@ -103,8 +97,6 @@ theorem exists_original_rim_homotopy
     map_zero_left := by intro x; apply Subtype.ext; exact congrArg t.projection (A.zero _)
     map_one_left := fun _ => rfl }
   exact ⟨rim₀, rim₁, eta, fun _ => rfl, fun _ => rfl, fun _ _ => rfl⟩
-
-
 
 theorem exists_original_region_homotopy
     (hj : PolyhedralPLInCharts t.charts j Ann)

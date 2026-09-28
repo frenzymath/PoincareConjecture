@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Compression.Upper.PhaseMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Compression.Upper.SlabCoordinate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

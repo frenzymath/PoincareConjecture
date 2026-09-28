@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Coordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Convolution.DirectionalLocal
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +10,6 @@ open scoped Manifold ContDiff Topology Bundle NNReal
 namespace PoincareConjecture.LeviCivitaData
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
 
 theorem norm_fderiv_parametrization_le_of_gradient_norm_le
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -57,7 +50,6 @@ theorem norm_fderiv_parametrization_le_of_gradient_norm_le
       _ ≤ N * (A * ‖w‖) := mul_le_mul_of_nonneg_left (hnorm w) hN
       _ = _ := by ring)
 
-
 theorem directional_upper_support_in_parametrization
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -85,8 +77,6 @@ theorem directional_upper_support_in_parametrization
   change fderiv ℝ (q ∘ e) z v =
     mvfderiv (𝓡 n) q (e z) (mfderiv (𝓡 n) (𝓡 n) e z v) at heq
   simpa only [heq] using hdir
-
-
 
 theorem exists_contMDiff_directional_approx_in_parametrization
     {n : ℕ} {M : Type*} [TopologicalSpace M]

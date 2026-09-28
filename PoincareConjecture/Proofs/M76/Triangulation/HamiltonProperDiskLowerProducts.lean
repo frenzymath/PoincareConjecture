@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskCoherentSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,15 +13,9 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
 
-
-
-
 noncomputable def HamiltonProperDiskTriangulation.diskDualBase
     (T : HamiltonProperDiskTriangulation R D b) (s : Finset E) : Set E :=
   T.dualRegion s ∩ D
-
-
-
 
 structure HamiltonProperDiskLowerProducts
     (T : HamiltonProperDiskTriangulation R D b) {c : E ≃ᴬ[ℝ] V}
@@ -80,7 +65,6 @@ structure HamiltonProperDiskLowerProducts
     ∀ t ∈ T.disk.faces, 2 ≤ t.card →
       map s '' ((T.diskDualBase s ∩ T.diskDualBase t) ×ˢ I) =
         T.dualRegion s ∩ T.dualRegion t
-
 
   boundary_image : ∀ s ∈ T.disk.faces, s.card = 2 → s ∈ T.boundary.faces →
     (fun t : ℝ => map s (s.centroid ℝ id, t)) '' I =

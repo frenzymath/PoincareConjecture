@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceEstimate
 import Mathlib.Analysis.Normed.Module.Dual
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +9,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem m64AnnulusInteriorIntegral_eq_iterated_vector (f : LoopPlane → F)
     (hf : Continuous f) :
@@ -51,8 +38,6 @@ theorem m64AnnulusInteriorIntegral_eq_iterated_vector (f : LoopPlane → F)
   simp_rw [← L.integral_comp_comm (hs _)]
   exact m64AnnulusInteriorIntegral_eq_iterated (fun p => L (f p)) (L.continuous.comp hf)
 
-
-
 theorem m64Annulus_integral_vertical_derivative
     {f : LoopPlane → F} (hf : ContDiff ℝ 1 f) :
     (∫ p in interior m64AnnulusDomain,
@@ -74,8 +59,6 @@ theorem m64Annulus_integral_vertical_derivative
   rw [integral_Icc_eq_integral_Ioc, ← intervalIntegral.integral_of_le zero_le_one]
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt (fun s _ => hder s)
     (hd.intervalIntegrable 0 1)
-
-
 
 theorem m64Annulus_vertical_green_identity
     {f : LoopPlane → F} {phi : LoopPlane → ℝ}

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b L : ℝ} [Fact (0 < L)]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem m63UniformInitialCurvatureSquared_bound
     (F : RicciFlow n M (Icc a b)) (ha : a ∈ Icc a b)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.HolderMoment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -76,7 +65,6 @@ theorem norm_integral_heatD2_smul_le_of_centered_bound
       ring
 
 omit [CompleteSpace F] in
-
 
 theorem norm_hessian_potential_le_of_centered_bound
     {α : ℝ≥0} (hα0 : 0 < α) (hα1 : α ≤ 1) {K t : ℝ}

@@ -3,14 +3,6 @@ import Mathlib.Data.Fintype.Prod
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -18,8 +10,6 @@ open scoped BigOperators
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I] [DecidableEq I]
-
-
 
 lemma derivative_contraction_prescribed_jet
     (dP : I → I → I → I → ℝ) (Ric B : I → I → ℝ) (W : I → ℝ) (k : ℝ)
@@ -66,8 +56,6 @@ lemma derivative_contraction_prescribed_jet
   apply Finset.sum_congr rfl
   intro c _
   rw [← Finset.sum_mul, ← Finset.sum_mul, hdiv]
-
-
 
 lemma curvature_derivative_contraction_prescribed_jet
     (dR : I → I → I → I → I → ℝ) (Ric : I → I → ℝ)
@@ -125,7 +113,6 @@ lemma curvature_derivative_contraction_prescribed_jet
 
 omit [DecidableEq I] in
 
-
 lemma curvature_derivative_ricci_cancellation
     (dR : I → I → I → I → I → ℝ) (Ric U : I → I → ℝ) (W : I → ℝ)
     (hpair : ∀ e a b c d, dR e a b c d = dR e c d a b)
@@ -147,8 +134,6 @@ lemma curvature_derivative_ricci_cancellation
       ring)
   simp only [Fintype.sum_prod_type, Finset.sum_neg_distrib] at he
   linarith only [he]
-
-
 
 lemma curvature_contraction_prescribed_jets
     (R : I → I → I → I → ℝ) (Ric : I → I → ℝ) (W : I → ℝ) (k : ℝ)
@@ -196,8 +181,6 @@ lemma curvature_contraction_prescribed_jets
     rw [← Finset.sum_mul, ← Finset.sum_mul, hRic]
   rw [hcross, htrace]
   ring
-
-
 
 lemma hamiltonM_prescribed_jet_cancellation
     (R : I → I → I → I → ℝ) (dP : I → I → I → I → ℝ)
@@ -252,8 +235,6 @@ lemma hamiltonM_prescribed_jet_cancellation
   rw [hcurv] at hd
   rw [hgrad, hd, hq]
   ring
-
-
 
 lemma hamiltonP_prescribed_jet_cancellation
     (dR : I → I → I → I → I → ℝ) (Ric : I → I → ℝ)

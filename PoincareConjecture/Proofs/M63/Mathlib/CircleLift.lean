@@ -4,29 +4,15 @@ import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace AddCircle
-
-
 
 theorem exists_continuous_real_lift {p : ℝ} {f : ℝ → AddCircle p} (hf : Continuous f) :
     ∃ L : ℝ → ℝ, Continuous L ∧ ∀ x, (L x : AddCircle p) = f x := by
   obtain ⟨r, hr⟩ := QuotientAddGroup.mk_surjective (f 0)
   obtain ⟨L, hL, _⟩ := (isCoveringMap_coe p).existsUnique_continuousMap_lifts ⟨f, hf⟩ 0 r hr
   exact ⟨L, L.continuous, congrFun hL.2⟩
-
-
-
 
 theorem real_lift_period_shift {p tau : ℝ} {L : ℝ → ℝ} (hL : Continuous L)
     (hper : Function.Periodic (fun x => (L x : AddCircle p)) tau) :
@@ -42,9 +28,6 @@ theorem real_lift_period_shift {p tau : ℝ} {L : ℝ → ℝ} (hL : Continuous 
         rw [coe_add, hd, add_zero]
         exact hper x) 0 (by simp)
   exact congrFun heq
-
-
-
 
 theorem real_lift_positive_degree {p tau : ℝ} (hp : 0 < p) (htau : 0 < tau)
     {L : ℝ → ℝ} (hL : Continuous L) (hderiv : ∀ x, 0 < deriv L x)
@@ -63,9 +46,6 @@ theorem real_lift_positive_degree {p tau : ℝ} (hp : 0 < p) (htau : 0 < tau)
     linarith
   refine ⟨N, hNpos, fun x => ?_⟩
   rw [real_lift_period_shift hL hper x, ← hN, nsmul_eq_mul]
-
-
-
 
 theorem exists_homotopy_lift_periodShift {p tau d : ℝ}
     (H : C(unitInterval × ℝ, AddCircle p)) (L0 : C(ℝ, ℝ))

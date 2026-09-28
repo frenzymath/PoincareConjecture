@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterLinear
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterDerivatives
 import Mathlib.Analysis.Calculus.ContDiff.Bounds

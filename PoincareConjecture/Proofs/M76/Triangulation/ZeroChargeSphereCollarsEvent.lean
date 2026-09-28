@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeSphereCollarsData
 import PoincareConjecture.Proofs.M76.Triangulation.AuxiliaryOriginalPolygonCutBox
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,10 +10,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {n : ℕ}
-
-
-
-
 
 theorem exists_sphere_collar_event_box
     (K : SimplicialComplex ℝ E) (hdim : Module.finrank ℝ E = 3)

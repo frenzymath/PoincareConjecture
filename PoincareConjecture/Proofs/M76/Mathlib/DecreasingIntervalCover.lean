@@ -3,24 +3,11 @@ import Mathlib.Order.Interval.Set.LinearOrder
 import Mathlib.Data.Finset.Range
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 
 namespace StrictAnti
-
-
-
 
 theorem mem_adjacent_Icc_iff {α : Type*} [LinearOrder α] {a : ℕ → α}
     (ha : StrictAnti a) {n m : ℕ} {x : α} (hx : x ∈ Icc (a (n + 1)) (a n)) :
@@ -42,9 +29,6 @@ theorem mem_adjacent_Icc_iff {α : Type*} [LinearOrder α] {a : ℕ → α}
       exact ⟨le_rfl, ha.antitone (Nat.le_succ m)⟩
     · subst m
       exact ⟨ha.antitone (Nat.le_succ (n + 1)), le_rfl⟩
-
-
-
 
 theorem iUnion_adjacent_Icc {α : Type*} [LinearOrder α] {a : ℕ → α}
     (ha : StrictAnti a) (N : ℕ) :
@@ -68,9 +52,6 @@ theorem iUnion_adjacent_Icc {α : Type*} [LinearOrder α] {a : ℕ → α}
     rw [hsplit, ih]
     exact Icc_union_Icc_eq_Icc (ha.antitone (Nat.le_succ _))
       (ha.antitone (Nat.zero_le _))
-
-
-
 
 theorem iUnion_adjacent_Icc_eq_Ioc {a : ℕ → ℝ} {c : ℝ}
     (ha : StrictAnti a) (hc : ∀ n, c < a n) (hlim : Tendsto a atTop (𝓝 c)) :

@@ -2,23 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.ChartGlui
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Models
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,34 +12,23 @@ namespace PoincareConjecture.SphereCharts
 
 private abbrev E3 := EuclideanSpace ℝ (Fin 3)
 
-
-
-
 noncomputable def threeSphereStereographic (v : UnitThreeSphere) :
     OpenPartialHomeomorph UnitThreeSphere E3 := by
   let : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
   exact stereographic' 3 v
 
-
-
 @[simp] theorem threeSphereStereographic_source (v : UnitThreeSphere) :
     (threeSphereStereographic v).source = {v}ᶜ := by
   simp [threeSphereStereographic]
-
-
 
 @[simp] theorem threeSphereStereographic_target (v : UnitThreeSphere) :
     (threeSphereStereographic v).target = univ := by
   simp [threeSphereStereographic]
 
-
-
 theorem threeSphereStereographic_mem_maximalAtlas (v : UnitThreeSphere) :
     threeSphereStereographic v ∈ maximalAtlas (𝓡 3) ∞ UnitThreeSphere := by
   apply IsManifold.subset_maximalAtlas
   exact ⟨v, rfl⟩
-
-
 
 theorem threeSphereStereographic_source_union_antipode (v : UnitThreeSphere) :
     (threeSphereStereographic v).source ∪ (threeSphereStereographic (-v)).source = univ := by
@@ -68,15 +40,9 @@ theorem threeSphereStereographic_source_union_antipode (v : UnitThreeSphere) :
     simpa only [hx, mem_compl_iff, mem_singleton_iff] using ne_neg_of_mem_unit_sphere ℝ v
   · exact Or.inl hx
 
-
-
-
 @[simp] theorem threeSphereStereographic_apply_antipode (v : UnitThreeSphere) :
     threeSphereStereographic v (-v) = 0 := by
   simp [threeSphereStereographic, stereographic', stereographic_apply_neg]
-
-
-
 
 @[simp] theorem threeSphereStereographic_symm_zero (v : UnitThreeSphere) :
     (threeSphereStereographic v).symm 0 = -v := by
@@ -86,9 +52,6 @@ theorem threeSphereStereographic_source_union_antipode (v : UnitThreeSphere) :
       ne_neg_of_mem_unit_sphere ℝ v
   simpa only [threeSphereStereographic_apply_antipode] using
     (threeSphereStereographic v).left_inv hv
-
-
-
 
 theorem threeSphereStereographic_transition_source (v : UnitThreeSphere) :
     ((threeSphereStereographic v).symm.trans (threeSphereStereographic (-v))).source =
@@ -108,19 +71,12 @@ theorem threeSphereStereographic_transition_source (v : UnitThreeSphere) :
       threeSphereStereographic_apply_antipode] at h
     exact h
 
-
-
 theorem threeSphereStereographic_transition_target (v : UnitThreeSphere) :
     ((threeSphereStereographic v).symm.trans (threeSphereStereographic (-v))).target =
       ({0} : Set E3)ᶜ := by
   rw [← OpenPartialHomeomorph.symm_source,
     OpenPartialHomeomorph.trans_symm_eq_symm_trans_symm, OpenPartialHomeomorph.symm_symm]
   simpa only [neg_neg] using threeSphereStereographic_transition_source (-v)
-
-
-
-
-
 
 theorem exists_diffeomorph_unitThreeSphere_of_stereographic
     {Y : Type*} [TopologicalSpace Y] [ChartedSpace E3 Y]

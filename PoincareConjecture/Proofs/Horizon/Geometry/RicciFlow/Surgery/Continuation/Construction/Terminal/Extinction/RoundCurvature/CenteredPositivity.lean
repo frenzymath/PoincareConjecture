@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Extinction.RoundCurvature.CenteredBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -108,8 +103,6 @@ theorem curvatureTensor_pos_orthonormal_of_centered_round_twoJet
     simpa only [mul_one] using mul_le_mul_of_nonneg_left hq hepsilon
   nlinarith only [hepsilon_small, hεq, hformula, hH₁.1, hH₂.2,
     hS₁.1, hS₂.2, hS₃.2, hS₄.1, hquad₁.1, hquad₂.2]
-
-
 
 theorem curvatureTensor_pos_of_euclidean_orthonormal
     (D : LeviCivitaData h) (x : EuclideanSpace ℝ (Fin n))

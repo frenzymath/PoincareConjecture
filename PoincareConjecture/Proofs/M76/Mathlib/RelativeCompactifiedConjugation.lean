@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Analysis.Normed.Module.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
-
 
 theorem norm_closedExtension_sub_le {S : Set E} (g : S ≃ₜ S) (hS : IsClosed S)
     (hfront : ∀ x : S, (x : E) ∈ frontier S → g x = x) {C : ℝ} (hC : 0 ≤ C)
@@ -30,9 +19,6 @@ theorem norm_closedExtension_sub_le {S : Set E} (g : S ≃ₜ S) (hS : IsClosed 
     exact hbound ⟨x, hx⟩
   · rw [g.closedExtension_apply_notMem hS hfront hx, sub_self, norm_zero]
     exact hC
-
-
-
 
 theorem compactified_conjugate_fixed_relative
     (p : OpenPartialHomeomorph E E)

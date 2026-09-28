@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.EarlyBallVolume
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.LateBallVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.M34
-
-
 
 theorem standardFlow_noncollapsingCertificate {g0 : StandardInitialMetric}
     (F : MaximalStandardCapFlow g0) (P : M34StandardCapPredecessors) :

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +19,6 @@ variable {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)
   (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
 
 include hI in
-
 
 theorem rawCylinder_sourceEnergy_upper
     (gSource : RiemannianMetric 3 C.carrier) (factor : ℝ)

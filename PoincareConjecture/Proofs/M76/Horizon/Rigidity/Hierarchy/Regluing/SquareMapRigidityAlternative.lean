@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.TwoPhaseCoveringInstallation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.FirstSlabAlternativeRigidity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

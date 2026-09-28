@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M34
 variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace 𝕜 E]
 
-
-
 noncomputable def modelTranslationDiffeomorph (x : E) (m : ℕ∞ω := ∞) :
     Diffeomorph (𝓘(𝕜, E)) (𝓘(𝕜, E)) E E m where
   toEquiv := (Homeomorph.addLeft x).toEquiv
@@ -28,7 +18,6 @@ noncomputable def modelTranslationDiffeomorph (x : E) (m : ℕ∞ω := ∞) :
   contMDiff_invFun := (contDiff_const.add contDiff_id).contMDiff
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem modelTranslationDiffeomorph_mfderiv (x z : E) (m : ℕ∞ω := ∞) :
     mfderiv (𝓘(𝕜, E)) (𝓘(𝕜, E)) (modelTranslationDiffeomorph (𝕜 := 𝕜) x m) z =
@@ -45,13 +34,9 @@ variable {E' : Type*} [NormedAddCommGroup E'] [NormedSpace 𝕜 E']
   {H : Type*} [TopologicalSpace H] {I : ModelWithCorners 𝕜 E' H}
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M] {m : ℕ∞ω}
 
-
-
 noncomputable def centeredDiffeomorph (e : PartialDiffeomorph (𝓘(𝕜, E)) I E M m)
     (x : E) : PartialDiffeomorph (𝓘(𝕜, E)) I E M m :=
   (modelTranslationDiffeomorph (𝕜 := 𝕜) x m).toPartialDiffeomorph.trans e
-
-
 
 theorem centeredDiffeomorph_mem_source (e : PartialDiffeomorph (𝓘(𝕜, E)) I E M m)
     (x z : E) : z ∈ (centeredDiffeomorph e x).source ↔ x + z ∈ e.source := by

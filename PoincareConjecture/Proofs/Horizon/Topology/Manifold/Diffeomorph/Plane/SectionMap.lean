@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.Flo
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +15,6 @@ local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "v₀" => (!₂[(1 : ℝ), 0] : E₂)
 
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P]
-
-
-
 
 theorem exists_smooth_horizontal_section_map
     {H : P × E₂ → E₂} (hH : ContDiff ℝ ∞ H) (hne : ∀ p x, H (p, x) ≠ 0)
@@ -175,7 +162,6 @@ theorem exists_smooth_horizontal_section_map
   exact ⟨σ, ρ, κ, hsσ, hsρ, hsκ, hcross, hpositive, hbij, hleft, hright, hderiv, houtside⟩
 
 omit [CompleteSpace P] in
-
 
 theorem deriv_section_inverse_pos
     {ρ κ : P × ℝ → ℝ} (hρ : ContDiff ℝ ∞ ρ) (hκ : ContDiff ℝ ∞ κ)

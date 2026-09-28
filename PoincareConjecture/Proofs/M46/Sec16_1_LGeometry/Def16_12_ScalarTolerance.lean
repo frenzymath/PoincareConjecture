@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarJet
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_StandardSphereMargin
 import PoincareConjecture.Proofs.M44.StandardScalar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -42,9 +29,6 @@ noncomputable local instance scalarToleranceTwoJetNorm :
 
 noncomputable local instance scalarToleranceTwoJetSpace :
     NormedSpace ℝ Jet := Prod.normedSpace
-
-
-
 
 theorem exists_uniform_scalarJet_error {C : Set Jet} (hC : IsCompact C)
     (hinv : ∀ J ∈ C, J.1.IsInvertible) {error : ℝ} (herror : 0 < error) :
@@ -78,9 +62,6 @@ theorem exists_uniform_scalarJet_error {C : Set Jet} (hC : IsCompact C)
     exact hnear
   exact (hinside (Metric.mem_cthickening_of_dist_le (J, J') (J, J) delta
     diagonal (mem_image_of_mem _ hJ) hdist)).2.2
-
-
-
 
 theorem exists_standardCap_scalarRate_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {c theta : ℝ}

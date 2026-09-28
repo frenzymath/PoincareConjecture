@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Diffeomorph
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalChainIsotopy
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace

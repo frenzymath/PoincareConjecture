@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedOldRecentCases
 import PoincareConjecture.Proofs.M47.SeedM15RecentVolume
 import PoincareConjecture.Proofs.M47.SeedRetainedCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47 M46
-
-
 
 theorem exists_positive_retained_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

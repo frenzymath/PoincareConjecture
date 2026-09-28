@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimCircl
 import PoincareConjecture.Proofs.M76.Rigidity.SourceBoundaryCylinder
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -22,7 +20,6 @@ local notation "D" => closedBall (0 : V1) 1
 local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "C32" => AddCircle (4 * (8 : ℝ))
 local notation "Q2" => sphere (0 : V2) 1
-
 
 theorem polyhedralPL_sourceBoundaryCircle_period
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
@@ -78,8 +75,6 @@ theorem polyhedralPL_sourceBoundaryCircle_period
   have h := hphi.polyhedralPLInCharts_boundary_fixed hfix K hK q hq.continuousOn hqB hqPL
   rw [hKs] at h
   exact h.congr (fun t _ => hqval t)
-
-
 
 theorem exists_sourceRimCircle_polyhedral_parametrization
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

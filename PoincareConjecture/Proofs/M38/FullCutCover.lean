@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.FullCutPost
 import PoincareConjecture.Proofs.M38.FullCutDiscarded
 import PoincareConjecture.Proofs.M38.OneCapAssembly
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
 
 theorem fullCutPostInclusion_cases (p : (F.slice T).carrier) :
     (∃ y : eventCapComplementOpen F T hT, fullCutPostInclusion F T hT P p =
@@ -39,7 +30,6 @@ theorem fullCutPostInclusion_cases (p : (F.slice T).carrier) :
       have hval : (P i).ball.map x.val = p := congrArg Subtype.val hx
       exact Or.inr ⟨i, x, hval ▸ fullCutPostInclusion_cap F T hT P i x⟩
 
-
 theorem fullCutDiscardedInclusion_cases (p : CappedDiscardedSpace F T hT P) :
     (∃ y : eventDiscardedOpen F T hT,
       fullCutDiscardedInclusion F T hT P p =
@@ -54,7 +44,6 @@ theorem fullCutDiscardedInclusion_cases (p : CappedDiscardedSpace F T hT P) :
       | inl y => exact Or.inl ⟨eventCappingMap F T hT P (.inl y) x,
           fullCutDiscardedInclusion_patch F T hT P (.inl y) x⟩
       | inr i => exact Or.inr ⟨i, x, fullCutDiscardedInclusion_cap F T hT P i x⟩
-
 
 theorem fullCutInclusions_disjoint :
     Disjoint (Set.range (fullCutPostInclusion F T hT P))
@@ -88,7 +77,6 @@ theorem fullCutInclusions_disjoint :
         (⟨i, Set.mem_univ i⟩, false) (⟨j, Set.mem_univ j⟩, true) (by simp))
           (Set.mem_range_self x) (h.symm ▸ Set.mem_range_self y)
 
-
 theorem fullCutInclusions_cover :
     Set.range (fullCutPostInclusion F T hT P) ∪
       Set.range (fullCutDiscardedInclusion F T hT P) = Set.univ := by
@@ -119,12 +107,10 @@ theorem fullCutInclusions_cover :
           | true => exact Or.inr ⟨eventCappingInclude F T hT P (.inr i.val) x,
               fullCutDiscardedInclusion_cap F T hT P i.val x⟩
 
-
 noncomputable def fullCutSumMap :
     (sumCarrier (F.slice T) (cappedDiscardedCarrier F T hT P)).carrier →
       (partialCappedCarrier F T hT P Set.univ).carrier :=
   Sum.elim (fullCutPostInclusion F T hT P) (fullCutDiscardedInclusion F T hT P)
-
 
 theorem fullCutSumMap_injective : Function.Injective (fullCutSumMap F T hT P) := by
   intro x y h
@@ -146,7 +132,6 @@ theorem fullCutSumMap_injective : Function.Injective (fullCutSumMap F T hT P) :=
           exact congrArg Sum.inr
             ((fullCutDiscardedInclusion_openEmbedding F T hT P).injective h)
 
-
 theorem fullCutSumMap_surjective : Function.Surjective (fullCutSumMap F T hT P) := by
   intro q
   have hq : q ∈ Set.range (fullCutPostInclusion F T hT P) ∪
@@ -157,18 +142,15 @@ theorem fullCutSumMap_surjective : Function.Surjective (fullCutSumMap F T hT P) 
   · exact ⟨.inl p, hp⟩
   · exact ⟨.inr d, hd⟩
 
-
 theorem fullCutSumMap_openEmbedding : IsOpenEmbedding (fullCutSumMap F T hT P) :=
   (fullCutPostInclusion_openEmbedding F T hT P).sumElim
     (fullCutDiscardedInclusion_openEmbedding F T hT P) (fullCutSumMap_injective F T hT P)
-
 
 noncomputable def fullCutSumHomeomorph :
     (sumCarrier (F.slice T) (cappedDiscardedCarrier F T hT P)).carrier ≃ₜ
       (partialCappedCarrier F T hT P Set.univ).carrier :=
   (fullCutSumMap_openEmbedding F T hT P).isEmbedding.toHomeomorphOfSurjective
     (fullCutSumMap_surjective F T hT P)
-
 
 theorem fullCutSumHomeomorph_apply
     (x : (sumCarrier (F.slice T) (cappedDiscardedCarrier F T hT P)).carrier) :

@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Gluing.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gluing.Compatibility
 import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Separation
 import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Connectedness
-
-
-
-
-
-
-

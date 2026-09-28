@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch04.Pinching
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

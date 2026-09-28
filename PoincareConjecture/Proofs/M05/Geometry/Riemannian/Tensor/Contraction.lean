@@ -1,14 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.RicciDerivative
 import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,7 +14,6 @@ section LinearAlgebra
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   {ι κ : Type*} [Fintype ι] [Fintype κ]
-
 
 def bilinearOfTwoTensor (A : MultilinearMap ℝ (fun _ : Fin 2 ↦ E) ℝ) :
     E →ₗ[ℝ] E →ₗ[ℝ] ℝ := by
@@ -49,7 +40,6 @@ def bilinearOfTwoTensor (A : MultilinearMap ℝ (fun _ : Fin 2 ↦ E) ℝ) :
 @[simp]
 lemma bilinearOfTwoTensor_apply (A : MultilinearMap ℝ (fun _ : Fin 2 ↦ E) ℝ)
     (a b : E) : bilinearOfTwoTensor A a b = A ![a, b] := rfl
-
 
 lemma bilinear_sum_orthonormalBasis_eq (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
     (b : OrthonormalBasis ι ℝ E) (c : OrthonormalBasis κ ℝ E) :
@@ -78,7 +68,6 @@ lemma bilinear_sum_orthonormalBasis_eq (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
   simp_rw [hcoeff]
   simp [b.inner_eq_ite]
 
-
 lemma bilinear_sum_frame_corrections (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
     (b : OrthonormalBasis ι ℝ E) (C : ι → E) :
     (∑ i, (B (C i) (b i) + B (b i) (C i))) =
@@ -97,7 +86,6 @@ lemma bilinear_sum_frame_corrections (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
   simp_rw [real_inner_comm (C _) (b _)]
   rw [add_comm]
   simp_rw [Finset.sum_add_distrib]
-
 
 lemma bilinear_sum_basis_eq_inverse_gram [DecidableEq ι]
     (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) (b : Module.Basis ι ℝ E)
@@ -148,7 +136,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 lemma IsSmoothCovariantTensor.contMDiffAt_extend {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     (x : M) (v : Fin k → TangentSpace (𝓡 n) x) :
@@ -191,7 +178,6 @@ lemma mvfderiv_sum_apply {ι : Type} [Fintype ι]
   have hs : (∑ i, ds i) v = ∑ i, ds i v := sum_apply Finset.univ ds v
   exact h'.trans hs
 
-
 lemma mvfderiv_metric_extend (D : LeviCivitaData g) (x : M)
     (v a b : TangentSpace (𝓡 n) x) :
     mvfderiv (𝓡 n)
@@ -215,16 +201,12 @@ lemma mvfderiv_metric_extend (D : LeviCivitaData g) (x : M)
     g.inner x a (D.connection (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) b) x v) at h
   linarith
 
-
 lemma covariantTensorDerivative_metric_eq_zero (D : LeviCivitaData g)
     (x : M) (v a b : TangentSpace (𝓡 n) x) :
     D.covariantTensorDerivative (fun y w ↦ g.inner y (w 0) (w 1)) x ![v, a, b] = 0 := by
   simp only [covariantTensorDerivative, Fin.sum_univ_two]
   simp
   exact sub_eq_zero.mpr (D.mvfderiv_metric_extend x v a b)
-
-
-
 
 lemma sum_covariantTensorDerivative_eq_fixed_trace_sub_gram
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M 2}
@@ -274,7 +256,6 @@ lemma sum_covariantTensorDerivative_eq_fixed_trace_sub_gram
     ext j
     fin_cases j <;> rfl
   · congr 1 <;> congr 1 <;> ext j <;> fin_cases j <;> simp [X]
-
 
 end LeviCivitaData
 

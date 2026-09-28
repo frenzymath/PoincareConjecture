@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Basic
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Topology.Bases
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -45,7 +37,6 @@ variable {S : ℝ → GeneralizedSliceCarrier.{u}}
   {g : ∀ t, RiemannianMetric 3 (S t).carrier} {J : Set ℝ}
   {ι : Type v} (B : ι → GeneralizedRicciFlowBox S g J)
 
-
 @[instance_reducible] def topology : TopologicalSpace (Σ t, (S t).carrier) :=
   ⨆ b, TopologicalSpace.coinduced (B b).spaceMap inferInstance
 
@@ -69,7 +60,6 @@ variable (compat : ∀ b c t ht hc x y,
   ∀ s hs hs', (B b).forward s hs x = (B c).forward s hs' y)
 
 include compat
-
 
 theorem overlap_isOpen (b c : ι) (U : Set ((B b).interval × (B b).carrier.carrier))
     (hU : IsOpen U) : IsOpen ((B c).spaceMap ⁻¹' ((B b).spaceMap '' U)) := by
@@ -116,7 +106,6 @@ variable (covers : ∀ t (x : (S t).carrier),
   ∃ b, ∃ ht : t ∈ (B b).interval, ∃ y, (B b).forward t ht y = x)
 
 include covers
-
 
 theorem t2Space : @T2Space (Σ t, (S t).carrier) (topology B) := by
   let := topology B
@@ -171,7 +160,6 @@ theorem slice_continuous (t : ℝ) :
   rintro z ⟨w, hw, rfl⟩
   exact hw
 
-
 theorem exists_open_extension (t : ℝ) (U : Set (S t).carrier) (hU : IsOpen U) :
     ∃ V, @IsOpen _ (topology B) V ∧ Sigma.mk t ⁻¹' V = U := by
   let := topology B
@@ -209,7 +197,6 @@ theorem slice_embedding (t : ℝ) :
   · exact exists_open_extension B compat covers t U
   · rintro ⟨V, hV, rfl⟩
     exact hV.preimage (slice_continuous B covers t)
-
 
 theorem secondCountable [Countable ι] :
     @SecondCountableTopology (Σ t, (S t).carrier) (topology B) := by

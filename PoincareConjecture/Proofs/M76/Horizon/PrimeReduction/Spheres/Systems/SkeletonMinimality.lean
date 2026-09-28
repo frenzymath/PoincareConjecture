@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalE
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.OriginalSkeletonContactCount
 import Mathlib.Data.Nat.Find
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_protected_sphere_system_skeleton_minimum
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

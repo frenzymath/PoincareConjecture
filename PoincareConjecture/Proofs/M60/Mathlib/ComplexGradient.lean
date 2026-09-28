@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CauchyRiemannGauge
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex
@@ -20,21 +11,14 @@ namespace PoincareConjecture.M60
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℂ V]
 
-
-
 noncomputable def complexGradient (C : E →L[ℝ] V) (u : ℂ → E) (z : ℂ) : V :=
   C (fderiv ℝ u z 1) - I • C (fderiv ℝ u z I)
-
-
 
 theorem contDiffAt_complexGradient (C : E →L[ℝ] V) {u : ℂ → E} {z : ℂ}
     (hu : ContDiffAt ℝ 2 u z) : ContDiffAt ℝ 1 (complexGradient C u) z := by
   have hd := hu.fderiv_right (m := 1) (by norm_num)
   exact (C.contDiff.contDiffAt.comp z (hd.clm_apply contDiffAt_const)).sub
     ((C.contDiff.contDiffAt.comp z (hd.clm_apply contDiffAt_const)).const_smul I)
-
-
-
 
 theorem cauchyRiemannDerivative_complexGradient
     (C : E →L[ℝ] V) {u : ℂ → E} {z : ℂ} (hu : ContDiffAt ℝ 2 u z) :

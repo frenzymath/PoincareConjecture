@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Ambient
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -73,8 +64,6 @@ private theorem finite_inverse_frontier
       inter_eq_right.mpr (frontier_subset_closure.trans htarget),
       inter_eq_right.mpr (frontier_subset_closure.trans hsource)] using
       himage.frontier.image_eq
-
-
 
 theorem limitFinite_neck_local_bounded_side
     {M : Type u} [TopologicalSpace M]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerOriginalAtlas
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedBallDeletedCellEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -68,10 +59,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ]
 local notation "L" => hamiltonLowerPeriodLattice κ
 local notation "W" => LatticeHandleAmbient ι κ L
 local notation "T" => ((κ → ℝ) ⧸ (Submodule.toAddSubgroup (hamiltonLowerPeriodLattice κ)))
-
-
-
-
 
 theorem lower_original_domain_hasOneSimplyConnectedEnd
     (hdim : Fintype.card ι + Fintype.card κ = 3)

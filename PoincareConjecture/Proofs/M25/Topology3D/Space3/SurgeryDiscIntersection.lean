@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CircleRadialChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem sourceDisc_collar_mem_retained_iff
     {X : Type*} [TopologicalSpace X]

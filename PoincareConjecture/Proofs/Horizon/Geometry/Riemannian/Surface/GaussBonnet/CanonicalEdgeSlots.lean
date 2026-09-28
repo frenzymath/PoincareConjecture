@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Incidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -53,8 +46,6 @@ private theorem card_slots_of_two_faces {I E : Type*} [Fintype I] [Fintype E]
   have h := Fintype.card_congr (Equiv.sigmaFiberEquiv f)
   simpa only [Fintype.card_sigma, hcard, Finset.sum_const, Finset.card_univ,
     smul_eq_mul, Fintype.card_prod, Fintype.card_fin, Nat.mul_comm] using h.symm
-
-
 
 theorem three_card_coordinate_faces_eq_two_card_boundary_edges
     {S : Type*} [TopologicalSpace S] [T2Space S]

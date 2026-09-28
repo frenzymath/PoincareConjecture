@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.VertexAbstractComplex
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,13 +13,9 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
 omit [DecidableEq E] in
 
-
 theorem finite_vertices_of_finite_faces (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) : K.vertices.Finite :=
   hfinite.preimage Finset.singleton_injective.injOn
-
-
-
 
 theorem reachable_vertices_of_mem_face (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (u v : K.vertices)
@@ -44,10 +31,6 @@ theorem reachable_vertices_of_mem_face (K : SimplicialComplex ℝ E)
       Finset.singleton_subset_iff] using And.intro hu hv) (Finset.insert_nonempty _ _)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem preconnected_edgeGraph_of_isPreconnected (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) (hc : IsPreconnected K.space) :
@@ -95,9 +78,6 @@ theorem preconnected_edgeGraph_of_isPreconnected (K : SimplicialComplex ℝ E)
   by_contra hnot
   rw [if_neg hnot] at hconst
   exact zero_ne_one hconst
-
-
-
 
 theorem connected_edgeGraph_of_isConnected (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) (hc : IsConnected K.space) :

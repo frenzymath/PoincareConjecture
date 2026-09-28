@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveFramedPolar
 import PoincareConjecture.Proofs.M38.TwoBallAffineNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +15,6 @@ open Poincare.Topology
 
 variable (L : StandardCapSpace ≃L[ℝ] StandardCapSpace)
   (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
-
 
 theorem projectivePolar_zero_ne_affine (z : UnitTwoSphere) (x : StandardCapSpace) :
     projectivePolarMap.{u} R (z, 0) ≠ projectiveAffineMap R x := by
@@ -43,7 +32,6 @@ theorem projectivePolar_zero_ne_affine (z : UnitTwoSphere) (x : StandardCapSpace
     rw [hzero] at hh
     linarith
 
-
 theorem projectiveFramedPolar_affine_of_ne_zero (z : UnitTwoSphere) {t : ℝ} (ht : t ≠ 0) :
     projectiveFramedPolarMap.{u} L R (z, t) = projectiveAffineMap R (L (t⁻¹ • z.val)) := by
   rcases lt_or_gt_of_ne ht with ht | ht
@@ -54,7 +42,6 @@ theorem projectiveFramedPolar_affine_of_ne_zero (z : UnitTwoSphere) {t : ℝ} (h
     change projectiveAffineMap R (L ((-t)⁻¹ • -z.val)) = _
     rw [inv_neg, neg_smul, smul_neg, neg_neg]
   · exact projectiveFramedPolar_affine L R z ht
-
 
 theorem projectiveFramedPolar_mem_affine_ball_iff (p : RoundCylinderSpace) :
     projectiveFramedPolarMap.{u} L R p ∈
@@ -86,9 +73,6 @@ theorem projectiveFramedPolar_mem_affine_ball_iff (p : RoundCylinderSpace) :
     · simpa only [Metric.mem_closedBall, dist_zero_right, norm_smul, Real.norm_eq_abs,
         abs_inv, norm_eq_of_mem_sphere, mul_one] using (inv_le_one₀ hpos).mpr ht
     · exact (projectiveFramedPolar_affine_of_ne_zero L R p.1 hne).symm
-
-
-
 
 theorem exists_projectiveBall_cylindrical_cover (B : SurgeryBallEmbedding projectiveCarrier.{u}) :
     ∃ q : RoundCylinderSpace → projectiveCarrier.{u}.carrier,

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Invol
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.MFDeriv.Zero
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 set_option backward.isDefEq.respectTransparency false
@@ -59,7 +53,6 @@ theorem involution_preserves_tangent_kernels (q : QuotientSphereLineCertificate 
   · intro hv
     rw [hv, zero_mul] at hl
     exact mul_self_eq_zero.mp hl.symm
-
 
 theorem involution_cross_mfderiv_eq_zero (q : QuotientSphereLineCertificate G) :
     letI := q.cover_topology
@@ -133,8 +126,6 @@ theorem involution_cross_mfderiv_eq_zero (q : QuotientSphereLineCertificate G) :
     change (mfderiv (𝓡 2) 𝓘(ℝ, ℝ) (fun _ : q.product.surface => z) s) v = _ at hc
     rw [mfderiv_const] at hc
     exact hc.symm
-
-
 
 theorem exists_smooth_factorization (q : QuotientSphereLineCertificate G) :
     letI := q.cover_topology

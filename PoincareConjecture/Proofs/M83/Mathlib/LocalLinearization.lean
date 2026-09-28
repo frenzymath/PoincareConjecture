@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +14,6 @@ namespace PoincareConjecture.Proofs.M83
 
 variable {E : Type u} {F : Type v} [NormedAddCommGroup E] [NormedSpace Real E]
   [NormedAddCommGroup F] [NormedSpace Real F]
-
-
 
 theorem exists_ball_linearization_bound {f : E → F} {x : E}
     (L : E ≃L[Real] F) (hf : HasFDerivAt f L.toContinuousLinearMap x) :
@@ -53,8 +41,6 @@ theorem exists_ball_linearization_bound {f : E → F} {x : E}
     _ ≤ (2 * c)⁻¹ * (c * ‖L (y - x)‖) := mul_le_mul_of_nonneg_left hi heps.le
     _ = (1 / 2 : Real) * ‖L (y - x)‖ := by rw [← mul_assoc, he]
     _ < ‖L (y - x)‖ := by linarith
-
-
 
 theorem exists_ball_linearization_homotopy {f : E → F} {x : E} {U : Set E}
     (hU : IsOpen U) (hx : x ∈ U) (hcont : ContinuousOn f U)

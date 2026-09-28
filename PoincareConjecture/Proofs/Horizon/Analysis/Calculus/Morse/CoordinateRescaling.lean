@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SquareCompletion
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,7 +10,6 @@ open scoped ContDiff
 namespace Poincare.Analysis.Calculus.Morse
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 theorem exists_diagonal_rescaling_localInverse
     {u w : E2 → Real} {U : Set E2} (hU : IsOpen U) (h0 : 0 ∈ U)

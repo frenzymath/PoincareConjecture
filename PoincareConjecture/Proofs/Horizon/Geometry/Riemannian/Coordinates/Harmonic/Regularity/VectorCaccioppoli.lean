@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.WeakGradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.VectorPowers
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,8 +71,6 @@ private theorem metric_inner_self_nonneg (x : EuclideanSpace ℝ (Fin n))
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos x v hv).le
-
-
 
 theorem regularized_power_test_lower (D : LeviCivitaData g)
     {V X : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -232,8 +224,6 @@ private theorem ricci_smul_right (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) (u v : TangentSpace (𝓡 n) x) (c : ℝ) :
     D.ricci x u (c • v) = c * D.ricci x u v := by
   simp only [ricci, curvatureTensor, map_smul, smul_eq_mul, Finset.mul_sum]
-
-
 
 theorem regularized_gradient_sub_power_caccioppoli (D : LeviCivitaData g)
     {f η : EuclideanSpace ℝ (Fin n) → ℝ}

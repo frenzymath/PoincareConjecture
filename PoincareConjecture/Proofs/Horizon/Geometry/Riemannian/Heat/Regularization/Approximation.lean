@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Pro
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -26,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
-
-
 
 theorem exists_compact_distance_approximations (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M) {f : M → ℝ}
@@ -96,8 +81,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem tendsto_integral_abs_approximation_error
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
     {L : ℝ} (hLip : ∀ x y, |f y - f x| ≤ L * (g.edist x y).toReal)
@@ -128,8 +111,6 @@ theorem tendsto_integral_abs_approximation_error
       mul_le_mul_of_nonneg_right he (H.positive x y t ht).le
   · filter_upwards [] with y
     simpa using ((hlim y).sub_const (f y)).abs.mul_const (H.kernel x y t)
-
-
 
 theorem exists_compact_kernel_approximations [PreconnectedSpace M]
     (H : ConservativeHeatKernelData g) (hcomplete : MetricComplete g) (O : M)

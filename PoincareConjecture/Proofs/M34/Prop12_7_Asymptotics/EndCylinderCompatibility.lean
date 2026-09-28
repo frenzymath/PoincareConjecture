@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderFlow
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndChartTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
-
-
 
 theorem endCylinderAuxMetric_inverse (t : ℝ) {z : StandardCylinderSpace}
     (hz : 2 < z.2) (u v : StandardCapSpace) :
@@ -35,9 +22,6 @@ theorem endCylinderAuxMetric_inverse (t : ℝ) {z : StandardCylinderSpace}
     (mfderiv (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) e.inverse (e.coordinate z) v)
   rwa [end_coordinate_inverse_mfderiv e (by linarith),
     end_coordinate_inverse_mfderiv e (by linarith)] at h
-
-
-
 
 theorem endCylinderAuxMetric_translation (t r : ℝ) {z : StandardCylinderSpace}
     (hz : 2 < z.2) (hrz : 2 < z.2 + r) (u v : StandardCapSpace) :
@@ -57,9 +41,6 @@ theorem endCylinderAuxMetric_translation (t r : ℝ) {z : StandardCylinderSpace}
     (endCylinderAuxMetric_coordinate e t (z := (z.1, z.2 + r)) hrz
       (mfderiv (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) e.inverse (e.coordinate z) u)
       (mfderiv (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) e.inverse (e.coordinate z) v)).symm
-
-
-
 
 theorem endCylinderMetric_transition (p : endReferenceRegion e) (r : ℝ) (hr : -3 < r) :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -93,9 +74,6 @@ theorem endCylinderMetric_transition (p : endReferenceRegion e) (r : ℝ) (hr : 
   have hheight := congrArg Prod.snd heq
   have hrz : 2 < z.2 + r := by have h := hw.2.1; dsimp only at hheight; linarith
   exact endCylinderAuxMetric_translation e t r (by linarith) hrz u v
-
-
-
 
 theorem endPullbackFlow_initial_eq_cylinder {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (hinit : F.metric 0 = g) (s : ℝ) (hs : -3 < s) :

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M38.LowerEndReparametrization
 import PoincareConjecture.Proofs.M38.CylinderEndReparametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_projective_collar_clock :
     ∃ f : Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞,

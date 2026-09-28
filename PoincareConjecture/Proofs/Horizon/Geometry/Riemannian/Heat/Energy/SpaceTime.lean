@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.TimeIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +25,6 @@ private lemma positive_time_germ {F : ℝ × M → ℝ}
   hF.contMDiffAt ((isOpen_Ioi.prod isOpen_univ).mem_nhds ⟨ht, mem_univ x⟩)
 
 omit [PreconnectedSpace M] in
-
-
 
 theorem aestronglyMeasurable_heat_gradient_normSq (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}
@@ -81,8 +69,6 @@ theorem aestronglyMeasurable_heat_gradient_normSq (D : LeviCivitaData g)
   simp only [σ, τ, piecewise, hspos hp, if_true, id_eq]
   rfl
 
-
-
 theorem integrable_heat_energy_cutoff_from_zero (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}
     (hF : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (Ioi 0 ×ˢ univ))
@@ -120,7 +106,6 @@ theorem integrable_heat_energy_cutoff_from_zero (D : LeviCivitaData g)
     by_cases hv : D.gradient (fun y ↦ F (t, y)) x = 0
     · simp [hv]
     · exact (g.pos x _ hv).le
-
 
 theorem integral_heat_energy_cutoff_eq_intervalIntegral (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}

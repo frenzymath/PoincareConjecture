@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.ParabolicNoncollapse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ local instance noncollapseCarrierConnected (D : FlowCarrier 3) : ConnectedSpace 
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (K : ∀ k, AncientKappaSolution 3 (C k).carrier) (p : ∀ k, (C k).carrier)
-
-
 
 theorem interiorLimit_noncollapsed_ball
     (G : AncientPointedGeometricConvergence C (fun k t => (K k).flow.metric (t - 1)) p 1)

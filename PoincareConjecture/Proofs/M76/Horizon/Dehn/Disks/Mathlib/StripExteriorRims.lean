@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripExteriorDisks
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MiddleRimIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem exists_strip_exterior_disks_with_rim_intervals
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

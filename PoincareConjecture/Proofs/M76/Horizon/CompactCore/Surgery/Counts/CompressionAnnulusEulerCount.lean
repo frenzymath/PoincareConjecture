@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.PLSurfaceCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "J" => Icc (-(1 / 2 : ℝ)) (1 / 2)
-
-
 
 theorem annulus_image_surfaceEulerCount
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

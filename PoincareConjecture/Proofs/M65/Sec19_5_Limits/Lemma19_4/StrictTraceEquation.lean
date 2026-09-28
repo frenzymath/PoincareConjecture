@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeRegularity
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexGradient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M65StrictTrace
 open M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
 
 theorem dbar_comp_holomorphic {F : ℂ → E} {psi : ℂ → ℂ} {z p : ℂ}
     (hF : DifferentiableAt ℝ F (psi z)) (hpsi : HasDerivAt psi p z) :
@@ -48,8 +37,6 @@ theorem dbar_comp_holomorphic {F : ℂ → E} {psi : ℂ → ℂ} {z p : ℂ}
     module
   rw [hlin, smul_comm]
 
-
-
 theorem complexGradient_comp_holomorphic {n : ℕ}
     {G : ℂ → EuclideanSpace ℝ (Fin n)} {psi : ℂ → ℂ} {z p : ℂ}
     (hG : DifferentiableAt ℝ G (psi z)) (hpsi : HasDerivAt psi p z) :
@@ -68,8 +55,6 @@ theorem complexGradient_comp_holomorphic {n : ℕ}
     module
   simpa only [complexGradient, hcol, one_mul, L, ContinuousLinearMap.comp_apply] using hlin
 
-
-
 theorem dbar_smul {p : ℂ → ℂ} {F : ℂ → E} {z : ℂ}
     (hp : DifferentiableAt ℝ p z) (hF : DifferentiableAt ℝ F z) :
     dbar (fun w => p w • F w) z = dbar p z • F z + p z • dbar F z := by
@@ -80,8 +65,6 @@ theorem dbar_smul {p : ℂ → ℂ} {F : ℂ → E} {z : ℂ}
   simp only [dbar, dbarLinear, smul_apply, add_apply, ContinuousLinearMap.apply_apply,
     hcol, smul_add, smul_smul, add_smul]
   module
-
-
 
 theorem matrix_equation_holomorphic_pullback
     {F : ℂ → E} {A : ℂ → E →L[ℂ] E} {psi p : ℂ → ℂ} {z : ℂ}
@@ -96,9 +79,6 @@ theorem matrix_equation_holomorphic_pullback
   rw [hs, dbar_eq_zero_of_differentiableAt_complex hp, zero_smul, zero_add,
     dbar_comp_holomorphic hF hpsi, heq]
   simp only [smul_apply, map_smul, smul_smul]
-
-
-
 
 theorem matrix_equation_under_frame
     {F : ℂ → E} {A L : ℂ → E →L[ℂ] E} {z : ℂ}

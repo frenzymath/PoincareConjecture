@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.AxialShift
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -11,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.CylinderGluing
 
 local notation "Cyl" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem mfderiv_axial_map_apply {k : ℝ → ℝ} {a : ℝ}
     (z : RoundCylinderSpace) (hk : HasDerivAt k a z.2)
@@ -29,8 +25,6 @@ theorem mfderiv_axial_map_apply {k : ℝ → ℝ} {a : ℝ}
   change (v.1, fderiv ℝ k z.2 v.2) = (v.1, a * v.2)
   rw [fderiv_eq_deriv_mul, hk.deriv]
 
-
-
 theorem round_metric_le_axial_pullback {k : ℝ → ℝ} {a : ℝ}
     (z : RoundCylinderSpace) (hk : HasDerivAt k a z.2) (ha : 1 ≤ a)
     (v : RoundCylinderTangent z) :
@@ -43,8 +37,6 @@ theorem round_metric_le_axial_pullback {k : ℝ → ℝ} {a : ℝ}
   have hh : v.2 ^ 2 ≤ (a * v.2) ^ 2 := by
     nlinarith [sq_nonneg v.2, mul_nonneg (show 0 ≤ a ^ 2 - 1 by nlinarith) (sq_nonneg v.2)]
   nlinarith
-
-
 
 theorem inverse_axial_expansion_round_metric_le
     (J : Diffeomorph Cyl Cyl RoundCylinderSpace RoundCylinderSpace ∞)

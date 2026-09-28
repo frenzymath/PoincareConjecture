@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.SourcePhaseCharts
 import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,8 +14,6 @@ local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem exists_sourcePhase_boundary_cover
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M39.Prop15_12_Assembly
 import PoincareConjecture.Proofs.M39.Prop15_12_BranchAssembly
 import PoincareConjecture.Proofs.M39.Prop15_12_Gluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,26 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedComparisonMap : RepairedComparisonMapTheory.{u} := by
   refine ⟨⟨1, zero_lt_one, ?_⟩⟩

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.MovingCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Scalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
-
 
 theorem tendsto_coordinate_scalarCurvature_prod (G : AncientCompactTimeConvergence S)
     (q : G.limit.carrier.carrier) (p : ℝ × EuclideanSpace ℝ (Fin n))
@@ -74,8 +64,6 @@ theorem tendsto_coordinate_scalarCurvature_prod (G : AncientCompactTimeConvergen
   exact (G.embedding z.1).scalarCurvature_eq_of_coordinate_germ
     (G.exhaustion_open z.1) q z.2 hz'.1 hz'.2 (gd z).1 (gd z).2 hz
 
-
-
 theorem tendsto_scalarCurvature_prod (G : AncientCompactTimeConvergence S)
     (p : ℝ × G.limit.carrier.carrier) (ht : p.1 < 0) :
     Tendsto (fun z : ℕ × (ℝ × G.limit.carrier.carrier) =>
@@ -98,8 +86,6 @@ theorem tendsto_scalarCurvature_prod (G : AncientCompactTimeConvergence S)
     (extChartAt_source_mem_nhds (I := 𝓡 n) p.2))] with z hz
   rw [c.left_inv hz]
 
-
-
 theorem exists_local_scalarCurvature_lt (G : AncientCompactTimeConvergence S)
     (p : ℝ × G.limit.carrier.carrier) (ht : p.1 < 0) {B : ℝ}
     (hB : (G.limit.flow.connection p.1).scalarCurvature p.2 < B) :
@@ -109,8 +95,6 @@ theorem exists_local_scalarCurvature_lt (G : AncientCompactTimeConvergence S)
   obtain ⟨P, hP, Q, hQ, hPQ⟩ := eventually_prod_iff.mp
     ((G.tendsto_scalarCurvature_prod p ht).eventually (Iio_mem_nhds hB))
   exact ⟨{z | Q z}, hQ, hP.mono (fun k hk z hz => hPQ hk hz)⟩
-
-
 
 theorem eventually_scalarCurvature_lt_on_compact (G : AncientCompactTimeConvergence S)
     {A : Set (ℝ × G.limit.carrier.carrier)} (hA : IsCompact A)

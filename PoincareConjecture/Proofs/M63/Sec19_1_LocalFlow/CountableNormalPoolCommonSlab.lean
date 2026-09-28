@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SliceCongruence
 import Mathlib.Data.Countable.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b L T : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem exists_countable_normal_pool_common_slab
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

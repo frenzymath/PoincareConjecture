@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M15.Prop8_2_CylinderDistance
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionPointwise
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
   {circumference : ℝ} (P : M62.CircleProductData F circumference)
-
-
-
 
 theorem m64Projection_edist_le (t : ℝ) (x y : P.charts.Point) :
     (F.metric t).edist x.1 y.1 ≤
@@ -51,9 +38,6 @@ theorem m64Projection_edist_le (t : ℝ) (x y : P.charts.Point) :
   apply Real.sqrt_le_sqrt
   exact le_add_of_nonneg_right
     ((P.circle.metricOnPoints.toRiemannianMetric.toCore q.2).re_inner_nonneg _)
-
-
-
 
 theorem m64ProjectedAnnulus_of_integrable
     (t : ℝ) (c0 c1 : ℝ → P.charts.Point)

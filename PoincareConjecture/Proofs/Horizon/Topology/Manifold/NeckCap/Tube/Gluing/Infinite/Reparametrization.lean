@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.AxialCompression
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.CylinderGluing
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_relative_reparametrization
     (H E : Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞)
@@ -37,8 +27,6 @@ theorem exists_relative_reparametrization
     rw [hCfixed _ hp]
   · intro p hp
     exact hCV (H p) (hb (mem_image_of_mem _ hp))
-
-
 
 theorem exists_exhausting_reparametrizations
     (E : ℕ → Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞)

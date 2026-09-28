@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamWeakExten
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusCircleTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMapCircleGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,8 +23,6 @@ local notation "O" => m64AnnulusSeamDomain
 local notation "mu" => volume.restrict S
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 
-
-
 theorem M64ObservedWeakAnnulus.seam_polar_column_tangent
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) (hKO : Metric.closedBall a rho ⊆ O) :
@@ -54,8 +40,6 @@ theorem M64ObservedWeakAnnulus.seam_polar_column_tangent
   refine ⟨w 0 • v0 + w 1 • v1, ?_⟩
   rw [map_add, map_smul, map_smul, hv0, hv1]
   rfl
-
-
 
 theorem M64ObservedWeakAnnulus.seam_local_circle_traces
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (hei : IsClosedEmbedding e)
@@ -144,8 +128,6 @@ theorem M64ObservedWeakAnnulus.seam_local_circle_traces
     rw [hegamma x hx]
     exact hj x hx
   · simpa only [hdw] using hds
-
-
 
 theorem M64ObservedWeakAnnulus.seam_local_circle_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

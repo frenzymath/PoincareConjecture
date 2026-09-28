@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskNormalComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -43,9 +33,6 @@ private theorem affine_patch_eq_full_piece
   intro z hz
   exact (ha hz.1).trans ((hpieces ⟨s, hs, hcard⟩) (interior_subset hz.2)).symm
 
-
-
-
 theorem det_mul_pos_of_actual_convex_affine_patches
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hdim : 0 < Module.finrank ℝ E)
@@ -61,10 +48,6 @@ theorem det_mul_pos_of_actual_convex_affine_patches
   obtain ⟨s, rfl⟩ := affine_patch_eq_full_piece K hK pieces hpieces hV hVne hVK a ha
   obtain ⟨t, rfl⟩ := affine_patch_eq_full_piece K hK pieces hpieces hW hWne hWK b hb
   exact hsign s t
-
-
-
-
 
 theorem normal_mul_pos_of_actual_chart_patches
     (K : SimplicialComplex ℝ (E × ℝ)) (hK : K.faces.Finite)

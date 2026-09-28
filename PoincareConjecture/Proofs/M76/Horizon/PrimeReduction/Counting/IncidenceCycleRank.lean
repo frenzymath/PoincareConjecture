@@ -2,15 +2,6 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.LinearAlgebra.Pi
 import Mathlib.Logic.Relation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -73,7 +64,6 @@ theorem vertex_difference_mem_range (ends : I → Bool → V) {v w : V}
         using 1
       abel
 
-
 theorem incidenceBoundary_range_eq_ker [Nonempty V] (ends : I → Bool → V)
     (hconn : ∀ v w, Relation.EqvGen
       (fun a b => ∃ i, ends i false = a ∧ ends i true = b) v w) :
@@ -91,8 +81,6 @@ theorem incidenceBoundary_range_eq_ker [Nonempty V] (ends : I → Bool → V)
   rw [heq]
   exact Submodule.sum_mem _ fun v _ => Submodule.smul_mem _ _
     (vertex_difference_mem_range ends (hconn v₀ v))
-
-
 
 theorem incidence_cycle_rank [Nonempty V] (ends : I → Bool → V)
     (hconn : ∀ v w, Relation.EqvGen

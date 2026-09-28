@@ -2,17 +2,10 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.S
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology
-
-
 
 theorem PoincareConjecture.LeviCivitaData.regularLevel_sectionalError_bounds
     {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

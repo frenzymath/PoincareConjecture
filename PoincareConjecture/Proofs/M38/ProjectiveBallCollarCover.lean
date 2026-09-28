@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveCollarClock
 import PoincareConjecture.Proofs.M38.ProjectivePolarBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_projectiveBall_linear_collar_cover
     (B : SurgeryBallEmbedding projectiveCarrier.{u}) :

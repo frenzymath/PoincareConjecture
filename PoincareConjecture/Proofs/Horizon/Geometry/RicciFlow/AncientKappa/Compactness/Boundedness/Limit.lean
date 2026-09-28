@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.ScalarBuffer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Monotonicity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
-
 
 theorem exists_complete_bounded_nonflat_interior_geometric_limit_of_time_cap
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -74,8 +61,6 @@ theorem exists_complete_bounded_nonflat_interior_geometric_limit_of_time_cap
     (G.embedding k G.base)
   rw [zero_add, G.base_preserving]
   exact hk (-δ) ⟨by linarith, by linarith⟩
-
-
 
 theorem exists_complete_bounded_nonflat_interior_geometric_limit
     (P : M23NormalizedKappaCompactnessPredecessors)

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_UpperGraph
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +8,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_fitted_graph_cap
     (L : AnnulusCoordinates ≃L[ℝ] (ℝ × ℝ)) {h : ℝ → ℝ} {X : Set ℝ} {x : ℝ}
@@ -91,10 +75,6 @@ theorem m64Intrinsic_exists_fitted_graph_cap
     refine ⟨q, ⟨?_, (hball hqR).1.mp hz, ?_⟩, rfl⟩
     · constructor <;> linarith [(abs_lt.mp hdist.1).1, (abs_lt.mp hdist.1).2]
     · linarith [(abs_lt.mp hdist.2).2]
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_graph_cap
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

@@ -7,7 +7,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
 theorem shell_half_complement_of_spanning_sides
     {S sq A U W L R : Set P2} {a b : P2}
     (hS : IsFinitePLBallPair P2 S sq)

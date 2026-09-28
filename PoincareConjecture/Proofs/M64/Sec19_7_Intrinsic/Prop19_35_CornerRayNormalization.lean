@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ComplexConeArea
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +8,6 @@ open Set InnerProductGeometry
 open scoped ComplexConjugate
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_complex_corner_normalization
     {x y : ℂ} (hx : x ≠ 0) (hy : y ≠ 0)

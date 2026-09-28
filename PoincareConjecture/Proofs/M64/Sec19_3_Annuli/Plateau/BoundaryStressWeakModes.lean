@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressMoments
 import PoincareConjecture.Proofs.M64.Mathlib.WeakDirichletMode
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +15,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) 1)
-
-
-
 
 theorem m64LocalizedStress_moment_weak
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)
@@ -49,10 +34,6 @@ theorem m64LocalizedStress_moment_weak
   rw [m64HorizontalMoment_pairing heta.continuous (hrho.continuous_deriv (by simp)) hV,
     m64HorizontalMoment_pairing (heta.continuous_deriv (by simp)) hrho.continuous hU]
   linarith
-
-
-
-
 
 theorem m64AnnulusStress_angular_mode_zero
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)

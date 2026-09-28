@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Equivale
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
 noncomputable section
 open Set Function TopologicalSpace PoincareConjecture
 open Poincare.Geometry.Manifold.RegularFiber
@@ -17,8 +11,6 @@ set_option backward.isDefEq.respectTransparency false
 universe u v
 
 set_option linter.style.haveILetI false
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_openFiber_diffeomorph_of_diffeomorph
     {n m k : ℕ} (hdim : n=m+k) {M : Type u} {N : Type v}

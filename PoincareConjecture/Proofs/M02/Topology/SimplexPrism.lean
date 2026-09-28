@@ -2,13 +2,6 @@ import Mathlib.Analysis.Convex.StdSimplex
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,7 +11,6 @@ open scoped BigOperators
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 def stdSimplexPrismSimplex (n : Nat) (i : Fin (n + 1)) :
     C(stdSimplex Real (Fin (n + 2)),
@@ -51,13 +43,11 @@ def stdSimplexPrismSimplex (n : Nat) (i : Fin (n + 1)) :
   exact ⟨fun z => (stdSimplex.map i.predAbove z, ⟨t z, ht z⟩),
     (stdSimplex.continuous_map i.predAbove).prodMk (hc.subtype_mk ht)⟩
 
-
 def stdSimplexPrismSide (n : Nat) (j : Fin (n + 2)) :
     C(stdSimplex Real (Fin (n + 1)) × unitInterval,
       stdSimplex Real (Fin (n + 2)) × unitInterval) :=
   ⟨fun p => (stdSimplex.map j.succAbove p.1, p.2),
     ((stdSimplex.continuous_map j.succAbove).comp continuous_fst).prodMk continuous_snd⟩
-
 
 def stdSimplexPrismEnd (n : Nat) (t : unitInterval) :
     C(stdSimplex Real (Fin (n + 1)),
@@ -65,7 +55,6 @@ def stdSimplexPrismEnd (n : Nat) (t : unitInterval) :
   ⟨fun z => (z, t), continuous_id.prodMk continuous_const⟩
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem exists_stdSimplex_prism_gluing
     {X : Type u} [TopologicalSpace X] (n : Nat)

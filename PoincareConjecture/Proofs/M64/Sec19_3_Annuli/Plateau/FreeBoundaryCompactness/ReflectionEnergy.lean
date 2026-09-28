@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.AnnulusReflection
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M64
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem areaGram_diagonal_comp_annulusFlip (g : RiemannianMetric n M)
     (f : LoopPlane → M) (p : LoopPlane) (i : Fin 2) :
@@ -53,8 +43,6 @@ theorem areaGram_diagonal_comp_annulusFlip (g : RiemannianMetric n M)
     simp only [map_neg, neg_apply, neg_neg] at h
     exact h
 
-
-
 theorem annulus_reverse_weightedGram_integrable
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) (r : ℝ)
     (hE : IntegrableOn (fun p => (r * m60AreaGram g A.map p 0 0 +
@@ -71,8 +59,6 @@ theorem annulus_reverse_weightedGram_integrable
   simp_rw [areaGram_diagonal_comp_annulusFlip]
   exact hi
 
-
-
 theorem annulus_reverse_weightedGramEnergy
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) (r : ℝ) :
     m64ClassicalWeightedGramEnergy g (m64Annulus_reverse A) r =
@@ -85,8 +71,6 @@ theorem annulus_reverse_weightedGramEnergy
     (fun p => (r * m60AreaGram g A.map p 0 0 + r⁻¹ * m60AreaGram g A.map p 1 1) / 2)
     m64AnnulusDomain
   rwa [m64AnnulusFlip_preimage_domain] at h
-
-
 
 theorem annulus_reverse_contMDiffOn_strip
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

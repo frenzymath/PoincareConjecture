@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.NormalCornerAdjacency
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

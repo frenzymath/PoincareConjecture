@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Covariant
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,8 +19,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem normalizedNeckMetric_centeredCoefficients_lower
     (N : EpsilonNeck g) (hsmall : N.epsilon < 1 / 200)
@@ -102,8 +92,6 @@ theorem centeredNeckAmbientCoordinates_mem_target
     centeredNeckAmbientCoordinates N q z p ∈ (extChartAt (𝓡 3) q).target :=
   (extChartAt (𝓡 3) q).map_source hp.2
 
-
-
 theorem centeredNeckAmbientCoordinates_metric
     (N : EpsilonNeck g) (q : M) (z : RoundCylinderSpace)
     {p : E₃} (hp : p ∈ centeredNeckAmbientDomain N q z) (v w : E₃) :
@@ -125,9 +113,6 @@ theorem centeredNeckAmbientCoordinates_metric
       (hi.mdifferentiableAt (by simp))
       ((centeredNeckAmbientCoordinates_contDiffAt N q z hp).differentiableAt (by simp))
       heq)).symm
-
-
-
 
 theorem exists_centeredNeckAmbientCoordinates_jet_bound
     (N : EpsilonNeck g) (hsmall : N.epsilon < 1 / 200) (q : M)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 noncomputable def SurgeryCapTag.mapHeightPreserving
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -62,8 +51,6 @@ noncomputable def SurgeryCapTag.mapHeightPreserving
     collar_le := C.collar_le
     collar_eq := fun x hx s hs => congrArg K (C.collar_eq x hx s hs) }
 
-
-
 theorem SurgeryCapTag.mapHeightPreserving_geometry
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (C : SurgeryCapTag psi u) (K : D3)
@@ -100,9 +87,6 @@ theorem SurgeryCapTag.mapHeightPreserving_geometry
     exact (image_image K C.tube A).symm
   · exact (image_image K (fun q : UnitTwoSphere => psi (q, 0)) C.sourceCap).symm
   · exact (image_image K (fun q : UnitTwoSphere => psi (q, 0)) C.sourceSeam).symm
-
-
-
 
 noncomputable def SaddlePieceData.mapHeightPreserving
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -152,8 +136,6 @@ noncomputable def SaddlePieceData.mapHeightPreserving
         ((D.cap i).sign = -1 ∧ ⟪(u : E3), K (psi (D.point, 0))⟫_ℝ < (D.cap i).cutHeight)
       rw [hK]
       exact D.cut_side i }
-
-
 
 theorem SaddlePieceData.mapHeightPreserving_geometry
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 import PoincareConjecture.Proofs.M09.LocalSmoothInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem closedFamily_eventually_bijective_sliceDerivative {C : Set ℝ} {U : Set E}
     (hC : UniqueDiffOn ℝ C) (hU : IsOpen U) (α : E × ℝ → E)
@@ -53,10 +41,6 @@ theorem closedFamily_eventually_bijective_sliceDerivative {C : Set ℝ} {U : Set
   filter_upwards [hnear, self_mem_nhdsWithin] with r hr hrC
   rw [(hd r hrC).fderiv]
   exact ⟨hr, (D (r, x₀)).toLinearMap.injective_iff_surjective.mp hr⟩
-
-
-
-
 
 theorem closedFamily_restart_of_bijective {C : Set ℝ} {U : Set E}
     (hU : IsOpen U) (α : E × ℝ → E) (hα : ContDiffOn ℝ ∞ α (U ×ˢ C))

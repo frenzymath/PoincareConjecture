@@ -3,21 +3,11 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.LocalNegativeReturnCircle
 import PoincareConjecture.Proofs.M25.AppA_21_Local.ProtectedRestartCompletion
 import PoincareConjecture.Proofs.M25.AppA_21_Local.LocalPositiveReturnCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture
-
-
 
 theorem N1_nonseparating_neckOnly_finite_tube_or_fibration :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

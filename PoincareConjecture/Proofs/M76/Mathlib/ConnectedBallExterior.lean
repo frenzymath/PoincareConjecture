@@ -1,23 +1,11 @@
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem isConnected_compl_closedBall_zero (hdim : 1 < Module.rank ℝ E) (r : ℝ) :
     IsConnected (closedBall (0 : E) r)ᶜ := by

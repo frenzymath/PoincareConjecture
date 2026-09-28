@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmoothTransverseFrames
 import PoincareConjecture.Proofs.M76.Mathlib.ParametricLeafGluing
 import PoincareConjecture.Proofs.M76.Mathlib.CompactParameterThickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter ContinuousLinearMap
@@ -23,10 +14,6 @@ variable {X Y E F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ Y] [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_coreAttachment
     {P : E → EuclideanSubspace E} {U : Set E} (hP : IsSmoothLeafFieldOn P U)

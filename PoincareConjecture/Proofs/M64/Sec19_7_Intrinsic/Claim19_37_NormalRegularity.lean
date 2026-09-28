@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalVariation
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem m64Intrinsic_normal_variation_initial_fderiv_injective
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)
@@ -77,10 +63,6 @@ theorem m64Intrinsic_normal_variation_initial_fderiv_injective
   have hzero : z.1 = 0 := (mul_eq_zero.mp hfirst).resolve_right hvpos.ne'
   exact Prod.ext hzero hsecond
 
-
-
-
-
 theorem m64Intrinsic_normal_variation_regular_neighborhood
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)
     {F : ℝ × ℝ → AnnulusCoordinates} {a : ℝ} {normal : AnnulusCoordinates}
@@ -105,9 +87,6 @@ theorem m64Intrinsic_normal_variation_regular_neighborhood
     exact ((hF.fderiv_right (m := 0) (by simp)).continuousAt).preimage_mem_nhds h
   obtain ⟨U, hUsub, hU, ha⟩ := mem_nhds_iff.mp hnear
   exact ⟨U, hU, ha, fun z hz => (hUsub hz).injective⟩
-
-
-
 
 theorem m64Intrinsic_inward_curve_enters_annulus
     {gamma : ℝ → AnnulusCoordinates} {a : ℝ} {v : AnnulusCoordinates}

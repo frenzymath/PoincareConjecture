@@ -1,11 +1,8 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Connection.Regularity
 import PoincareConjecture.Proofs.M05.Geometry.Manifold.ContDiff.TimeDerivative
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.Algebra.Structures
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,12 +17,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
-
-
-
-
 
 theorem contMDiffAt_ricci_fields
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) {x : M}
@@ -62,8 +53,6 @@ theorem contMDiffAt_ricci_fields
   have hderiv' := hderiv.congr_of_eventuallyEq heq'.symm
   have hscale := hderiv'.div_const (-2 : ℝ)
   convert hscale using 1 <;> ext p <;> ring
-
-
 
 theorem hasDerivAt_mvfderiv_ricci_fields
     (hC : RicciFlowCurvatureTheory.{u})

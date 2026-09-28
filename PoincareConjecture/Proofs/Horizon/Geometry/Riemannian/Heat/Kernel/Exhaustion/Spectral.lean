@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Dirichlet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Bounded
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem monotone_heatKernelContinuousTime_exhaustion
     {n : ℕ} [NeZero n] {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -42,8 +33,6 @@ theorem monotone_heatKernelContinuousTime_exhaustion
       exact hKj.nonneg t ht x y
   · rw [hKi.zero_outside t ht x y (Or.inl hx)]
     exact hKj.nonneg t ht x y
-
-
 
 theorem exists_canonical_dirichletHeatKernel_exhaustion
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -76,8 +65,6 @@ variable {n : ℕ} [NeZero n] {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
 
-
-
 theorem exists_heatKernelContinuousTime_exhaustion_local_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)
     {k : ℝ} (hk : 0 ≤ k)
@@ -95,8 +82,6 @@ theorem exists_heatKernelContinuousTime_exhaustion_local_bound
     (fun _ ht x y => D.monotone_heatKernelContinuousTime_exhaustion S hΩmono ht x y)
     O hR
 
-
-
 theorem bddAbove_heatKernelContinuousTime_exhaustion
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)
     {k : ℝ} (hk : 0 ≤ k)
@@ -110,8 +95,6 @@ theorem bddAbove_heatKernelContinuousTime_exhaustion
     (fun j => Dirichlet.heatKernelContinuousTime_isDirichletHeatKernel D (S j))
     (fun _ ht x y => D.monotone_heatKernelContinuousTime_exhaustion S hΩmono ht x y)
     ht x y
-
-
 
 theorem exists_heatKernelContinuousTime_exhaustion_compact_time_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)
@@ -130,8 +113,6 @@ theorem exists_heatKernelContinuousTime_exhaustion_compact_time_bound
     O hR ha
 
 open Poincare.Analysis.Dirichlet.Kernel
-
-
 
 theorem exists_evaluationRow_exhaustion_compact_time_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)

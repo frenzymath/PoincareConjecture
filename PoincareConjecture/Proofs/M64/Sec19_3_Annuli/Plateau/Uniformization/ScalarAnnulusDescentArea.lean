@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRoughAreaChange
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCylinderAdmission
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +16,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
-
-
-
-
 
 theorem scalarAnnulusDescent_comp_standardCylinder
     {M : Type*} {f : Plane → M} {F : Plane → M}
@@ -53,10 +37,6 @@ theorem scalarAnnulusDescent_comp_standardCylinder
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
 theorem scalarAnnulusDescent_density
     (g : RiemannianMetric n M) {f : Plane → M} {F : Plane → M}
     (hdesc : ∀ z : Cover, 0 < z.1 → F (scalarCoverMap z) = scalarAnnulusCoverLift f z)
@@ -70,10 +50,6 @@ theorem scalarAnnulusDescent_density
   filter_upwards [(isOpen_Ioo.preimage (EuclideanSpace.proj 1).continuous).mem_nhds hp]
     with q hq
   exact scalarAnnulusDescent_comp_standardCylinder hdesc hq
-
-
-
-
 
 theorem scalarAnnulusDescent_area
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

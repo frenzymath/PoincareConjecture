@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M52GlobalFlow
 import PoincareConjecture.Statements.M43UnifiedContinuation
 import PoincareConjecture.Statements.M51GlobalSchedule
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,44 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 structure RepairedGlobalFlowTheory : Prop where
   global_flow :

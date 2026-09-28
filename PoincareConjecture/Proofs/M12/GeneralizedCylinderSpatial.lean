@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderClock
 import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

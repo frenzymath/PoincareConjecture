@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.MixedCapCover
 import PoincareConjecture.Proofs.M25.AppA_21_Local.ProjectiveCoverModel
 import PoincareConjecture.Proofs.M25.AppA_21_Local.ClosedComponentPacking
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificates_nonempty_projective_component_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

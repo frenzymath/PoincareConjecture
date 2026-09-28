@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Regularity.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -18,7 +11,6 @@ open Bundle Set
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem contDiffOn_of_C2_hessian_smooth (D : LeviCivitaData g)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -59,7 +51,6 @@ theorem contDiffOn_of_C2_hessian_smooth (D : LeviCivitaData g)
         exact sub_eq_iff_eq_add.mp h.symm
   rw [contDiffOn_infty_iff_fderiv_of_isOpen hU]
   exact ⟨hf.differentiableOn (by norm_num), hfd⟩
-
 
 theorem contDiff_ricci_const (D : LeviCivitaData g)
     (v w : EuclideanSpace ℝ (Fin n)) :

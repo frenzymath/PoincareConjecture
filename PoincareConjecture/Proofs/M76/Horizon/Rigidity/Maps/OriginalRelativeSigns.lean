@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalPLDomination
 import PoincareConjecture.Proofs.M76.Mathlib.PLBandCutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -44,10 +34,6 @@ private theorem localPL_min {f g : V3 → ℝ} {U : Set V3}
       rcases le_total (f x) (g x) with h | h
       · rw [max_eq_left (neg_le_neg h), min_eq_left h, neg_neg]
       · rw [max_eq_right (neg_le_neg h), min_eq_right h, neg_neg])
-
-
-
-
 
 theorem PLDomain.exists_same_signs_relative (he : PLDomain e R) (hR : IsCompact R)
     {f old : X → ℝ} (hfc : Continuous f) (hoc : Continuous old)
@@ -121,8 +107,6 @@ theorem PLDomain.exists_same_signs_relative (he : PLDomain e R) (hR : IsCompact 
     · have hgp := hspos hp
       exact ⟨iff_of_true hgp hp, iff_of_false hgp.ne' hp.ne',
         iff_of_false (not_lt_of_ge hgp.le) (not_lt_of_ge hp.le)⟩
-
-
 
 theorem PLDomain.exists_bounded_same_signs_relative (he : PLDomain e R) (hR : IsCompact R)
     {f old : X → ℝ} (hfc : Continuous f) (hoc : Continuous old)

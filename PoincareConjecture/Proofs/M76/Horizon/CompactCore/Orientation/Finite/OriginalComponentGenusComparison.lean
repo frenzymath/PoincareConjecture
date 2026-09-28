@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.PLSurfaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -17,9 +8,6 @@ open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem original_component_surfaceEulerCount_eq
     {E₁ E₂ X ι : Type*}
@@ -58,8 +46,6 @@ theorem original_component_surfaceEulerCount_eq
       obtain ⟨x, hx, hxz⟩ := himage₁.symm.subset hzS
       exact ⟨x, hx, (congrArg phi₂ hxz).trans (hinverse₂ z hz)⟩
   exact htransition.surfaceEulerCount_eq_of_injOn hJ₁ hJ₂ hdim₁ hdim₂ hinj himage
-
-
 
 theorem original_component_genus_eq
     {E₁ E₂ X ι : Type*}

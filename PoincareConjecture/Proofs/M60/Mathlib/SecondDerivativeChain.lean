@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -21,8 +13,6 @@ variable {P Q E : Type*}
   [NormedAddCommGroup Q] [NormedSpace ℝ Q]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem fderiv_column {u : P → E} {z : P} (hu : ContDiffAt ℝ 2 u z) (v w : P) :
     fderiv ℝ (fun q => fderiv ℝ u q w) z v = fderiv ℝ (fderiv ℝ u) z v w := by
   rw [fderiv_clm_apply
@@ -30,8 +20,6 @@ theorem fderiv_column {u : P → E} {z : P} (hu : ContDiffAt ℝ 2 u z) (v w : P
     (differentiableAt_const w)]
   simp only [fderiv_const_apply, ContinuousLinearMap.comp_zero, zero_add,
     ContinuousLinearMap.flip_apply]
-
-
 
 theorem second_fderiv_comp {u : Q → E} {φ : P → Q} {z : P}
     (hu : ContDiffAt ℝ 2 u (φ z)) (hφ : ContDiffAt ℝ 2 φ z) (v w : P) :

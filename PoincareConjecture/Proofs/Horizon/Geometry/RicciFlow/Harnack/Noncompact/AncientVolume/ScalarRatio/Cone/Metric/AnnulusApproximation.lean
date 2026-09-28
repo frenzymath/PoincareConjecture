@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RayDensity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RiemannianLink
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,17 +12,13 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
 
-
 def rescaledClosedAnnulus (p : X) (L a b : ℝ) : Set X :=
   {x | a ≤ dist p x / L ∧ dist p x / L ≤ b}
-
 
 def asymptoticConeClosedAnnulus (hcomparison : RayComparison p) (a b : ℝ) :
     Set (AsymptoticCone p hcomparison) :=
   {z | a ≤ (asymptoticConeRadius hcomparison z : ℝ) ∧
     (asymptoticConeRadius hcomparison z : ℝ) ≤ b}
-
-
 
 theorem isCompact_asymptoticConeClosedAnnulus [ProperSpace X]
     (hcomparison : RayComparison p) (a b : ℝ) :
@@ -48,13 +33,11 @@ theorem isCompact_asymptoticConeClosedAnnulus [ProperSpace X]
   · intro z hz
     exact NNReal.coe_le_coe.mp (hz.2.trans (Real.le_coe_toNNReal b))
 
-
 def annulusConeRelation (hcomparison : RayComparison p) (L τ : ℝ)
     (x : X) (z : AsymptoticCone p hcomparison) : Prop :=
   ∃ γ : basedMinimizingRays p,
     asymptoticConeRayProjection hcomparison ((dist p x / L).toNNReal, γ) = z ∧
     dist x (rayExtension γ (dist p x)) / L < τ
-
 
 theorem annulusConeRelation_radius (hcomparison : RayComparison p)
     {L τ : ℝ} (hL : 0 < L) {x : X} {z : AsymptoticCone p hcomparison}
@@ -63,8 +46,6 @@ theorem annulusConeRelation_radius (hcomparison : RayComparison p)
   obtain ⟨γ, rfl, _⟩ := h
   change ((dist p x / L).toNNReal : ℝ) = dist p x / L
   exact Real.coe_toNNReal _ (div_nonneg dist_nonneg hL.le)
-
-
 
 theorem annulusConeRelation_surjective (hcomparison : RayComparison p)
     {L τ a b : ℝ} (hL : 0 < L) (hτ : 0 < τ)
@@ -136,10 +117,6 @@ open scoped Manifold ContDiff ENNReal
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
-
 
 theorem exists_annulusConeRelation_approximation_of_metricComplete
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

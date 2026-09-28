@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.CompactPrefixRay
 import PoincareConjecture.Proofs.M28.Mathlib.CurvatureScaleRadiusBuffer
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,11 +11,6 @@ open Set Filter
 open scoped Topology ENNReal
 
 namespace PoincareConjecture.M28
-
-
-
-
-
 
 theorem exists_curvatureScale_annular_limit
     {S X L : Type*} [MetricSpace X] [MetricSpace L] [CompactSpace L]

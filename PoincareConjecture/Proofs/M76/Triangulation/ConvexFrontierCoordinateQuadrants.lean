@@ -2,29 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexTwoPlaneFrontierData
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSignedDiskCut
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
-
 
 theorem isFinitePLBallPair_coordinate_frontier_quadrants
     (K : SimplicialComplex ℝ ((ℝ × ℝ) × ℝ)) (hK : K.faces.Finite)

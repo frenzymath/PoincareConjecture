@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.CompactPartialImage
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -26,14 +10,10 @@ namespace OpenPartialHomeomorph
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (e : OpenPartialHomeomorph X Y) {D : Set X}
 
-
-
 theorem image_frontier_eq_target_inter_of_closure_subset (hD : closure D ⊆ e.source) :
     e '' frontier D = e.target ∩ frontier (e '' D) := by
   have hh := (e.isImage_image_of_subset_source (subset_closure.trans hD)).frontier.image_eq
   rwa [inter_eq_right.mpr (frontier_subset_closure.trans hD)] at hh
-
-
 
 theorem image_region_of_isCompact_closure [T2Space Y] (hD : IsOpen D)
     (hcompact : IsCompact (closure D)) (hsource : closure D ⊆ e.source) :

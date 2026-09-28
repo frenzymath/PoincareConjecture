@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAveragingBound
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -53,9 +43,6 @@ private theorem averagingRadiusField_bounds
   simp only [Fin.sum_univ_two]
   nlinarith only [hs 0, hs 1,
     sq_nonneg (((x 0 - z 0) / r) * d 0 z - ((x 1 - z 1) / r) * d 1 z)]
-
-
-
 
 theorem averagingValue_derivative_sq_bounds {B : ℝ} (hB0 : 0 ≤ B)
     (hB : ∀ z, averagingProfile z ≤ B)
@@ -130,10 +117,6 @@ private theorem abs_le_power_of_sq_bound {B Λ β r v : ℝ} (hB : 0 ≤ B)
     _ ≤ (1 + B + Λ) ^ 2 * (r ^ (β - 1)) ^ 2 :=
       mul_le_mul_of_nonneg_right hC (sq_nonneg _)
     _ = ((1 + B + Λ) * r ^ (β - 1)) ^ 2 := by ring
-
-
-
-
 
 theorem averagingValue_derivatives_of_energy {Λ β : ℝ} (hΛ : 0 ≤ Λ) :
     ∃ C : ℝ, 0 < C ∧

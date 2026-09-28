@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarMaximum
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,12 +17,6 @@ variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 private theorem radial_smooth :
     ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ (fun x : Plane => ‖x‖ ^ 2) :=
   contMDiff_iff_contDiff.mpr (contDiff_id.norm_sq ℝ)
-
-
-
-
-
-
 
 theorem scalarRadial_gradient_pos {x : Plane} (hx : x ≠ 0) :
     0 < g.inner x (D.gradient (fun y : Plane => ‖y‖ ^ 2) x)
@@ -61,11 +42,6 @@ theorem scalarRadial_gradient_pos {x : Plane} (hx : x ≠ 0) :
   rw [hinner] at h
   nlinarith [sq_pos_of_pos hn]
 
-
-
-
-
-
 theorem scalarRadial_exp_laplacian (c : ℝ) (x : Plane) :
     D.laplacian (fun y : Plane => Real.exp (c * ‖y‖ ^ 2)) x =
       Real.exp (c * ‖x‖ ^ 2) *
@@ -86,12 +62,6 @@ theorem scalarRadial_exp_laplacian (c : ℝ) (x : Plane) :
   change D.laplacian (fun y : Plane => Real.exp (c * ‖y‖ ^ 2)) x = _ at h
   rw [h]
   ring
-
-
-
-
-
-
 
 theorem exists_annular_radial_exponential_barriers :
     ∃ alpha : ℝ, 0 < alpha ∧

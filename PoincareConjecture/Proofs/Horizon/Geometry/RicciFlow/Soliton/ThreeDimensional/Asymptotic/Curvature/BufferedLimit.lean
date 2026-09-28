@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SmallRescaledLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.SmallBuffer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -45,8 +32,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_nonflat_ancient_blowup_limit_of_unbounded_scalarCurvature_lt
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

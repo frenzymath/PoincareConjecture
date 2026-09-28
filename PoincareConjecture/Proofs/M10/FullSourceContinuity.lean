@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.WeightedRays
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -37,7 +29,6 @@ theorem exponentialSliceChart_contMDiff (G : LExponentialGeometry F T τmax p)
   have hγ := G.gamma_smooth.contMDiffAt ((isOpen_univ.prod isOpen_Ioo).mem_nhds hz)
   exact hγ.comp x (β.toContinuousLinearMap.contMDiff.contMDiffAt.prodMk contMDiffAt_const)
 
-
 theorem exponentialSliceJacobian_continuous (G : LExponentialGeometry F T τmax p)
     {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax) :
     Continuous (exponentialSliceJacobian G τ) := by
@@ -62,7 +53,6 @@ theorem exponentialAction_continuous (G : LExponentialGeometry F T τmax p)
     ((isOpen_univ.prod isOpen_Ioo).mem_nhds hz)).continuousAt
   exact hact.comp (f := fun y : EuclideanSpace ℝ (Fin n) ↦ (β y, τ))
     (β.continuous.continuousAt.prodMk continuousAt_const)
-
 
 theorem weightedExponentialJacobian_continuous (G : LExponentialGeometry F T τmax p)
     {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax) :

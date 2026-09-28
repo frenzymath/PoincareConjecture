@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature.Level
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.ProductIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +9,6 @@ open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem exists_curvatureTensor_ne_zero_of_scalar_pos
     {k : ℕ} {P : Type*} [TopologicalSpace P]
@@ -34,9 +25,6 @@ theorem exists_curvatureTensor_ne_zero_of_scalar_pos
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M] {g : RiemannianMetric (n + 1) M}
-
-
-
 
 theorem exists_parallelGradient_productIsometry_curvature [ConnectedSpace M]
     {D : LeviCivitaData g} {f : M → ℝ} (hc : MetricComplete g)

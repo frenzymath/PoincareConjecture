@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Maps.SlabExcision
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.OriginalArcRemoval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

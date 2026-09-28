@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.LocalChart
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +7,6 @@ open Set
 open scoped Topology
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem exists_openChart_of_isometry_subset_coverage
     {A B : Type*} [MetricSpace A] [MetricSpace B]

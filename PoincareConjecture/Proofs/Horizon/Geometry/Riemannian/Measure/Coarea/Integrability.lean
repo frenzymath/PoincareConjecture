@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChartSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,8 +11,6 @@ namespace PoincareConjecture
 universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
-
-
 
 theorem continuous_chartPullback
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -38,8 +29,6 @@ theorem continuous_chartPullback
 namespace RiemannianMetric
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem integrable_chartPullback_density_of_continuous
     (g : RiemannianMetric n M)
@@ -62,8 +51,6 @@ theorem integrable_chartPullback_density_of_continuous
   apply Continuous.integrable_of_hasCompactSupport _ hUc.mul_right
   exact (hU.continuousOn.mul hρ).continuous_of_tsupport_subset e.open_source
     (tsupport_mul_subset_left.trans hUs)
-
-
 
 theorem integrableOn_pullbackVolumeDensity
     (g : RiemannianMetric n M)

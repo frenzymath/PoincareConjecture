@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Termin
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Orientation.LocalProjection
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

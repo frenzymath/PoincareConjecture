@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 import Mathlib.LinearAlgebra.UnitaryGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,7 +18,6 @@ noncomputable def standardRotation
   (EuclideanSpace.equiv (Fin 3) ℝ).symm
     (Matrix.mulVec A.1 (EuclideanSpace.equiv (Fin 3) ℝ x))
 
-
 noncomputable def standardCylinderInner (t : ℝ) (z : StandardCylinderSpace)
     (v w : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) : ℝ :=
   2 * (1 - t) * inner ℝ
@@ -40,7 +30,6 @@ def StandardCapPositiveSectional
   ∀ x : StandardCapSpace, ∀ u v : TangentSpace (𝓡 3) x,
     LeviCivitaData.IsOrthonormalPair g x u v →
       0 < D.sectionalCurvature x u v
-
 
 structure StandardCylindricalEnd (g : RiemannianMetric 3 StandardCapSpace) where
   radius : ℝ
@@ -69,7 +58,6 @@ structure StandardCylindricalEnd (g : RiemannianMetric 3 StandardCapSpace) where
         (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) coordinate z w) =
           standardCylinderInner 0 z v w
 
-
 structure StandardInitialMetric where
   metric : RiemannianMetric 3 StandardCapSpace
   connection : LeviCivitaData metric
@@ -86,7 +74,6 @@ structure StandardInitialMetric where
       LeviCivitaData.IsOrthonormalPair metric x u v →
         connection.sectionalCurvature x u v = (1 / 4 : ℝ)
 
-
 structure StandardCapEstimate (g₀ : StandardInitialMetric) where
   scalar_constant : ℝ
   scalar_constant_pos : 0 < scalar_constant
@@ -100,7 +87,6 @@ structure StandardCapEstimate (g₀ : StandardInitialMetric) where
       ENNReal.ofReal core_volume_constant
   curvature_derivative_bounds : ∀ k : ℕ, ∃ C : ℝ, 0 ≤ C ∧
     ∀ x : StandardCapSpace, g₀.connection.curvatureDerivativeNorm k x ≤ C
-
 
 structure PartialStandardCapFlow (g₀ : StandardInitialMetric) where
   lifetime : ℝ
@@ -141,10 +127,6 @@ def MaximalStandardCapFlow.connection
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀) (t : ℝ) :
     LeviCivitaData (F.metric t) := F.base.flow.connection t
 
-
-
-
-
 structure StandardCylinderAtlas where
   count : ℕ
   chart : Fin count → OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2))
@@ -154,7 +136,6 @@ structure StandardCylinderAtlas where
   domain_subset : ∀ i, domain i ⊆ (chart i).target
   covers : ∀ x : UnitTwoSphere, ∃ i, x ∈ (chart i).source ∧
     chart i x ∈ interior (domain i)
-
 
 structure StandardCylinderPatch (length : ℝ) (center : StandardCapSpace) where
   length_pos : 0 < length
@@ -198,16 +179,11 @@ noncomputable def standardCylinderCoefficient (t : ℝ)
     (mfderiv (𝓡 2) (𝓡 2) c.symm p.1 v.1, v.2)
     (mfderiv (𝓡 2) (𝓡 2) c.symm p.1 w.1, w.2)
 
-
-
 def StandardSpatialCylinderClose (_A : StandardCylinderAtlas)
     (g : RiemannianMetric 3 StandardCapSpace) (epsilon scale : ℝ)
     {x : StandardCapSpace} (N : StandardCylinderPatch epsilon⁻¹ x) : Prop :=
   RoundCylinderClose epsilon 0 (fun z v w =>
     scale * roundCylinderPullback g N.coordinate z v w)
-
-
-
 
 def StandardSpacetimeCylinderClose (_A : StandardCylinderAtlas)
     (g : ℝ → RiemannianMetric 3 StandardCapSpace)
@@ -250,18 +226,12 @@ structure StandardFlowNoncollapsingCertificate
       ENNReal.ofReal (kappa * r ^ 3) ≤
         calibratedMetricVolume (F.metric t) ((F.metric t).ball p r)
 
-
-
 noncomputable def standardCapIntrinsicEDist (g : RiemannianMetric 3 StandardCapSpace)
     (U : Set StandardCapSpace) (x y : StandardCapSpace) : ℝ≥0∞ :=
   sInf {L | ∃ gamma : ℝ → StandardCapSpace,
     ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 3) 1 gamma (Set.Icc (0 : ℝ) 1) ∧
       gamma 0 = x ∧ gamma 1 = y ∧ gamma '' Set.Icc (0 : ℝ) 1 ⊆ U ∧
         L = g.pathELength gamma 0 1}
-
-
-
-
 
 structure StandardCapNeighborhood (A : StandardCylinderAtlas)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)
@@ -319,8 +289,6 @@ structure StandardCapNeighborhood (A : StandardCylinderAtlas)
     |(F.connection t).laplacian (F.connection t).scalarCurvature y +
       2 * (F.connection t).ricciNormSq y| < C * (F.connection t).scalarCurvature y ^ 2
 
-
-
 structure StandardEvolvingNeck (A : StandardCylinderAtlas)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)
     (t epsilon : ℝ) (x : StandardCapSpace) (I : Set ℝ) where
@@ -333,8 +301,6 @@ structure StandardEvolvingNeck (A : StandardCylinderAtlas)
     t + u / (F.connection t).scalarCurvature x ∈ Set.Ico 0 F.base.lifetime
   close : StandardSpacetimeCylinderClose A F.metric epsilon t
     ((F.connection t).scalarCurvature x) I patch
-
-
 
 inductive StandardCanonicalAlternative (A : StandardCylinderAtlas)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)

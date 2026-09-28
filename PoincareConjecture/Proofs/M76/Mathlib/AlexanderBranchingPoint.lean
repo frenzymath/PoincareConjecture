@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonBranchingPoint
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicBranchingSection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
 
 theorem HasAlexanderCurvePresentation.exists_branching_family_at_common_point
     {S T r : Set E} {a : ℕ} (h : HasAlexanderCurvePresentation T a)

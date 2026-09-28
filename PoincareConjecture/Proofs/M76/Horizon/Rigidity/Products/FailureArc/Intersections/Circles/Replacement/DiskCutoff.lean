@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDiskRoof
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

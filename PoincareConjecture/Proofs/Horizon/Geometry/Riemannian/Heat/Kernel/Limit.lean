@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Local
 import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -53,8 +42,6 @@ private lemma norm_integral_test_mul_sub_le
       · simp [image_eq_zero_of_notMem_tsupport hx]
     _ = _ := integral_const_mul _ _
 
-
-
 theorem tendstoUniformlyOn_integral_test_mul
     {F : ℕ → ℝ × M → ℝ} {U : ℝ × M → ℝ} {s : Set ℝ}
     {φ : M → ℝ} (hφ : Continuous φ) (hφc : HasCompactSupport φ)
@@ -76,8 +63,6 @@ theorem tendstoUniformlyOn_integral_test_mul
       simpa only [dist_eq_norm, norm_sub_rev] using (hj (t, x) ⟨ht, hx⟩).le)
   have heq : ε / (C + 1) * (C + 1) = ε := div_mul_cancel₀ ε (by positivity)
   exact hb.trans_lt (by change ε / (C + 1) * C < ε; nlinarith)
-
-
 
 theorem integral_test_mul_sub_eq_of_tendstoUniformlyOn
     (D : LeviCivitaData g) {F : ℕ → ℝ × M → ℝ} {U : ℝ × M → ℝ}
@@ -124,8 +109,6 @@ theorem integral_test_mul_sub_eq_of_tendstoUniformlyOn
   exact tendsto_nhds_unique_of_eventuallyEq
     ((hl.tendsto_at ⟨hab, le_rfl⟩).sub (hl.tendsto_at ⟨le_rfl, hab⟩)) hr' hweak
 
-
-
 theorem integral_test_mul_heat_sub_of_tendstoUniformlyOn [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℕ → ℝ × M → ℝ} {U : ℝ × M → ℝ}
     (hF : ∀ j, ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞
@@ -144,9 +127,6 @@ theorem integral_test_mul_heat_sub_of_tendstoUniformlyOn [PreconnectedSpace M]
       (prod_mono (fun t ht => ha.trans_le ht.1) Subset.rfl)) hU hlim
   filter_upwards [hheat] with j hj
   exact D.integral_test_mul_heat_sub_on_tsupport (hF j) hφ hφc ha hab hj
-
-
-
 
 theorem hasDerivAt_integral_test_mul_of_tendstoUniformlyOn_domains [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℕ → ℝ × M → ℝ} {U : ℝ × M → ℝ}
@@ -182,8 +162,6 @@ theorem hasDerivAt_integral_test_mul_of_tendstoUniformlyOn_domains [Preconnected
   exact D.hasDerivAt_integral_test_mul_of_heatEquationOn (hΩ j) (hF j) hφ hφc hφj
     (hs0 hr) (hj r hr)
 
-
-
 theorem hasDerivAt_integral_test_mul_of_tendstoUniformlyOn [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℕ → ℝ × M → ℝ} {U : ℝ × M → ℝ}
     (hF : ∀ j, ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞
@@ -200,9 +178,6 @@ theorem hasDerivAt_integral_test_mul_of_tendstoUniformlyOn [PreconnectedSpace M]
   D.hasDerivAt_integral_test_mul_of_tendstoUniformlyOn_domains (fun _ => isOpen_univ) hF
     hφ hφc (Eventually.of_forall (fun _ => subset_univ _)) hs hs0
     (fun r hr => (hU r hr).continuousOn) hlim hheat ht
-
-
-
 
 theorem hasDerivAt_integral_test_mul_of_exhaustion [PreconnectedSpace M]
     (D : LeviCivitaData g) {Ω : ℕ → Set M} (hΩ : ∀ j, IsOpen (Ω j))

@@ -8,13 +8,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
 theorem m67_regular_piece_of_m66
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

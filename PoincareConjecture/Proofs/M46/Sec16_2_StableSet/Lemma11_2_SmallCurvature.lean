@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SeedCurvature
 import Mathlib.Analysis.Complex.ExponentialBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem exp_four_le_four_inv_sq {r : ℝ} (hr : 0 < r) (hrsmall : r ≤ 1 / 200) :
     Real.exp 4 ≤ 4 * r⁻¹ ^ 2 := by
@@ -37,8 +26,6 @@ theorem exp_four_le_four_inv_sq {r : ℝ} (hr : 0 < r) (hrsmall : r ≤ 1 / 200)
     norm_num at h
     exact h
   nlinarith [sq_nonneg (r⁻¹ - 200)]
-
-
 
 theorem low_scalar_curvature_le_fifty_two (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} {t r : ℝ}

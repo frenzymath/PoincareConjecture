@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexFacets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 omit [DecidableEq E] in
-
-
-
 
 theorem full_coface_eq_of_paired_facet
     (K : SimplicialComplex ℝ E) {s t u w : Finset E}
@@ -43,10 +31,6 @@ theorem full_coface_eq_of_paired_facet
       (K.subset_of_mem_intrinsicInterior_face hw ht hyw hyt) (by omega))
   · exact Or.inr (Finset.eq_of_subset_of_card_le
       (K.subset_of_mem_intrinsicInterior_face hw hu hyw hyu) (by omega))
-
-
-
-
 
 theorem faceLink_ncard_eq_two_of_hull_meets_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

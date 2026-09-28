@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubs
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.ExpandingRealizations
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.ExpandingSubsets
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Topology
@@ -30,8 +23,6 @@ private theorem pointedGHConvergesUnbounded_comp
   obtain ⟨δ, hδ, hpos, ⟨⟨C, hC⟩, hdist⟩⟩ := h r hr
   exact ⟨fun j => δ (φ j), hδ.comp hφ, fun j => hpos (φ j),
     ⟨C, fun j => hC (φ j)⟩, hdist.comp hφ⟩
-
-
 
 theorem exists_subseq_compact_openFiber_limit_in_expanding_realizations
     {m k : ℕ} {M : ℕ → Type}
@@ -149,6 +140,5 @@ theorem exists_subseq_compact_openFiber_limit_in_expanding_realizations
     K, hK, hbaseK, ?_, ?_⟩
   · exact hfwd
   · exact hback
-
 
 end PoincareConjecture.RiemannianMetric

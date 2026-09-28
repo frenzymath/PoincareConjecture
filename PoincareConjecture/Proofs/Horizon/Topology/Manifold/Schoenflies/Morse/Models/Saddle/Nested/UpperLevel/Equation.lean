@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.UpperLevel.Roots
 
-
-
 noncomputable section
 set_option autoImplicit false
 

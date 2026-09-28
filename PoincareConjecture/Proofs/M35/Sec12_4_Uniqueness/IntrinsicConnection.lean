@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicMetricCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 theorem intrinsicSpatialMetric_connection_beta {r : ℝ} (hr : 0 < r) :
     radialConnectionBeta (intrinsicSpatialMetric g hrotation hcomplete) r * r =
@@ -57,7 +47,6 @@ theorem intrinsicSpatialMetric_connection_beta {r : ℝ} (hr : 0 < r) :
   field_simp [hr.ne']
   ring
 
-
 theorem intrinsicSpatialMetric_connection_radial {r : ℝ} (hr : 0 < r) :
     2 * radialConnectionAlpha (intrinsicSpatialMetric g hrotation hcomplete) r +
       radialConnectionBeta (intrinsicSpatialMetric g hrotation hcomplete) r +
@@ -69,7 +58,6 @@ theorem intrinsicSpatialMetric_connection_radial {r : ℝ} (hr : 0 < r) :
   exact (mul_eq_zero.mp h.symm).resolve_left (mul_ne_zero (by norm_num) hr.ne')
 
 variable (D : LeviCivitaData (intrinsicSpatialMetric g hrotation hcomplete))
-
 
 theorem intrinsicSpatialMetric_connection_angular {r : ℝ} (hr : 0 < r)
     (i : Fin 3) (hi : i ≠ 2) :
@@ -87,7 +75,6 @@ theorem intrinsicSpatialMetric_connection_angular {r : ℝ} (hr : 0 < r)
   rw [h, hn, hxe, hei]
   simp only [zero_smul, add_zero, smul_zero, mul_one, mul_zero, smul_smul, zero_add]
   rw [intrinsicSpatialMetric_connection_beta g hrotation hcomplete hr]
-
 
 theorem intrinsicSpatialMetric_connection_axis {r : ℝ} (hr : 0 < r) :
     D.euclideanConnection (e 2) (e 2) (r • e 2) = 0 := by

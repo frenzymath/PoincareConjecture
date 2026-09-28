@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeDense
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ variable (F : ℕ → SurgeryFlowData.{u}) (W : ∀ k, M33RegularHistoryWindow (
   (hDiverges : Tendsto (fun k => ((F k).connection (t k)).scalarCurvature
     ((H k).history.forward (t k) (ht k) (x k))) atTop atTop)
 
-
-
 noncomputable def regularHistoryBlowupSequence : GeneralizedBlowupSequence.{u} where
   flow k := (H k).generalized
   base k := ⟨t k, x k⟩
@@ -38,8 +27,6 @@ noncomputable def regularHistoryBlowupSequence : GeneralizedBlowupSequence.{u} w
       using hPositive k
   scalar_diverges := by
     simpa only [GeneralizedRicciFlowData.scalar, (H _).scalar_pullback] using hDiverges
-
-
 
 theorem regular_history_blowup_bounded_distance
     (S : RepairedControlledSchedulesData.{u}) {epsilon C : ℝ}

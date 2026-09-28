@@ -8,13 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -37,7 +30,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem scalarCurvature_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -100,8 +92,6 @@ theorem scalarCurvature_eq_of_local_isometry
   intro i hi
   exact hricci (g.orthonormalBasis x i) (g.orthonormalBasis x i)
 
-
-
 theorem scalarCurvature_eq_of_eventually_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -115,7 +105,6 @@ theorem scalarCurvature_eq_of_eventually_local_isometry
   exact D.scalarCurvature_eq_of_local_isometry D'
     (hU.inter hVo) (hf.mono inter_subset_left)
     (fun y hy => hVsub hy.2) ⟨hx, hxV⟩
-
 
 noncomputable def coordinateGaussTerm {k : ℕ}
     (h : RiemannianMetric k (EuclideanSpace ℝ (Fin k)))
@@ -320,7 +309,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {m : ℕ} {P : Type*} [TopologicalSpace P]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) P]
   [IsManifold (𝓡 (m + 2)) ∞ P]
-
 
 def regularLevelNormalShapeOperator
     {g : RiemannianMetric (m + 2) P} (D : LeviCivitaData g)
@@ -966,8 +954,6 @@ private theorem regularLevel_scalarCurvature_gauss_and_shape
   rw [hneg, hshape_hess, hhess, hqnorm, hsourceId', hsourceId', hp0]
   ring
 
-
-
 theorem regularLevel_scalarCurvature_gauss
     (g : RiemannianMetric (m + 2) P) (D : LeviCivitaData g)
     {f : P → ℝ} (hf : ContMDiff (𝓡 (m + 2)) 𝓘(ℝ, ℝ) ∞ f)
@@ -987,8 +973,6 @@ theorem regularLevel_scalarCurvature_gauss
         D.levelGaussTerm f (openLevelIncl f U c z) := by
   intro D' z
   exact (D.regularLevel_scalarCurvature_gauss_and_shape g hf U hreg c D' z).1
-
-
 
 theorem regularLevelNormalShapeOperator_inner
     {g : RiemannianMetric (m + 2) P} (D : LeviCivitaData g)
@@ -1010,9 +994,6 @@ theorem regularLevelNormalShapeOperator_inner
         Real.sqrt (D.levelQ f (openLevelIncl f U c z)) := by
   intro D' z u v
   exact (D.regularLevel_scalarCurvature_gauss_and_shape g hf U hreg c D' z).2 u v
-
-
-
 
 lemma inner_connection_unitNormal_of_contMDiffAt
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -1091,9 +1072,6 @@ private theorem exists_orthonormalBasis_adjoin_local
   let a := basisOfOrthonormalOfCardEqFinrank hv hcard
   have ha : Orthonormal ℝ a := by simpa [a] using hv
   refine ⟨a.toOrthonormalBasis ha, ?_, ?_⟩ <;> simp [a, v]
-
-
-
 
 theorem inner_shapeOperator_eq_neg_levelHessian
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

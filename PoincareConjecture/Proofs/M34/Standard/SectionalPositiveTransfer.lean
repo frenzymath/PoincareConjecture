@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.SectionalMovingBarrier
 import PoincareConjecture.Proofs.M04.ChartScalarBarrier
 import PoincareConjecture.Proofs.M04.ConnectedPropagation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 open M04
-
-
 
 theorem sectional_local_positive_transfer
     {J : Set ℝ} {a b : ℝ} (F : RicciFlow 3 (EuclideanSpace ℝ (Fin 3)) J)
@@ -132,8 +121,6 @@ theorem sectional_local_positive_transfer
     linarith
   exact (mul_pos (mul_pos hepsilon (Real.exp_pos _))
     (expNegInvGlue.pos_of_pos hargument)).trans_le hcomparison
-
-
 
 theorem modelLeastSectional_positive_later
     {J : Set ℝ} {a b : ℝ} (hab : a < b)

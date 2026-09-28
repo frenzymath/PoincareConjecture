@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalVolumeAssembly
 import PoincareConjecture.Definitions.M51GlobalSchedule
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -44,8 +34,6 @@ private theorem schedule_on_flow {K : MetricSurgeryConstants}
           (F.parameters.delta t * F.parameters.r t) (F.parameters.delta t) := by
   cases hK
   exact ⟨schedule, HEq.rfl, hepsilon, hC, hstandard, hagreement⟩
-
-
 
 theorem normalizedAssembly
     (S : RepairedControlledSchedulesData.{u})

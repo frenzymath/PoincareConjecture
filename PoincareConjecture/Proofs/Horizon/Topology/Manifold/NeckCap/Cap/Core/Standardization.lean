@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExten
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.ContainedCollar
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
-
-
 
 theorem exists_boundary_diffeomorph_of_ball_neighborhood
     (b : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M)
@@ -102,8 +88,6 @@ theorem exists_boundary_diffeomorph_of_ball_neighborhood
     contMDiff_toFun := hf
     contMDiff_invFun := hk }, hbf⟩
 
-
-
 theorem exists_ball_coordinate_collar
     (b : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M)
     (hs : Metric.closedBall 0 1 ⊆ b.source)
@@ -154,8 +138,6 @@ theorem exists_ball_coordinate_collar
       rw [hezero, d.apply_symm_apply]
   · intro z hz
     exact b.right_inv hz.2
-
-
 
 theorem ball_coordinate_collar_sides
     (b : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M)
@@ -227,8 +209,6 @@ theorem ball_coordinate_collar_sides
     · rintro _ ⟨z, hz, rfl⟩
       exact hout (hneg hz).1 (hn (hneg hz).2)
 
-
-
 theorem exists_euclidean_core_standardization (hkind : C.model_kind = .euclidean) :
     ∃ b : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M,
       Metric.closedBall 0 1 ⊆ b.source ∧
@@ -255,9 +235,6 @@ theorem exists_euclidean_core_standardization (hkind : C.model_kind = .euclidean
     hbi.mono inter_subset_left
   exact ⟨c, hcs, hct, inter_subset_right, hc, hci, hclosed, hopen, hboundary,
     C.exists_boundary_diffeomorph_of_ball_neighborhood c hcs hc hci hboundary⟩
-
-
-
 
 theorem exists_euclidean_core_boundary_filling (hkind : C.model_kind = .euclidean) :
     ∃ b : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M,

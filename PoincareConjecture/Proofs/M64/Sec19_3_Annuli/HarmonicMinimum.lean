@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import Mathlib.Analysis.Complex.AbsMax
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +9,6 @@ open Set Filter Metric InnerProductSpace
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64ComplexHarmonicAt_eventually_eq_of_isLocalMin
     {f : ℂ → ℝ} {z : ℂ} (hf : HarmonicAt f z) (hmin : IsLocalMin f z) :
@@ -49,9 +33,6 @@ theorem m64ComplexHarmonicAt_eventually_eq_of_isLocalMin
   have he : Real.exp (-f w) = Real.exp (-f z) := hn.symm.trans (hw.trans hnorm.eq_of_nhds)
   exact neg_injective (Real.exp_injective he)
 
-
-
-
 theorem m64PlaneHarmonicAt_eventually_eq_of_isLocalMin
     {f : LoopPlane → ℝ} {p : LoopPlane} (hf : HarmonicAt f p) (hmin : IsLocalMin f p) :
     f =ᶠ[𝓝 p] fun _ => f p := by
@@ -67,10 +48,6 @@ theorem m64PlaneHarmonicAt_eventually_eq_of_isLocalMin
   have hback := (e.symm.continuous.continuousAt.tendsto).eventually hlocal
   change ∀ᶠ x in 𝓝 p, f x = f p
   simpa only [Function.comp_apply, hez, e.apply_symm_apply] using hback
-
-
-
-
 
 theorem m64PlaneHarmonicOnNhd_eqOn_of_minimum
     {f : LoopPlane → ℝ} {U : Set LoopPlane} (hU : IsOpen U)
@@ -95,10 +72,6 @@ theorem m64PlaneHarmonicOnNhd_eqOn_of_minimum
     (show ({q : U | f q = f p} : Set U).Nonempty from ⟨⟨p, hp⟩, rfl⟩)
   intro q hq
   exact (Set.eq_univ_iff_forall.mp hall) ⟨q, hq⟩
-
-
-
-
 
 theorem m64PlaneHarmonicOnNhd_pos_of_nonneg
     {f : LoopPlane → ℝ} {U : Set LoopPlane} (hU : IsOpen U)

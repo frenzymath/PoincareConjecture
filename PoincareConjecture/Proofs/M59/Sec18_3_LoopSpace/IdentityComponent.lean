@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RawRegularization
 import Mathlib.Geometry.Manifold.Metrizable
 import Mathlib.Topology.Metrizable.Uniformity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +16,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M]
-
-
 
 theorem m59_c1_path_of_null_loop
     (hcompact : IsCompact (univ : Set M)) (gamma : C1FreeLoopSpace (M := M))
@@ -55,8 +45,6 @@ theorem m59_c1_path_of_null_loop
     source' := K.apply_zero v
     target' := K.apply_one v }⟩⟩
 
-
-
 theorem m59_inIdentityComponent_of_null_loop
     (hcompact : IsCompact (univ : Set M)) (hconnected : IsConnected (univ : Set M))
     (x : M) (gamma : C1FreeLoopSpace (M := M)) (hgamma : IsNullHomotopicLoop gamma) :
@@ -69,16 +57,12 @@ theorem m59_inIdentityComponent_of_null_loop
   let R := P.trans Q
   exact ⟨R, R.continuous, R.source, R.target⟩
 
-
-
 theorem m59_identity_component
     (hcompact : IsCompact (univ : Set M)) (hconnected : IsConnected (univ : Set M))
     (x : M) (gamma : C1FreeLoopSpace (M := M)) :
     InIdentityComponent x gamma ↔ IsNullHomotopicLoop gamma :=
   ⟨m59NullLoop_of_inIdentityComponent x gamma,
     m59_inIdentityComponent_of_null_loop hcompact hconnected x gamma⟩
-
-
 
 theorem m59_raw_regularization
     (hcompact : IsCompact (univ : Set M)) (hconnected : IsConnected (univ : Set M))

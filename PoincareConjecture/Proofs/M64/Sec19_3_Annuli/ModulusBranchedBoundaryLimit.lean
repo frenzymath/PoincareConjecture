@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusLogBoundaryLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,11 +36,6 @@ private theorem regularized_ratio_tendsto_of_zero_set
         (tendsto_const_nhds.add tendsto_one_div_add_atTop_nhds_zero_nat)
         (by simpa using hfx)
       simpa [hfx] using hlim.mul_const (g x)
-
-
-
-
-
 
 theorem m64Annulus_log_normal_trace_tendsto_of_factored_trace
     {a : LoopPlane → ℝ} {O : Set LoopPlane} (hO : IsOpen O)

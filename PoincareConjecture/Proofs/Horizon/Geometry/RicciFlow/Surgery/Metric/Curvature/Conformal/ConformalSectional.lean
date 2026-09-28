@@ -8,14 +8,6 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -52,7 +44,6 @@ theorem mvfderiv_exp_neg_two {F : M → ℝ} {x : M}
       exact fderiv_eq_deriv_mul (𝕜 := ℝ)
     _ = _ := by rw [(hφ (F x)).deriv]; ring
 
-
 theorem mvfderiv_conformal_inner (g : RiemannianMetric n M)
     {F : M → ℝ} {x : M}
     (hF : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) F x)
@@ -78,8 +69,6 @@ theorem mvfderiv_conformal_inner (g : RiemannianMetric n M)
   simp only [add_apply, smul_apply, smul_eq_mul]
   rw [mvfderiv_exp_neg_two hF]
   ring
-
-
 
 theorem connection_positiveScaling_exp
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -181,7 +170,6 @@ private theorem conformal_connection_pairing_diagonal
   ring
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 private theorem conformal_curvature_normal_fields
     {U : Set M} (hU : IsOpen U)
@@ -335,10 +323,6 @@ private theorem conformal_curvature_normal_fields
   dsimp only [W₀, V₀, a, b]
   ring
 
-
-
-
-
 theorem sectionalCurvature_positiveScaling_exp (x : M)
     (v w : TangentSpace (𝓡 n) x)
     (hvv : g.inner x v v = 1) (hww : g.inner x w w = 1)
@@ -380,6 +364,5 @@ theorem sectionalCurvature_positiveScaling_exp (x : M)
     _ = _ := by ring
 
 end Conformal
-
 
 end PoincareConjecture.MetricSurgery

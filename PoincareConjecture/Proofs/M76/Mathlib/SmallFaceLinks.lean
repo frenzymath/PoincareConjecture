@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NormalFaceStar
 import PoincareConjecture.Proofs.M76.Mathlib.TwoRayProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [DecidableEq E]
-
-
-
 
 theorem affine_image_closedFaceStar_twoPoint (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (f : E →ᵃ[ℝ] F)
@@ -46,9 +34,6 @@ theorem affine_image_closedFaceStar_twoPoint (K : SimplicialComplex ℝ E)
       simpa only [Finset.coe_singleton, image_singleton, convexHull_pair] using hy
     · refine mem_iUnion₂.mpr ⟨{v}, Or.inr (Or.inr rfl), ?_⟩
       simpa only [Finset.coe_singleton, image_singleton, convexHull_pair] using hy
-
-
-
 
 theorem affine_image_closedFaceStar_emptyLink (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (f : E →ᵃ[ℝ] F)

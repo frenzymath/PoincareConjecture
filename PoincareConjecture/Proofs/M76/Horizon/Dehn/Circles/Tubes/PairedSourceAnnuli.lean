@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SourceStripPeriod
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.NormalizedIdentityTube
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -60,8 +52,6 @@ theorem OrdinaryIntervalMarkedModel.graph_injOn_clip (D : OrdinaryIntervalMarked
   exact congrArg Subtype.val (hinj.injective (a₁ := ⟨x, hx'.1⟩)
     (a₂ := ⟨y, hy'.1⟩) heq)
 
-
-
 theorem OrdinaryIntervalMarkedModel.source_tube_preimage
     (D : OrdinaryIntervalMarkedModel old i) {a b : ℝ}
     (sigma : P2 × ℝ → (D.sample → ℝ × V3))
@@ -111,8 +101,6 @@ theorem OrdinaryIntervalMarkedModel.source_tube_preimage
         signedSheetStripMap_mem j hw, (hvalue j w hw).symm⟩
     exact fun hx => hx.elim (fun h => hmem 0 h) (fun h => hmem 1 h)
 
-
-
 theorem OrdinaryIntervalMarkedModel.source_circle_subset_strip_image
     (D : OrdinaryIntervalMarkedModel old i) {a b : ℝ}
     (sigma : P2 × ℝ → (D.sample → ℝ × V3))
@@ -149,9 +137,6 @@ theorem OrdinaryIntervalMarkedModel.source_circle_subset_strip_image
     fin_cases j <;> simp [signedSheetStripMap_apply]
   refine ⟨(0, t), h0t, D.graph_injOn_clip j (hclip j _ h0t) hxclip ?_⟩
   exact (hgraph j _ h0t).trans ((congrArg sigma hstrip).trans htx)
-
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_paired_source_annuli
     (D : OrdinaryIntervalMarkedModel old i) {a b L d : ℝ}

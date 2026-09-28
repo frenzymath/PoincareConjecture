@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripCenterCuts
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -64,9 +54,6 @@ private theorem strip_not_contained_in_center_boundary_disk
   have hyx := hci (hstrip.1 hy) hx heq
   rw [hyx] at hy
   norm_num [stripRim] at hy
-
-
-
 
 theorem strip_halves_on_opposite_cut_sides
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

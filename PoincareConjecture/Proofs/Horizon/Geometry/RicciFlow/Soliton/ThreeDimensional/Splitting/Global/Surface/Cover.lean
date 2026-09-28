@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Local
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem exists_global_inverse_round_surface_local_isometry
     {M : Type} [TopologicalSpace M] [T2Space M] [CompactSpace M]
@@ -59,8 +48,6 @@ theorem exists_global_inverse_round_surface_local_isometry
     ((isometryPresheaf (roundSphereMetric 2) g).germ U q hq s)
   obtain ⟨ht, htm⟩ := sectionExtension_spec (roundSphereMetric 2) g t.property
   exact ⟨sectionExtension ⊤ t.val, contMDiffOn_univ.mp ht, fun x => htm x (by trivial)⟩
-
-
 
 theorem exists_unitSphere_two_covering
     {M : Type u} [TopologicalSpace M]

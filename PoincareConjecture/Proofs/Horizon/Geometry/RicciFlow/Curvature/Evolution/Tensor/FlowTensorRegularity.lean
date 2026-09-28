@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.T
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

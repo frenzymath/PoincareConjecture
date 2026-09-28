@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineCylinderExterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +12,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_first_height_cap_ball_with_exterior
     {s : Set E} {T : Set F} {e : s ≃ₜ frontier T} (he : e.IsFinitePL)

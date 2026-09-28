@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialTipCapture
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialTipObstruction
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCapPath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open M45
-
-
 
 theorem source_initial_compared_cap_no_contact
     {F : SurgeryFlowData.{u}} (standard : RepairedStandardCapExistenceData F.standard_initial)

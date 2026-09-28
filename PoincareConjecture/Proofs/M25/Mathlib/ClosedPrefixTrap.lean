@@ -4,23 +4,11 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.DenselyOrdered
 import Mathlib.Topology.Algebra.Ring.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 universe u
-
-
-
 
 theorem ContinuousOn.mapsTo_uIcc_of_closed_prefix_trap
     {X : Type u} [TopologicalSpace X]

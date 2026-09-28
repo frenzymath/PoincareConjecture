@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Se
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
 
 theorem ricci_mul_edist_sq_le (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hc : MetricComplete g) {k : ℝ}
@@ -70,8 +62,6 @@ theorem ricci_mul_edist_sq_le (g : RiemannianMetric n M) (D : LeviCivitaData g)
     simp only [hz, zero_pow (by norm_num : 2 ≠ 0), mul_zero]
     positivity
 
-
-
 theorem edist_le_of_positive_ricci (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hc : MetricComplete g) {k : ℝ} (hk : 0 < k)
     (hRic : ∀ x (v : TangentSpace (𝓡 n) x), k * g.inner x v v ≤ D.ricci x v v)
@@ -82,8 +72,6 @@ theorem edist_le_of_positive_ricci (g : RiemannianMetric n M) (D : LeviCivitaDat
   rw [← ENNReal.ofReal_toReal (g.edist_ne_top p x)]
   apply ENNReal.ofReal_le_ofReal
   exact (Real.le_sqrt ENNReal.toReal_nonneg (by positivity)).mpr hsq
-
-
 
 theorem compactSpace_of_positive_ricci (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hc : MetricComplete g) {k : ℝ} (hk : 0 < k)

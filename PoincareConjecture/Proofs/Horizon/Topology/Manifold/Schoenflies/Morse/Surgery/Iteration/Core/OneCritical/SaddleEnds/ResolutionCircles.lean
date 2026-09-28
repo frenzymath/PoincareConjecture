@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ComponentCount
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -42,8 +35,6 @@ private theorem index_two_component_family
     ⟨hinj, hcards⟩), heq⟩
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {K : Set S2}
-
-
 
 theorem exists_lowerCutCircle_equiv_of_two_components
     (A : AnnularEndFamily v g B K)

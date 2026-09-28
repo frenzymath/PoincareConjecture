@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RetainedLongitudinalPrism
 import PoincareConjecture.Proofs.M76.Mathlib.LongitudinalPrismCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +8,6 @@ open Set Geometry
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem image_axis_inverse_of_linear_cones
     {S : Set E} {T : Set ((ℝ × ℝ) × ℝ)} (e : S ≃ₜ T)
@@ -103,9 +88,6 @@ theorem image_axis_inverse_of_linear_cones
 end Homeomorph
 
 namespace CoordinateHalfBoxes
-
-
-
 
 theorem longitudinalPrismCoordinates_image_axis {r a b : ℝ}
     (hr : 0 < r) (hab : a < b) :

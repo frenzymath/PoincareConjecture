@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ open M36
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 theorem terminalCurvature_neck_sphere_geometry (N : EpsilonNeck g) :
     ContMDiff (𝓡 2) (𝓡 3) ∞ (fun theta => N.coordinate_map (theta, 0)) ∧
@@ -46,8 +36,6 @@ theorem terminalCurvature_neck_sphere_geometry (N : EpsilonNeck g) :
   refine ⟨hf, hrange, ?_, ⟨N.center, N.center_on_central_sphere⟩⟩
   rw [← hrange]
   exact isCompact_range hf.continuous
-
-
 
 theorem terminalCurvature_neck_sphere_horizontal
     (N : EpsilonNeck g) (theta : UnitTwoSphere)

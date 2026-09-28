@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.NoncompactKappa.Positive
-
-
 
 theorem uniform_scalar_radius_volume_lower_of_services
     (P : NoncompactKappaServices.{u}) :
@@ -56,8 +42,6 @@ theorem uniform_scalar_radius_volume_lower_of_services
     apply le_trans ?_ hscalar.le
     exact le_csSup (K.scalar_range_ball_bddAbove ht p r) ⟨⟨q, hq⟩, rfl⟩
 
-
-
 theorem uniform_scalar_radius_volume_lower
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ C kappa : ℝ, 0 < C ∧ 0 < kappa ∧ C⁻¹ < kappa ∧
@@ -72,8 +56,6 @@ theorem uniform_scalar_radius_volume_lower
             ENNReal.ofReal (kappa * r ^ 3) ≤
               calibratedMetricVolume (K.flow.metric t) ((K.flow.metric t).ball p r) := by
   exact uniform_scalar_radius_volume_lower_of_services P.noncompactServices
-
-
 
 theorem exists_scalar_ball_enclosure_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

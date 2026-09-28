@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem unit_ball_volume_lower_bound_of_le_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -60,8 +47,6 @@ theorem unit_ball_volume_lower_bound_of_le_truncatedInjectivityRadius
       ((show ‖v‖ < r by simpa using hv).trans_le hr1))
   · intro v hv w
     exact (hb v (hsub hv) ((show ‖v‖ < r by simpa using hv).le.trans hrK)).2 w |>.1
-
-
 
 theorem exists_uniform_unit_ball_volume_lower_bound_of_injectivity
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

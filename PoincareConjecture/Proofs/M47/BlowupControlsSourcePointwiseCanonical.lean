@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceStandardSplit
 import PoincareConjecture.Proofs.M47.PrefixMonotone
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_5_OverlapCaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_standard_canonical_neighborhood_of_initial
     (S : RepairedControlledSchedulesData.{u})

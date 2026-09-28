@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Cutting.DiskPartitionRefinement
 import Mathlib.SetTheory.Cardinal.NatCard
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem exists_finset_proper_arc_disk_decomposition
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -62,9 +52,6 @@ theorem exists_finset_proper_arc_disk_decomposition
     · intro k
       simpa only [hcuts] using hR' k
     · simpa only [hcuts] using hinter'
-
-
-
 
 theorem exists_finite_proper_arc_disk_decomposition
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

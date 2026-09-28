@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderOrdinary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem neck_ordinary_terminal_metric
     {F : SurgeryFlowData.{u}} {T : ℝ} {I J : Set ℝ}

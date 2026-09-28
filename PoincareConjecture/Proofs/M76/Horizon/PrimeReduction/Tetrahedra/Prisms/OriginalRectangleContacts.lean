@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.Or
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.AffineRegionTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Counting.SuccessorRectangleFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry TriangularRoofModel
 namespace PoincareConjecture.M76.PrismBelt

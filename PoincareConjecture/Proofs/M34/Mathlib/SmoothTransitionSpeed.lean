@@ -1,22 +1,12 @@
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace Real.smoothTransition
-
-
 
 theorem exists_deriv_bound : ∃ C : ℝ, 1 ≤ C ∧ ∀ x : ℝ,
     |deriv Real.smoothTransition x| ≤ C := by

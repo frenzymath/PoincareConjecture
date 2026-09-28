@@ -1,19 +1,6 @@
 import Mathlib.MeasureTheory.Covering.Vitali
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,9 +8,6 @@ open Set Metric MeasureTheory
 open scoped ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_measurable_focusing_cover
     {ι : Type*} (T : Set ι) (center radius : ι → ℝ)
@@ -73,8 +57,6 @@ theorem m64Intrinsic_exists_measurable_focusing_cover
         apply tsum_measure_le_measure_univ (fun _ => measurableSet_closedBall.nullMeasurableSet)
         intro i j hij
         exact (hdisj i.2 j.2 (fun h => hij (Subtype.ext h))).aedisjoint
-
-
 
 theorem m64Intrinsic_exists_measurable_interval_cover
     (T : Set (ℝ × ℝ)) (ν : Measure ℝ) {A τ P : ℝ}

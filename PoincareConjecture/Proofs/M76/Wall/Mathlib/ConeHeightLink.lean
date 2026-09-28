@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PiecewiseVertexSuperlevel
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialStar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   {K : SimplicialComplex ℝ E} {f : E → ℝ}
-
-
-
-
 
 theorem AffineOnFaces.closedStar_link_level (hf : K.AffineOnFaces f)
     (p : E) (r : ℝ) (hstar : K.closedStar p = K) (hp : r < f p)

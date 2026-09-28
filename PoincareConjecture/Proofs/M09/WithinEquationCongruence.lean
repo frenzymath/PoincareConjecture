@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.WithinDerivativeCongruence
 import PoincareConjecture.Proofs.M09.LocalRegularizedEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

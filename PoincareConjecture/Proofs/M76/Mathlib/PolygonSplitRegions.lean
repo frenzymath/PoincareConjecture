@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitIndex
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionPartition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open Set
 namespace Polygon
 
 variable {m n : ℕ}
-
-
 
 theorem hasNonverticalEdges_split (u : Fin (m + 1) → ℝ × ℝ)
     (v : Fin (n + 1) → ℝ × ℝ)
@@ -42,10 +30,6 @@ theorem hasNonverticalEdges_split (u : Fin (m + 1) → ℝ × ℝ)
       have hrot : finRotate ((n + 1) + 1) i.castSucc = i.succ := finRotate_of_lt i.isLt
       simpa only [hrot, Fin.snoc_castSucc, Fin.append_right, Fin.append_finRotate_natAdd] using
         hP (Fin.natAdd (m + 1) i)
-
-
-
-
 
 theorem region_partition_split_of_nonvertical (u : Fin (m + 2) → ℝ × ℝ)
     (v : Fin (n + 2) → ℝ × ℝ)

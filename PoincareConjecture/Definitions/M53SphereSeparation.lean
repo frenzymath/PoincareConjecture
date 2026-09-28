@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def IsNullHomotopicSphere {M : Type u} [TopologicalSpace M]
     (sphere : UnitTwoSphere → M) : Prop :=
@@ -43,7 +32,6 @@ structure RepairedSphereSeparationData
     [IsManifold (𝓡 3) ∞ M]
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]
     [ConnectedSpace M] where
-
 
   separating : ∀ (S : SmoothEmbeddedNullHomotopicSphere (M := M)),
     SeparatingSphere (Set.range S.sphere)

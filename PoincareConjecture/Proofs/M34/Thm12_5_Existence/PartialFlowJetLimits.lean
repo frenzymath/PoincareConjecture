@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowTimeJetBounds
 import PoincareConjecture.Proofs.M34.Mathlib.TerminalLipschitz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology NNReal
 
 namespace PoincareConjecture
-
-
 
 theorem RiemannianMetric.pullbackCoefficients_id {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) :
@@ -33,8 +21,6 @@ theorem RiemannianMetric.pullbackCoefficients_id {n : ℕ}
   rfl
 
 namespace M34
-
-
 
 theorem partialFlow_compactPullback_spatialJet_time_lipschitz
     (P : RicciFlowCurvatureTheory.{0})
@@ -73,8 +59,6 @@ theorem partialFlow_compactPullback_spatialJet_time_lipschitz
     exact (hat.comp t (contDiffAt_id.prodMk contDiffAt_const)).differentiableAt (by simp)
   · exact fun t ht => hbound hU he hinv hmetric t ht x hx hxU
 
-
-
 theorem partialFlow_compact_spatialJet_time_lipschitz
     (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)
@@ -100,8 +84,6 @@ theorem partialFlow_compact_spatialJet_time_lipschitz
     simp only [id_eq, mfderiv_id, ContinuousLinearMap.id_apply]
   simpa only [RiemannianMetric.pullbackCoefficients_id] using
     hD isOpen_univ contMDiffOn_id hinv hmetric x hx (mem_univ x)
-
-
 
 theorem partialFlow_spatialJet_terminal_limit_exists
     (P : RicciFlowCurvatureTheory.{0})

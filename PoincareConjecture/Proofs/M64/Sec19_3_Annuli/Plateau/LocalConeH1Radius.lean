@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveOscillation
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,9 +9,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem m64H1Trace_radius_sq_le
     (u v : ℝ → E) {T : ℝ}
@@ -52,9 +39,6 @@ theorem m64H1Trace_radius_sq_le
   exact ((sq_le_sq₀ (norm_nonneg _) hnorm0).mpr hnorm).trans
     (hCS.trans ((mul_le_mul_of_nonneg_left hsmall hx.1).trans
       (mul_le_mul_of_nonneg_right hx.2 (integral_nonneg fun t => sq_nonneg ‖v t‖))))
-
-
-
 
 theorem m64H1Trace_oscillation_sq_le
     (u v : ℝ → E) {T : ℝ}

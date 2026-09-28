@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Representation
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem mem_boundedCylinderNorthernCap_iff_of_height_lt_one
     {v y : E3} (hv : ‖v‖ = 1) (hy : inner Real v y < 1) :
@@ -33,8 +29,6 @@ theorem mem_boundedCylinderNorthernCap_iff_of_height_lt_one
       linarith
   · rintro ⟨ht, hn⟩
     exact Or.inl ⟨hn, ht, hy.le⟩
-
-
 
 theorem lifted_cap_slice_eq_circle
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)
@@ -74,8 +68,6 @@ theorem lifted_cap_slice_eq_circle
     change inner Real v ((c + s * t) • v + (A x : E3)) = c + s * t
     rw [← hLz]
     exact (inner_liftPlaneDiffeomorph hv c s hs A z).trans (by rw [hzh])
-
-
 
 theorem lifted_cap_closed_strip_eq_cylinder
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLInChartsProd
 import PoincareConjecture.Proofs.M76.Mathlib.TorusPLCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,12 +12,8 @@ variable {E F X Y ι κ : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
 def realCharts (E : Type*) [TopologicalSpace E] : Unit → OpenPartialHomeomorph E E :=
   fun _ => OpenPartialHomeomorph.refl E
-
-
 
 def prodCharts (Q : ι → OpenPartialHomeomorph E X) (R : κ → OpenPartialHomeomorph F Y) :
     ι × κ → OpenPartialHomeomorph (E × F) (X × Y) :=
@@ -34,7 +21,6 @@ def prodCharts (Q : ι → OpenPartialHomeomorph E X) (R : κ → OpenPartialHom
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedSpace ℝ F] [FiniteDimensional ℝ F] in
-
 
 theorem prodCharts_cover (Q : ι → OpenPartialHomeomorph E X)
     (R : κ → OpenPartialHomeomorph F Y)
@@ -44,14 +30,10 @@ theorem prodCharts_cover (Q : ι → OpenPartialHomeomorph E X)
   obtain ⟨j, hj⟩ := hR z.2
   exact ⟨(i, j), hi, hj⟩
 
-
-
 theorem realCharts_cover (E : Type*) [TopologicalSpace E] (x : E) :
     ∃ i, x ∈ (realCharts E i).target := ⟨(), mem_univ _⟩
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem plInCharts_id (Q : ι → OpenPartialHomeomorph E X)
     (hQ : ∀ i j, LocallyPiecewiseAffineOn ((Q i).trans (Q j).symm)
@@ -69,7 +51,6 @@ theorem plInCharts_id (Q : ι → OpenPartialHomeomorph E X)
 
 omit [FiniteDimensional ℝ F] in
 
-
 theorem plInCharts_affine (a : E →ᴬ[ℝ] F) {U : Set E} (hU : IsOpen U) :
     PLInCharts (realCharts E) (realCharts F) a U := by
   refine ⟨hU, a.continuous.continuousOn, ?_⟩
@@ -82,8 +63,6 @@ theorem plInCharts_affine (a : E →ᴬ[ℝ] F) {U : Set E} (hU : IsOpen U) :
   exact locallyPiecewiseAffineOn_affine a hU
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
-
 
 theorem plInCharts_real_target (Q : ι → OpenPartialHomeomorph E X)
     (f : X → F) (U : Set X) (hU : IsOpen U) (hf : ContinuousOn f U)
@@ -99,7 +78,6 @@ theorem plInCharts_real_target (Q : ι → OpenPartialHomeomorph E X)
   exact hPL i
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
 
 theorem PLInCharts.real_target_coordinates
     {Q : ι → OpenPartialHomeomorph E X} {f : X → F} {U : Set X}
@@ -119,20 +97,13 @@ namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
 
-
-
 noncomputable def quotientCharts : ℝ → OpenPartialHomeomorph ℝ (AddCircle p) :=
   fun a => openPartialHomeomorphCoe p a
-
-
 
 theorem quotientCharts_cover (z : AddCircle p) :
     ∃ a, z ∈ (quotientCharts p a).target := by
   obtain ⟨b, hb⟩ := two_puncture_charts_cover p z
   exact ⟨if b then 0 else p / 2, hb⟩
-
-
-
 
 theorem plInCharts_id :
     PLInCharts (quotientCharts p) (quotientCharts p) id univ :=

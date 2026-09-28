@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Collars.CollarNormalLabel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.TubeNormal
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -101,8 +95,6 @@ theorem canonicalTubeCollar_surface_iff
     rw [U.second_trace _ hzt]
     change -(z.1.val.1 + z.2) = -z.1.val.1 ↔ z.2 = 0
     simp
-
-
 
 theorem exists_constant_canonicalTube_normal_label
     {κ : Type*} (U : OriginalIntervalTube e R W S T C D f₀ f₁) (side : Bool)

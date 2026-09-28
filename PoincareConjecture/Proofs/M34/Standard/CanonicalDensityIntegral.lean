@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.CutoffFiniteSquareIntegral
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ variable {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
 
 include hφ hφc hφU
 
-
-
 theorem canonicalDifferenceDensity_integrable_cutoff :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -52,9 +41,6 @@ theorem canonicalDifferenceDensity_integrable_cutoff :
     simpa only [pow_two] using (tsupport_mul_subset_left (f := φ) (g := φ)).trans hφU
   exact integrable_cutoff_mul (μ := volume) hU (hφ.pow 2).continuousOn hwc hwU
     (canonicalDifferenceDensity_continuousOn_slice U hU qH qA qS F F' p ht)
-
-
-
 
 theorem canonicalDifferenceDensity_integral_eq :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

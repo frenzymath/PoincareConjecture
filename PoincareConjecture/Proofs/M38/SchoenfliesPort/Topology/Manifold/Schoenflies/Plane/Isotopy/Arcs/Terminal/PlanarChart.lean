@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -161,8 +153,6 @@ private theorem embedding_postcompose
   exact (J.mfderivToContinuousLinearEquiv (by simp) (g q)).injective.comp
     (injective_mfderiv_sphere_embedding hge q)
 
-
-
 theorem exists_terminal_planar_chart
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
     (he0 : 0 ∈ e.source) (hep : e 0 = p)
@@ -183,8 +173,6 @@ theorem exists_terminal_planar_chart
   change mfderiv (𝓡 2) 𝓘(Real, Real) (fun q => d.flatten (g q) 2) p = 0
   rw [hh]
   exact hc
-
-
 
 theorem exists_terminal_planar_chart_before_flattening
     (hg : g ∈ M.tree.leaves)

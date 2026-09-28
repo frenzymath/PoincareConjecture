@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationDerivative
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.CircleRelabeling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +15,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
-
-
-
-
 
 theorem exists_double_point_controls (x y : LoopCircle) (hxy : x ≠ y) (z : M) :
     ∃ (d : ℝ) (beta : LoopPlane → ℝ) (Phi : Fin 3 → M × ℝ → M),
@@ -64,8 +50,6 @@ theorem exists_double_point_controls (x y : LoopCircle) (hxy : x ≠ y) (z : M) 
 
 omit [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [CompactSpace M] in
-
-
 
 theorem source_weight_regular (beta : LoopPlane → ℝ) (hbeta : ContDiff ℝ ∞ beta)
     (hbound : ∀ w, beta w ∈ Icc (0 : ℝ) 1) :

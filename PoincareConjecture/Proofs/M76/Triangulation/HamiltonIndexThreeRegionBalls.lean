@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionCertificates
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,10 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
-
-
-
-
 
 theorem hasAlexanderRegionBalls_identifies_open_region {S C V : Set E}
     (hregions : HasAlexanderRegionBalls S C)
@@ -90,9 +75,6 @@ theorem hasAlexanderRegionBalls_identifies_open_region {S C V : Set E}
 
 omit [FiniteDimensional ℝ E] in
 
-
-
-
 theorem indexThree_chart_boundary_isFinitePL
     (e : OpenPartialHomeomorph (Fin 3 → ℝ) E)
     (hsource : closedBall (0 : Fin 3 → ℝ) 1 ⊆ e.source)
@@ -114,9 +96,6 @@ theorem indexThree_chart_boundary_isFinitePL
   exact hPL.finitePiecewiseAffineOn L hL (hLs.subset.trans hN)
 
 omit [FiniteDimensional ℝ E] in
-
-
-
 
 theorem indexThree_chart_image_isFinitePLBallPair
     (e : OpenPartialHomeomorph (Fin 3 → ℝ) E)
@@ -153,13 +132,6 @@ theorem indexThree_chart_image_isFinitePLBallPair
   have hresult := hasAlexanderRegionBalls_identifies_open_region hregions hV hVc hfront
     ((image_mono ball_subset_closedBall).trans hC)
   rwa [hclosure] at hresult
-
-
-
-
-
-
-
 
 theorem exists_indexThree_chart_handleStraightening_of_region_balls
     (e : OpenPartialHomeomorph (Fin 3 → ℝ) E)

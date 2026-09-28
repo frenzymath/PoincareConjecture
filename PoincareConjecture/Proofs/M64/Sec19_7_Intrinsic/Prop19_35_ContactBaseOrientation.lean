@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SmoothLastContact
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,10 +7,6 @@ open Set Function
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_positive_contact_base_orientation
     {base eta : ℝ → AnnulusCoordinates} (hb : ContDiff ℝ ∞ base)

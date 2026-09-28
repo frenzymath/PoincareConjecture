@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.LocalControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.Compactness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -32,8 +21,6 @@ local instance windowCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.car
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
-
 
 theorem ball_subset_terminal
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -74,8 +61,6 @@ noncomputable def windowSequence (ha : a < 0) (hb : 0 < b) (hbδ : b ≤ δ) :
     PointedFlowSequence 3 a b where
   carrier := C
   flow := fun k => basedWindow C F p k ha hb hbδ
-
-
 
 noncomputable def compactnessHypotheses
     (P : M23NormalizedKappaCompactnessPredecessors)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Jets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -33,8 +23,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem tendsto_terminal_coordinate_scalarCurvature_prod
     (hconv : M23TerminalMetricConvergence G e)
@@ -72,8 +60,6 @@ theorem tendsto_terminal_coordinate_scalarCurvature_prod
     (G.limit.flow.flow.metric 0) (G.limit.flow.flow.connection 0) q 0 p hp g D hg] at hscalar
   exact hscalar
 
-
-
 theorem tendsto_terminal_scalarCurvature_prod
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ k (t : ℝ), t ≤ 0 → ∀ x ∈ G.exhaustion k,
@@ -95,8 +81,6 @@ theorem tendsto_terminal_scalarCurvature_prod
   apply hn.congr'
   filter_upwards [tendsto_snd.eventually (extChartAt_source_mem_nhds (I := 𝓡 3) p)] with z hz
   rw [c.left_inv hz]
-
-
 
 theorem tendstoUniformlyOn_terminal_scalarCurvature
     (hconv : M23TerminalMetricConvergence G e)

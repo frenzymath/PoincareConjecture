@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flat.Rigidit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBounds
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,8 +51,6 @@ private theorem laplacian_eq_dim_mul_of_hessian_eq_metric
   have hdim : Module.finrank ℝ (TangentSpace (𝓡 n) x) = n := finrank_euclideanSpace_fin
   simp only [LeviCivitaData.laplacian, hess, hb, mul_one, Finset.sum_const,
     Finset.card_univ, Fintype.card_fin, nsmul_eq_mul, hdim]
-
-
 
 theorem RicciFlow.integral_gaussian_of_flat_soliton_entropy
     {J : Set ℝ} (F : RicciFlow n M J) {f : M × ℝ → ℝ} {t : ℝ} (ht : t < 0)
@@ -113,9 +110,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.secondCountable
 
 variable {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
-
-
-
 
 theorem nonflat_at_of_limitReducedLength_soliton_entropy
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)

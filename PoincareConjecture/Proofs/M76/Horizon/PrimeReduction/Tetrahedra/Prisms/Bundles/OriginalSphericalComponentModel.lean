@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RelativeComponentBoundary
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SphericalSubregionModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76.PrismBelt
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem hasPuncturedSphereModel_of_finitePL_spherical_product
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -70,9 +58,6 @@ theorem hasPuncturedSphereModel_of_finitePL_spherical_product
   intro z
   change g (p z) = (G0 (P z) : X)
   rw [hG0, hpval]
-
-
-
 
 theorem not_finitePL_spherical_product_containing_noL3_component
     {X E ι ν : Type*} [TopologicalSpace X] [T2Space X] [Finite ν]

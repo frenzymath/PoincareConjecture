@@ -1,24 +1,12 @@
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem terminalGerms_closed_taylor_jets
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

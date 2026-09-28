@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.RegularSlices
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +11,6 @@ namespace PoincareConjecture.Surgery.RegularHistory
 
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
 
-
 def SlabCompatible (A : GeneralizedRicciFlowBox (slice W) (metric W) W.interval) : Prop :=
   ∀ a b : ℝ, ∀ hab : a < b, ∀ hJ : Icc a b ⊆ F.time_domain,
     ∀ hfree : Disjoint F.surgery_times (Ioc a b),
@@ -28,8 +19,6 @@ def SlabCompatible (A : GeneralizedRicciFlowBox (slice W) (metric W) W.interval)
     ∀ x : A.carrier.carrier,
       (F.regular_slabs a b hab hJ hfree).transport ⟨s, hs⟩ ⟨t, ht⟩
         (forward W s (A.forward s hs' x)) = forward W t (A.forward t ht' x)
-
-
 
 theorem boxes_vertical_of_regular_overlap
     (A B : GeneralizedRicciFlowBox (slice W) (metric W) W.interval)

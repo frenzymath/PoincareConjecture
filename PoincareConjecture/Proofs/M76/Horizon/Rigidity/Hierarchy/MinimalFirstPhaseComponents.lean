@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.OriginalIrreducibleSlab
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.ResidualModelInvariance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -23,7 +14,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 
-
 theorem FrontierResidualModel.count_eq_of_same_surface
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {N N' F : Set X}
@@ -31,8 +21,6 @@ theorem FrontierResidualModel.count_eq_of_same_surface
     M.count = M'.count := by
   obtain ⟨r, _⟩ := M.exists_component_matching M'
   simpa only [Fintype.card_fin] using Fintype.card_congr r
-
-
 
 def HamiltonZeroIncompressiblePhaseCount {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)
@@ -82,4 +70,3 @@ theorem exists_hamiltonZero_minimal_incompressible_phase_count {ι κ : Type*}
   exact ⟨Nat.find hex, Nat.find_spec hex, fun _ hm => Nat.find_min' hex hm⟩
 
 end PoincareConjecture.M76
-

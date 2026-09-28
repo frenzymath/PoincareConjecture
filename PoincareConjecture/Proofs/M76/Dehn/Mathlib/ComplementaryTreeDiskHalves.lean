@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualTreeDisk
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Finite K.faces]
-
-
-
 
 theorem exists_disk_halves_of_complementary_induced_trees
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -54,9 +41,6 @@ theorem exists_disk_halves_of_complementary_induced_trees
   · rw [← K.vertexDualUnion_union, union_compl_self, K.vertexDualUnion_univ]
   · rw [hrim] at hD₁
     simpa only [hT] using hD₁
-
-
-
 
 theorem exists_sphere_model_of_complementary_induced_trees
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2RatioEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem c2_rampRatio_bound (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)
@@ -85,8 +73,6 @@ theorem c2_rampRatio_bound (P : M62.CircleProductData F circumference)
       (by norm_num) ht x).trans
         (add_le_add le_rfl (hforcing t (Ioo_subset_Icc_self ht) x))) hR
   exact fun t ht x => h x t ht
-
-
 
 theorem c2_rampCurvature_bound (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)

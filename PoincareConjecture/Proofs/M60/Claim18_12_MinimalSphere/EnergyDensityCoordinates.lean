@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Intrinsic
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.StereographicConformal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m60EnergyDensity_congr_of_eventuallyEq (g : RiemannianMetric n M)
     {f h : LoopPlane → M} {z : LoopPlane} (hf : f =ᶠ[𝓝 z] h) :
     m60EnergyDensity g f z = m60EnergyDensity g h z := by
@@ -32,8 +21,6 @@ theorem m60EnergyDensity_congr_of_eventuallyEq (g : RiemannianMetric n M)
     congrArg (fun p : M => g.inner p v w) hf.eq_of_nhds
   simp only [m60EnergyDensity, m60AreaGram, hf.mfderiv_eq, hi]
   rfl
-
-
 
 theorem m60EnergyDensity_eq_chart (g : RiemannianMetric n M) (b : M)
     {φ : LoopPlane → M} {z : LoopPlane}
@@ -55,8 +42,6 @@ theorem m60EnergyDensity_eq_chart (g : RiemannianMetric n M) (b : M)
   intro i _
   rw [hd]
   exact (ConjugateVariation.chartCoefficients_apply g b hz _ _).symm
-
-
 
 theorem m60EnergyDensity_family_eq_chart (g : RiemannianMetric n M) (b : M)
     {φ : ℝ × LoopPlane → M} {p : ℝ × LoopPlane}
@@ -85,8 +70,6 @@ theorem m60EnergyDensity_family_eq_chart (g : RiemannianMetric n M) (b : M)
   dsimp only [Function.comp_def] at hd ⊢
   rw [hd.fderiv]
   rfl
-
-
 
 theorem m60EnergyDensity_family_contDiffAt (g : RiemannianMetric n M)
     {φ : ℝ × LoopPlane → M} {p : ℝ × LoopPlane}

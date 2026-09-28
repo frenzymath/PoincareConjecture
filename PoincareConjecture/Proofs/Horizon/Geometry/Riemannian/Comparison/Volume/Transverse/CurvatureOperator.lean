@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.CurvatureOperator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.Symmetry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Jacobi.ParallelFrame
-
-
-
-
-
-
-

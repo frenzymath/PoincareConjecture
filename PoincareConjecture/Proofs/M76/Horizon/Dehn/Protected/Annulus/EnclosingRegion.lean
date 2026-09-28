@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Spheres.Annulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.AnnulusSphereCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.EnclosingRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Collars
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric
@@ -21,8 +11,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_boundary_neighborhood
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius p) :
@@ -70,7 +58,6 @@ theorem exists_boundary_neighborhood
     rw [collarParameterEquiv.apply_symm_apply]
     exact ⟨⟨(lt_of_not_ge htl).le, (lt_of_not_ge hrt).le⟩,
       neg_neg_of_pos (hbounds a).2.2.2, (hbounds a).2.2.2⟩
-
 
 def regionCore (N : Set M) (x : M) : Set M :=
   closure (connectedComponentIn (chartDiskBoundaryUnion D.centers D.radius)ᶜ x) \ N

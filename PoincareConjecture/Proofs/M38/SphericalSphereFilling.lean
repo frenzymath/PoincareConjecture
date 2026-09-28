@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import PoincareConjecture.Proofs.M38.SurgeryBallTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set IsManifold
@@ -61,9 +51,6 @@ private theorem fill_sphere_positive_collar_side
     (hct.trans hes.symm.subset) hf hside
   exact ⟨b, hbs, hb, hbi, (b.image_sphere_eq_frontier hbs hbK).trans hf,
     by rw [hbK]; exact fun hp => hcl hp hpA⟩
-
-
-
 
 theorem exists_sphere_ballNeighborhood_avoiding_point
     (f : UnitTwoSphere → UnitThreeSphere)
@@ -117,8 +104,6 @@ theorem exists_sphere_ballNeighborhood_avoiding_point
           exact hn ⟨(z.1, -z.2),
             ⟨mem_univ _, by linarith [hz.2.2], by linarith [hz.2.1]⟩, rfl⟩)
     exact ⟨b, hbs, hb, hbi, hbS.trans hdS, hbp⟩
-
-
 
 theorem exists_surgerySphereBall_avoiding_point
     (f : UnitTwoSphere → sphereCarrier.{u}.carrier)

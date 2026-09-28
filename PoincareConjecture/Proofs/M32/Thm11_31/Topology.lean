@@ -2,19 +2,6 @@ import PoincareConjecture.Definitions.Ch11.SingularLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +13,6 @@ namespace PoincareConjecture.M32
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
-
-
 
 theorem horn_isClosed_carrier (horn : StrongHorn E epsilon) : IsClosed horn.carrier := by
   let f : UnitTwoSphere × Ico (0 : ℝ) 1 → (E.extended.slice T).carrier :=
@@ -46,8 +31,6 @@ theorem horn_isClosed_carrier (horn : StrongHorn E epsilon) : IsClosed horn.carr
         congrArg Subtype.val (horn.coordinate.apply_symm_apply ⟨x, hx⟩)⟩
   rw [← hrange]
   exact hp.isClosed_range
-
-
 
 theorem horn_carrier_diff_boundary_eq_image (horn : StrongHorn E epsilon) :
     horn.carrier \ horn.boundary_sphere =
@@ -81,8 +64,6 @@ theorem horn_carrier_diff_boundary_eq_image (horn : StrongHorn E epsilon) :
     have hzero := congrArg (fun z : UnitTwoSphere × Ico (0 : ℝ) 1 => (z.2 : ℝ))
       (horn.coordinate.injective heq')
     exact (ne_of_gt ht0) hzero.symm
-
-
 
 theorem horn_isOpen_carrier_diff_boundary (horn : StrongHorn E epsilon) :
     IsOpen (horn.carrier \ horn.boundary_sphere) := by
@@ -119,8 +100,6 @@ theorem horn_isOpen_carrier_diff_boundary (horn : StrongHorn E epsilon) :
   exact mem_of_superset ((isOpen_univ.prod isOpen_Ioo).mem_nhds hz)
     (fun y hy => ⟨y, hy, rfl⟩)
 
-
-
 theorem horn_frontier_carrier_subset_boundary (horn : StrongHorn E epsilon) :
     frontier horn.carrier ⊆ horn.boundary_sphere := by
   intro x hx
@@ -131,8 +110,6 @@ theorem horn_frontier_carrier_subset_boundary (horn : StrongHorn E epsilon) :
   apply mem_interior_iff_mem_nhds.mpr
   exact mem_of_superset ((horn_isOpen_carrier_diff_boundary horn).mem_nhds ⟨hxc, hnot⟩)
     (fun y hy => hy.1)
-
-
 
 theorem horn_subset_carrier_of_isPreconnected (horn : StrongHorn E epsilon)
     {S : Set (E.extended.slice T).carrier} (hS : IsPreconnected S)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.SmoothCurvatureBarri
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.BoundedCurvatureFirstJet
 import PoincareConjecture.Proofs.M62.Lemma0_4_CurveTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +15,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem exists_common_normal_curvature_bounds
     (F : RicciFlow n M (Icc a b))

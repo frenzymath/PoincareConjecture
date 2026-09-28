@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M14.OrdinaryCaptureRegularImage
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureVolume
 import PoincareConjecture.Proofs.M10.RegularImage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -36,9 +25,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (hPath : M14PathCalculusConclusion G)
 
 include D hCoordinates hPath
-
-
-
 
 theorem ordinaryCapture_full_measure_at_cylinder
     (hL : LGeodesicTheory F t₀.val τmax)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalStageRimModel
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.MarkedSquareImageCycle
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,10 +18,6 @@ variable {G M ι : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G]
   [FiniteDimensional ℝ G] [DecidableEq G] [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
 
 theorem Stage.exists_original_marked_cycle (st : Stage e S f r C)
     (hSD : S.space = D) {R : Set M} {N : Set st.Carrier} (hN : IsClosed N)

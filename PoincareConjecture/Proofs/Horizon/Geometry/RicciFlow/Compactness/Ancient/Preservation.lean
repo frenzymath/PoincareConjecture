@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.CurvatureLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +21,6 @@ variable {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}
 
 include hT htime
 
-
-
 theorem curvatureTensorNorm_le_of_uniform_ball_bound {K : ℝ}
     (hbound : ∀ a b : ℝ, b < T → ∀ R : ℝ, 0 < R → ∀ᶠ k in atTop,
       ∀ t ∈ Ioo a b, ∀ x ∈ ((F k).metric t).ball (p k) R,
@@ -51,8 +39,6 @@ theorem curvatureTensorNorm_le_of_uniform_ball_bound {K : ℝ}
   exact (G.subsequence_strictMono.tendsto_atTop.comp (tendsto_add_atTop_nat N)).eventually
     (hbound a b hbT R hR)
 
-
-
 theorem nonnegativeCurvatureOperator_of_eventually
     (hoperator : ∀ t ∈ Iio T, ∀ᶠ k in atTop, ∀ x : (C k).carrier,
       ((F k).connection t).NonnegativeCurvatureOperator x) :
@@ -67,8 +53,6 @@ theorem nonnegativeCurvatureOperator_of_eventually
   apply W.nonnegativeCurvatureOperator_of_eventually t (htw (mem_singleton t))
   exact (G.subsequence_strictMono.tendsto_atTop.comp (tendsto_add_atTop_nat N)).eventually
     (hoperator t ht)
-
-
 
 theorem scalar_lower_bound_le_mul_base_curvatureTensorNorm {c : ℝ}
     (hscalar : ∀ᶠ k in atTop, c ≤ ((F k).connection 0).scalarCurvature (p k)) :

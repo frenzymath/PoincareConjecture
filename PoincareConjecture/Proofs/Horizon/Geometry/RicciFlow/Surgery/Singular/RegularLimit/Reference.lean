@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 theorem GeneralizedRicciFlowData.box_scalar (F : GeneralizedRicciFlowData.{u})
     (b : F.box_index) (t : ℝ) (ht : t ∈ (F.box b).interval)
@@ -37,7 +27,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 theorem exists_regular_collar (H : SingularTimeAssumptions F T M) :
     ∃ s : ℝ, H.reference.tMinus < s ∧ s < T ∧
@@ -59,7 +48,6 @@ theorem exists_regular_collar (H : SingularTimeAssumptions F T M) :
   rw [abs_of_neg (sub_neg.mpr ht.2)] at hdist
   linarith [ht.1]
 
-
 theorem compact_reference (H : SingularTimeAssumptions F T M) : CompactSpace M := by
   obtain ⟨s, hsref, hsT, hregular⟩ := H.exists_regular_collar
   have hs : s ∈ Ico H.reference.tMinus T := ⟨hsref.le, hsT⟩
@@ -73,7 +61,6 @@ theorem compact_reference (H : SingularTimeAssumptions F T M) : CompactSpace M :
   rw [← himage]
   exact hcompact.image (H.reference.inverse_smooth s hs).continuous
 
-
 theorem reference_scalar_continuousOn (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (x : M) :
     ContinuousOn (fun t => H.reference.scalar t x) (Ico H.reference.tMinus T) := by
@@ -84,7 +71,6 @@ theorem reference_scalar_continuousOn (H : SingularTimeAssumptions F T M)
   exact hj.comp (f := fun t : ℝ => (t, x))
     (continuous_id.prodMk continuous_const).continuousOn (fun t ht => ⟨ht, mem_univ x⟩)
 
-
 theorem reference_scalar_continuous (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) (ht : t ∈ Ico H.reference.tMinus T) :
     Continuous (H.reference.scalar t) := by
@@ -94,7 +80,6 @@ theorem reference_scalar_continuous (H : SingularTimeAssumptions F T M)
     (P04.scalar_regular 3 M _ H.reference.flow).continuousOn
   exact hj.comp_continuous (f := fun x : M => (t, x))
     (continuous_const.prodMk continuous_id) (fun x => ⟨ht, mem_univ x⟩)
-
 
 theorem reference_scalar_derivative_bound (H : SingularTimeAssumptions F T M)
     (x : M) (t : ℝ) (ht : t ∈ Ioo H.reference.tMinus T)
@@ -121,7 +106,6 @@ theorem reference_scalar_derivative_bound (H : SingularTimeAssumptions F T M)
     (by simpa only [← heqt] using hR)
   refine ⟨d, (hd.hasDerivAt hmem).congr_of_eventuallyEq heq, ?_⟩
   simpa only [← heqt] using hbound
-
 
 theorem reference_scalar_lower_bound (H : SingularTimeAssumptions F T M) :
     ∃ L : ℝ, ∀ t ∈ Ico H.reference.tMinus T, ∀ x : M, L ≤ H.reference.scalar t x := by

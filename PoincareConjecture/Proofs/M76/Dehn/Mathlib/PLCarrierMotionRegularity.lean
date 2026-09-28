@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -19,9 +10,6 @@ namespace Geometry.PLCarrierMotion
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {C P : Set E} {ε : ℝ}
 
-
-
-
 theorem finitePiecewiseAffineOn_carrier
     (H : PLCarrierMotion C P ε) (t : I) :
     FinitePiecewiseAffineOn (H.map t : E → E) C := by
@@ -30,9 +18,6 @@ theorem finitePiecewiseAffineOn_carrier
   apply hf.congr
   intro x hx
   exact (hfval ⟨x, hx⟩).symm.trans (hval ⟨x, hx⟩)
-
-
-
 
 theorem finitePiecewiseAffineOn_finite_polyhedron [FiniteDimensional ℝ E]
     (H : PLCarrierMotion C P ε) (t : I)
@@ -45,9 +30,6 @@ theorem finitePiecewiseAffineOn_finite_polyhedron [FiniteDimensional ℝ E]
       (fun x hx => H.outside t x (fun hi => hx (interior_subset hi))) L hL
   exact ⟨hglobal K hK,
     (H.map t).finitePiecewiseAffineOn_symm_of_forall_finite_polyhedron hglobal K hK⟩
-
-
-
 
 theorem mem_superset_iff (H : PLCarrierMotion C P ε)
     {U : Set E} (hCU : C ⊆ U) (t : I) (x : E) :

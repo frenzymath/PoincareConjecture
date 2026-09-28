@@ -3,24 +3,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 universe u
-
-
-
 
 theorem hasDerivAt_spatialDeriv_of_time_equation
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

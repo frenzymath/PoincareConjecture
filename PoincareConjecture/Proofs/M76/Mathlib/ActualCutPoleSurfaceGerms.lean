@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffinePlaneGermRigidity
 import PoincareConjecture.Proofs.M76.Mathlib.ActualRadialFrontierPoles
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarConvexFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace CoordinateHalfBoxes
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
-
 
 theorem mem_closedStar_of_frontier_positive_smul
     (K : SimplicialComplex ℝ E) {C : Set E}
@@ -42,11 +28,6 @@ theorem mem_closedStar_of_frontier_positive_smul
     rw [← K.radial_frontier_section_eq_closedStar_inter hC hcv hzero hlink]
     exact ⟨hp, y, hy, hdir⟩
   exact hpsection.1
-
-
-
-
-
 
 theorem exists_actual_cut_pole_surface_germ
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +11,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.eq_of_subset_with_same_endpoints
     {U V : Set E} {a b : E}
@@ -54,11 +39,6 @@ theorem IsFinitePLBallPair.eq_of_subset_with_same_endpoints
   have heq : e.symm ⟨u, hUV u.property⟩ = e.symm ⟨x, hx⟩ := Subtype.ext hu
   have hux : (u : E) = x := congrArg Subtype.val (e.symm.injective heq)
   exact hux ▸ u.property
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_boundary_arc_complement
     {s q U : Set E} {a b : E}

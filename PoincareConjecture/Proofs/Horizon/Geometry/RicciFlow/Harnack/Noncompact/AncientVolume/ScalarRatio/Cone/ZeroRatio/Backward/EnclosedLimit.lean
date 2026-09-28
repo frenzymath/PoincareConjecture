@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coeffic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Distance
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local instance : NormedAddCommGroup
     (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedAddCommGroup
-
 
 theorem pullbackCoefficients_inverse_chart_transition
     (g : RiemannianMetric n M)
@@ -66,10 +56,6 @@ theorem pullbackCoefficients_inverse_chart_transition
         (mfderiv (𝓡 n) (𝓡 n) (Φ ∘ f) x v) = _
       rw [heq.mfderiv_eq, heq.self_of_nhds]
       rfl
-
-
-
-
 
 theorem exists_enclosed_smooth_coordinate_limits
     (g : ℕ → RiemannianMetric n M) (q : ℕ → M)
@@ -192,9 +178,6 @@ theorem exists_enclosed_smooth_coordinate_limits
     change (Φ (σ k)).symm (a j (σ k) y) = (Φ (σ k)).symm (a i (σ k) x)
     rw [hk]
 
-
-
-
 theorem exists_smooth_isometric_immersion_of_compatible_charts
     {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) X] [IsManifold (𝓡 n) ∞ X]
@@ -281,9 +264,6 @@ theorem exists_smooth_isometric_immersion_of_compatible_charts
     EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) 0 0 = _ at he
   simp only [map_zero] at he
   exact (h.pos x v hne).ne' he.symm
-
-
-
 
 theorem lower_distance_of_enclosed_euclidean_limit
     (g : ℕ → RiemannianMetric n M)

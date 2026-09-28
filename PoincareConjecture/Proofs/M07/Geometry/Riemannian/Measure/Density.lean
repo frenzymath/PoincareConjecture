@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Pullback
 import Mathlib.Analysis.Matrix.PosDef
 import Mathlib.LinearAlgebra.Matrix.BilinearForm
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,13 +14,11 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def pullbackVolumeDensity (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
   Real.sqrt (Matrix.of (fun i j : Fin n => g.inner (f x)
     (mfderiv (𝓡 n) (𝓡 n) f x (EuclideanSpace.basisFun (Fin n) ℝ i))
     (mfderiv (𝓡 n) (𝓡 n) f x (EuclideanSpace.basisFun (Fin n) ℝ j)))).det
-
 
 theorem contDiffAt_pullbackVolumeDensity (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -63,7 +49,6 @@ theorem contDiffAt_pullbackVolumeDensity (g : RiemannianMetric n M)
     apply contDiffAt_const.mul
     exact contDiffAt_prod (fun i _ ↦ g.contDiffAt_pullback_inner hf (b (σ i)) (b i))
   exact ⟨(Real.contDiffAt_sqrt hpos.ne').comp x hdet, Real.sqrt_pos.mpr hpos⟩
-
 
 theorem contDiffAt_chartVolumeDensity (g : RiemannianMetric n M) (p : M)
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ (extChartAt (𝓡 n) p).target) :

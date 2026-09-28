@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M48.NextFrontier
 import PoincareConjecture.Proofs.M48.ExtensionControls
 import PoincareConjecture.Proofs.M33.ContinuationPolicy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ universe u
 namespace PoincareConjecture.M51
 
 open M51Numerical
-
-
-
 
 structure EpochStage (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)
@@ -47,7 +35,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {N : RepairedNoncollapseInductionData S} {C : RepairedCanonicalInductionData S N}
   {n : ℕ} {F : SurgeryFlowData.{u}}
 
-
 noncomputable def ofObservation (O : SurgeryObservation F)
     (old : SurgeryPrefixControls (prefixAt S N C n) F O)
     (pinched : SurgeryFlowPinched F)
@@ -67,8 +54,6 @@ noncomputable def ofObservation (O : SurgeryObservation F)
   early_frontier := hfront
 
 variable (X : EpochStage S N C n F) {delta : ℝ → ℝ}
-
-
 
 noncomputable def rebase : EpochStage S N C n X.extension.extended :=
   ofObservation X.observation X.old_controls X.pinched X.terminal_policy X.maximal_tail
@@ -91,8 +76,6 @@ theorem profiles
         (delta t * X.extension.extended.parameters.r t) (delta t) := by
   simpa only [X.extension.parameters_eq] using hprofiles
 
-
-
 theorem controls
     (hdelta : ∀ t, 0 ≤ t → F.parameters.delta t = delta t)
     (hprofiles : ∀ j t, t ∈ surgeryEpochEntry j → 0 ≤ t →
@@ -111,8 +94,6 @@ theorem controls
       simpa only [surgeryObservationInterval] using X.observation.interval_subset)
   continuationControls S N C n _ _ delta (X.delta_eq hdelta) (X.profiles hprofiles)
     hcut X.old_controls X.pinched terminal_policy X.start_le X.horizon_le
-
-
 
 theorem advance (A : M48AnalyticCalibration S) (P : M48Predecessors.{u})
     (hdelta : ∀ t, 0 ≤ t → F.parameters.delta t = delta t)
@@ -158,8 +139,6 @@ theorem advance (A : M48AnalyticCalibration S) (P : M48Predecessors.{u})
   intro t ht
   exact (branch.conclusion.extension.old_surgery_times t
     (X.extension.extended.surgery_times_subset ht)).2 ht
-
-
 
 theorem promote
     (hdelta : ∀ t, 0 ≤ t → F.parameters.delta t = delta t)

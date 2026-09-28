@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.TraceRegularity
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,9 +47,6 @@ variable {n m : ℕ} {X : Type v} {Y : Type w} [TopologicalSpace X] [Topological
 local notation "TX" => TangentSpace (𝓡 n) (M := X)
 local notation "TY" => TangentSpace (𝓡 m) (M := Y)
 
-
-
-
 theorem contMDiffAt_parametric_tangentMap [IsManifold J 1 N]
     (f : N → X → Y) (p : N → X) {x : N}
     (hf : ContMDiffAt (J.prod (𝓡 n)) (𝓡 m) ∞ (Function.uncurry f) (x, p x))
@@ -73,8 +62,6 @@ theorem contMDiffAt_parametric_tangentMap [IsManifold J 1 N]
   exact ContMDiffAt.clm_apply_of_inCoordinates hA hV hb
 
 omit [IsManifold (𝓡 m) ∞ Y] in
-
-
 
 theorem contMDiffAt_metricTrace_along (g : RiemannianMetric n X)
     (p : N → X) {x : N} (hp : ContMDiffAt J (𝓡 n) ∞ p x)

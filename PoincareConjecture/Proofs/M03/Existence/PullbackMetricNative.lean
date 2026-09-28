@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 

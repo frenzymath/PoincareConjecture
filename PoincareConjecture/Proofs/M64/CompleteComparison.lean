@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Assembly
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Lemma19_15_Evolution
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.Lemma19_31_Comparison
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,10 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 def m64FlowConclusion_of_M63_analytic
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
@@ -30,9 +22,6 @@ def m64FlowConclusion_of_M63_analytic
   exact m64FlowConclusion_of_fields G
     (m64AnnulusEvolution_of_M63 G analytic hcompact (by omega))
     (m64RampSmallAnnulusComparison_of_geometry G) (m64ProjectionField_of_annulus G)
-
-
-
 
 theorem m64ComparisonTheory_from_M63 (hM63 : M63RampEstimatesTheory.{u}) :
     M64ComparisonTheory.{u} := by

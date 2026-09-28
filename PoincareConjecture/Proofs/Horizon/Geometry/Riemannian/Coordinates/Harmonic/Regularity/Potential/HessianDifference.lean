@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Convolution
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -28,8 +20,6 @@ private theorem continuous_heatD3Map (t : ℝ) (v w : V) :
     Continuous (heatD3Map t v w) := by
   unfold heatD3Map baseD3Map baseHeat baseHeatMass
   fun_prop
-
-
 
 def heatD3ConvMap (t : ℝ) (v w : V) (f : V → F) (x : V) : V →L[ℝ] F :=
   ∫ y, (heatD3Map t v w (x - y)).smulRight (f y)
@@ -55,7 +45,6 @@ private theorem integrable_heatD3_integrand {f : V → F} (hf : Continuous f)
 
 omit [Nontrivial V] [CompleteSpace F] in
 
-
 theorem heatD3ConvMap_apply_of_compact {f : V → F} (hf : Continuous f)
     (hc : HasCompactSupport f) (t : ℝ) (v w x u : V) :
     heatD3ConvMap t v w f x u = heatD3Conv t u v w f x := by
@@ -66,7 +55,6 @@ theorem heatD3ConvMap_apply_of_compact {f : V → F} (hf : Continuous f)
   rfl
 
 omit [Nontrivial V] [CompleteSpace F] in
-
 
 theorem heatD2Conv_hasFDerivAt_of_compact {f : V → F} (hf : Continuous f)
     (hc : HasCompactSupport f) (t : ℝ) (v w x : V) :
@@ -120,8 +108,6 @@ theorem heatD2Conv_hasFDerivAt_of_compact {f : V → F} (hf : Continuous f)
   rw [heq] at h
   exact h
 
-
-
 theorem heatD3ConvMap_norm_le_of_half_holder {f : V → F} (hc : HasCompactSupport f)
     {K : ℝ≥0} (hf : HolderWith K (1 / 2) f) {t : ℝ} (ht : 0 < t) (v w x : V) :
     ‖heatD3ConvMap t v w f x‖ ≤
@@ -133,7 +119,6 @@ theorem heatD3ConvMap_norm_le_of_half_holder {f : V → F} (hc : HasCompactSuppo
     heatD3Conv_eq_cancel_of_half_holder ht hf]
   exact (heatD3Cancel_norm_of_half_holder ht hf u v w x).trans_eq (by ring)
 
-
 theorem heatD2Conv_sub_norm_le_of_half_holder {f : V → F} (hc : HasCompactSupport f)
     {K : ℝ≥0} (hf : HolderWith K (1 / 2) f) {t : ℝ} (ht : 0 < t) (v w x y : V) :
     ‖heatD2Conv t v w f x - heatD2Conv t v w f y‖ ≤
@@ -143,7 +128,6 @@ theorem heatD2Conv_sub_norm_le_of_half_holder {f : V → F} (hc : HasCompactSupp
       hc t v w z).hasFDerivWithinAt)
     (fun z _ => heatD3ConvMap_norm_le_of_half_holder hc hf ht v w z)
     (mem_univ y) (mem_univ x)
-
 
 theorem heatD2Conv_sub_norm_le_uniform_half_holder {f : V → F}
     {K : ℝ≥0} (hf : HolderWith K (1 / 2) f) {t : ℝ} (ht : 0 < t) (v w x y : V) :

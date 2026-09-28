@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Locality
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartLevel.Neighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Finiteness
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -28,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [IsManifold (𝓡 2) ∞ M]
 
 omit [T2Space M] [IsManifold (𝓡 2) ∞ M] in
-
 
 theorem exists_finite_complement_chartCircle (x : M) {r : ℝ} (hr : 0 < r)
     (htarget : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ⊆
@@ -52,7 +40,6 @@ theorem exists_finite_complement_chartCircle (x : M) {r : ℝ} (hr : 0 < r)
 
 omit [T2Space M] in
 
-
 theorem exists_finite_complement_chartCircle_pair (x y : M) {rx ry : ℝ}
     (hrx : 0 < rx) (hry : 0 < ry)
     (hxsub : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) rx ⊆
@@ -74,8 +61,6 @@ theorem exists_finite_complement_chartCircle_pair (x y : M) {rx ry : ℝ}
     (hN.mem_nhds hpN) _ hs
   intro z hz
   simp only [mem_union, hlx z hz, hly z hz, hfval, hgval, or_comm]
-
-
 
 theorem exists_finite_complement_chartCircle_arrangement
     (s : Finset M) (r : M → ℝ) (hpos : ∀ x ∈ s, 0 < r x)
@@ -128,8 +113,6 @@ theorem exists_finite_complement_chartCircle_arrangement
       exact and_congr_right fun hqW => not_congr (hq (hWN hqW))
     rwa [heq]
 
-
-
 theorem finite_regions_of_chart_circle_general_position
     (s : Finset M) (r : M → ℝ) (hpos : ∀ x ∈ s, 0 < r x)
     (htarget : ∀ x ∈ s,
@@ -148,8 +131,6 @@ theorem finite_regions_of_chart_circle_general_position
   rw [chartDiskBoundaryUnion_eq_iUnion_chartCircle s r hpos htarget]
   exact fun p hp => exists_finite_complement_chartCircle_arrangement
     s r hpos htarget htriple hregular hp
-
-
 
 theorem exists_finite_chart_disk_cover_finite_regions [CompactSpace M] :
     ∃ (s : Finset M) (r : M → ℝ),

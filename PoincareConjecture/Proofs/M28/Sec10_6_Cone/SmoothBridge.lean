@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.EndpointObstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 structure SmoothConeObstructionData
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} where
@@ -42,10 +28,6 @@ structure SmoothConeObstructionData
     (flow.connection b).tensorLaplacian (flow.connection b).ricciEvaluation
         point ![radial, radial] =
       2 * (flow.connection b).scalarCurvature point / radius ^ 2
-
-
-
-
 
 theorem no_smooth_cone_obstruction
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ}

@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -17,8 +8,6 @@ open scoped Topology
 namespace Poincare.Topology
 
 variable {X I : Type*} [TopologicalSpace X]
-
-
 
 theorem exists_exactly_two_closed_cover_members_of_two_sided_neighborhood
     (A : I → Set X) (hclosed : ∀ i, IsClosed (A i))

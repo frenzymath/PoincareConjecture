@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityDiameter
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeakGreen
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +10,6 @@ open Set Filter Metric MeasureTheory
 open scoped Topology ContDiff SchwartzMap ENNReal
 
 namespace PoincareConjecture.M65Boundary
-
-
-
-
 
 theorem weakTrace_boundary_halfDisk_uniform :
     ∃ R : ℝ, 0 < R ∧ ∀ (p : ℂ), ‖p‖ = 1 →
@@ -123,9 +108,6 @@ theorem weakTrace_boundary_halfDisk_uniform :
     (by simpa only [uIoc_of_le Real.pi_pos.le] using Ioc_subset_Icc_self) hvU
   filter_upwards [hv] with θ hθ
   rw [hθ]
-
-
-
 
 theorem weakTrace_boundary_halfDisk {p : ℂ} (hp : ‖p‖ = 1)
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

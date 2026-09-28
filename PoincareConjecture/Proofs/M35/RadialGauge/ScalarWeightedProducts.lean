@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ScalarRapidProducts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff BigOperators
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem scalar_weighted_product {A : Type*} {f g : A → ℝ → ℝ} {N : ℕ}
     (hf : ∀ a, ContDiffOn ℝ ∞ (f a) (Ioi 0))
@@ -52,8 +41,6 @@ theorem scalar_weighted_product {A : Type*} {f g : A → ℝ → ℝ} {N : ℕ}
     (mul_nonneg (Nat.cast_nonneg _) (hB0 i))
   convert! hm using 1
   ring
-
-
 
 theorem reciprocal_radius_weighted_jet_bound (j : ℕ) {r : ℝ} (hr : 1 ≤ r) :
     (1 + r) * |iteratedDeriv j (fun s : ℝ => 1 / s) r| ≤ 2 * (j.factorial : ℝ) := by

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.Selected
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -38,9 +29,6 @@ private theorem coordinate_identity_pl
     exact (hf hz).symm
 
 open Classical in
-
-
-
 
 theorem exists_coordinate_signed_tube
     {κ : Type*} [Finite κ]

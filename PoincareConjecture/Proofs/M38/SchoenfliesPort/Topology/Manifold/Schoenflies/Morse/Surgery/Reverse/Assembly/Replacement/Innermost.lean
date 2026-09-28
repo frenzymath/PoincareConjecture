@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Reconstruction
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 set_option autoImplicit false
 
@@ -25,8 +17,6 @@ namespace Poincare.Manifold.Schoenflies.SphereSurgeryStep
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem child_filling_avoids_other_boundary_or
     {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)

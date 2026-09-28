@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContraction
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,13 +17,9 @@ open Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 noncomputable def m65ContractionAnnulusMap (C : ℝ × (M × M) → M)
     (gamma eta : C1FreeLoopSpace (M := M)) (p : LoopPlane) : M :=
   C (Real.smoothTransition (p 1), periodicFreeLoop eta (p 0), periodicFreeLoop gamma (p 0))
-
-
 
 theorem m65ContractionAnnulusMap_contMDiff (C : ℝ × (M × M) → M)
     (gamma eta : C1FreeLoopSpace (M := M))
@@ -55,8 +42,6 @@ theorem m65ContractionAnnulusMap_contMDiff (C : ℝ × (M × M) → M)
   exact (hC _ ⟨Real.smoothTransition.nonneg _, Real.smoothTransition.le_one _⟩ _).comp
     p (hinput p)
 
-
-
 theorem m65ContractionAnnulusMap_periodic (C : ℝ × (M × M) → M)
     (gamma eta : C1FreeLoopSpace (M := M)) (x s : ℝ) :
     m65ContractionAnnulusMap C gamma eta (annulusPoint (x + curvePeriod) s) =
@@ -67,8 +52,6 @@ theorem m65ContractionAnnulusMap_periodic (C : ℝ × (M × M) → M)
     periodic_periodicFreeLoop eta, periodic_periodicFreeLoop gamma]
   rfl
 
-
-
 theorem m65ContractionAnnulusMap_lower (C : ℝ × (M × M) → M)
     (h0 : ∀ p q, C (0, p, q) = q)
     (gamma eta : C1FreeLoopSpace (M := M)) (x : ℝ) :
@@ -77,8 +60,6 @@ theorem m65ContractionAnnulusMap_lower (C : ℝ × (M × M) → M)
   change C (Real.smoothTransition 0, _, _) = _
   rw [Real.smoothTransition.zero, h0]
   rfl
-
-
 
 theorem m65ContractionAnnulusMap_upper (C : ℝ × (M × M) → M)
     (gamma eta : C1FreeLoopSpace (M := M))

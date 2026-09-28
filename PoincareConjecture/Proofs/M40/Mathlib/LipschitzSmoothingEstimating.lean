@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.LocalSmoothLipschitz
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingFiniteControls
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Set Filter Metric
@@ -33,10 +22,6 @@ variable {E F M N : Type*}
   [RiemannianBundle (TangentSpace 𝓘(ℝ, F) : N → Type _)]
   [IsContinuousRiemannianBundle F (TangentSpace 𝓘(ℝ, F) : N → Type _)]
   [IsRiemannianManifold 𝓘(ℝ, F) N]
-
-
-
-
 
 theorem exists_chart_smoothing_estimate_neighborhood
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
@@ -121,12 +106,6 @@ theorem exists_chart_smoothing_estimate_neighborhood
     exact hy.2.2.1
   · exact htInv
   · exact hρZ.mono (fun _ hy => hZ'sub hy.2.2.2)
-
-
-
-
-
-
 
 theorem exists_finite_chart_smoothing_estimates
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)

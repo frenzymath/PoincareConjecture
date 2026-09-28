@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -19,7 +11,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
 
-
 theorem locally_eventually_smooth_continuousLinearMap_comp
     (L : F →L[ℝ] G) {U : Set E} {f : ℕ → E → F}
     (hlocal : ∀ x ∈ U, ∃ W, IsOpen W ∧ x ∈ W ∧
@@ -29,8 +20,6 @@ theorem locally_eventually_smooth_continuousLinearMap_comp
   intro x hx
   obtain ⟨W, hW, hxW, hks⟩ := hlocal x hx
   exact ⟨W, hW, hxW, hks.mono fun _ hk => hk.continuousLinearMap_comp L⟩
-
-
 
 theorem smooth_convergence_continuousLinearMap_comp
     (L : F →L[ℝ] G) {U : Set E} (hU : IsOpen U)

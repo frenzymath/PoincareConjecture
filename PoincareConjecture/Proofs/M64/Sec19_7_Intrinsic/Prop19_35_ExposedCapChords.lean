@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChosenCapUnionFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.PolygonalCores
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,12 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_retained_cap_exposed_chord
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) (r : ℝ)
@@ -141,12 +122,6 @@ theorem m64Intrinsic_retained_cap_exposed_chord
       right
       refine ⟨t, ht, ?_⟩
       simpa [sectorParameterEquiv_apply] using (hfirst (true, j) t ht).symm
-
-
-
-
-
-
 
 theorem m64Intrinsic_residual_core_cap_chord
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) (r : ℝ)

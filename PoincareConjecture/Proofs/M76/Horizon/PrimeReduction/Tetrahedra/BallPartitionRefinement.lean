@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalC
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Cutting.DiskPartitionRefinement
 import Mathlib.SetTheory.Cardinal.NatCard
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry

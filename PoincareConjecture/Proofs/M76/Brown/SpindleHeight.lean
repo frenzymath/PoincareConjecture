@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.SpindleCoordinates
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,12 +10,7 @@ namespace BrownCollar
 
 variable {B : Type*} [MetricSpace B]
 
-
 def collarBase (b : B) : B × Ico (0 : ℝ) 1 := (b, ⟨0, by constructor <;> norm_num⟩)
-
-
-
-
 
 theorem exists_spindleHeight {U : Set B} (hU : IsOpen U)
     {O : Set (B × Ico (0 : ℝ) 1)} (hO : IsOpen O)

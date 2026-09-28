@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarGradientConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M35
 
 local notation:max "E" n:max => EuclideanSpace ℝ (Fin n)
 local notation:max "G" n:max => E n →L[ℝ] E n →L[ℝ] ℝ
-
-
 
 theorem scalar_second_fderiv_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
@@ -66,8 +56,6 @@ private theorem connection_tendsto_moving_vector {n : ℕ}
   simp_rw [LeviCivitaData.euclideanConnection, LeviCivitaData.connection_const_eq_inverse]
   exact (continuous_fst.clm_apply continuous_snd).continuousAt.tendsto.comp
     (hinv.prodMk_nhds hcov)
-
-
 
 theorem scalar_laplacian_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}

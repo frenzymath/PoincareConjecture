@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.Coordinates
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.MarkedGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -27,7 +18,6 @@ local notation "Ann" => squareAnnulus 8 1
 local notation "E" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
 local notation "Q" => hamiltonOneHierarchyCoordinates
 
-
 noncomputable def originalIntervalCoordinates : Icc (-1 : ℝ) 1 ≃ₜ D1 where
   toFun t := ⟨fun _ => (t : ℝ), by
     simpa only [mem_closedBall_zero_iff, pi_norm_const, Real.norm_eq_abs, abs_le, mem_Icc] using t.property⟩
@@ -41,8 +31,6 @@ noncomputable def originalIntervalCoordinates : Icc (-1 : ℝ) 1 ≃ₜ D1 where
   continuous_invFun := by
     apply Continuous.subtype_mk
     exact (continuous_apply 0).comp continuous_subtype_val
-
-
 
 noncomputable def standardPhaseCoordinates (theta : C) :
     (D1 × C) ≃ₜ sourceSurface (ContinuousMap.id H) theta where
@@ -65,7 +53,6 @@ noncomputable def standardPhaseCoordinates (theta : C) :
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
 
-
 noncomputable def standardAnnulusCylinderCoordinates : (unitInterval × C32) ≃ₜ (D1 × C) :=
   ((iccHomeoI (-1 : ℝ) 1 (by norm_num)).symm.trans originalIntervalCoordinates).prodCongr
     (AddCircle.homeomorphAddCircle (4 * (8 : ℝ)) (4 * (128 : ℝ))
@@ -83,8 +70,6 @@ theorem standardAnnulusCylinderCoordinates_rim (side : Bool) (z : C32) :
       simp [standardAnnulusCylinderCoordinates, originalIntervalCoordinates,
         originalIntervalEndpoint, iccHomeoI_symm_apply_coe]
   · rfl
-
-
 
 noncomputable def standardTargetAnnulus (theta : C) :
     Ann ≃ₜ sourceSurface (ContinuousMap.id H) theta :=

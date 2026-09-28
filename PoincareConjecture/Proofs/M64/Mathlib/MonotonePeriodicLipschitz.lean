@@ -2,10 +2,6 @@ import Mathlib.Algebra.Order.ToIntervalMod
 import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Tactic
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -14,9 +10,6 @@ open Set
 open scoped NNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Monotone_lipschitz_of_periodic_interval
     {f : ℝ → ℝ} {P : ℝ} (hP : 0 < P) (hm : Monotone f)

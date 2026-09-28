@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphere
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -54,8 +44,6 @@ private theorem exists_end_placement {epsilon : ℝ} (he : 0 < epsilon)
   · rw [hsc]
     change c s * (epsilon * s) ^ 2 - 1 = 0 at hz
     linarith
-
-
 
 theorem exists_attaching_necks_threshold {epsilon : ℝ}
     (he : 0 < epsilon) (hesmall : epsilon ≤ 1 / 200) :

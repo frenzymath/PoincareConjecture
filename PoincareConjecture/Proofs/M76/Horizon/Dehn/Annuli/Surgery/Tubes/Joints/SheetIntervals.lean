@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalSheetIntervals
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Joints.EdgeJoints
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -247,8 +245,6 @@ theorem ComponentBranchModel.exists_local_sheet_interval
     · simpa only [inter_comm] using hradii.2
 
 open Classical in
-
-
 
 theorem ComponentBranchModel.exists_raw_edge_joint_intervals
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OldVertices
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapFaces
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem single_refineByLines_original_corner
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -54,8 +45,6 @@ namespace ChartCircleArrangementVertexPatch.VertexCapFaces
 
 variable {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
-
-
 
 theorem sum_refined_center_contributions (g : RiemannianMetric 2 S)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) :

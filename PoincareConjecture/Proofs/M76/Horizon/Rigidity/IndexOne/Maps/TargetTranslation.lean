@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.SourcePhase
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.StandardTargetTranslationPL
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -25,11 +16,9 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 
-
 noncomputable def targetTranslation : C(ℝ × X, X) where
   toFun z := (z.2.1, z.2.2 + QuotientAddGroup.mk ![0, z.1])
   continuous_toFun := by fun_prop
-
 
 noncomputable def handleTranslation : C(ℝ × H, H) where
   toFun z := (z.2.1, z.2.2 + QuotientAddGroup.mk ![0, z.1])
@@ -69,8 +58,6 @@ theorem handleTranslation_domain (t : ℝ) (x : H) :
     ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).symm
       (handleTranslation (t, x)) : X) =
         targetTranslation (t, ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).symm x : X)) := rfl
-
-
 
 theorem polyhedralPL_targetTranslation
     {E β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

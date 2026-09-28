@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.ScalarLaplacianJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -108,9 +93,6 @@ private theorem norm_scalarMetricFourJet_sub_le {n : ℕ}
 
 set_option maxHeartbeats 800000 in
 
-
-
-
 theorem exists_scalar_laplacian_control_of_metric_fourJet {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n)
     {alpha : ℝ} (halpha : 0 < alpha) :
@@ -135,9 +117,6 @@ theorem exists_scalar_laplacian_control_of_metric_fourJet {n : ℕ}
   rw [scalarLaplacianFourJet_scalarMetricFourJet D' x,
     scalarLaplacianFourJet_scalarMetricFourJet D x, Real.dist_eq] at hresult
   exact hresult
-
-
-
 
 theorem tendsto_scalar_laplacian_of_metric_fourJet {n : ℕ} {ι : Type*} {l : Filter ι}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.RelativeScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Normalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem compact_uniform_scalar_ratio_of_scaled_diameter_of_m27
     (P : M27KappaAlternativePredecessors.{u})
@@ -60,8 +48,6 @@ theorem compact_uniform_scalar_ratio_of_scaled_diameter_of_m27
   rw [N.scalar_eq 0 le_rfl x, zero_div, zero_add] at hscalar
   have hresult := (div_le_iff₀ N.scale_pos).mp hscalar
   simpa only [L, hscale] using hresult
-
-
 
 theorem compact_uniform_allPoint_diameter_bound_of_m27
     (P : M27KappaAlternativePredecessors.{u})

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialSpher
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphSide
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CollarGraphComponentLabels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +17,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem initial_sphere_isSeparating (H : CounterexampleNeckFamily E)
     (W : CriticalBallSourcePacket H)
@@ -124,10 +110,6 @@ theorem initial_sphere_isSeparating (H : CounterexampleNeckFamily E)
     hconn).joinedIn x₀ hx₀S x₁ hx₁S)
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_retained_initial_separating_sphere_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

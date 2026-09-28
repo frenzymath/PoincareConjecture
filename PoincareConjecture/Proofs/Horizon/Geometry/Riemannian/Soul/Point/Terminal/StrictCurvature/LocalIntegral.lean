@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.RadialGauss
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,7 +23,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
 
 omit [T2Space M] in
 
-
 theorem inner_parallel_eq_endpoint
     {q : ℝ → M} {V W : (t : ℝ) → TangentSpace (𝓡 n) (q t)}
     (hq : ∀ t ∈ Icc (0 : ℝ) 1, ContMDiffAt 𝓘(ℝ, ℝ) (𝓡 n) ∞ q t)
@@ -52,8 +41,6 @@ theorem inner_parallel_eq_endpoint
     (fun s hs => (hd s ⟨hs.1, hs.2.le⟩).hasDerivWithinAt.derivWithin
       (uniqueDiffOn_Icc zero_lt_one s ⟨hs.1, hs.2.le⟩))
   exact (hc t ht).trans (hc 1 ⟨zero_le_one, le_rfl⟩).symm
-
-
 
 theorem gram_affine_parallel_geodesic
     {q : ℝ → M} {I : Set ℝ} {Z : (t : ℝ) → TangentSpace (𝓡 n) (q t)}
@@ -105,8 +92,6 @@ theorem gram_affine_parallel_geodesic
     (g.inner (q t) (t • Z t) (T t)) ^ 2 = _
   rw [hscale, hZZ, hTT, hZT, ← hsq 1 (Z 1)]
   ring
-
-
 
 theorem curvature_integral_lower_bound_of_parallel
     (D : LeviCivitaData g)
@@ -160,8 +145,6 @@ theorem curvature_integral_lower_bound_of_parallel
     norm_num
   rw [hpoly] at hmono
   exact hmono.trans hfull
-
-
 
 theorem jacobi_inner_le_sub_local_curvature_of_minimizing
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}

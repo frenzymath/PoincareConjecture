@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetCommonC
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryTangent
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetRadialConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,17 +14,12 @@ namespace PoincareConjecture.M65Gauss
 
 open M65Branch
 
-
-
 def weightedMetricDual {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (H N : ℂ → EuclideanSpace ℝ (Fin n)) (w : ℂ → ℝ) (z : ℂ) :
     EuclideanSpace ℝ (Fin n) :=
   w z • (toDual ℝ (EuclideanSpace ℝ (Fin n))).symm
     (g.euclideanCoefficients (H z) (N z))
-
-
-
 
 theorem inner_weightedMetricDual {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -44,11 +29,6 @@ theorem inner_weightedMetricDual {n : ℕ}
   rw [weightedMetricDual, inner_smul_right, real_inner_comm, toDual_symm_apply]
   rw [g.symm]
   rfl
-
-
-
-
-
 
 theorem weightedMetricDual_regularity {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -178,12 +158,6 @@ private theorem continuousOn_deriv_of_c1 {E : Type*} [NormedAddCommGroup E]
   have hh := ((hq t ht).fderiv_right (m := 0) (by norm_num)).continuousAt.clm_apply
     (continuousAt_const (x := t) (y := (1 : ℝ)))
   simpa only [fderiv_apply_one_eq_deriv] using hh.continuousWithinAt
-
-
-
-
-
-
 
 theorem finite_weighted_connection_collar_limit {ι : Type*} [Finite ι] {n : ℕ}
     (g : ι → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

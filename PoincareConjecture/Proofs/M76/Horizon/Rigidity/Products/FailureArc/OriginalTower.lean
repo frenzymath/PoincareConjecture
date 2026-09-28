@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.TerminalRegion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.FiniteMarkedTower
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w z
@@ -22,9 +14,6 @@ local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_original_singular_annulus_terminal_region
     {M : Type w} {ι : Type z} [TopologicalSpace M] [T2Space M] [LocallyCompactSpace M]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeG
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Coordinates
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,16 +15,10 @@ local notation "E" n:max => EuclideanSpace ℝ (Fin n)
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem open_extChartAt_coe {n : ℕ} (U : Opens (E n)) (x : U) :
     (extChartAt (𝓡 n) x : U → E n) = Subtype.val := by
   ext y
   simp [extChartAt, Opens.chartAt_eq]
-
-
-
 
 theorem open_mfderiv_extChartAt_symm {n : ℕ} (U : Opens (E n)) (q x : U) :
     mfderiv (𝓡 n) (𝓡 n) (extChartAt (𝓡 n) q).symm (x : E n) =
@@ -48,9 +32,6 @@ theorem open_mfderiv_extChartAt_symm {n : ℕ} (U : Opens (E n)) (q x : U) :
   simp only [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at hd
   rw [hcx] at hd
   exact hd
-
-
-
 
 theorem open_pullbackCoefficients_germ {n : ℕ} (U : Opens (E n))
     (g : RiemannianMetric n U) {B : E n → SpacetimeBounds.MetricCoefficient n}
@@ -76,9 +57,6 @@ theorem open_pullbackCoefficients_germ {n : ℕ} (U : Opens (E n))
   change g.inner ((extChartAt (𝓡 n) x).symm y) v w = B y v w
   rw [he]
   exact hB z v w
-
-
-
 
 theorem jetRicci_open_coefficients {n : ℕ} (U : Opens (E n))
     {g : RiemannianMetric n U} (D : LeviCivitaData g)
@@ -107,9 +85,6 @@ theorem jetRicci_open_coefficients {n : ℕ} (U : Opens (E n))
     exact h
   change D.ricci ((extChartAt (𝓡 n) x).symm (x : E n)) v w = D.ricci x v w
   rw [he]
-
-
-
 
 theorem ricciFlowOperator_open_coefficients {n : ℕ} (U : Opens (E n))
     {g : RiemannianMetric n U} (D : LeviCivitaData g)

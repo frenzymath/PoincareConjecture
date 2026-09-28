@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Smoothing.ProjectionCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.NormalizedProjectionLeaves
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -18,10 +9,6 @@ namespace PoincareConjecture.M76
 
 variable {ι M E : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_smooth_atlas_of_leaf_coordinates
     (c : ι → OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))

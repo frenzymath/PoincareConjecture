@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedReciprocal
 import PoincareConjecture.Proofs.M47.ComponentEstimateMinimum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem jointSeed_compact_low_point_gap
     (P : M47ScalarPersistencePredecessors.{u}) [CompactSpace M]
@@ -46,10 +33,6 @@ theorem jointSeed_compact_low_point_gap
       mul_le_mul_of_nonneg_left hpScalar hCpos
     _ ≤ L := hterminal
     _ ≤ _ := hhigh.le
-
-
-
-
 
 theorem jointSeed_worldline_of_evolution_bound
     (P : M47ScalarPersistencePredecessors.{u})

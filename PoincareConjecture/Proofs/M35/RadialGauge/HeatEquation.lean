@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.GaussianTrace
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -23,13 +14,9 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
-
 noncomputable def euclideanLaplacian (f : V → F) (x : V) : F :=
   ∑ i : Fin (n + 1), fderiv ℝ (fderiv ℝ f) x (EuclideanSpace.single i (1 : ℝ))
     (EuclideanSpace.single i (1 : ℝ))
-
-
 
 theorem heatAverage_hasDerivAt_trace {f : V → F} {f' : V → V →L[ℝ] F}
     {f'' : V → V →L[ℝ] V →L[ℝ] F}
@@ -64,8 +51,6 @@ theorem heatAverage_hasDerivAt_trace {f : V → F} {f' : V → V →L[ℝ] F}
   rw [← heq]
   exact heatAverage_hasDerivAt_time_integral hf hf' hd hb hdb ht x
 
-
-
 theorem euclideanLaplacian_heatAverage {f : V → F} {f' : V → V →L[ℝ] F}
     {f'' : V → V →L[ℝ] V →L[ℝ] F}
     (hf : Continuous f) (hf' : Continuous f') (hf'' : Continuous f'')
@@ -97,8 +82,6 @@ theorem euclideanLaplacian_heatAverage {f : V → F} {f' : V → V →L[ℝ] F}
       intro i _
       rw [ContinuousLinearMap.integral_apply hi, ContinuousLinearMap.integral_apply (hia i)]
     _ = _ := (integral_finsetSum _ (fun i _ => hiaa i)).symm
-
-
 
 theorem heatAverage_solves_heat {f : V → F} {f' : V → V →L[ℝ] F}
     {f'' : V → V →L[ℝ] V →L[ℝ] F}

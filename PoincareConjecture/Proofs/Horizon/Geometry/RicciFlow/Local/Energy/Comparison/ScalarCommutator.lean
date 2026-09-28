@@ -1,26 +1,6 @@
 import PoincareConjecture.Proofs.M03.ScalarCommutator
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Connection.Family
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeTriangulation
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalMarkedProductConstruction
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianBand
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,9 +20,6 @@ local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "I" => Icc (-1 : ℝ) 1
 
 private instance : Fact (0 < 4 * (128 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem exists_source_meridian_marked_product
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveHistoryPaths
 import PoincareConjecture.Proofs.M47.SeedM15TestHistory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_historyPositive_subpath
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

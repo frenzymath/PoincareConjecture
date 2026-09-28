@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDiskEdgeCofaces
 import PoincareConjecture.Proofs.M76.Mathlib.SurfaceLinkPolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 omit [DecidableEq E] in
-
 
 theorem ncard_triangle_cofaces_eq_two_of_local_disk_at_vertex
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -42,9 +32,6 @@ theorem ncard_triangle_cofaces_eq_two_of_local_disk_at_vertex
   have hxK : x ∈ K.space := K.convexHull_subset_space hs (intrinsicInterior_subset hxs)
   have hxd : x ∈ d \ rim := (Set.ext_iff.mp hUeq ⟨x, hxK⟩).mp hxU
   exact K.ncard_triangle_cofaces_eq_two_of_local_disk hK hbound hs hs2 hxs hd hdK hxd hopen
-
-
-
 
 theorem exists_link_polygon_of_local_finitePLDisk
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

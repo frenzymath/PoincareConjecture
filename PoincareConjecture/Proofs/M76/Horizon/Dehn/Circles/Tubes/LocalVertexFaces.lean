@@ -37,7 +37,6 @@ theorem ComponentBranchModel.vertex_dual_subset_star
 open Classical in
 set_option maxHeartbeats 800000 in
 
-
 theorem ComponentBranchModel.local_vertex_faces
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}

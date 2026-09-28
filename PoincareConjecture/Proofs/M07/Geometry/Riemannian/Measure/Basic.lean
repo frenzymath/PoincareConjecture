@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Euclidean.Volume.Measure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -22,11 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 noncomputable def volumeMeasure (g : RiemannianMetric n M) : Measure M :=
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=

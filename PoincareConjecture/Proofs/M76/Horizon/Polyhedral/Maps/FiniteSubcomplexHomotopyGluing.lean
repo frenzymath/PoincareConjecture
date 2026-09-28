@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E X κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [Finite κ]
-
-
-
 
 theorem exists_homotopy_of_finite_subcomplex_cover
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -63,9 +51,6 @@ theorem exists_homotopy_of_finite_subcomplex_cover
   refine ⟨⟨g, hg⟩, ?_⟩
   intro i t x
   exact hval i ⟨(t, ⟨x, space_subset_of_le (hJK i) x.property⟩), x.property⟩
-
-
-
 
 theorem exists_polyhedralPL_homotopy_of_finite_subcomplex_cover
     [FiniteDimensional ℝ E] {V ι : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

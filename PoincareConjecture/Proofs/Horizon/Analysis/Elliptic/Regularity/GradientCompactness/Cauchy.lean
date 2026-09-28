@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.LocalL2
 
-
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem cauchySeq_lipschitzPartialL2_of_weak_divergence
     {O U : Set E} (hO : IsOpen O) (hU : IsOpen U) (hUO : U ⊆ O)

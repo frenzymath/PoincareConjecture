@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SeparatingCoverChain
 import PoincareConjecture.Statements.Ch09.NeckCapTopology
 import Mathlib.Data.Sigma.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.NeckOnlyCover
-
-
 
 theorem exists_correctedA19Conclusion_of_separating :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -87,8 +76,6 @@ theorem exists_correctedA19Conclusion_of_separating :
     contains_X := T.contains_X
     separating_necks := hsep
   }⟩
-
-
 
 theorem exists_correctedA20Conclusion_of_separating :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

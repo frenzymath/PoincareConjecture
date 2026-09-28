@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingEndpoint
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_boundary_self_inner (radius t : ℝ) :
     inner ℝ (intrinsicAnnulusBoundary radius t) (intrinsicAnnulusBoundary radius t) =
       radius ^ 2 := by
@@ -35,8 +22,6 @@ theorem m64Intrinsic_boundary_self_inner (radius t : ℝ) :
       ring
     _ = _ := by rw [Real.sin_sq_add_cos_sq, mul_one]
 
-
-
 theorem m64Intrinsic_boundary_radial_pairing (radius t : ℝ) :
     inner ℝ (intrinsicAnnulusBoundary radius t)
       (curveVelocity (n := 2) (intrinsicAnnulusBoundary radius) t) = 0 := by
@@ -45,17 +30,12 @@ theorem m64Intrinsic_boundary_radial_pairing (radius t : ℝ) :
     Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_fin_one, Real.inner_apply]
   ring
 
-
-
 theorem m64Intrinsic_boundary_ne_zero {radius : ℝ} (hradius : radius ≠ 0) (t : ℝ) :
     intrinsicAnnulusBoundary radius t ≠ 0 := by
   intro hzero
   have h := m64Intrinsic_boundary_self_inner radius t
   rw [hzero, inner_zero_left] at h
   exact hradius (sq_eq_zero_iff.mp h.symm)
-
-
-
 
 theorem m64Intrinsic_exists_smooth_inward_boundary_normal
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) :
@@ -107,9 +87,6 @@ theorem m64Intrinsic_exists_smooth_inward_boundary_normal
   · change 0 < inner ℝ (gamma t) ((speed t)⁻¹ • V t)
     rw [inner_smul_right, ← hdual t (V t)]
     exact mul_pos (inv_pos.mpr (hspeed t)) (hVV t)
-
-
-
 
 theorem m64Intrinsic_boundary_normal_turning_lower
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)

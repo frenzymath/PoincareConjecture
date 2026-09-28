@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.VectorBundle.CompactFrame
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Finite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem isCompact_normalized_hamilton_directions [T2Space M]
     (g : RiemannianMetric n M) {K : Set M} (hK : IsCompact K) :

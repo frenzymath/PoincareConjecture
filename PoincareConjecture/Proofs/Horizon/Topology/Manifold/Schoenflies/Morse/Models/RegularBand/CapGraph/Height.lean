@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Equation
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +9,6 @@ open Set Filter Function
 open scoped Topology ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 def boundedCapHeight (z : Real) : Real :=
   if h : 0 ≤ z ∧ z < 1 then

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Graph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Flow
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_supported_graph_push
     (b : E -> Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Charts
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
@@ -25,7 +16,6 @@ private abbrev E (k : ℕ) := EuclideanSpace ℝ (Fin k)
 variable {m : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
   [ChartedSpace (E (m + 1)) L] [IsManifold (𝓡 (m + 1)) ∞ L]
   [ChartedSpace (E (m + 2)) M] [IsManifold (𝓡 (m + 2)) ∞ M]
-
 
 structure InducedChartRealization
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)
@@ -78,7 +68,6 @@ noncomputable def inducedChartRealization
   have hex₄ := Classical.choose_spec hex₃
   exact ⟨gE, D, hE, D', hex₄.1, hex₄.2.1, hex₄.2.2⟩
 
-
 noncomputable def chartShapeOperator
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)
     {f : L → M} (hf : ContMDiff (𝓡 (m + 1)) (𝓡 (m + 2)) ∞ f) (x : L)
@@ -96,8 +85,6 @@ noncomputable def chartShapeOperator
     ((shapeOperator R.D R.D' F (c x)
       (mfderiv (𝓡 (m + 2)) (𝓡 (m + 2)) d (f x) N)).comp
       (mfderiv (𝓡 (m + 1)) (𝓡 (m + 1)) c x).toLinearMap)
-
-
 
 noncomputable def normalShapeOperator
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)
@@ -322,10 +309,6 @@ theorem chartShapeOperator_trace_eq_coordinate
   exact trace_conjugate_of_right_inverse
     (shapeOperator R.D R.D' F (c x)
       (mfderiv (𝓡 (m + 2)) (𝓡 (m + 2)) d (f x) N)) P Q hPQ
-
-
-
-
 
 theorem sectionalCurvature_lower_bound_in_chart
     (g : RiemannianMetric (m + 2) M)

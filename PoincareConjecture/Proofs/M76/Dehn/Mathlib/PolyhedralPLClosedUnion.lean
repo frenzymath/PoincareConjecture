@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.CompatibleChartFormula
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.union_of_finite
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

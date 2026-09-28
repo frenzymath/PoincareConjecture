@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.PullbackJacobian
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

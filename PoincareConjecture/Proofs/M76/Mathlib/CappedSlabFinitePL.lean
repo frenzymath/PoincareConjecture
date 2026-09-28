@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +11,6 @@ namespace Set
 variable {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.finitePiecewiseAffineOn_capped_of_slab
     {S s b d T R : Set X} (hs : IsFinitePLBallPair E s b) (hd : IsFinitePLBallPair F d b)

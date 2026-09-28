@@ -1,15 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -133,8 +122,6 @@ namespace LeviCivitaData
 
 variable {g : RiemannianMetric n M}
 
-
-
 lemma mvfderiv_metricTrace_eq_fixed_trace_sub_gram
     (T : CovariantTensorEvaluation n M 2) (x : M)
     (hlin : ∀ᶠ y in 𝓝 x, ∃ B : TangentSpace (𝓡 n) y →ₗ[ℝ]
@@ -190,7 +177,6 @@ lemma mvfderiv_metricTrace_eq_fixed_trace_sub_gram
   simpa only [A, G, X, b, FiberBundle.extend_apply_self] using
     mvfderiv_inverse_gram_contraction G A x hG hT hx v
 
-
 lemma sum_covariantTensorDerivative_eq_mvfderiv_metricTrace
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M 2}
     (hT : IsSmoothCovariantTensor T) (x : M) (v : TangentSpace (𝓡 n) x) :
@@ -215,7 +201,6 @@ lemma sum_covariantTensorDerivative_eq_mvfderiv_metricTrace
     congr 1
     ext k
     fin_cases k <;> rfl
-
 
 lemma sum_covariantTensorDerivative_ricci_eq_scalar_derivative
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

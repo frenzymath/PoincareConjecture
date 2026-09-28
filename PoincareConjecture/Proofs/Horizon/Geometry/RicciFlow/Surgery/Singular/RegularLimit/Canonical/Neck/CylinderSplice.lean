@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.CylinderClock
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.SpliceTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -154,8 +145,6 @@ theorem spliceForward_vertical_compatibility (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ
     refine ⟨hc, ?_⟩
     rw [e.spliceForward_early hQ hbase hbox hold s' hs' hcut]
     exact heq
-
-
 
 def spliceBox : GeneralizedFlowCylinder F (F.box b).carrier T Q (Ioc (-1) 0) U := by
   classical

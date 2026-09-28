@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M13.DomainMaximal
 import PoincareConjecture.Proofs.M13.DomainMetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

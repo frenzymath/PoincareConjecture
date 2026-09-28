@@ -1,23 +1,5 @@
 import PoincareConjecture.Definitions.M79TopologicalPoincare
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture

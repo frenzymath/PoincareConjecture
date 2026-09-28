@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_ProductStable
 import PoincareConjecture.Proofs.M15.Thm8_10_ProductCylinder
 import PoincareConjecture.Proofs.M15.Thm8_10_StableSource
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_compact_late_volume_bound
     (hM04 : RicciFlowCurvatureTheory.{u})

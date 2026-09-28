@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NoConjugate
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularExponential
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_pullbackDensity_eq_sqrt_det_orthonormal
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -69,9 +55,6 @@ theorem m64Intrinsic_pullbackDensity_eq_sqrt_det_orthonormal
       rw [LinearMap.BilinForm.toMatrix_apply]
       rfl
 
-
-
-
 theorem m64Intrinsic_radial_pullback_first_row
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
     (b : OrthonormalBasis (Fin 2) ℝ AnnulusCoordinates)
@@ -84,9 +67,6 @@ theorem m64Intrinsic_radial_pullback_first_row
   simp only [map_smul, smul_apply, smul_eq_mul,
     real_inner_smul_left] at h
   exact mul_left_cancel₀ hr.ne' h
-
-
-
 
 theorem m64Intrinsic_radial_transverse_metric_eq_density_sq
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -112,9 +92,6 @@ theorem m64Intrinsic_radial_transverse_metric_eq_density_sq
   rw [m64Intrinsic_pullbackDensity_eq_sqrt_det_orthonormal N e _ b,
     Matrix.det_fin_two, Matrix.of_apply, Matrix.of_apply, Matrix.of_apply,
     Matrix.of_apply, h00, h01, one_mul, zero_mul, sub_zero, Real.sq_sqrt hnonneg]
-
-
-
 
 theorem m64Intrinsic_radial_pullback_metric
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -143,9 +120,6 @@ theorem m64Intrinsic_radial_pullback_metric
     Fin.zero_ne_one, if_false, if_true, hcol,
     m64Intrinsic_radial_transverse_metric_eq_density_sq N e b hr hgauss]
   ring
-
-
-
 
 theorem m64Intrinsic_radial_christoffel_pairing
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}

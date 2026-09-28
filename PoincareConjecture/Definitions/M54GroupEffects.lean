@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import Mathlib.Topology.Homotopy.HomotopyGroup
 import Mathlib.GroupTheory.CoprodI
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure FiniteOrCyclicFactors (n : Nat) where
   carrier : Fin n → Type u
@@ -58,10 +45,6 @@ theorem RepairedGroupFactorData.target_subsingleton
   apply D.injection_injective
   exact Subsingleton.elim _ _
 
-
-
-
-
 structure RepairedSurgeryGroupEffectsData
     {A B : GeneralizedSliceCarrier.{u}}
     (C : SurgeryTopologyConclusion A B) where
@@ -72,8 +55,6 @@ structure RepairedSurgeryGroupEffectsData
     RepairedGroupFactorData
       (FundamentalGroup A.carrier (parent_basepoint i hi x))
       (FundamentalGroup (C.piece i).carrier x)
-
-
 
 structure RepairedGroupPersistenceInput (F : SurgeryFlowData.{u}) (T : ℝ)
     (component : ∀ s : Set.Icc (0 : ℝ) T,

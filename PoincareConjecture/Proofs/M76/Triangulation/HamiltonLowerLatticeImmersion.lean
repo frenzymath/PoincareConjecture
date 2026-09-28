@@ -1,29 +1,15 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerPeriodLattice
 import Mathlib.Topology.Algebra.Module.Equiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
 
-
-
 def hamiltonLowerLatticePuncture (κ : Type*) :
     (κ → ℝ) ⧸ (hamiltonLowerPeriodLattice κ).toAddSubgroup :=
   QuotientAddGroup.mk (fun _ => (256 : ℝ))
-
-
-
 
 structure HamiltonLowerLatticeImmersion (κ : Type*) [Fintype κ] where
   map : ((κ → ℝ) ⧸ (hamiltonLowerPeriodLattice κ).toAddSubgroup) → (κ → ℝ)
@@ -138,9 +124,6 @@ private theorem lower_halfperiod_eq :
   convert AddCircle.coe_add_period (4 * (128 : ℝ)) (-256) using 1
   norm_num
 
-
-
-
 theorem exists_lower_lattice_immersion_one :
     Nonempty (HamiltonLowerLatticeImmersion (Fin 1)) := by
   let : Fact (0 < 4 * (128 : ℝ)) := ⟨by norm_num⟩
@@ -169,10 +152,6 @@ theorem exists_lower_lattice_immersion_one :
     rw [hes] at hxe
     exact hxe
   · simpa only [hes, Function.comp_def] using circle_raw_PL (4 * (128 : ℝ)) e hPL
-
-
-
-
 
 theorem exists_lower_lattice_immersion_two :
     Nonempty (HamiltonLowerLatticeImmersion (Fin 2)) := by

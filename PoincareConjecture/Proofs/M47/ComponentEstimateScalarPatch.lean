@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.TerminalBlowup.ScalarReciprocalGradient
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -84,9 +74,6 @@ private theorem scalar_variation_le_path_length
   rw [hlength, hKcoe] at h
   simpa only [r, ContinuousAffineMap.coe_lineMap_eq, AffineMap.lineMap_apply_zero,
     AffineMap.lineMap_apply_one] using h
-
-
-
 
 theorem component_maximum_scalar_patch
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

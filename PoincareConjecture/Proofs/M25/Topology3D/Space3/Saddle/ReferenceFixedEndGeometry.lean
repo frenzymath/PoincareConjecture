@@ -5,22 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTranspor
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_nonnested_reference_fixed_end_geometry
     (sigma : ℝ) (hsigma : 0 < sigma) (hsigmaSmall : sigma ≤ 1 / 16)

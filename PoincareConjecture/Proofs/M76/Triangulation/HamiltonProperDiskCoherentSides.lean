@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +13,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
 
-
-
-
 structure HamiltonProperDiskCoherentSides
     (T : HamiltonProperDiskTriangulation R D b) (c : E ≃ᴬ[ℝ] V) where
 
@@ -34,9 +22,6 @@ structure HamiltonProperDiskCoherentSides
     (p : E) ∈ s → (q : E) ∈ s →
       T.dualRegion s ∩ {x | 0 ≤ labels.height p x} =
         T.dualRegion s ∩ {x | 0 ≤ labels.height q x}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_coherent_sides
     [FiniteDimensional ℝ E] (T : HamiltonProperDiskTriangulation R D b)
@@ -59,8 +44,6 @@ theorem HamiltonProperDiskTriangulation.exists_coherent_sides
   · exact O.half_eq_on_triangle_dual p q hs hcard hps hqs
 
 variable {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
-
-
 
 theorem HamiltonProperDiskCoherentSides.negative_agreement
     (C : HamiltonProperDiskCoherentSides T c) {s : Finset E}
@@ -89,10 +72,6 @@ theorem HamiltonProperDiskCoherentSides.negative_agreement
     have hxD := (C.labels.height_eq_zero_iff q (hqS hx.1) hx.1.2).mp hqzero
     exact (ne_of_gt hppos) ((C.labels.height_eq_zero_iff p (hpS hx.1) hx.1.2).mpr hxD)
 
-
-
-
-
 theorem HamiltonProperDiskCoherentSides.positive_restriction
     (C : HamiltonProperDiskCoherentSides T c) {s t : Finset E}
     (ht : t ∈ T.disk.faces) (hst : s ⊆ t) (p q : T.disk.vertices)
@@ -111,8 +90,6 @@ theorem HamiltonProperDiskCoherentSides.positive_restriction
     exact h.subset ⟨hx.2, hx.1.2⟩
   · intro x hx
     exact ⟨⟨hinc hx.1, (h.symm.subset hx).2⟩, hx.1⟩
-
-
 
 theorem HamiltonProperDiskCoherentSides.negative_restriction
     (C : HamiltonProperDiskCoherentSides T c) {s t : Finset E}

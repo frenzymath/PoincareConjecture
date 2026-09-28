@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.ClosedMod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CollarMatching
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Projective.Certificate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace Topology
@@ -26,8 +15,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
 
 theorem nonempty_mixed_pair_certificate
     (U V : Opens M) {p : RealProjectiveThree}

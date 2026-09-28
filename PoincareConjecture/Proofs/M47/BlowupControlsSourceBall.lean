@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceHistory
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff Topology Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_blowup_six_radius_source_or_cap
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

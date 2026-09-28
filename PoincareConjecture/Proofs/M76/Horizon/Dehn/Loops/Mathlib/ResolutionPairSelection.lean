@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndHomotopies
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.RotatedResolutionWords
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ variable {X : Type*} [TopologicalSpace X] {Z : Set X} {τ : ((ℝ × ℝ) × ℝ
   {b : ℝ} (d0 : MarkedResolutionEndData Z τ b 0) (d1 : MarkedResolutionEndData Z τ b 1)
   {base : Z} (J : Subgroup (FundamentalGroup Z base)) [J.Normal]
   (p : Path base d0.z) (q : Path base d1.z)
-
-
 
 theorem actual_resolution_pair_excluded_case_a
     (a : Path d0.a d1.a) (β : Path d1.r d1.l)
@@ -54,8 +44,6 @@ theorem actual_resolution_pair_excluded_case_a
         basedPathWord (q.trans d1.rc) (p.trans d0.rc) c) ∈ J by
       simpa only [mul_assoc] using hv)
   exact hrot
-
-
 
 theorem actual_resolution_pair_excluded_case_b
     (a : Path d1.a d0.a) (β : Path d0.r d1.l)

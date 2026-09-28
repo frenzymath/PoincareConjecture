@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.SmoothMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle ContinuousLinearMap Filter Set

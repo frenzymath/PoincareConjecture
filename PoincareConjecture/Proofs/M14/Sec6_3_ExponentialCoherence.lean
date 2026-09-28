@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialAction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 def exponentialInitialValuePath (E : M14ExponentialFamily G T x)
     (Z : G.Horizontal x) (s : ℝ) (hs : (Z, s) ∈ E.domain) (hpos : 0 < s) :
     M14SquareRootInitialValuePath G T (s ^ 2) x (E.gamma Z s) Z where
@@ -32,9 +20,6 @@ def exponentialInitialValuePath (E : M14ExponentialFamily G T x)
   extension := E.square_extension Z s hs hpos
   euler := E.square_euler Z s hs hpos
   initial_velocity := E.square_initial_velocity Z s hs hpos
-
-
-
 
 theorem exponentialFamily_domain_eq (E : M14ExponentialFamily G T x) :
     E.domain = initialValueDomain G T x := by
@@ -54,8 +39,6 @@ theorem exponentialFamily_domain_eq (E : M14ExponentialFamily G T x) :
     · exact (E.positive_survival_iff Z s hpos).mpr
         ((initialValueDomain_positive_iff hpos).mp hs)
 
-
-
 theorem exponentialFamily_gamma_eq
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {s : ℝ}
@@ -66,9 +49,6 @@ theorem exponentialFamily_gamma_eq
     exact (E.gamma_at_zero Z).trans (initialValueCurve_zero Z).symm
   · exact (initialValueCurve_eq_endpoint hM04 hM12 hpos
       (exponentialInitialValuePath E Z s hs hpos)).symm
-
-
-
 
 theorem exponentialFamily_action_eq
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.EuclideanGaugeTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ variable {m n : ℕ} {S : Type*} [TopologicalSpace S]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 local notation "W" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem restricted_euclideanGauge_continuous (I : V →L[ℝ] W)
     {u : S → W → ℝ} (hs : ∀ t, ContDiff ℝ ∞ (u t))

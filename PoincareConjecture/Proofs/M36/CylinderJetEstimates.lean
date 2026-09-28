@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderMetricEstimates
 import PoincareConjecture.Proofs.M36.CylinderTwoJet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

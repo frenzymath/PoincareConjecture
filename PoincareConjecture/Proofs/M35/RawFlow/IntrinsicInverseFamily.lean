@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.ArclengthJointSmooth
 import PoincareConjecture.Proofs.M35.RawFlow.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
       (G.flow.metric t).inner (standardRotation A x)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = (G.flow.metric t).inner x u v)
-
-
 
 noncomputable def rawInverseRadius (t s : ℝ) : ℝ :=
   if ht : t ∈ Ico 0 G.lifetime then
@@ -53,8 +42,6 @@ theorem rawInverseRadius_pos {t s : ℝ} (ht : t ∈ Ico 0 G.lifetime) (hs : 0 <
     0 < rawInverseRadius P G hrotation t s := by
   rw [rawInverseRadius_eq P G hrotation ht]
   exact radialArclengthOrderIso_symm_pos (G.flow.metric t) (hrotation t ht) (G.complete P ht) hs
-
-
 
 theorem rawInverseRadius_contDiffAt {p : ℝ × ℝ} (hp : p.1 ∈ Ioo 0 G.lifetime) :
     ContDiffAt ℝ ∞ (Function.uncurry (rawInverseRadius P G hrotation)) p := by

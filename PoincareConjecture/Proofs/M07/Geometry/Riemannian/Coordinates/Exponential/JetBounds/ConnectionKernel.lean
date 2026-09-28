@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CoframeEquation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialConnectionBounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +28,6 @@ local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] E →L[ℝ] E) :=
 local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] E) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 def radialCurvatureKernel (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (T : E → E →L[ℝ] E) (x u v : E) : E →L[ℝ] E :=
   (T x).inverse.comp
@@ -55,8 +42,6 @@ def radialCurvatureKernel (Γ : E → E →L[ℝ] E →L[ℝ] E)
   rfl
 
 variable [CompleteSpace E]
-
-
 
 theorem contDiff_radialCurvatureKernel
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {T : E → E →L[ℝ] E}
@@ -84,7 +69,6 @@ theorem contDiff_radialCurvatureKernel
 
 variable [FiniteDimensional ℝ E]
 
-
 theorem radial_transport_ray_velocity
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
     (hgeo : ∀ x : E, ∀ t : ℝ, Γ (t • x) x x = 0)
@@ -96,8 +80,6 @@ theorem radial_transport_ray_velocity
       (radial_field_self_of_geodesic_rays hΓ hgeo (t • x))
     rw [map_smul] at h
     exact (smul_right_injective E ht) h
-
-
 
 theorem radialFrameConnection_eq_integral_kernel
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
@@ -121,8 +103,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem norm_radialCurvatureKernel_apply_le
     (D : LeviCivitaData g)
     (h0 : ∀ v w : EuclideanSpace ℝ (Fin n), g.inner 0 v w = inner ℝ v w)
@@ -141,8 +121,6 @@ theorem norm_radialCurvatureKernel_apply_le
   have hnorm (a : EuclideanSpace ℝ (Fin n)) : g.tangentNorm x (T x a) = ‖a‖ := by
     rw [hTv, tangentNorm_radial_field D, tangentNorm_zero_eq_norm_of_normalized h0]
   simpa only [hnorm] using D.tangentNorm_curvature_le x (T x u) (T x v) (T x w)
-
-
 
 theorem inner_radialCurvatureKernel_eq_component
     (D : LeviCivitaData g)

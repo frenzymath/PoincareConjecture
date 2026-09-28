@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderTripleCoordinates
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderComponentSide
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CoherentSphereOrder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -82,11 +73,6 @@ open M28
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : TopologicalSpace.Opens M}
-
-
-
-
-
 
 theorem exists_middle_sphere_crossing_height
     (T : OpenCylinderModel (U : Set M)) {S C H F : Set M}

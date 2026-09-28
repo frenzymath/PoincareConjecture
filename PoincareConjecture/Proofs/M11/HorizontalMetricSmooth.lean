@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.BoxMetric
 import PoincareConjecture.Proofs.M11.HorizontalInclusion
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

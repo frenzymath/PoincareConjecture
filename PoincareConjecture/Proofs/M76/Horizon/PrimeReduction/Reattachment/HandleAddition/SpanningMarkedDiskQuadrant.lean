@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoIntervalDiskN
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped unitInterval
@@ -86,9 +78,6 @@ private theorem lowerCorner_second_half {x : P2} (hx : x ∈ Rect) :
     · change -1+4*(x.2/4) = -1+x.2
       ring
 
-
-
-
 theorem exists_marked_disk_endpoint_quadrant
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {d U C : Set E} {a b : E}
@@ -158,4 +147,3 @@ theorem exists_marked_disk_endpoint_quadrant
     exact (hmarks true (lowerCorner x) (lowerCorner_mem_disk hx)).trans (lowerCorner_second_half hx)
 
 end PoincareConjecture.M76
-

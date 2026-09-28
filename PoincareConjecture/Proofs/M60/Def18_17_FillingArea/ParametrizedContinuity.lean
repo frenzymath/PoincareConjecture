@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LoopNeighborhoods
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.SmallParametrizedCollars
 import PoincareConjecture.Proofs.M60.Filling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m60_exists_parametrized_collar_neighborhood (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) (γ₀ : C1FreeLoopSpace (M := M))
@@ -53,9 +41,6 @@ theorem m60_exists_parametrized_collar_neighborhood (g : RiemannianMetric 3 M)
       exact Manifold.riemannianEDist_comm
     rw [hsymm]
     exact hclose γ hγ.2 z
-
-
-
 
 theorem m60FillingArea_continuousOn_of_parametrized_near_minimizers
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M))

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabContinuation
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabControlled
 import PoincareConjecture.Proofs.M30.Thm11_8.SeedFiniteLongConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem exists_uniform_left_cylinders_of_bounded_finite_limit
     (hC : RicciFlowCurvatureTheory.{u})
@@ -70,9 +57,6 @@ theorem exists_uniform_left_cylinders_of_bounded_finite_limit
   exact ⟨noncollapsedControlledCylinderOfFiniteHorizonSlab e hbuffer'
     (fun s hs x _hx => hcurvature s hs x)
     (fun s hs x _hx => hdefect s hs x)⟩
-
-
-
 
 theorem exists_larger_finite_convergence_of_scalar_bound
     (P : M30ControlledBlowupPredecessors.{u})

@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.PointedExhaustion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.SourceMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -36,9 +24,6 @@ local instance ancientGeometric_sourceManifold (k : ℕ) :
     IsManifold (𝓡 n) ∞ (C k).carrier := (C k).isManifold
 
 variable {J : ℕ → Set ℝ} (Fseq : ∀ k, RicciFlow n (C k).carrier (J k))
-
-
-
 
 theorem exists_complete_ancient_geometric_limit_of_controlled_charts
     (p : ∀ k, (C k).carrier) {T : ℝ} (hT : 0 < T)

@@ -5,16 +5,6 @@ import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,7 +12,6 @@ open scoped intervalIntegral
 open scoped Topology
 
 namespace Poincare.Asymptotics
-
 
 theorem tendsto_elapsed_time_ratio_atBot (a b : ℝ) :
     Tendsto (fun T : ℝ ↦ (a - T) / (b - T)) atBot (𝓝 1) := by
@@ -39,13 +28,11 @@ theorem tendsto_elapsed_time_ratio_atBot (a b : ℝ) :
   field_simp
   ring
 
-
 theorem tendsto_div_elapsed_time_atBot (t R : ℝ) :
     Tendsto (fun T : ℝ ↦ R / (t - T)) atBot (𝓝 0) := by
   apply Filter.Tendsto.const_div_atTop
   refine tendsto_atTop.2 (fun C ↦ ?_)
   exact eventually_atBot.2 ⟨t - C, fun T hT ↦ by linarith⟩
-
 
 theorem nonneg_of_eventually_add_div_nonneg {Q R t : ℝ}
     (hfinite : ∀ᶠ T : ℝ in atBot, 0 ≤ Q + R / (t - T)) :
@@ -53,7 +40,6 @@ theorem nonneg_of_eventually_add_div_nonneg {Q R t : ℝ}
   have hlim : Tendsto (fun T : ℝ ↦ Q + R / (t - T)) atBot (𝓝 Q) := by
     simpa using (tendsto_div_elapsed_time_atBot t R).const_add Q
   exact ge_of_tendsto hlim hfinite
-
 
 theorem ancient_limit_of_scaled_inequality
     {a b A B E : ℝ}
@@ -75,7 +61,6 @@ theorem ancient_limit_of_scaled_inequality
     rwa [heq]
   exact le_of_tendsto_of_tendsto hleft hright hnorm
 
-
 theorem le_at_right_endpoint {f g : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hf : ContinuousWithinAt f (Icc a b) b)
     (hg : ContinuousWithinAt g (Icc a b) b)
@@ -87,7 +72,6 @@ theorem le_at_right_endpoint {f g : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     ((show ∀ᶠ t : ℝ in 𝓝[Ioo a b] b, t ∈ Ioo a b from
       self_mem_nhdsWithin).mono fun t ht ↦ hfg t ht)
 
-
 theorem nonneg_at_zero_of_nonneg_neg {f : ℝ → ℝ}
     (hf : ContinuousWithinAt f (Iic 0) 0)
     (hnonneg : ∀ t < 0, 0 ≤ f t) :
@@ -95,11 +79,6 @@ theorem nonneg_at_zero_of_nonneg_neg {f : ℝ → ℝ}
   exact ge_of_tendsto (hf.mono Iio_subset_Iic_self)
     ((show ∀ᶠ t : ℝ in 𝓝[Iio (0 : ℝ)] 0, t ∈ Iio (0 : ℝ) from
       self_mem_nhdsWithin).mono fun t ht ↦ hnonneg t ht)
-
-
-
-
-
 
 theorem le_at_right_endpoint_of_finite_origins
     {f q : ℝ → ℝ} {a b : ℝ} (hab : a < b)
@@ -124,7 +103,6 @@ theorem le_at_right_endpoint_of_finite_origins
     (hf b (right_mem_Icc.mpr (le_of_lt hab))) (by
     intro t ht
     exact ancient_limit_of_scaled_inequality (hfinite t ht))
-
 
 theorem nonneg_at_zero_of_finite_origins {q r : ℝ → ℝ}
     (hq : ContinuousWithinAt q (Iic 0) 0)

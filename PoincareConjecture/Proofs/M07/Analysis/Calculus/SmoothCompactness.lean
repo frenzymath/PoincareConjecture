@@ -8,37 +8,6 @@ import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.Topology.MetricSpace.Equicontinuity
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -46,13 +15,6 @@ open Metric
 open scoped ContDiff Topology
 
 namespace Poincare.Analysis.Calculus
-
-
-
-
-
-
-
 
 theorem limit_hasFDerivAt_of_tendstoLocallyUniformlyOn
     {X Y : Type*}
@@ -72,21 +34,11 @@ theorem limit_hasFDerivAt_of_tendstoLocallyUniformlyOn
 variable {d : ℕ} {E : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
-
-
 def LocallyEventuallyBoundedDerivatives (Ω : Set (EuclideanSpace ℝ (Fin d)))
     (f : ℕ → EuclideanSpace ℝ (Fin d) → E) : Prop :=
   ∀ K : Set (EuclideanSpace ℝ (Fin d)), IsCompact K → K ⊆ Ω →
     ∀ m : ℕ, ∃ B : ℝ, ∀ᶠ j : ℕ in atTop,
       ∀ x ∈ K, ‖iteratedFDeriv ℝ m (f j) x‖ ≤ B
-
-
-
-
 
 theorem norm_iteratedFDeriv_le_on_compact
     {Ω : Set (EuclideanSpace ℝ (Fin d))}
@@ -293,7 +245,6 @@ theorem eventually_norm_iteratedFDeriv_sub_le_of_closedBall
     exact (hN j hj w hw).trans (le_max_left _ _)
   exact (convex_closedBall x r).norm_image_sub_le_of_norm_fderiv_le hderiv hdiff hz hy
 
-
 structure SmoothSubsequenceExtraction
     (Ω : Set (EuclideanSpace ℝ (Fin d)))
     (f : ℕ → EuclideanSpace ℝ (Fin d) → E) where
@@ -312,11 +263,6 @@ structure SmoothSubsequenceExtraction
         (fun j x ↦ iteratedFDeriv ℝ m (f (subsequence j)) x)
         (iteratedFDeriv ℝ m limit) atTop K
 
-
-
-
-
-
 theorem SmoothSubsequenceExtraction.tendsto_iteratedFDeriv
     {Ω : Set (EuclideanSpace ℝ (Fin d))}
     {f : ℕ → EuclideanSpace ℝ (Fin d) → E}
@@ -327,13 +273,6 @@ theorem SmoothSubsequenceExtraction.tendsto_iteratedFDeriv
       (fun j x ↦ iteratedFDeriv ℝ m (f (H.subsequence j)) x)
       (iteratedFDeriv ℝ m H.limit) atTop K :=
   H.iteratedFDeriv_tendsto_uniformlyOn m K hK hKΩ
-
-
-
-
-
-
-
 
 theorem exists_smoothSubsequenceExtraction
     [FiniteDimensional ℝ E]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteCapDistance
 import PoincareConjecture.Proofs.M47.LimitFiniteBallEndpoint
 import PoincareConjecture.Proofs.M47.TerminalRegularFiniteCapBudget
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +23,6 @@ private local instance uniformCapTopology : TopologicalSpace C.carrier :=
   C.topologicalSpace
 private local instance uniformCapCharts : ChartedSpace E C.carrier := C.chartedSpace
 private local instance uniformCapManifold : IsManifold (𝓡 3) ∞ C.carrier := C.isManifold
-
-
-
 
 theorem limitFinite_uniform_cap_exclusion
     {c d window Bplus D : ℝ}

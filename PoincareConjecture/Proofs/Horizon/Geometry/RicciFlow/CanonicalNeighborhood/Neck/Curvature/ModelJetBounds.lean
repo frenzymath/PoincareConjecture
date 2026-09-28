@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.QuantitativeJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Realization
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
 
 namespace PoincareConjecture
-
 
 theorem fderiv_roundCylinderEuclideanCoefficients_zero :
     fderiv ℝ roundCylinderEuclideanCoefficients 0 = 0 := by
@@ -29,7 +18,6 @@ theorem fderiv_roundCylinderEuclideanCoefficients_zero :
       rw [norm_iteratedFDeriv_one,
         roundCylinderEuclideanCoefficients_scalar_fderiv_zero q i j, norm_zero])
   simpa only [norm_iteratedFDeriv_one, mul_zero, norm_le_zero_iff] using h
-
 
 theorem norm_second_fderiv_roundCylinderEuclideanCoefficients_zero_le :
     ‖fderiv ℝ (fderiv ℝ roundCylinderEuclideanCoefficients) 0‖ ≤ 162 := by

@@ -4,14 +4,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -96,7 +88,6 @@ private theorem contMDiffAt_unique_time_root
   simpa only [G, q₀, e.left_inv (mem_extChartAt_source y)] using (hroot y hy).2.symm
 end Poincare.Manifold
 
-
 namespace Poincare.Manifold
 private theorem time_control_of_derivative_le_neg
     {F : ℝ → ℝ} {F' : ℝ → ℝ} {a b c s : ℝ}
@@ -131,7 +122,6 @@ private theorem time_control_of_derivative_le_neg
     exact (le_div_iff₀ hc).mpr (by nlinarith)
 end Poincare.Manifold
 
-
 namespace Poincare.Manifold
 private theorem image_sub_le_of_derivative_le
     {F F' : ℝ → ℝ} {a b c u v : ℝ}
@@ -154,7 +144,6 @@ private theorem strictAntiOn_of_derivative_le_neg
   have hneg : -c * (v - u) < 0 := mul_neg_of_neg_of_pos (by linarith) (sub_pos.mpr huv)
   linarith
 end Poincare.Manifold
-
 
 namespace Poincare.Manifold
 theorem exists_smooth_hitting_time_of_derivative_le_neg

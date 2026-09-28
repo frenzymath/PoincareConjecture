@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.TerminalAdaptedFrame
 import PoincareConjecture.Proofs.M09.LocalHessianSymmetry
 import Mathlib.Analysis.Normed.Module.Normalize
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

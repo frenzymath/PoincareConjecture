@@ -5,23 +5,12 @@ import PoincareConjecture.Proofs.M09.RiemannianProper
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem exists_initial_second_curvature_bound
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -81,8 +70,6 @@ theorem exists_initial_second_curvature_bound
   change (F.connection t).curvatureDerivativeNorm 2 x ≤ B
   simpa only [Nat.sub_self, Nat.cast_zero, zero_div, Real.rpow_zero, div_one] using hbound
 
-
-
 theorem exists_initial_scalar_derivative_lower_bound
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) :
@@ -100,8 +87,6 @@ theorem exists_initial_scalar_derivative_lower_bound
   have h := hbound t ht x
   have hneg := (abs_le.mp hlap).1
   nlinarith
-
-
 
 theorem exists_initial_scalar_floor
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

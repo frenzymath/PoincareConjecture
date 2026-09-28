@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Reversal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Differential
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -51,9 +42,6 @@ private theorem curvature_smul_velocity (g : RiemannianMetric n M) (D : LeviCivi
     a ^ 2 * D.curvatureTensor x u v w v
   rw [D.curvatureTensor_smul_second, D.curvatureTensor_smul_last]
   ring
-
-
-
 
 theorem isInvertible_mfderiv_of_minimizing_backward_extension_of_le_one
     (g : RiemannianMetric n M) (D : LeviCivitaData g) {R : ℝ}

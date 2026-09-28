@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Geodesic.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Chart
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hasDerivAt_deriv_comp_geodesic_eq_zero
     {D : LeviCivitaData g} {f : M → ℝ} {γ : ℝ → M} {s : Set ℝ}
@@ -59,8 +51,6 @@ theorem hasDerivAt_deriv_comp_geodesic_eq_zero
     simpa +instances only [Function.comp_def, map_neg, ← sub_eq_add_neg] using hfield
   exact hfield0.congr_of_eventuallyEq (hfirst.mono fun _ hu => hu.deriv)
 
-
-
 theorem deriv_comp_geodesic_eq_initial
     {D : LeviCivitaData g} {f : M → ℝ} {γ : ℝ → M}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hzero : HasZeroHessian D f)
@@ -72,7 +62,6 @@ theorem deriv_comp_geodesic_eq_initial
       (mem_univ u)).differentiableAt.differentiableWithinAt)
     (fun u _ => (hasDerivAt_deriv_comp_geodesic_eq_zero hf hzero hγ
       (mem_univ u)).deriv) (mem_univ t) (mem_univ 0)
-
 
 theorem comp_geodesic_eq_affine [T3Space M]
     {D : LeviCivitaData g} {f : M → ℝ} {γ : ℝ → M}
@@ -92,8 +81,6 @@ theorem comp_geodesic_eq_affine [T3Space M]
     (fun u _ => (deriv_comp_geodesic_eq_initial hf hzero hγ u).trans (hψ u).deriv.symm)
     (mem_univ (0 : ℝ)) (by simp)
   exact heq (mem_univ t)
-
-
 
 theorem geodesic_velocity_eq_gradient [T3Space M]
     {D : LeviCivitaData g} {f : M → ℝ} {γ : ℝ → M}

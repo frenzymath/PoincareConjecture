@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialGram
 import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 import Mathlib.Analysis.Matrix.Normed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem pullbackMetricPair_contDiffOn {T a b : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T a b x y} (R : M14SquareRootPath G p)
@@ -43,8 +32,6 @@ theorem pullbackMetricPair_contDiffOn {T a b : ℝ} {x y : G.Point}
 
 variable {T : ℝ} {x : G.Point}
 
-
-
 theorem exponentialGram_contDiffOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14ExponentialFamily G T x) (v : Fin n → G.Horizontal x)
@@ -63,8 +50,6 @@ theorem exponentialGram_contDiffOn
   apply (h.mono hsub).congr
   intro s hs
   exact exponentialGram_eq_jacobi_pair hM04 hM12 E v hb hpos (hC.symm ▸ hs) i j
-
-
 
 theorem exponentialJacobian_continuousOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

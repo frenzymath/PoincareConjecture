@@ -3,16 +3,6 @@ import Mathlib.Topology.Instances.AddCircle.Defs
 import Mathlib.MeasureTheory.Measure.OpenPos
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +11,6 @@ open Set Filter MeasureTheory Topology
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64Curve_periodic_extension {Y : Type*} [TopologicalSpace Y]
     (W : ℝ → Y) {T : ℝ} (hT : 0 < T) (hW : ContinuousOn W (Icc (0 : ℝ) T))
@@ -43,8 +31,6 @@ theorem m64Curve_periodic_extension {Y : Type*} [TopologicalSpace Y]
       rw [AddCircle.coe_period]
       exact h0.trans hends
     · exact AddCircle.liftIco_zero_coe_apply ⟨hx.1, lt_of_le_of_ne hx.2 hxt⟩
-
-
 
 theorem m64Curve_closed_target_of_ae
     {E : Type*} [PseudoMetricSpace E] (W : ℝ → E) {T : ℝ} (hT : 0 < T)

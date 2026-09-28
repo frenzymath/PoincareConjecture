@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.ImmersedAreaTransfer
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundaryArc
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -440,9 +431,6 @@ private theorem motion_eventuallyEq
   filter_upwards [he, hfc, hgc] with t ht hf hg
   exact c.injOn hf hg ht
 
-
-
-
 theorem motion_eqOn [T2Space M]
     (V : (t : ℝ) → (p : M) → TangentSpace (𝓡 3) p) (T : Set ℝ) (hT : IsOpen T)
     (hV : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓡 3)) ((𝓡 3).prod (𝓡 3)) ∞
@@ -475,8 +463,6 @@ theorem motion_eqOn [T2Space M]
   exact hm
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem compact_motion [T2Space M]
     (V : (t : ℝ) → (p : M) → TangentSpace (𝓡 3) p) (T : Set ℝ) (hT : IsOpen T)
@@ -603,8 +589,6 @@ private theorem spacetime_weightedField_smooth {ι : Type*} [Fintype ι]
     _ = _ := (map_sum (ContinuousLinearMap.snd ℝ ℝ LoopAmbient) _ _).symm
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem family_velocity_extension [T2Space M] [SigmaCompactSpace M]
     {J : Set ℝ} (hJ : IsOpen J) (loops : ℝ → C1FreeLoopSpace (M := M))

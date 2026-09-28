@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Intrinsic
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,9 +30,6 @@ private theorem contDiffOn_one_of_hasDerivAt
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_terminal_chart_variation
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

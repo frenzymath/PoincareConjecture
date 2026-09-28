@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryPathCrossing
 import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,10 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem exists_predecessor_entry_below_cap_graph
     (P W : EpsilonNeck g)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTenso
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCoordinateSmooth
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -48,9 +38,6 @@ private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
-
 
 theorem ordinaryChapter11_eventually_chart_neck_metricJets
     (p : ℕ → (OrdinaryFlow).point) (hp : ∀ k, 0 < (OrdinaryFlow).scalar (p k))

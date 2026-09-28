@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.TensorNorms
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
 open FiniteHessian
-
-
 
 theorem cylinder_component_sq_le_jet_error
     {u : ℝ} (hu : u < 1) (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace)
@@ -49,8 +38,6 @@ theorem cylinder_component_sq_le_jet_error
   apply (le_div_iff₀ (cylinderTensorWeight_pos hu a)).mpr
   simpa only [mul_comm] using hsquare.trans horder
 
-
-
 theorem cylinder_component_abs_le_of_jet_error_le_one
     {u : ℝ} (hu : u < 1) (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace)
     {k m : ℕ} (hk : k ≤ m) (a : Fin (2 + k) → Fin 3)
@@ -64,8 +51,6 @@ theorem cylinder_component_abs_le_of_jet_error_le_one
   apply (sq_le_sq₀ (abs_nonneg _) (Real.sqrt_nonneg _)).mp
   rw [sq_abs, Real.sq_sqrt (by positivity : 0 ≤ 1 / cylinderTensorWeight u a)]
   exact hsq
-
-
 
 theorem hasUniformZeroJetBoundsAt_roundCylinderIteratedDerivative
     {ι : Type*} (m : ℕ) (q : ι → UnitTwoSphere) (s : ι → ℝ)

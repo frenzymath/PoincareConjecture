@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.OrdinaryNeckVolume
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Covering
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_compact_bounded_scalar_neck_cover
     (K : NeckOnlyCover g) (D : LeviCivitaData g)
@@ -101,9 +89,6 @@ theorem exists_compact_bounded_scalar_neck_cover
   change g.edist y x < ENNReal.ofReal (2 * δ)
   change g.edist x y < ENNReal.ofReal (2 * δ) at hxy
   simpa only [RiemannianMetric.edist, Manifold.riemannianEDist_comm] using hxy
-
-
-
 
 theorem exists_scalar_gt_of_neck_cover_noncompact_closure
     (K : NeckOnlyCover g) (D : LeviCivitaData g)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Triangle.SimpleTriangle
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Regions.ConvexExterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ} {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.polygonInterior_eq_interior_of_boundary_eq_frontier
     (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2) {C : Set E}
@@ -70,8 +58,6 @@ theorem IsSimplePolygon.polygonInterior_eq_interior_of_boundary_eq_frontier
     have hxcover : x ∈ polygonInterior p ∪ polygonExterior p := hcover.symm ▸ hxB
     exact hxcover.resolve_right fun hxO => hOsub hxO (interior_subset hx)
 
-
-
 theorem IsSimplePolygon.triangle_polygonInterior {p : Polygon E 3}
     (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2) :
     polygonInterior p = interior (convexHull ℝ (range p)) := by
@@ -80,8 +66,6 @@ theorem IsSimplePolygon.triangle_polygonInterior {p : Polygon E 3}
     (convex_convexHull ℝ _) hcompact.isBounded
     ⟨_, (hp.triangleAffineBasis hdim).centroid_mem_interior_convexHull⟩
     (hp.triangle_boundary_eq_frontier hdim)
-
-
 
 theorem IsSimplePolygon.triangle_closure_polygonInterior {p : Polygon E 3}
     (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2) :

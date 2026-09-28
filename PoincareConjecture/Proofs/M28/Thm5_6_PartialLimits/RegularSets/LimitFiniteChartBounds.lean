@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.FiniteChartBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k}
   {ι : Type*} [Finite ι]
-
-
-
 
 theorem exists_limit_finite_chart_bounds (G : RegularPointedMetricConvergence g p) :
     letI := G.limitCarrier.topologicalSpace

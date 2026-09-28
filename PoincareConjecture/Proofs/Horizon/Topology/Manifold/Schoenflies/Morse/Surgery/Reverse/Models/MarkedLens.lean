@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.Belt
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 def markedLensRadius (v : E3) (edge width : Real) (p : S2) : Real :=
   boundedCylinderRadius v p *
@@ -89,8 +85,6 @@ theorem markedLens_bounds (v : E3) (hv : ‖v‖ = 1) (edge width : Real) (p : S
       (boundedCylinderRadius v p • (p : E3)))]
   · have := abs_boundedCylinder_height_le v hv p
     nlinarith [abs_nonneg (inner Real v (boundedCylinderRadius v p • (p : E3)))]
-
-
 
 theorem exists_ambient_marked_lens (v : E3) (hv : ‖v‖ = 1) (edge : Real)
     {width : Real} (hw : 0 < width) :

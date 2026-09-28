@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.RadialAffineArea
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.AreaDensityProduct
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ScalarFactorArea
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,12 +13,8 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 def m64SweepOpen (a b : ℝ) : Set LoopPlane :=
   {p | 0 < p 0 ∧ p 0 < curvePeriod ∧ a < p 1 ∧ p 1 < b}
-
-
 
 theorem isOpen_m64SweepOpen (a b : ℝ) : IsOpen (m64SweepOpen a b) := by
   have h0 := PiLp.continuous_apply 2 (fun _ : Fin 2 => ℝ) 0
@@ -38,8 +22,6 @@ theorem isOpen_m64SweepOpen (a b : ℝ) : IsOpen (m64SweepOpen a b) := by
   exact (isOpen_lt continuous_const h0).inter
     ((isOpen_lt h0 continuous_const).inter
       ((isOpen_lt continuous_const h1).inter (isOpen_lt h1 continuous_const)))
-
-
 
 theorem m64SweepTime_mem_interior {a b s t u : ℝ}
     (hs : s ∈ Icc a b) (ht : t ∈ Icc a b) (hne : s ≠ t)
@@ -56,9 +38,6 @@ theorem m64SweepTime_mem_interior {a b s t u : ℝ}
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M}
-
-
-
 
 theorem m64_c2_spacetime_lipschitz
     (hc : M63C2ShrinkingCurveOn F c (Icc a b)) (g : RiemannianMetric n M)
@@ -91,9 +70,6 @@ theorem m64_c2_spacetime_lipschitz
         ENNReal.ofReal H * ENNReal.ofReal ‖p - q‖ := by
       gcongr <;> exact hcoord _
     _ = _ := by rw [ENNReal.ofReal_add hS hH, add_mul]
-
-
-
 
 theorem m64SweptMap_density_bound
     (hc : M63C2ShrinkingCurveOn F c (Icc a b)) (g : RiemannianMetric n M)
@@ -145,8 +121,6 @@ theorem m64SweptMap_density_bound
           (add_nonneg hS hH) (m64_c2_spacetime_lipschitz hc g hS hH hvelocity hcurvature)
           hmem) (abs_nonneg _)
       _ = _ := mul_comm _ _
-
-
 
 theorem m64Annulus_of_c2_sweep_area
     (hc : M63C2ShrinkingCurveOn F c (Icc a b)) (g : RiemannianMetric n M) :

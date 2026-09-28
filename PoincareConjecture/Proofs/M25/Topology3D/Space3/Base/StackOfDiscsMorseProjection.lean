@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMorseMeridian
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem stackMorseProjection_geometry
     (rFlat rOne v0 v1 rho lambda : ℝ)

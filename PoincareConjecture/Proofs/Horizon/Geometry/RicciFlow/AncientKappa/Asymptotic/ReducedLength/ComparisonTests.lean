@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.ComparisonTest
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +28,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M}
-
-
 
 theorem reducedLength_coordinate_flux_memLp
     (P : AncientAsymptoticSolitonPredecessors K) (p : M) {τ : ℝ} (hτ : 0 < τ)
@@ -72,7 +69,6 @@ theorem reducedLength_coordinate_flux_memLp
     rw [h', neg_mul]
   exact hsum.neg.ae_eq (Eventually.of_forall fun x ↦ (hflux x).symm)
 
-
 theorem reducedLength_coordinate_source_memLp
     (P : AncientAsymptoticSolitonPredecessors K) (p : M) {τ : ℝ} (hτ : 0 < τ)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -96,8 +92,6 @@ theorem reducedLength_coordinate_source_memLp
   have hl := (P.continuous_reducedLength p τ hτ).comp_continuousOn (e.continuousOn.mono hOs)
   exact (memLp_top_of_continuousOn_compactClosure hO hOc
     (((hl.add continuousOn_const).div_const τ).mul hρ)).mono_exponent le_top
-
-
 
 theorem reducedLength_weak_coordinate_comparison_test
     (P : AncientAsymptoticSolitonPredecessors K) (p : M) {τ : ℝ} (hτ : 0 < τ)

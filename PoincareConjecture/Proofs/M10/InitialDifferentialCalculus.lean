@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y]
-
 
 theorem tendsto_scaled_horizontal_fderiv {P : X × ℝ → Y} {x : X} {c : Y}
     (L : X →L[ℝ] Y) (hP : ContDiffAt ℝ 2 P (x, 0))

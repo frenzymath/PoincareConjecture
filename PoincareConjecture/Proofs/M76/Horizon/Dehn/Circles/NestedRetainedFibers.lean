@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.NestedResolvedAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
@@ -21,8 +12,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "R" => sphere (0 : V2) 1
-
-
 
 theorem exists_nested_retained_fibers
     {X : Type*} {m n k : ℕ}

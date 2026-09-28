@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Pointwise Topology
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_pos_smul_add_mem_of_intrinsicInterior {C : Set E} {p l : E}
     (hp : p ∈ intrinsicInterior ℝ C) (hl : l ∈ (affineSpan ℝ C).direction) :
@@ -38,9 +26,6 @@ theorem exists_pos_smul_add_mem_of_intrinsicInterior {C : Set E} {p l : E}
   refine ⟨r / 2, half_pos hr, hb ?_⟩
   simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs, abs_of_pos (half_pos hr)]
     using half_lt_self hr
-
-
-
 
 theorem exists_pos_secant_of_mem_add_direction {C S : Set E} {p : E}
     (hp : p ∈ intrinsicInterior ℝ C) (hstar : ∀ q ∈ C, StarConvex ℝ q S)
@@ -74,9 +59,6 @@ namespace Submodule
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
 theorem IsSecantTransverse.of_secant_rescaling {K : Submodule ℝ E} {S T : Set E}
     (hK : K.IsSecantTransverse S)
     (hscale : ∀ x ∈ T, ∀ y ∈ T,
@@ -89,9 +71,6 @@ theorem IsSecantTransverse.of_secant_rescaling {K : Submodule ℝ E} {S T : Set 
   rw [huv, map_smul, ← smul_sub, norm_smul, norm_smul, Real.norm_of_nonneg hr.le] at h
   exact (mul_le_mul_iff_right₀ hr).mp (by nlinarith only [h])
 
-
-
-
 theorem isSecantTransverse_add_direction_iff (K : Submodule ℝ E) {C S : Set E} {p : E}
     (hp : p ∈ intrinsicInterior ℝ C) (hstar : ∀ q ∈ C, StarConvex ℝ q S) :
     K.IsSecantTransverse (S + ((affineSpan ℝ C).direction : Set E)) ↔
@@ -102,10 +81,6 @@ theorem isSecantTransverse_add_direction_iff (K : Submodule ℝ E) {C S : Set E}
   · intro h
     exact h.of_secant_rescaling (fun _ hx _ hy =>
       Set.exists_pos_secant_of_mem_add_direction hp hstar hx hy)
-
-
-
-
 
 theorem isSecantTransverse_closedFaceStar_tangent_iff [DecidableEq E]
     (K : Geometry.SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)

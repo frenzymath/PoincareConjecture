@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.EuclideanMetric
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RicciControl
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Overlap_A11
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -47,9 +37,6 @@ private theorem exists_sign_axis_error {H t τ : ℝ}
     simpa only [← pow_two, sq_abs] using mul_self_le_mul_self (abs_nonneg (t - σ)) herror
   refine ⟨σ, hσ, ?_⟩
   nlinarith [mul_nonneg hτ.le (sub_nonneg.mpr hcap)]
-
-
-
 
 theorem exists_normalized_axis_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.SharedB
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangleBoundaryComplex
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Maps.SourceEdgeHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M48.RoundCylinderCongruence
 import PoincareConjecture.Proofs.M48.RegularGuards
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,7 +29,6 @@ variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
 
 include ht
 
-
 theorem strongNeck_time_subset (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0) :
     t + s / N.neck.scale⁻¹ ^ 2 ∈ H.generalized.interval := by
   have hn := F.time_domain_nonnegative (N.cylinder.time_subset ⟨s, hs, rfl⟩)
@@ -47,9 +36,6 @@ theorem strongNeck_time_subset (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0) :
     add_le_of_nonpos_right (div_nonpos_of_nonpos_of_nonneg hs.2 N.cylinder.scale_pos.le)
   rw [H.interval_eq] at ht ⊢
   exact W.interval_connected.out W.zero_mem ht ⟨hn, hle⟩
-
-
-
 
 theorem strongNeck (hregular : t ∉ F.surgery_times) :
     ∃ Q : GeneralizedStrongNeck H.generalized t epsilon,
@@ -164,7 +150,6 @@ theorem strongNeck (hregular : t ∉ F.surgery_times) :
     cylinder_identity := hzero
     metric_comparison := hcomparison }
   exact ⟨Q, f.apply_symm_apply _, rfl⟩
-
 
 theorem canonical_neck (hregular : t ∉ F.surgery_times) (C : ℝ)
     (x : (H.generalized.slice t).carrier)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SectionalIntegral
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   {g : RiemannianMetric (n + 1) M}
-
-
 
 theorem levelMeanCurvature_div_tangentNorm_le_of_hessian_le
     (D : LeviCivitaData g) {f : M → ℝ} {x : M} {l H : ℝ}
@@ -59,8 +50,6 @@ theorem levelMeanCurvature_div_tangentNorm_le_of_hessian_le
     _ = (n : ℝ) * H / l ^ 2 := by ring
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem hasDerivAt_regularLevelArea_and_le_of_hessian_le
     (D : LeviCivitaData g) {f : M → ℝ}

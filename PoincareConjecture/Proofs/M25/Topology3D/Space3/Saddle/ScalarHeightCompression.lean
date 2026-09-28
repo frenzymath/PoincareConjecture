@@ -2,27 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ScalarHeightFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
 
 theorem exists_scalar_height_compression (c d R k : ℝ)
     (hd : 0 < d) (hdR : d ≤ R) (hk : 0 < k) (hk1 : k ≤ 1) :

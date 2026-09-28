@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M34.Standard.CoordinateVolumeBounds
 import PoincareConjecture.Proofs.M34.Mathlib.CenteredDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem modelTranslationDiffeomorph_pullbackMetricForm {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -37,8 +27,6 @@ theorem modelTranslationDiffeomorph_pullbackMetricForm {n : ℕ}
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem centeredDiffeomorph_pullbackMetricForm (g : RiemannianMetric n M)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)

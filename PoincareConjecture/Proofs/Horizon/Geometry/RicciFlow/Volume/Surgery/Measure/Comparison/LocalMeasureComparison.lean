@@ -4,24 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Comparison.CalibratedComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Comparison.DensityComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -33,7 +25,6 @@ theorem zero_mem_radialParameterDomain {v : E} (hv : v ∈ D.domain) (w : E) :
     (0 : ℝ) ∈ D.radialParameterDomain v w := by
   simpa [radialParameterDomain] using hv
 
-
 def radialGeodesicVariation {v : E} (hv : v ∈ D.domain) (w : E) :
     GeodesicVariation B (D.radialParameterDomain v w) (Ioo (-2 : ℝ) 2) where
   phase p := D.trajectory (v + p.1 • w) p.2
@@ -47,7 +38,6 @@ theorem radialGeodesicVariation_stays {v : E} (hv : v ∈ D.domain) (w : E)
     {s t : ℝ} (hs : s ∈ D.radialParameterDomain v w) (ht : t ∈ Ioo (-2 : ℝ) 2) :
     ((D.radialGeodesicVariation hv w).phase (s, t)).1 ∈ U :=
   D.trajectory_mem hs ht
-
 
 theorem radialGeodesicVariation_jacobi [CompleteSpace E]
     (hU : IsOpen U) (hB : ContDiffOn ℝ ∞ B U)

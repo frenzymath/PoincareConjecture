@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.AnnularConcentration
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.PositiveRadii
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +8,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem integral_scalarCurvature_posPart_outside_iUnion_ball_le_of_mixed_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -102,8 +91,6 @@ theorem integral_scalarCurvature_posPart_outside_iUnion_ball_le_of_mixed_annuli
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture
-
-
 
 theorem exists_subseq_critical_ball_scalar_integral_tendsto_atTop_of_mixed_annuli
     {n : ℕ} {M : ℕ → Type*}

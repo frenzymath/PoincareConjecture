@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CompactPLDomainImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetraction
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +11,6 @@ namespace OpenPartialHomeomorph
 variable {M E G ι : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
 
 theorem exists_finite_PL_domain_image_pair
     (e : ι → OpenPartialHomeomorph M E)
@@ -65,11 +50,6 @@ theorem exists_finite_PL_domain_image_pair
   · rintro ⟨y, hy, hyx⟩
     exact hinj (hN.isClosed.frontier_subset hy) x.property hyx ▸ hy
   · exact fun hx => mem_image_of_mem F hx
-
-
-
-
-
 
 theorem exists_compact_PL_domain_finite_pair [LocallyCompactSpace M]
     (e : ι → OpenPartialHomeomorph M E)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexHomologyClass
 import Mathlib.Algebra.Homology.ConcreteCategory
 
-
-
 set_option autoImplicit false
 
 noncomputable section

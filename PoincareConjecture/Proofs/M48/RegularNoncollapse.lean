@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.RegularSpacetime
 import PoincareConjecture.Proofs.M15.RawNoncollapse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

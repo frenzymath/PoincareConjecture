@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M04.TensorNormBounds
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory
@@ -362,4 +354,3 @@ theorem shiActualJoinedDensity_integrated_jet_bounds [T2Space M]
           one_mul]
 
 end PoincareConjecture.M04
-

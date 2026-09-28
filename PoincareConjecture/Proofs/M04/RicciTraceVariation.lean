@@ -4,13 +4,6 @@ import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.LinearAlgebra.Trace
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -263,4 +256,3 @@ theorem hasDerivAt_ricci_of_curvature_derivative (F : RicciFlow n M J)
   ring
 
 end PoincareConjecture.M04
-

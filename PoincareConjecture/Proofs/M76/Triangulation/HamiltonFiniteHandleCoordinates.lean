@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonHandleCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTheoremOne
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -66,11 +56,6 @@ private theorem exists_finite_handle_coordinates {k : ℕ}
     change |x (sigma.symm (sigma (Sum.inl j)))| ≤ 1 at hh
     change |x (Sum.inl j)| ≤ 1
     simpa only [sigma.symm_apply_apply] using hh
-
-
-
-
-
 
 theorem hasHamiltonChartHandleStraightening_of_product_case
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

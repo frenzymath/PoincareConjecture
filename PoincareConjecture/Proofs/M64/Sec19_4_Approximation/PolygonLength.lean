@@ -1,17 +1,5 @@
 import PoincareConjecture.Definitions.M64Approximation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -118,9 +106,6 @@ private theorem polygon_cell_speed_ae
     ((polygon.side j).constant_speed (x - left) (by
       dsimp [left, right, ell] at hxint ⊢
       constructor <;> linarith [hxint.1, hxint.2]))
-
-
-
 
 theorem m64PolygonLength_eq_sum
     (polygon : M63GeodesicPolygon g D N) (hN : 0 < N) :

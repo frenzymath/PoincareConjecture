@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.Parameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,8 +25,6 @@ private theorem observed_old_entry {K : MetricSurgeryConstants}
   have hj := M51Numerical.epochIndex_le (ht.2.trans_le hH)
   exact ⟨⟨M51Numerical.epochIndex t, Nat.lt_succ_of_le hj⟩,
     M51Numerical.mem_epochEntry_index ht.1⟩
-
-
 
 theorem SurgeryPrefixControls.observePastPrefix
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -63,8 +53,6 @@ theorem SurgeryPrefixControls.observePastPrefix
     kappa_schedule := fun j hj t ht => old.kappa_schedule j hj t (htime ht)
     h_schedule := fun j hj t ht => old.h_schedule j hj t (htime ht) }
 
-
-
 theorem SurgeryPrefixControls.canonicalBeforePrefix
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -79,8 +67,6 @@ theorem SurgeryPrefixControls.canonicalBeforePrefix
   have hsquare := pow_le_pow_left₀ (inv_nonneg.mpr (p.r_pos j).le) hinv 2
   exact old.canonical j hji t ⟨ht, hj⟩ htF x (hsquare.trans hx)
 
-
-
 theorem SurgeryPrefixControls.noncollapsedBeforePrefix
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -94,8 +80,6 @@ theorem SurgeryPrefixControls.noncollapsedBeforePrefix
   exact (ENNReal.ofReal_le_ofReal
     (mul_le_mul_of_nonneg_right hk (pow_nonneg hr.le 3))).trans
       (old.noncollapsed j hji t ⟨ht, hj⟩ htF x hx r hr hre e hzero hcurv)
-
-
 
 theorem SurgeryPrefixControls.noncollapsedProfileBeforePrefix
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

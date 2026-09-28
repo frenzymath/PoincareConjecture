@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactConvexHalfspaceNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_open_maximal_face_interior_neighborhood
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -57,11 +42,6 @@ theorem exists_open_maximal_face_interior_neighborhood
     obtain ⟨x, hxt, hxU⟩ := hmeet
     exact hxU.1 (mem_iUnion₂.mpr ⟨t, ⟨ht, hts⟩, hxt⟩)
   · exact disjoint_left.mpr fun _ hxU hxF => hxU.2 hxF
-
-
-
-
-
 
 theorem exists_compact_convex_maximal_face_body [DecidableEq E]
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

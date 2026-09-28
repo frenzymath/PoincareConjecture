@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Algebra
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators InnerProductSpace
 
 namespace Poincare.Geometry.Curvature.Hypersurface
-
-
 
 theorem symmetric_operator_extrinsic_determinant_lower_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

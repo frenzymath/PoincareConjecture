@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeUniformizationEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 structure M64FreeMorreyUniformizationCandidate
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M)
@@ -46,8 +30,6 @@ structure M64FreeMorreyUniformizationCandidate
       m60AreaGram g annulus.map p 0 1 = 0
   energy_le : m64ClassicalWeightedGramEnergy g annulus modulus ≤ A.area + ε
 
-
-
 theorem M64FreeMorreyUniformizationCandidate.weightedEnergy_eq_area
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
     {A : M64Annulus g c0 c1} {ε : ℝ}
@@ -56,15 +38,10 @@ theorem M64FreeMorreyUniformizationCandidate.weightedEnergy_eq_area
   exact m64_weightedEnergy_eq_area_of_ae_modulus_conformal C.annulus
     C.modulus_pos C.ae_modulus_conformal
 
-
-
-
 structure M64FreeMorreyUniformizationCertificate
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) where
   candidate : ∀ A : M64Annulus g c0 c1, ∀ ε : ℝ, 0 < ε →
     M64FreeMorreyUniformizationCandidate g c0 c1 A ε
-
-
 
 theorem m64FreeConformalModulusApproximation_of_morrey_certificate
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

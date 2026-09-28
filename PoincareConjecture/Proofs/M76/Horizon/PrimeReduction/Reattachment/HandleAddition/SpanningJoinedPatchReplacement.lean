@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalBallDiskAttachment
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.ClosedBallConfinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -26,8 +17,6 @@ local notation "RectRim" => Ends ∪ Sides
 local notation "Wide" => Set.prod (Icc (-1 : ℝ) 2) (Icc (-1 : ℝ) 1)
 local notation "WideRim" => Set.union (Set.prod ({-1,2} : Set ℝ) (Icc (-1 : ℝ) 1))
   (Set.prod (Icc (-1 : ℝ) 2) ({-1,1} : Set ℝ))
-
-
 
 theorem exists_original_marked_joined_patch
     {X ι : Type*} [MetricSpace X]
@@ -181,8 +170,6 @@ theorem exists_original_marked_joined_patch
     fun h => hrF ((image_mono (hcorners.trans hends)) h)
   simp only [mem_inter_iff,mem_sdiff,mem_union] at *
   tauto
-
-
 
 theorem ChartwisePLSphere.exists_nonbounding_spanning_patch_replacement
     {X ι : Type*} [MetricSpace X]

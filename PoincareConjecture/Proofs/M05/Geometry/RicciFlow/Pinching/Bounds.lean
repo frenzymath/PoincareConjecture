@@ -1,18 +1,5 @@
-
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.Linarith
-
-
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare
 

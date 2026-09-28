@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedBallSphereModel
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallActualDiskAttachment
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.CubicalThreeSphere
@@ -26,9 +12,6 @@ local notation "P3" => ((ℝ × ℝ) × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.exists_punctured_sphere_of_disk_port_sum
     {ι : Type*} [Finite ι] {B U S T d q : Set E}

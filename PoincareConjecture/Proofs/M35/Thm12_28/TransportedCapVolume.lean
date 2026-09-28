@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedVolume
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem blowupSequence_volume_comparison (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -100,8 +90,6 @@ theorem blowupSequence_volume_comparison (P : M35StandardCapPredecessors)
       apply (le_div_iff₀ he).mpr
       nlinarith
     exact (Real.sqrt_le_sqrt hquad).trans_eq (Real.sqrt_mul (div_nonneg hQ.le he.le) _)
-
-
 
 theorem blowupSequence_cap_volume_bound (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

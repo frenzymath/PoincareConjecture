@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Pointed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -38,9 +30,6 @@ private theorem exists_strictMono_tendsto_atTop_of_unbounded
     | zero => exact (hvalue 0 0).le
     | succ k => exact (hvalue (phi k) (k + 1)).le
   exact ⟨phi, hphi, tendsto_atTop_mono hbound tendsto_natCast_atTop_atTop⟩
-
-
-
 
 theorem exists_subseq_proper_geodesic_pointed_limit_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type}

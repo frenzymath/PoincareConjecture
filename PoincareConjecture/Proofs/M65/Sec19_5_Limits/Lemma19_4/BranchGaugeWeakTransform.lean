@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchWeakCRMultip
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchWeakCRRegularity
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeTransform
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +10,6 @@ open Set MeasureTheory Complex
 open scoped Topology ContDiff SchwartzMap
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem dbar_clm_comp {E G : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
@@ -38,9 +23,6 @@ theorem dbar_clm_comp {E G : Type*}
     ContinuousLinearMap.apply_apply, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.coe_restrictScalars', map_add, map_smul]
 
-
-
-
 theorem contDiff_inverse_operator {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
     {Q : ℂ → E →L[ℂ] E} (hQ : ContDiff ℝ 1 Q)
@@ -52,10 +34,6 @@ theorem contDiff_inverse_operator {E : Type*}
   have hi : ContDiffAt ℝ 1 Ring.inverse (Q z) := by
     simpa only [hu] using contDiffAt_ringInverse ℝ (n := 1) u
   exact hi.comp z hQ.contDiffAt
-
-
-
-
 
 theorem dbar_inverse_operator_apply {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
@@ -105,11 +83,6 @@ private theorem operator_apply_coordinate {n : ℕ}
       apply Finset.sum_congr rfl
       intro j _
       ring
-
-
-
-
-
 
 theorem differentiableOn_inverse_weak_matrix_field {n : ℕ}
     {A Q : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)}

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.AmbientReduction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ namespace Poincare
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => Metric.sphere (0 : E3) 1
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_cylinder_coordinates_of_ambient_sphere_in_model
     {Y : Type*} [TopologicalSpace Y]

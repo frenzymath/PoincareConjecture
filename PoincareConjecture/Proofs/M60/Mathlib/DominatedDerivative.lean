@@ -1,24 +1,12 @@
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter Set
 open scoped Topology
 
 namespace PoincareConjecture.M60
-
-
 
 theorem hasDerivWithinAt_integral_of_dominated_lipschitz
     {X : Type*} [MeasurableSpace X] {mu : Measure X}

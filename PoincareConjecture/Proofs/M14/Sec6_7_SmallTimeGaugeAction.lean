@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeEnergy
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCoefficients
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareGaugeEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (x₀ : G.gaugeCover.spatial b)
-
-
-
 
 theorem squarePath_gauge_kinetic_eq {U : Set G.Point}
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -66,9 +54,6 @@ theorem squarePath_gauge_kinetic_eq {U : Set G.Point}
   rw [squareMetricCoefficient_apply, ← hclock]
   exact henergy.symm
 
-
-
-
 theorem squarePath_gauge_potential_eq
     (θ : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
     {U : Set G.Point}
@@ -81,9 +66,6 @@ theorem squarePath_gauge_potential_eq
     (hclock.trans (gaugeLift_time_eq p b lift hright (squarePath_parameter_mem p hs) hsrc).symm)
   simp only [squarePotentialCoefficient, (G.gaugeCover.spatial b).chartAt_symm_apply_val,
     heq, hright _ hsrc, pathSquarePotential]
-
-
-
 
 theorem squarePath_gauge_action_eq (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (θ : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)

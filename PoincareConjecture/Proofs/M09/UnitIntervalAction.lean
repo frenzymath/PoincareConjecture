@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M09.SmoothSquareAction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

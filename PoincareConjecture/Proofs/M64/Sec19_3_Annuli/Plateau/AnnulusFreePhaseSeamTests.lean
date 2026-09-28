@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseSeamGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicGreenIdentity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64AnnulusSeam_shifted_derivative_integral {phi : LoopPlane → ℝ}
     (hp : ContDiff ℝ ∞ phi) (hs : tsupport phi ⊆ O) (i : Fin 2) :
@@ -60,8 +51,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)}
   {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {c0 c1 : ℝ → M}
   {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
-
-
 
 theorem phase_seam_folded_green
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

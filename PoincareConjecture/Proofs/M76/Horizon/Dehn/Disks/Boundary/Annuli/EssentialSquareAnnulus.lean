@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.EssentialPolygonNesting
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSquares
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -19,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 open _root_.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "Q2" => sphere (0 : Fin 2 → ℝ) 1
-
-
 
 theorem essential_polygon_in_square_annulus
     {n : ℕ} (P : Polygon P2 (n + 3))

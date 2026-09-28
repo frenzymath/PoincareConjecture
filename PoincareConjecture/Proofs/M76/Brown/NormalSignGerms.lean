@@ -5,16 +5,6 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric SignType
@@ -23,9 +13,6 @@ namespace BrownCollar
 
 variable {P Q R : Type*} [TopologicalSpace P] [TopologicalSpace Q]
   [TopologicalSpace R]
-
-
-
 
 def NormalSignAt (e : OpenPartialHomeomorph (P × ℝ) (Q × ℝ))
     (p : P) (s : SignType) : Prop :=
@@ -45,8 +32,6 @@ theorem base_zero (h : NormalSignAt e p s) : (e (p, (0 : ℝ))).2 = 0 := by
   apply sign_eq_zero_iff.mp
   simpa only [sign_zero, mul_zero] using hsign (p, 0) hp
 
-
-
 theorem exists_open (h : NormalSignAt e p s) :
     ∃ W : Set P, IsOpen W ∧ p ∈ W ∧ ∀ q ∈ W, NormalSignAt e q s := by
   obtain ⟨hs, U, hU, hp, hUs, hsign⟩ := h
@@ -54,9 +39,6 @@ theorem exists_open (h : NormalSignAt e p s) :
     hU.preimage (continuous_id.prodMk continuous_const), hp, ?_⟩
   intro q hq
   exact ⟨hs, U, hU, hq, hUs, hsign⟩
-
-
-
 
 theorem trans {f : OpenPartialHomeomorph (Q × ℝ) (R × ℝ)} {t : SignType}
     (he : NormalSignAt e p s) (hf : NormalSignAt f (e (p, 0)).1 t) :
@@ -78,8 +60,6 @@ theorem trans {f : OpenPartialHomeomorph (Q × ℝ) (R × ℝ)} {t : SignType}
     change sign (f (e z)).2 = (t * s) * sign z.2
     rw [hsignV (e z) hz.2, hsignU z hz.1, mul_assoc]
 
-
-
 theorem symm (h : NormalSignAt e p s) :
     NormalSignAt e.symm (e (p, 0)).1 s := by
   have hbase : ((e (p, (0 : ℝ))).1, (0 : ℝ)) = e (p, 0) := by
@@ -99,15 +79,11 @@ theorem symm (h : NormalSignAt e p s) :
 
 end NormalSignAt
 
-
-
 theorem normalSignAt_refl (p : P) :
     NormalSignAt (OpenPartialHomeomorph.refl (P × ℝ)) p 1 := by
   refine ⟨one_ne_zero, univ, isOpen_univ, mem_univ _, subset_rfl, ?_⟩
   intro z _
   exact (one_mul (sign z.2)).symm
-
-
 
 theorem NormalSignAt.unique {e : OpenPartialHomeomorph (P × ℝ) (Q × ℝ)}
     {p : P} {s t : SignType} (hs : NormalSignAt e p s) (ht : NormalSignAt e p t) :

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasCorrection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem supported_chart_preimage_region {E X : Type*}
     [TopologicalSpace E] [TopologicalSpace X]
@@ -51,10 +39,6 @@ end OpenPartialHomeomorph
 
 namespace Homeomorph
 
-
-
-
-
 theorem preimage_frontier_mark_of_supported {X : Type*} [TopologicalSpace X]
     (F : X ≃ₜ X) {R C W : Set X} (hR : F ⁻¹' R = R)
     (hfix : EqOn F id Cᶜ) (hCW : C ⊆ W) :
@@ -69,9 +53,6 @@ theorem preimage_frontier_mark_of_supported {X : Type*} [TopologicalSpace X]
 end Homeomorph
 
 namespace Topology
-
-
-
 
 theorem exists_open_frontier_mark {X : Type*} [TopologicalSpace X]
     {R F : Set X} (hF : F ⊆ frontier R)

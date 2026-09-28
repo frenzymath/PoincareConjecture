@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalStopp
 import Mathlib.Algebra.Order.GroupWithZero.OrderIso
 import Mathlib.Algebra.Order.Group.OrderIso
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem cylinder_forward_eq_of_initial
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

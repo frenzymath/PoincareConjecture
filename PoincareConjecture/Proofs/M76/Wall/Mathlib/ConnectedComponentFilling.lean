@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocalComplementarySides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ namespace IsClosed
 
 variable {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
   {K : Set X}
-
-
 
 theorem frontier_connectedComponentIn_compl_subset_frontier
     (hK : IsClosed K) (x : X) :
@@ -30,9 +19,6 @@ theorem frontier_connectedComponentIn_compl_subset_frontier
   intro y hy
   rw [hK.frontier_eq]
   exact ⟨hK.frontier_connectedComponentIn_compl_subset x hy, hcl hy.1⟩
-
-
-
 
 theorem isConnected_compl_connectedComponentIn [PreconnectedSpace X]
     (hK : IsClosed K) (hconn : IsConnected K) (x : X) :

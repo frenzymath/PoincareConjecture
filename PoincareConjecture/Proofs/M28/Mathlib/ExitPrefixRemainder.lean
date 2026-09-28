@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
-
 
 theorem ContinuousOn.exists_prefix_in_remainder_of_exit
     {X : Type*} [TopologicalSpace X] {V K F L : Set X}

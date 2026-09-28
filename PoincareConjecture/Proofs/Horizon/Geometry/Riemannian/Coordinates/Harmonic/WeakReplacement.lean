@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Energy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.WeakEquation
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -28,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
 
-
 def l2Forcing (D : LeviCivitaData g) (Ω : Set M) :
     Lp ℝ 2 g.volumeMeasure →L[ℝ] (H1Zero D Ω →L[ℝ] ℝ) :=
   (innerSL ℝ).bilinearComp (ContinuousLinearMap.id ℝ _) (toL2 D Ω)
@@ -42,7 +32,6 @@ theorem norm_l2Forcing_apply_le (f : Lp ℝ 2 g.volumeMeasure) :
   intro v
   exact (norm_inner_le_norm f (toL2 D Ω v)).trans
     (mul_le_mul_of_nonneg_left (norm_toL2_le v) (norm_nonneg f))
-
 
 def weakPoisson (D : LeviCivitaData g) (Ω : Set M) {P : ℝ}
     (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω P) :
@@ -92,14 +81,12 @@ theorem testToL2_inner_laplacianLp {Ω' : Set M}
   filter_upwards [q.memLp.coeFn_toLp] with x hx
   rw [show (testToL2 D Ω' q) x = q x from hx]
 
-
 theorem gradientEnergy_eq_neg_inner_laplacianLp [PreconnectedSpace M]
     (w : H1Zero D Ω) (f : EnergyTest D Ω) :
     gradientEnergy D Ω w (f : H1Zero D Ω) = -⟪toL2 D Ω w, f.laplacianLp⟫_ℝ := by
   rw [gradientEnergy_apply, inner_test_eq_inner_oneSubLaplacian, toL2_coe,
     EnergyTest.laplacianLp, inner_sub_right]
   ring
-
 
 theorem weakPoisson_distributional [PreconnectedSpace M] {P : ℝ}
     (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω P)
@@ -110,10 +97,8 @@ theorem weakPoisson_distributional [PreconnectedSpace M] {P : ℝ}
   rw [gradientEnergy_eq_neg_inner_laplacianLp, toL2_coe] at h
   linarith
 
-
 def IsWeakHarmonicReplacement (q : Lp ℝ 2 g.volumeMeasure) (w : H1Zero D Ω) : Prop :=
   ∀ f : EnergyTest D Ω, ⟪q + toL2 D Ω w, f.laplacianLp⟫_ℝ = 0
-
 
 theorem laplacianLp_inner_testToL2 [PreconnectedSpace M] {Ω' : Set M}
     (q : EnergyTest D Ω') (f : EnergyTest D Ω) :
@@ -121,7 +106,6 @@ theorem laplacianLp_inner_testToL2 [PreconnectedSpace M] {Ω' : Set M}
       ⟪testToL2 D Ω' q, f.laplacianLp⟫_ℝ := by
   rw [real_inner_comm, testToL2_inner_laplacianLp, testToL2_inner_laplacianLp]
   exact D.integral_mul_laplacian_comm f.smooth q.smooth f.hasCompactSupport q.hasCompactSupport
-
 
 theorem weakPoisson_isWeakHarmonicReplacement [PreconnectedSpace M] {P : ℝ}
     (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω P) {Ω' : Set M}
@@ -131,7 +115,6 @@ theorem weakPoisson_isWeakHarmonicReplacement [PreconnectedSpace M] {P : ℝ}
   intro f
   rw [inner_add_left, weakPoisson_distributional, laplacianLp_inner_testToL2]
   ring
-
 
 theorem existsUnique_weakHarmonicReplacement [PreconnectedSpace M] {P : ℝ}
     (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω P) {Ω' : Set M}
@@ -166,7 +149,6 @@ theorem integrable_replacement_mul_laplacian {Ω' : Set M}
     q.memLp.coeFn_toLp] with x hadd hq
   rw [hadd, Pi.add_apply, show (testToL2 D Ω' q) x = q x from hq]
 
-
 theorem isWeakHarmonicReplacement_iff_integral {Ω' : Set M}
     (q : EnergyTest D Ω') (w : H1Zero D Ω) :
     IsWeakHarmonicReplacement (testToL2 D Ω' q) w ↔
@@ -184,16 +166,12 @@ open LeviCivitaData.Dirichlet
 variable {n : ℕ} [NeZero n]
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem existsUnique_weakPoisson_on_ball (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R) (F : Lp ℝ 2 g.volumeMeasure) :
     ∃! w : H1Zero D (Metric.ball 0 R), ∀ v : H1Zero D (Metric.ball 0 R),
       gradientEnergy D (Metric.ball 0 R) w v = ⟪F, toL2 D (Metric.ball 0 R) v⟫_ℝ := by
   obtain ⟨P, hP0, hP⟩ := exists_metric_poincare_on_ball g D hR
   exact existsUnique_weakPoisson hP0 hP F
-
-
 
 theorem existsUnique_weakHarmonicReplacement_on_ball (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R) {q : EuclideanSpace ℝ (Fin n) → ℝ}

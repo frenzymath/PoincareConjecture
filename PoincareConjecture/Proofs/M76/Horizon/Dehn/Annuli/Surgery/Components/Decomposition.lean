@@ -1,14 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.OrdinaryCircles
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 open Classical in
-
 
 structure SourceCircleDecomposition
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -65,4 +62,3 @@ theorem nonempty_sourceCircleDecomposition
     n, P, mate, hfin, hmodel, hcover, hdis, htop, hm2, hmem, himage, himagedis⟩⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderSpatial
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M30.Cylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {a q : ℝ} {J : SpacetimeInterval} {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
-
-
 
 theorem isOpen_spatial_image (s : J.domain) :
     IsOpen (e.forward s.1 s.2 '' U) := by
@@ -42,8 +30,6 @@ theorem isOpen_spatial_image (s : J.domain) :
   rw [← Poincare.map_nhds_eq_of_contMDiffAt_mfderiv_bijective
     ((e.forward_smooth s.1 s.2 x hx).contMDiffAt (U.isOpen.mem_nhds hx)) hbij]
   exact image_mem_map (U.isOpen.mem_nhds hx)
-
-
 
 def spatialHomeomorph (s : J.domain) :
     OpenPartialHomeomorph C.carrier (F.slice (a + s.1 / q)).carrier where
@@ -63,14 +49,10 @@ def spatialHomeomorph (s : J.domain) :
   continuousOn_toFun := (e.forward_smooth s.1 s.2).continuousOn
   continuousOn_invFun := (e.inverse_smooth s.1 s.2).continuousOn
 
-
-
 theorem spatialHomeomorph_contMDiffAt (s : J.domain) {x : C.carrier}
     (hx : x ∈ (spatialHomeomorph e s).source) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ (spatialHomeomorph e s) x :=
   (e.forward_smooth s.1 s.2 x hx).contMDiffAt (U.isOpen.mem_nhds hx)
-
-
 
 theorem spatialHomeomorph_symm_contMDiffAt (s : J.domain)
     {y : (F.slice (a + s.1 / q)).carrier}

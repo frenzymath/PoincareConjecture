@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.SmoothMetric
 import PoincareConjecture.Proofs.M10.MetricInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,7 +32,6 @@ theorem backwardMetricCoordinates_apply_symm (q₀ : M) (w : M × ℝ)
       (TangentSpace (𝓡 n)) q₀).symmL ℝ w.1 v)
   simpa only [Bundle.Trivialization.continuousLinearMapAt_symmL _ hw] using h
 
-
 theorem backwardMetricCoordinates_symm (q₀ : M) (w : M × ℝ)
     (hw : w.1 ∈ (trivializationAt (EuclideanSpace ℝ (Fin n))
       (TangentSpace (𝓡 n)) q₀).baseSet) (u v : EuclideanSpace ℝ (Fin n)) :
@@ -48,7 +39,6 @@ theorem backwardMetricCoordinates_symm (q₀ : M) (w : M × ℝ)
   rw [backwardMetricCoordinates_apply_symm q₀ w hw,
     backwardMetricCoordinates_apply_symm q₀ w hw]
   exact (F.metric (T - w.2)).symm w.1 _ _
-
 
 theorem backwardMetricCoordinates_pos (q₀ : M) (w : M × ℝ)
     (hw : w.1 ∈ (trivializationAt (EuclideanSpace ℝ (Fin n))
@@ -62,14 +52,12 @@ theorem backwardMetricCoordinates_pos (q₀ : M) (w : M × ℝ)
   rw [Bundle.Trivialization.continuousLinearMapAt_symmL _ hw, map_zero] at h
   exact hu h
 
-
 theorem coordinateBackwardMetric_symm (q₀ : M) (w : EuclideanSpace ℝ (Fin n) × ℝ)
     (hw : w.1 ∈ (extChartAt (𝓡 n) q₀).target) (u v : EuclideanSpace ℝ (Fin n)) :
     coordinateBackwardMetric F T q₀ w u v = coordinateBackwardMetric F T q₀ w v u := by
   apply backwardMetricCoordinates_symm q₀ ((extChartAt (𝓡 n) q₀).symm w.1, w.2)
   simpa only [TangentBundle.trivializationAt_baseSet, extChartAt_source] using
     (extChartAt (𝓡 n) q₀).map_target hw
-
 
 theorem coordinateBackwardMetric_isInvertible (q₀ : M)
     (w : EuclideanSpace ℝ (Fin n) × ℝ)

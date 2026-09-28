@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.FreeEnergyLimit
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,9 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem observedWeakAnnulus_free_infimum_limit
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e) (hei : IsClosedEmbedding e)

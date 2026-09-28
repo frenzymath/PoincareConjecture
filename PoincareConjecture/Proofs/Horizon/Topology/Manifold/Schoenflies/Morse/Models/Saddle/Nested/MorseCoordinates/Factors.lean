@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.CriticalPoint
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SquareCompletion
 
-
-
 noncomputable section
 set_option autoImplicit false
 

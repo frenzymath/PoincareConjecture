@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderScalarOperators
 import PoincareConjecture.Proofs.M09.HessianTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_terminal_scalar_operators_tendsto_chart (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

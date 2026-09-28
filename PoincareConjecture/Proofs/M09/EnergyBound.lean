@@ -2,13 +2,6 @@ import Mathlib.Analysis.ODE.Gronwall
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M09

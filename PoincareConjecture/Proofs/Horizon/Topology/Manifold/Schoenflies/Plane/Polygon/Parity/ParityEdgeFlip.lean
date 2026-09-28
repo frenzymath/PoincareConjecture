@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Parity.CrossingParity
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.BoundaryBasics
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology BigOperators
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem polygonCrossingParity_flip_near_edge
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.OriginalDomainCover
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.OpenCoverInjection
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +19,6 @@ private theorem inclusion_injective_congr {A B T : Set X}
       (FundamentalGroup.map (ContinuousMap.inclusion hAT) x) := by
   subst B
   exact h
-
-
 
 theorem side_ambient_injective (C : OpenFrontierCollapse R) (_hR : IsClosed R)
     (hpi : ∀ T ∈ ({R, (interior R)ᶜ} : Set (Set X)),
@@ -71,10 +67,6 @@ theorem side_ambient_injective (C : OpenFrontierCollapse R) (_hR : IsClosed R)
     exact hab
 
 end OpenFrontierCollapse
-
-
-
-
 
 theorem PLDomain.closed_sides_ambient_injective
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

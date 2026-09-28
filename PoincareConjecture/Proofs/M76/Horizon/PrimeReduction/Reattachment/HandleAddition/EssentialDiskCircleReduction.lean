@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.EssentialDiskCirclePair
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip _root_.Dehn
 
@@ -115,4 +105,3 @@ theorem exists_disk_contact_reduction_of_inessential_surface_circle
     exact hkeep ⟨hh.1.1,hh.2⟩
 
 end PoincareConjecture.M76
-

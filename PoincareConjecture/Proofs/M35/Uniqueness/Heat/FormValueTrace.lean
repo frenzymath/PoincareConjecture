@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormWeakHeat
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ private theorem sqrt_parameter_shift (J : V →L[ℝ] H) (hc : IsCompactOperator
     Real.sqrt i.1.val * q = Real.sqrt i.1.val * (Real.sqrt q * Real.sqrt q) := by
       rw [Real.mul_self_sqrt hq]
     _ = Real.sqrt q := by rw [← mul_assoc, h, one_mul]
-
-
 
 theorem formDualResponse_value_trace (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

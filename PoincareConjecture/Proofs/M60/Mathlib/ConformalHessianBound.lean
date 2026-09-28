@@ -1,23 +1,11 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem sq_inner_add_sq_inner_le (u v w : E) {a : ℝ} (ha : 0 < a)
     (hu : inner ℝ u u = a) (hv : inner ℝ v v = a) (huv : inner ℝ u v = 0) :
@@ -36,10 +24,6 @@ theorem sq_inner_add_sq_inner_le (u v w : E) {a : ℝ} (ha : 0 < a)
     ring
   rw [heq] at h
   linarith
-
-
-
-
 
 theorem conformal_tracefree_hessian_bound (u v A B : E) {a x y : ℝ}
     (ha : 0 < a) (hu : inner ℝ u u = a) (hv : inner ℝ v v = a)

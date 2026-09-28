@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.StandardLattic
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeHandleMapTransport
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Isotopy.Mathlib.HomeomorphConjugacy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_lattice_handle_normalization
     {ι ι' κ κ' α β : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']

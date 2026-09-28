@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_PotentialCoefficient
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_1_GaugePerturbation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +21,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
   (x₀ : G.gaugeCover.spatial b)
-
-
-
 
 theorem backwardGaugeFamily_quadraticDensity {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -66,9 +54,6 @@ theorem backwardGaugeFamily_quadraticDensity {U : Set G.Point} (hU : IsOpen U)
   simpa only [hd.deriv,
     (G.gaugeCover.spatial b).affineShift_val hshift] using hdensity
 
-
-
-
 theorem middleAction_supportedBackwardGauge_eq_quadratic
     {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -100,9 +85,6 @@ theorem middleAction_supportedBackwardGauge_eq_quadratic
       (hsrc t htc) (hshift t htc)]
   dsimp only
   rw [derivWithin_of_mem_nhds (Icc_mem_nhds ht.1 ht.2)]
-
-
-
 
 theorem exists_quadratic_local_minimum
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hmin : M14IsMinimizing p)

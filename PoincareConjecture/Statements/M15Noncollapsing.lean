@@ -4,16 +4,6 @@ import PoincareConjecture.Statements.M12GeneralizedEquation
 import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure GeneralizedNoncollapsingConclusion (n : ℕ) : Prop where
   uniform : M15GeneralizedUniformTheorem.{u} n
@@ -36,10 +23,8 @@ structure GeneralizedNoncollapsingConclusion (n : ℕ) : Prop where
       (U : M15GeneralizedUniformData.{u} n taubar l₀ V),
       M15ProviderImpliesNoncollapse G Omega taubar l₀ V r₀ U.kappa U
 
-
 structure CompactNoncollapsingConclusion : Prop where
   compact : M15CompactTheorem810.{u}
-
 
 structure NoncollapsingConclusion (n : ℕ) : Prop where
   generalized : GeneralizedNoncollapsingConclusion.{u} n

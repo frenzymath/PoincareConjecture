@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Eventual
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.SourceCharts.Rescaling
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 noncomputable section
@@ -37,8 +25,6 @@ local instance ancientRescaling_unitBallNonempty :
 variable {R ρ a b : ℕ → ℝ} {N : ℕ → ℕ}
     (cover : ∀ k j, j ≤ k → NormalChartCover ((S.flow k).flow.metric)
       (S.flow k).base T' T ((j : ℝ) + 1) (R j) (ρ j) (a j) (b j) (N j))
-
-
 
 theorem diagonalUnitBallMap_eventually_bounded_spacetime_derivatives_on_open
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (i : ℕ)
@@ -119,9 +105,6 @@ theorem diagonalUnitBallMap_eventually_bounded_spacetime_derivatives_on_open
     (fun _ : Fin m => L)).trans
       (mul_le_mul_of_nonneg_right (hkB (L z) (mem_image_of_mem L hz))
         (Finset.prod_nonneg fun _ _ => norm_nonneg _))
-
-
-
 
 theorem diagonalUnitBallMap_eventually_lower_coefficients_of_raw
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (i : ℕ) (t : ℝ)

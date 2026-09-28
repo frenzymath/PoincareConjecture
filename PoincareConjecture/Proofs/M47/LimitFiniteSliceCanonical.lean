@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteSliceChart
 import PoincareConjecture.Proofs.M47.LimitNoncollapsePointScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +34,6 @@ private local instance sliceCanonicalCharts :
   G.limit.carrier.chartedSpace
 private local instance sliceCanonicalManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_eventually_physical_slice_canonical
     (P : M47Predecessors.{u}) (hfinite : H ≠ ⊤) {epsilon C : ℝ}

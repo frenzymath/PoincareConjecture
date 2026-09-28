@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open Set Topology AddCommGroup
 open scoped Manifold ContDiff
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem AddCircle.exists_flatChartedSpace
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.Finite
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.CompactTime
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +16,6 @@ open ReducedLengthMinimum.Variational
 variable {M : Type u} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem reducedLength_le_finite_chart_piece_action (K : AncientKappaSolution 2 M)
     {τ : ℝ} (hτ : 0 < τ)
@@ -83,7 +74,6 @@ theorem reducedLength_le_finite_chart_piece_action (K : AncientKappaSolution 2 M
   have h := (le_div_iff₀ (show 0 < 2 * Real.sqrt τ by positivity)).mp
     (K.reducedLength_le_path (paths k) (hstart k) (hend k))
   simpa only [haction, mul_comm] using h
-
 
 theorem reducedLength_le_finite_chart_action (K : AncientKappaSolution 2 M)
     {τ : ℝ} (hτ : 0 < τ)

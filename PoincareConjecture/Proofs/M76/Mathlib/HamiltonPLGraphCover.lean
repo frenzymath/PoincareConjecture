@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLGraphBlock
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonFiniteAtlas
 import Mathlib.Topology.ShrinkingLemma
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ namespace ChartedSpace
 variable {M E : Type*} [TopologicalSpace M] [T2Space M]
   [CompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [ChartedSpace E M]
-
-
-
 
 theorem exists_finite_compact_PL_chart_cover_with_interiors
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening
@@ -53,9 +41,6 @@ theorem exists_finite_compact_PL_chart_cover_with_interiors
   intro x
   obtain ⟨i, hi⟩ := mem_iUnion.mp (hvU (mem_univ x))
   exact ⟨i, (hv i).subset_interior_iff.mpr subset_closure hi⟩
-
-
-
 
 theorem exists_finite_compact_PL_chart_cover
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening

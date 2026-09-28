@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenSurjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped unitInterval
 namespace VanKampen
 
 variable {X : Type*} [TopologicalSpace X] (U V : Set X)
-
-
 
 noncomputable def adaptedTails (hW : IsSimplyConnected (U ∩ V))
     (w b : U) (hw : w.1 ∈ V) (x : U) (hx : Joined b x) :
@@ -30,7 +19,6 @@ noncomputable def adaptedTails (hW : IsSimplyConnected (U ∩ V))
   else Path.Homotopic.Quotient.mk hx.somePath
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem adapted_transport_eq_one (hW : IsSimplyConnected (U ∩ V))
     (w b : U) (hw : w.1 ∈ V) (p : C(unitInterval, U))
@@ -79,8 +67,6 @@ variable (b : U)
     (htails : ∀ (p : C(unitInterval, U)), (∀ t, (p t).1 ∈ V) →
       Path.Homotopic.Quotient.basedContinuousTransport b tails p = 1)
 
-
-
 noncomputable def transportOfTails :
     LocalPathTransport (cover U V) (FundamentalGroup U b)ᵐᵒᵖ := by
   classical
@@ -116,7 +102,6 @@ noncomputable def transportOfTails :
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem transportOfTails_restriction (hU : IsOpen U) (hV : IsOpen V)
     (hcover : U ∪ V = univ) :
     (((transportOfTails U V b tails htails).global (cover_open U V hU hV)
@@ -147,8 +132,6 @@ theorem transportOfTails_restriction (hU : IsOpen U) (hV : IsOpen V)
 omit tails htails in
 set_option backward.isDefEq.respectTransparency false in
 
-
-
 theorem exists_retraction (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
     (hW : IsSimplyConnected (U ∩ V)) :
     ∃ r : FundamentalGroup X b.1 →* FundamentalGroup U b,
@@ -166,7 +149,6 @@ theorem exists_retraction (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = un
 
 omit tails htails in
 
-
 theorem inclusion_injective_at (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
     (hW : IsSimplyConnected (U ∩ V)) :
     Function.Injective (FundamentalGroup.map (inclusion U) b) := by
@@ -175,8 +157,6 @@ theorem inclusion_injective_at (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V
     fun q => DFunLike.congr_fun hr q).injective
 
 omit tails htails in
-
-
 
 noncomputable def inclusionMulEquivAt (hU : IsOpen U) (hV : IsOpen V)
     (hcover : U ∪ V = univ) (hVs : IsSimplyConnected V)

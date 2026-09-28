@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_PullbackPlane
 import PoincareConjecture.Proofs.M44.Mathlib.ProjectionAxis
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "e" => EuclideanSpace.basisFun (Fin 3) ℝ
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
 
 theorem cylinder_axis_and_horizontal_of_rank_drop
     (L : E2 →L[ℝ] E) (hL : Function.Injective L)
@@ -56,9 +43,6 @@ theorem cylinder_axis_and_horizontal_of_rank_drop
   · rw [map_smul, hqh, smul_zero]
   · exact (LinearMap.range L.toLinearMap).smul_mem _ (LinearMap.mem_range_self L.toLinearMap q)
 
-
-
-
 theorem cylinder_projection_injective_of_sectional_bounds
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x : E)
     (L : E2 →L[ℝ] E) (hL : Function.Injective L) (k : ℝ)
@@ -76,9 +60,6 @@ theorem cylinder_projection_injective_of_sectional_bounds
   have hlo := hlower _ haxis u hmem hgram
   exact (not_lt_of_ge hlo.le) ((le_abs_self _).trans_lt hupper)
 
-
-
-
 theorem cylinder_plane_mem_span (L : E2 →L[ℝ] E) {v : E}
     (hv : v ∈ LinearMap.range L.toLinearMap) :
     v ∈ Submodule.span ℝ ({L (b 0), L (b 1)} : Set E) := by
@@ -88,9 +69,6 @@ theorem cylinder_plane_mem_span (L : E2 →L[ℝ] E) {v : E}
   change w 0 • L (b 0) + w 1 • L (b 1) = L w
   have h := congrArg L ((EuclideanSpace.basisFun (Fin 2) ℝ).sum_repr w)
   simpa only [Fin.sum_univ_two, EuclideanSpace.basisFun_repr, map_add, map_smul] using h
-
-
-
 
 theorem cylinder_projection_injective_of_plane_margin
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x : E)

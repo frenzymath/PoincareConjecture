@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.MarkedRims
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 open scoped unitInterval
@@ -50,8 +41,6 @@ theorem stage_rim_not_nullhomotopic (b : Bool) :
   exact squareRimLoop_class_ne_one
     (Path.Homotopic.Quotient.eq.mpr (SimplyConnectedSpace.paths_homotopic _ _))
 
-
-
 theorem stage_rim_not_factor_contractible (b : Bool)
     {X : Type*} [TopologicalSpace X] [ContractibleSpace X]
     (cap : C(X, s.Carrier)) (rim : C(Q2, X))
@@ -61,8 +50,6 @@ theorem stage_rim_not_factor_contractible (b : Bool)
     ContinuousMap.ext hwhole
   rw [heq] at hn
   exact stage_rim_not_nullhomotopic L retained s hS hvalues b hn
-
-
 
 theorem stage_rim_not_finitePL_cap (b : Bool)
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -74,8 +61,6 @@ theorem stage_rim_not_finitePL_cap (b : Bool)
   let : ContractibleSpace D := H.contractibleSpace
   exact stage_rim_not_factor_contractible L retained s hS hvalues b cap rim hwhole
 
-
-
 theorem stage_rim_not_square_disk (b : Bool) (cap : C(D2, s.Carrier))
     (hwhole : ∀ u : Q2,
       cap ⟨u, sphere_subset_closedBall u.property⟩ = s.annulusRim hS b u) : False := by
@@ -84,8 +69,6 @@ theorem stage_rim_not_square_disk (b : Bool) (cap : C(D2, s.Carrier))
   let rim : C(Q2, D2) := ⟨fun u ↦ ⟨u, sphere_subset_closedBall u.property⟩,
     continuous_subtype_val.subtype_mk _⟩
   exact stage_rim_not_factor_contractible L retained s hS hvalues b cap rim hwhole
-
-
 
 theorem stage_rim_not_capped_cylinder (b : Bool)
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

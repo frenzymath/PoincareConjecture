@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.RadialForm
 import PoincareConjecture.Proofs.M34.Mathlib.WeightedRadialConnection
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,12 +9,8 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def initialRankOneCoefficient (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   (initialRadialCoefficient g₀ r - initialAngularCoefficient g₀ r) / r ^ 2
-
-
 
 theorem initialRankOneCoefficient_contDiffAt (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : r ≠ 0) : ContDiffAt ℝ ∞ (initialRankOneCoefficient g₀) r :=
@@ -31,23 +18,17 @@ theorem initialRankOneCoefficient_contDiffAt (g₀ : StandardInitialMetric)
     (initialAngularCoefficient_contDiff g₀).contDiffAt).div
       (contDiffAt_id.pow 2) (pow_ne_zero 2 hr)
 
-
 noncomputable def initialChristoffelA (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   deriv (initialAngularCoefficient g₀) r / (2 * r * initialAngularCoefficient g₀ r)
-
-
 
 noncomputable def initialChristoffelB (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   (initialRankOneCoefficient g₀ r - deriv (initialAngularCoefficient g₀) r / (2 * r)) /
     initialRadialCoefficient g₀ r
 
-
 noncomputable def initialChristoffelC (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   (deriv (initialRankOneCoefficient g₀) r / (2 * r) -
     2 * initialChristoffelA g₀ r * initialRankOneCoefficient g₀ r) /
       initialRadialCoefficient g₀ r
-
-
 
 theorem initialChristoffel_contDiffAt (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : r ≠ 0) :
@@ -71,8 +52,6 @@ theorem initialChristoffel_contDiffAt (g₀ : StandardInitialMetric)
       (mul_ne_zero (by norm_num) hr)).sub ((contDiffAt_const.mul hA).mul hb)).div
         hl (initialCoefficients_pos g₀ r).1.ne'
 
-
-
 theorem initialMetricInner_fderiv (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (u v w : StandardCapSpace) :
     fderiv ℝ (fun y => g₀.metric.inner y u v) x w =
@@ -94,7 +73,6 @@ theorem initialMetricInner_fderiv (g₀ : StandardInitialMetric)
       (by simp)).hasDerivAt u v w
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialConnection_formula (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (u v : StandardCapSpace) :

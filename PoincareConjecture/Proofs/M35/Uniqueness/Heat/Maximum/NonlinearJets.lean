@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Normed.Operator.Prod
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,7 +18,6 @@ def nonlinearSpaceJet (T : E × Z → ℝ) (x : E) (z : Z) : E →L[ℝ] ℝ :=
 def nonlinearValueJet (T : E × Z → ℝ) (x : E) (z : Z) : Z →L[ℝ] ℝ :=
   (fderiv ℝ T (x, z)).comp (ContinuousLinearMap.inr ℝ E Z)
 
-
 theorem nonlinear_field_fderiv {T : E × Z → ℝ} {X : E → Z} {x : E}
     (hT : DifferentiableAt ℝ T (x, X x)) (hX : DifferentiableAt ℝ X x) (v : E) :
     fderiv ℝ (fun y => T (y, X y)) x v =
@@ -41,7 +30,6 @@ theorem nonlinear_field_fderiv {T : E × Z → ℝ} {X : E → Z} {x : E}
     simp
   rw [hp, map_add]
   rfl
-
 
 theorem centered_covector_difference_le (A B : Z →L[ℝ] ℝ) (v w z : Z)
     {C L : ℝ} (hA : ‖A‖ ≤ C) (hB : ‖B‖ ≤ C) (hAB : ‖A - B‖ ≤ L) :
@@ -61,8 +49,6 @@ theorem centered_covector_difference_le (A B : Z →L[ℝ] ℝ) (v w z : Z)
           (mul_le_mul_of_nonneg_right hnorm (norm_nonneg _))
       · exact ((A - B).le_opNorm _).trans
           (mul_le_mul_of_nonneg_right hAB (norm_nonneg _))
-
-
 
 theorem nonlinear_field_fderiv_sub_le {T : E × Z → ℝ} {X Y : E → Z} {x : E}
     (hTX : DifferentiableAt ℝ T (x, X x)) (hTY : DifferentiableAt ℝ T (x, Y x))

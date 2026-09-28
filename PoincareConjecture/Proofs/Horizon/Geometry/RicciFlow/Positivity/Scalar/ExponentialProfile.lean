@@ -3,10 +3,6 @@ import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Tactic
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Filter Polynomial

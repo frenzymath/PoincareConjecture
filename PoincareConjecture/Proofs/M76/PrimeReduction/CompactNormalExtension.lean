@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompactHalfNormalExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ local notation "I-" => Icc (-1 : ℝ) 0
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.exists_compact_normal_extension
     {s q : Set E} (hs : IsFinitePLBallPair (ℝ × ℝ) s q)

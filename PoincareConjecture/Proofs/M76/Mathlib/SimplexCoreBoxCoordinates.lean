@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexCoreBox
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,14 +10,10 @@ namespace StdSimplexCore
 
 variable {ι κ : Type*} [Fintype ι] [Fintype κ]
 
-
-
 theorem contDiff_boxScale (ι : Type*) [Fintype ι] (η : ℝ) (n : ℕ∞ω) :
     ContDiff ℝ n (boxScale ι η : (κ → ℝ) → ℝ) := by
   unfold boxScale
   fun_prop
-
-
 
 theorem contDiff_boxPoint (ι κ : Type*) [Fintype ι] [Fintype κ] (η : ℝ) (n : ℕ∞ω) :
     ContDiff ℝ n (fun z : (ι → ℝ) × (κ → ℝ) => boxPoint ι κ η z.1 z.2) := by
@@ -39,8 +25,6 @@ theorem contDiff_boxPoint (ι κ : Type*) [Fintype ι] [Fintype κ] (η : ℝ) (
       (((contDiff_apply ℝ ℝ i).comp contDiff_fst).sub contDiff_const))
   · exact contDiff_snd
 
-
-
 theorem contDiffAt_boxBase (η : ℝ) (n : ℕ∞ω) (z : (ι → ℝ) × (κ → ℝ))
     (hz : boxScale ι η z.2 ≠ 0) : ContDiffAt ℝ n (boxBase ι κ η) z := by
   apply contDiffAt_pi.mpr
@@ -48,9 +32,6 @@ theorem contDiffAt_boxBase (η : ℝ) (n : ℕ∞ω) (z : (ι → ℝ) × (κ �
   exact contDiffAt_const.add
     ((((contDiff_apply ℝ ℝ i).comp contDiff_fst).contDiffAt.sub contDiffAt_const).div
       ((contDiff_boxScale ι η n).comp contDiff_snd).contDiffAt hz)
-
-
-
 
 noncomputable def boxHomeomorph {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1) :
@@ -84,16 +65,11 @@ noncomputable def boxHomeomorph {η : ℝ} (hη : 0 ≤ η)
           continuous_subtype_val.continuousAt
     · exact (continuous_snd.comp continuous_subtype_val).subtype_mk _
 
-
-
-
 noncomputable def boxExtension {Y : Type*} [TopologicalSpace Y] {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1)
     (f : C(stdSimplexCore ι η, Y)) : C(boxRegion ι κ η, Y) :=
   f.comp ⟨fun z => ((boxHomeomorph hη hbound).symm z).1,
     continuous_fst.comp (boxHomeomorph hη hbound).symm.continuous⟩
-
-
 
 theorem boxExtension_boxPoint {Y : Type*} [TopologicalSpace Y] {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1)

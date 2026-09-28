@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -94,8 +85,6 @@ private theorem initialNativeError_zero {u : ℝ} (hu : u < 1)
           (roundCylinderCoordinateBasis p.1) (roundCylinderCoordinateBasis p.2)) ^ 2)).trans
     (Fintype.sum_prod_type _)
 
-
-
 theorem source_initial_native_metric_error
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hu : u < 1)
     {B : RoundCylinderTwoTensor} (hclose : RoundCylinderClose epsilon u B)
@@ -122,8 +111,6 @@ theorem source_initial_native_metric_error
     ![v.1 0, v.1 1, v.2] hepsilon.le hsq
   rw [← initialNativeBilinear_sum, ← initialNativeBilinear_self] at herr
   simpa only [D, sub_apply, hL, initialNativeBilinear_apply] using herr
-
-
 
 theorem source_initial_native_metric_bounds
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 2) (hu : u < 1)

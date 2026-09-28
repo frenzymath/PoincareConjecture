@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.VertexStarHa
 import PoincareConjecture.Proofs.M76.PrimeReduction.ConvexZeroSectionDisk
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarMarkedCutCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -94,9 +86,6 @@ private theorem geometric_closedStar_zero_disk
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem isFinitePLBallPair_closedStar_chart_zero_section
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -7,17 +7,6 @@ import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology

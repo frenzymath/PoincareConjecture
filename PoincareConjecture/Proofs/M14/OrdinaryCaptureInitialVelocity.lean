@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.OrdinaryCaptureClock
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureVelocity
 import PoincareConjecture.Proofs.M09.InitialVectorIdentification
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +30,6 @@ private theorem capture_spatial_tangent_heq
   cases ht
   cases hc
   exact heq_of_eq (congrArg (g.spatialTangentEquiv t c) hv)
-
-
 
 theorem ordinaryCapture_square_initial_velocity_of_eqOn
     (t₀ : (G.timeIntervals.interval K).Point) (c₀ : C)

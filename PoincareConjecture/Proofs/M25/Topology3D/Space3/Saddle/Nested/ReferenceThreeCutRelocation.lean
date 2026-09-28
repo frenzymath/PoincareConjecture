@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularHorizontalTranspor
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceScalarWindow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceCutConjugacy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_reference_three_cut_relocation
     (ws wm d alpha beta nu t z v : ℝ)

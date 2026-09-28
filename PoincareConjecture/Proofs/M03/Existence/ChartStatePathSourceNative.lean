@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartStateBoundsNative
 import PoincareConjecture.Proofs.M03.Existence.ChartStateLipschitzNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

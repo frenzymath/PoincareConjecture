@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionMinimizer
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Length
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,18 +14,12 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem m64Intrinsic_boundary_pathELength
     (N : IntrinsicAnnulus) {radius a b : ℝ} (hradius : radius ≠ 0) (hab : a ≤ b) :
     N.metric.pathELength (intrinsicAnnulusBoundary radius) a b =
       ENNReal.ofReal (intrinsicBoundaryLength N.metric radius a b) := by
   exact N.metric.pathELength_eq_ofReal_integral_speed hab
     (m64Intrinsic_contDiff_boundarySpeed N hradius).continuous.continuousOn
-
-
-
 
 theorem m64Intrinsic_boundary_curveVariation_le
     (N : IntrinsicAnnulus) {radius a b : ℝ} (hradius : radius ≠ 0) (hab : a ≤ b) :
@@ -38,9 +29,6 @@ theorem m64Intrinsic_boundary_curveVariation_le
   exact m64Intrinsic_curveVariation_le_pathELength N.metric
     ((contMDiff_iff_contDiff.mpr
       (m64Intrinsic_contDiff_boundary radius)).of_le (by simp)).contMDiffOn
-
-
-
 
 theorem m64Intrinsic_unit_curveVariation_le
     (N : IntrinsicAnnulus) {γ : ℝ → AnnulusCoordinates} {a b : ℝ}

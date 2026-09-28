@@ -1,23 +1,11 @@
 import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M34
-
-
 
 theorem exists_bad_point_with_earlier_good
     {X T : Type*} [Preorder T] (time : X → T) (value : X → ℝ) (Good : X → Prop)

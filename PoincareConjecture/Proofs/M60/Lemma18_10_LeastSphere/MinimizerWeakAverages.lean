@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerDyadicHolde
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem suWeakPartial_kernel_identity {O : Set Plane} (hO : MeasurableSet O)
     {u p : Plane → ℝ} {i : Fin 2} (hw : HasWeakPartialDeriv i p u O)
@@ -62,8 +49,6 @@ theorem suWeakPartial_kernel_identity {O : Set Plane} (hO : MeasurableSet O)
   rw [hind, hind]
   simpa only [ψ, mul_comm] using heq
 
-
-
 theorem suConvolution_map {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
@@ -76,8 +61,6 @@ theorem suConvolution_map {E F : Type*}
   change B (∫ t, φ t • u (x - t)) = ∫ t, φ t • B (u (x - t))
   rw [← B.integral_comp_comm hi]
   simp only [map_smul]
-
-
 
 theorem suConvolution_fderiv_apply {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -92,9 +75,6 @@ theorem suConvolution_fderiv_apply {E : Type*}
   change (∫ t, ((lsmul ℝ ℝ).precompL Plane) (fderiv ℝ φ t) (u (x - t))) e = _
   rw [ContinuousLinearMap.integral_apply hi]
   rfl
-
-
-
 
 theorem suWeak_convolution_fderiv {m : ℕ} {O : Set Plane} (hO : MeasurableSet O)
     {u p : Plane → EuclideanSpace ℝ (Fin m)} {i : Fin 2}

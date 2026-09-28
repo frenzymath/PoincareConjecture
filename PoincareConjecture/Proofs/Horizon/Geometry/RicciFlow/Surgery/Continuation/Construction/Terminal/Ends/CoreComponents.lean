@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.TerminalPolicy
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

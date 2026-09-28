@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricStarFaces
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
 omit [Fintype K.faces] in
-
 
 theorem faceCentroid_injective [Finite K.faces] :
     Function.Injective (fun s : K.faces => s.val.centroid ℝ id) := by
@@ -35,9 +24,6 @@ theorem faceCentroid_injective [Finite K.faces] :
     exact_mod_cast hs.card_pos
   · rw [Finset.centroid_eq_inv_card_smul_sum _ hs]
     simp only [Finset.centroidWeights_apply, Finset.smul_sum, id_eq]
-
-
-
 
 theorem barycentricSubdivision_faces_of_face_chains [DecidableEq E] (t : Finset E) :
     t ∈ K.barycentricSubdivision.faces ↔
@@ -70,8 +56,6 @@ theorem barycentricSubdivision_faces_of_face_chains [DecidableEq E] (t : Finset 
         a.attach.image ((fun s => s.centroid ℝ id) ∘ ((↑) : a → Finset E))
       rw [← Finset.image_image, Finset.attach_image_val]
 
-
-
 theorem barycentricSubdivision_mono {L : SimplicialComplex ℝ E} [Fintype L.faces]
     (hKL : K ≤ L) : K.barycentricSubdivision ≤ L.barycentricSubdivision := by
   classical
@@ -80,9 +64,6 @@ theorem barycentricSubdivision_mono {L : SimplicialComplex ℝ E} [Fintype L.fac
     (K.barycentricSubdivision_faces_of_face_chains t).mp ht
   exact (L.barycentricSubdivision_faces_of_face_chains _).mpr
     ⟨a, ha, fun s hs => hKL (hfaces s hs), hchain, rfl⟩
-
-
-
 
 theorem mem_barycentricSubdivision_vertices_iff (x : E) :
     x ∈ K.barycentricSubdivision.vertices ↔
@@ -112,8 +93,6 @@ theorem mem_barycentricSubdivision_vertices_iff (x : E) :
 
 omit [Fintype K.faces] in
 
-
-
 theorem faceCentroid_mem_barycentricSubdivision_iff [Finite K.faces]
     {L : SimplicialComplex ℝ E} [Fintype L.faces] (hLK : L ≤ K)
     (s : K.faces) :
@@ -125,9 +104,6 @@ theorem faceCentroid_mem_barycentricSubdivision_iff [Finite K.faces]
     exact congrArg Subtype.val heq ▸ ht
   · intro hs
     exact (L.mem_barycentricSubdivision_vertices_iff _).mpr ⟨s.val, hs, rfl⟩
-
-
-
 
 theorem barycentricSubdivision_full {L : SimplicialComplex ℝ E} [Fintype L.faces]
     (hLK : L ≤ K) {t : Finset E} (ht : t ∈ K.barycentricSubdivision.faces)

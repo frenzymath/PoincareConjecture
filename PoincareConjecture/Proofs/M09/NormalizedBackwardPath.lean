@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.NormalizedSquareFamily
 import PoincareConjecture.Proofs.M09.ForwardRegularizedContinuation
 import PoincareConjecture.Proofs.M09.SqrtActionIntegrability
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

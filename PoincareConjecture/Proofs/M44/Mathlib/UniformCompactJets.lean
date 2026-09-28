@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Mathlib.UniformCompactDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +7,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 universe u
-
 
 theorem tendstoUniformlyOn_of_iteratedFDeriv_zero
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -28,8 +17,6 @@ theorem tendstoUniformlyOn_of_iteratedFDeriv_zero
   simpa only [Function.comp_def, iteratedFDeriv_zero_apply] using
     (ContinuousMultilinearMap.uniformContinuous_eval_const
       (0 : Fin 0 → E)).comp_tendstoUniformlyOn h
-
-
 
 theorem tendstoUniformlyOn_iteratedFDeriv_succ_of_fderiv
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -46,8 +33,6 @@ theorem tendstoUniformlyOn_iteratedFDeriv_succ_of_fderiv
         iteratedFDeriv ℝ j (fderiv ℝ g) :=
     funext fun _ => iteratedFDeriv_succ_eq_comp_right
   simpa only [he] using hconv
-
-
 
 theorem tendstoUniformlyOn_iteratedFDeriv_prodMk
     {E F G ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -83,9 +68,6 @@ private theorem fderiv_comp_germ
   have hgn := (hg.of_le (by simp : (1 : WithTop ℕ∞) ≤ ∞)).eventually (by decide)
   filter_upwards [hfn, hf.continuousAt.eventually hgn] with y hy hyg
   exact fderiv_comp y (hyg.differentiableAt one_ne_zero) (hy.differentiableAt one_ne_zero)
-
-
-
 
 theorem tendstoUniformlyOn_iteratedFDeriv_comp_of_compact
     (m : ℕ) {E F G : Type u}

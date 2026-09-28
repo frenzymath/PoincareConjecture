@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M38
 
 variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
-
-
 
 theorem puncturedProjectiveCover_connected {p : RealProjectiveThree} {U : Set Q}
     (C : StandardPuncturedProjectiveCover Q p U) : IsConnected U := by
@@ -34,12 +23,10 @@ theorem puncturedProjectiveCover_connected {p : RealProjectiveThree} {U : Set Q}
 
 variable (C : SmoothProjectiveDoubleModel Q)
 
-
 theorem projectiveDouble_regions_connected :
     IsConnected C.first_region ∧ IsConnected C.second_region :=
   ⟨puncturedProjectiveCover_connected C.first_model,
     puncturedProjectiveCover_connected C.second_model⟩
-
 
 theorem projectiveDouble_central_continuous :
     Continuous (fun z : UnitTwoSphere => C.collar (z, 0)) := by
@@ -49,7 +36,6 @@ theorem projectiveDouble_central_continuous :
     apply (C.collar_local_diffeomorph ⟨(z, 0), by simp⟩).contMDiffAt.comp z
     exact (contMDiff_id.prodMk contMDiff_const) z
   exact hs.continuous
-
 
 theorem projectiveDouble_central_range :
     Set.range (fun z : UnitTwoSphere => C.collar (z, 0)) = C.sphere := by
@@ -62,7 +48,6 @@ theorem projectiveDouble_central_range :
     subst s
     exact Set.mem_range_self z
 
-
 theorem projectiveDouble_sphere_compact_connected :
     IsCompact C.sphere ∧ IsConnected C.sphere := by
   let : ConnectedSpace UnitTwoSphere :=
@@ -71,7 +56,6 @@ theorem projectiveDouble_sphere_compact_connected :
   rw [← projectiveDouble_central_range C]
   exact ⟨isCompact_range (projectiveDouble_central_continuous C),
     isConnected_range (projectiveDouble_central_continuous C)⟩
-
 
 theorem projectiveDouble_sphere_subset_closures :
     C.sphere ⊆ closure C.first_region ∩ closure C.second_region := by
@@ -108,7 +92,6 @@ theorem projectiveDouble_sphere_subset_closures :
     intro p hp
     exact ⟨hp.1, hp.2.1, by linarith [hp.2.2]⟩
 
-
 theorem projectiveDouble_side_complements :
     C.first_region ∪ C.sphere = C.second_regionᶜ ∧
       C.second_region ∪ C.sphere = C.first_regionᶜ := by
@@ -137,7 +120,6 @@ theorem projectiveDouble_side_complements :
       · exact Or.inl hsecond
       · exact Or.inr hsphere
 
-
 theorem projectiveDouble_region_closures :
     closure C.first_region = C.first_region ∪ C.sphere ∧
       closure C.second_region = C.second_region ∪ C.sphere := by
@@ -156,7 +138,6 @@ theorem projectiveDouble_region_closures :
     rintro y (hy | hy)
     · exact subset_closure hy
     · exact (projectiveDouble_sphere_subset_closures C hy).2
-
 
 theorem projectiveDouble_region_frontiers :
     frontier C.first_region = C.sphere ∧ frontier C.second_region = C.sphere := by
@@ -179,7 +160,6 @@ theorem projectiveDouble_region_frontiers :
     · intro hy
       exact ⟨Or.inr hy, fun hsecond =>
         Set.disjoint_left.mp C.sphere_disjoint hy (Or.inr hsecond)⟩
-
 
 theorem projectiveDouble_closed_sides_compact :
     IsCompact (closure C.first_region) ∧ IsCompact (closure C.second_region) := by

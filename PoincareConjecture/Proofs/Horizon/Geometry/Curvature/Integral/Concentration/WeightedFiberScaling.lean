@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.RegularFiberScaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedSimilarity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_scaled_openFiber_weighted_integral_equivalence
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

@@ -2,14 +2,6 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open scoped Topology
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X]
-
-
-
 
 theorem ContinuousOn.exists_short_segment_mem_open
     {S : Set E} {f : E → X} (hf : ContinuousOn f S) (hS : Convex ℝ S)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RadialMetricForm
 import PoincareConjecture.Proofs.M35.Uniqueness.RadialArclength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,13 +9,9 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
 
-
-
 noncomputable def axisCorrectionCoefficient
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   (axisRadialCoefficient g r - axisAngularCoefficient g r) / r ^ 2
-
-
 
 theorem rotational_metric_form_correction
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -50,8 +37,6 @@ private theorem radius_hasFDerivAt {x : StandardCapSpace} (hx : x ≠ 0) :
   ext w
   simp [smul_eq_mul]
   ring
-
-
 
 theorem rotational_metric_first_derivative
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -93,8 +78,6 @@ theorem rotational_metric_first_derivative
     smul_eq_mul, innerSL_apply_apply,
     real_inner_comm v x, real_inner_comm w x, real_inner_comm v u, real_inner_comm w u]
   ring
-
-
 
 theorem rotational_inner_connection_const
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

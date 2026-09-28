@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
-
 
 theorem exists_source_criticalBall_backward_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

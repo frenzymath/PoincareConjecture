@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.MinimizerLifts
 import PoincareConjecture.Proofs.M09.PathMinimality
 import PoincareConjecture.Proofs.M09.PathComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

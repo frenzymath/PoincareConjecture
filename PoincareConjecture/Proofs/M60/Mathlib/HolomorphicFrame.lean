@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.HolomorphicFrameSeries
 import PoincareConjecture.Proofs.M60.Mathlib.CauchyTransformRightInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,13 +14,9 @@ section Projection
 variable {W : Type*} [NormedAddCommGroup W] [NormedSpace ℂ W]
   [NormedSpace ℝ W] [IsScalarTower ℝ ℂ W]
 
-
-
 noncomputable def cauchyRiemannProjection : (ℂ →L[ℝ] W) →L[ℝ] W :=
   (1 / 2 : ℝ) • (ContinuousLinearMap.apply ℝ W (1 : ℂ) +
     Complex.I • ContinuousLinearMap.apply ℝ W Complex.I)
-
-
 
 theorem cauchyRiemannProjection_fderiv (f : ℂ → W) (z : ℂ) :
     cauchyRiemannProjection (fderiv ℝ f z) = cauchyRiemannDerivative f z := rfl
@@ -38,9 +25,6 @@ end Projection
 
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V] [CompleteSpace V]
-
-
-
 
 theorem cauchyRiemannDerivative_holomorphicFrameSum
     {A : ℂ → V →L[ℂ] V} (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)
@@ -53,8 +37,6 @@ theorem cauchyRiemannDerivative_holomorphicFrameSum
     (hasFDerivAt_holomorphicFrameSum hA hc ha hq hq1 hsmall hAb hDAb z).fderiv]
   exact cauchyRiemannProjection.map_tsum
     (summable_holomorphicFrameTerm hA hc ha hq hq1 hsmall hAb hDAb z).2
-
-
 
 theorem cauchyRiemannDerivative_holomorphicFrameSum_eq_mul
     {A : ℂ → V →L[ℂ] V} (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)
@@ -82,9 +64,6 @@ theorem cauchyRiemannDerivative_holomorphicFrameSum_eq_mul
         (tsupport_mul_subset_left.trans hs) hz
     _ = A z * holomorphicFrameSum A z :=
       ((ContinuousLinearMap.mul ℂ (V →L[ℂ] V) (A z)).map_tsum hsum.1).symm
-
-
-
 
 theorem exists_c1_invertible_frame_of_smallCoefficient
     {A : ℂ → V →L[ℂ] V} (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)

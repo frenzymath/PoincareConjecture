@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.StandardFinitePLSphereModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace Homeomorph
-
-
-
 
 theorem IsFinitePL.exists_unit_cube_sphere_model
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

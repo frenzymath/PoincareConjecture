@@ -2,15 +2,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Logic.Equiv.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open Set
 namespace Homeomorph
 
 variable {X : Type*} [TopologicalSpace X] {U K : Set X}
-
-
 
 theorem symm_eqOn_compl (e : U ≃ₜ U)
     (he : ∀ x : U, (x : X) ∉ K → e x = x) :
@@ -56,9 +45,6 @@ private theorem continuous_extendDomain (e : U ≃ₜ U) (hU : IsOpen U)
   rw [hcover] at hf
   exact continuousOn_univ.mp hf
 
-
-
-
 noncomputable def extendByIdentity (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsClosed K) (hKU : K ⊆ U)
     (he : ∀ x : U, (x : X) ∉ K → e x = x) : X ≃ₜ X := by
@@ -68,16 +54,12 @@ noncomputable def extendByIdentity (e : U ≃ₜ U) (hU : IsOpen U)
       continuous_toFun := continuous_extendDomain e hU hK hKU he
       continuous_invFun := continuous_extendDomain e.symm hU hK hKU (e.symm_eqOn_compl he) }
 
-
-
 theorem extendByIdentity_apply_mem (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsClosed K) (hKU : K ⊆ U)
     (he : ∀ x : U, (x : X) ∉ K → e x = x) {x : X} (hx : x ∈ U) :
     e.extendByIdentity hU hK hKU he x = (e ⟨x, hx⟩ : X) := by
   classical
   exact Equiv.Perm.extendDomain_apply_subtype _ _ hx
-
-
 
 theorem extendByIdentity_apply_of_notMem (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsClosed K) (hKU : K ⊆ U)

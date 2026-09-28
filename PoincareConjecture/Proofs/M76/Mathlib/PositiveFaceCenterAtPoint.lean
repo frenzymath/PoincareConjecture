@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.CentroidMesh
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ open scoped BigOperators
 namespace AffineIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_positive_weights_of_mem_intrinsicInterior
     {s : Finset E} (hs : AffineIndependent ℝ ((↑) : s → E))
@@ -51,10 +37,6 @@ end AffineIndependent
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_positive_face_centers_at_point (K : SimplicialComplex ℝ E)
     (s : K.faces) {p : E}

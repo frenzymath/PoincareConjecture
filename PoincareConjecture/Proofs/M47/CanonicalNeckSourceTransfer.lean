@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckOpenSource
 import PoincareConjecture.Proofs.M47.CanonicalNeckPartialIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_full_open_source_neck
     {C : GeneralizedSliceCarrier.{u}} {g : RiemannianMetric 3 C.carrier}

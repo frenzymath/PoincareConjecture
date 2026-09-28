@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantPairing
 import PoincareConjecture.Proofs.M60.Mathlib.HarmonicCovariantTrace
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,29 +17,20 @@ variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 def mapConnectionCoefficients (Γ : E → E →L[ℝ] E →L[ℝ] E) (u : P → E)
     (p : P) : P →L[ℝ] E →L[ℝ] E :=
   (Γ (u p)).comp (fderiv ℝ u p)
-
-
 
 theorem covariantDerivative_mapConnectionCoefficients
     (Γ : E → E →L[ℝ] E →L[ℝ] E) (u Y : P → E) (p d : P) :
     covariantDerivative (mapConnectionCoefficients Γ u) Y p d =
       covDerivAlong Γ u Y d p := rfl
 
-
-
 theorem contDiffAt_mapConnectionCoefficients
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : P → E} {p : P}
     (hΓ : ContDiffAt ℝ ∞ Γ (u p)) (hu : ContDiffAt ℝ ∞ u p) :
     ContDiffAt ℝ ∞ (mapConnectionCoefficients Γ u) p :=
   (hΓ.comp p hu).clm_comp (hu.fderiv_right (by simp))
-
-
-
 
 theorem harmonic_map_metric_bochner
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : P → E}

@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Analysis.Calculus.Deriv.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold
@@ -19,9 +11,7 @@ variable {𝕜 E H M F : Type*} [NontriviallyNormedField 𝕜]
   [TopologicalSpace M] [ChartedSpace H M]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem vector_graph_hasDerivWithinAt (f : 𝕜 × M → F)
     {γ : 𝕜 → M} {J : Set 𝕜} {s : 𝕜}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiDerivativeBounds
 import PoincareConjecture.Proofs.M03.Existence.EuclideanFourierCoordinatesNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -88,11 +78,6 @@ private theorem exists_euclidean_budget_bound (m : ℕ) :
           _root_.add_le_add h0 (mul_le_mul_of_nonneg_left
             (_root_.add_le_add (h2 0) (h2 1)) laplacianFactor_nonneg)
         _ = _ := by ring
-
-
-
-
-
 
 theorem exists_norm_iteratedFDeriv_le_planeDerivativeL2Budget (j : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (h : 𝓢(ℂ, ℂ)) (z : ℂ),

@@ -1,21 +1,12 @@
 import Mathlib.Topology.MetricSpace.CoveringNumbers
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ENNReal
 
 namespace Poincare
-
-
 
 theorem exists_finset_cover_of_separated_card_le
     {X : Type*} [PseudoEMetricSpace X] (s : Set X) {ε : ℝ≥0∞}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundMetric
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Functionals
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +37,6 @@ private theorem pullback_nonneg (g : RiemannianMetric n M)
   · simp [hv]
   · exact (g.pos _ _ hv).le
 
-
-
 noncomputable def m60SphereRegularizedMetric (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (delta : ℝ) (hdelta : 0 < delta) : RiemannianMetric 2 UnitTwoSphere where
@@ -78,8 +67,6 @@ noncomputable def m60SphereRegularizedMetric (g : RiemannianMetric n M)
   contMDiff p := (M60.metricPullbackForm_contMDiffAt g (hf p)).add_section
     ((m60RoundSphereMetric.contMDiff p).const_smul_section (a := delta))
 
-
-
 theorem m60SphereRegularizedMetric_inner (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (delta : ℝ) (hdelta : 0 < delta) (p : UnitTwoSphere)
@@ -87,8 +74,6 @@ theorem m60SphereRegularizedMetric_inner (g : RiemannianMetric n M)
     (m60SphereRegularizedMetric g f hf delta hdelta).inner p v w =
       g.inner (f p) (mfderiv (𝓡 2) (𝓡 n) f p v) (mfderiv (𝓡 2) (𝓡 n) f p w) +
       delta * m60RoundSphereInner p v w := rfl
-
-
 
 theorem m60SphereRegularizedMetric_dominates (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

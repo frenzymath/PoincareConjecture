@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationIsothe
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.NormalizedChart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Norm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +16,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem exists_local_annular_gauss_metric (g : RiemannianMetric 2 Plane) (p : Plane) :
     ∃ (e : OpenPartialHomeomorph Plane Plane) (R : ℝ)
@@ -87,11 +70,6 @@ theorem exists_local_annular_gauss_metric (g : RiemannianMetric 2 Plane) (p : Pl
   intro x hx v
   rw [heq x (Metric.ball_subset_closedBall hx)]
   exact hbound x (hhalf hx) v
-
-
-
-
-
 
 theorem exists_local_annular_harmonic_chart (g : RiemannianMetric 2 Plane) (p : Plane) :
     ∃ (e : Plane → Plane) (r : ℝ) (h : RiemannianMetric 2 Plane) (Dh : LeviCivitaData h),

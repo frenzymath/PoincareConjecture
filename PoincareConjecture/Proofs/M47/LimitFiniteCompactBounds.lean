@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteLowPoint
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCompactCarrier
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +34,6 @@ private local instance finiteCompactCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance finiteCompactManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_compact_curvature_bound
     (P : M47Predecessors.{u}) (schedules : RepairedControlledSchedulesData.{u})

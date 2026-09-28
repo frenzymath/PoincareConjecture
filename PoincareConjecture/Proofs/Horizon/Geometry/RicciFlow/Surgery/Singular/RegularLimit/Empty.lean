@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M31SingularRegularLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,7 +9,6 @@ universe u
 namespace PoincareConjecture
 
 namespace GeneralizedFlowExtension
-
 
 noncomputable def refl (F : GeneralizedRicciFlowData.{u}) (T : ℝ) :
     GeneralizedFlowExtension F T where
@@ -53,8 +44,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 noncomputable def regularLimitOfEmpty (H : SingularTimeAssumptions F T M)
     (hempty : H.reference.regularLimitSet = ∅) :

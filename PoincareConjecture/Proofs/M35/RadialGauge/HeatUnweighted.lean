@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelDerivative
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatSmoothness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

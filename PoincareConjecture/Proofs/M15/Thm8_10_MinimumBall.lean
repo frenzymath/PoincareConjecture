@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_ShortTail
 import PoincareConjecture.Proofs.M15.Thm8_10_PathJoin
 import PoincareConjecture.Statements.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_ball_reducedLength_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M]

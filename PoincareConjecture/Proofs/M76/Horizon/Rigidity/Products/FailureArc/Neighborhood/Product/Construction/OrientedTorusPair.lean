@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.Construction.OrientedSourcePair
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.EndDisks.FromPLTorus
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -16,7 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "Q" => sphere (0 : V2) 1
-
 
 theorem exists_marked_product_of_torus_source_annulus_pair_of_localOrientation
     {X ι : Type} [TopologicalSpace X] [T2Space X] (O : LocalOrientation X)

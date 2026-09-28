@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M38.CapPatch
 import PoincareConjecture.Proofs.M38.OneCapAssembly
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def regionPartialDiffeomorph
     {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
@@ -39,14 +30,12 @@ noncomputable def regionPartialDiffeomorph
   contMDiffOn_toFun := E.map_smooth
   contMDiffOn_invFun := E.inverse_smooth
 
-
 theorem openSubtype_localDiffeomorph (A : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens A.carrier) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (Subtype.val : U → A.carrier) := by
   intro x
   let d := regionPartialDiffeomorph (openRegionEquivalence A U x) isOpen_univ U.isOpen
   exact ⟨d, Set.mem_univ x, fun _ _ => rfl⟩
-
 
 theorem openInclusion_localDiffeomorph (A : GeneralizedSliceCarrier.{u})
     (U V : TopologicalSpace.Opens A.carrier) (hUV : U ≤ V) :
@@ -60,7 +49,6 @@ theorem openInclusion_localDiffeomorph (A : GeneralizedSliceCarrier.{u})
   intro y _
   apply Subtype.ext
   exact (eV.right_inverse (hUV y.property)).symm
-
 
 noncomputable def surgeryBallPartialDiffeomorph (A : GeneralizedSliceCarrier.{u})
     (B : SurgeryBallEmbedding A) :
@@ -84,12 +72,10 @@ noncomputable def surgeryBallPartialDiffeomorph (A : GeneralizedSliceCarrier.{u}
   contMDiffOn_toFun := B.map_smooth
   contMDiffOn_invFun := B.inverse_smooth
 
-
 theorem surgeryBall_map_localDiffeomorph (A : GeneralizedSliceCarrier.{u})
     (B : SurgeryBallEmbedding A) {x : StandardCapSpace} (hx : x ∈ Metric.ball 0 2) :
     IsLocalDiffeomorphAt (𝓡 3) (𝓡 3) ∞ B.map x :=
   ⟨surgeryBallPartialDiffeomorph A B, hx, fun _ _ => rfl⟩
-
 
 theorem surgeryBall_patch_localDiffeomorph (A : GeneralizedSliceCarrier.{u})
     (B : SurgeryBallEmbedding A) :
@@ -103,7 +89,6 @@ theorem surgeryBall_patch_localDiffeomorph (A : GeneralizedSliceCarrier.{u})
     (capDoubleBall : Set StandardCapSpace) capDoubleBall.isOpen ∞ x).comp (𝓡 3) A.carrier
       (surgeryBall_map_localDiffeomorph A B x.property)
 
-
 theorem sumInl_localDiffeomorph (A B : GeneralizedSliceCarrier.{u}) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞
       (Sum.inl : A.carrier → (sumCarrier A B).carrier) := by
@@ -111,7 +96,6 @@ theorem sumInl_localDiffeomorph (A B : GeneralizedSliceCarrier.{u}) :
   let d := regionPartialDiffeomorph (sumInlEquivalence A B ⟨x⟩)
     isOpen_univ isOpen_range_inl
   exact ⟨d, Set.mem_univ x, fun _ _ => rfl⟩
-
 
 theorem sumInr_localDiffeomorph (A B : GeneralizedSliceCarrier.{u}) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞

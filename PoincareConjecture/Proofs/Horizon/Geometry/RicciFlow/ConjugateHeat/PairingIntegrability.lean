@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.TestRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Integral
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -62,8 +61,6 @@ theorem weakPairing_integrable_of_continuousOn
     intro τ hτ
     by_contra ht'
     exact hτ (by simp only [hzt τ ht', integral_zero])
-
-
 
 def weakPairingLinearOfContinuousOn
     (F : RicciFlow n M J) {α β : ℝ}

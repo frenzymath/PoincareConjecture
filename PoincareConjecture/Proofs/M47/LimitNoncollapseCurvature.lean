@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature.MovingJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -19,10 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
 
 theorem limitNoncollapse_curvature_of_spatial_jets
     {α : Type*} {l : Filter α} [l.NeBot] {n : ℕ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.LocalDivergenceIntegration
 import PoincareConjecture.Proofs.M10.WeightedMetricDual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -28,7 +20,6 @@ theorem inverse_bilinear_pairing_symm (B : E →L[ℝ] E →L[ℝ] ℝ)
   have hd := congrArg (fun a : E →L[ℝ] ℝ ↦ a (B.inverse e)) (hi.self_apply_inverse d)
   have he := congrArg (fun a : E →L[ℝ] ℝ ↦ a (B.inverse d)) (hi.self_apply_inverse e)
   exact hd.symm.trans ((hs _ _).trans he)
-
 
 theorem integral_weighted_green {ι : Type*} [Fintype ι] (b : OrthonormalBasis ι ℝ E)
     {U : Set E} (hU : IsOpen U) {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ u ψ : E → ℝ}

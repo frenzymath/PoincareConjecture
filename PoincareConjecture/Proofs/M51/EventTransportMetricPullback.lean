@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M51.EventTransportMetricCharts
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +20,6 @@ local instance : NormedAddCommGroup (V3 →L[ℝ] ℝ) :=
 local instance : NormedSpace ℝ (V3 →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 local instance : NormedAddCommGroup (Bil3) := ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ (Bil3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem metricLimit_pullbackCoefficients_seq
     {A B : GeneralizedSliceCarrier.{u}}

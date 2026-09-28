@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapTransitionFormulas
 import PoincareConjecture.Proofs.M76.Mathlib.LocalPLCollarTransition
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -34,10 +25,6 @@ private theorem original_frontier (B : OpenPartialHomeomorph X M)
   have h := hi.frontier.apply_mem_iff hx
   rw [heq] at h
   exact h.symm
-
-
-
-
 
 theorem compatible (c d : HamiltonMarkedCapCoordinates (E := E) (D := D) g)
     (hg : ∀ p, g p ∈ D) (hinj : Function.Injective g)

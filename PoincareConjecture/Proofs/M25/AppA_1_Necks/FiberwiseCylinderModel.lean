@@ -4,16 +4,6 @@ import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.OpenCylinderModel
-
-
-
 
 theorem exists_of_fiberwise_partial_chart
     {M : Type u} [TopologicalSpace M]

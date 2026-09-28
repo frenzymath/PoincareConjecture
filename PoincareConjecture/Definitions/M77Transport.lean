@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch18.SmoothingBridge
 import PoincareConjecture.Statements.Ch01.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

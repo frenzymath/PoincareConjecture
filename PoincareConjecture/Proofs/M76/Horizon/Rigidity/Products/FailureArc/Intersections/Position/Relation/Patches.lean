@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLEqualityLoci
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLCompatibleChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
 set_option autoImplicit false
 open Set
 

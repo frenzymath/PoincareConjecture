@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -68,7 +56,6 @@ private theorem orthonormal_pair_independent (g : RiemannianMetric 3 M)
       · exact (hij rfl).elim
   exact horth.linearIndependent
 
-
 theorem AncientKappaNormalization.volume_original_zero
     {K : AncientKappaSolution 3 M} {p : M}
     (A : AncientKappaNormalization K p 0) :
@@ -92,8 +79,6 @@ theorem AncientKappaNormalization.volume_original_zero
   simpa only [neg_div] using h
 
 end Transport
-
-
 
 theorem compact_positive_geometry_of_scaled_diameter
     (P : M27KappaAlternativePredecessors.{u}) {D : ℝ} (hD : 0 < D) :

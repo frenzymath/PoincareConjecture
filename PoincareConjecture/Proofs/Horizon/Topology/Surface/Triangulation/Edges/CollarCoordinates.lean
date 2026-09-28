@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -20,7 +10,6 @@ namespace PoincareConjecture.Topology.Surface
 
 universe u
 
-
 noncomputable def collarParameterEquiv : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] ℝ × ℝ :=
   (PiLp.continuousLinearEquiv 2 ℝ (fun _ : Fin 2 => ℝ)).trans
     (ContinuousLinearEquiv.finTwoArrow ℝ ℝ)
@@ -30,9 +19,6 @@ noncomputable def collarParameterEquiv : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] �
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
-
 
 theorem exists_surface_normal_collar_coordinates (p : M)
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)

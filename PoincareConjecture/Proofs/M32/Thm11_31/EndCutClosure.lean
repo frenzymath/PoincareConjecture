@@ -4,24 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Collar
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,9 +15,6 @@ namespace PoincareConjecture.M32
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon delta rho : ℝ}
   {E : GeneralizedFlowExtension F T}
-
-
-
 
 theorem horn_neckSphere_subset_closure_component (horn : StrongHorn E epsilon)
     (N : TerminalStrongNeck E delta) (hdelta : delta < 1 / 2)
@@ -143,16 +122,12 @@ theorem horn_neckSphere_subset_closure_component (horn : StrongHorn E epsilon)
       (P.isConnected_region (neg_nonpos.mpr hi.le) le_rfl hi).isPreconnected
       (P.central_sphere_disjoint_region _ _ (Or.inr le_rfl)) hzpos))
 
-
-
 theorem hornCut_centralSphere_subset_closure (horn : StrongHorn E epsilon)
     (N : TerminalStrongNeck E delta) (cut : HornEndCut horn N rho)
     (hdelta : delta < 1 / 2) (hN : N.carrier ⊆ horn.carrier) :
     N.central_sphere ⊆ closure cut.carrier := by
   rw [cut.component_eq]
   exact horn_neckSphere_subset_closure_component horn N hdelta hN cut.point cut.point_mem
-
-
 
 theorem hornCut_center_mem_closure (horn : StrongHorn E epsilon)
     (N : TerminalStrongNeck E delta) (cut : HornEndCut horn N rho)

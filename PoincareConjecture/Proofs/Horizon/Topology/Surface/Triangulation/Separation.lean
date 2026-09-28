@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Domains
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +12,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
-
-
 
 theorem isConnected_compl_chart_unitInterval_image (p : M) {f : ℝ → M}
     (hf : ContinuousOn f (Icc (0 : ℝ) 1))
@@ -41,7 +28,6 @@ theorem isConnected_compl_chart_unitInterval_image (p : M) {f : ℝ → M}
     exact hinj hs ht ((chartAt (EuclideanSpace ℝ (Fin 2)) p).injOn
       (hsource ⟨s, hs, rfl⟩) (hsource ⟨t, ht, rfl⟩) h)
 
-
 theorem SmoothEdge.isConnected_compl_chart_image [IsManifold (𝓡 2) ∞ M]
     (e : SmoothEdge M) (p : M) (hinj : InjOn e.map (Icc (0 : ℝ) 1))
     (hsource : e.map '' Icc (0 : ℝ) 1 ⊆
@@ -49,8 +35,6 @@ theorem SmoothEdge.isConnected_compl_chart_image [IsManifold (𝓡 2) ∞ M]
     IsConnected ((chartAt (EuclideanSpace ℝ (Fin 2)) p) ''
       (e.map '' Icc (0 : ℝ) 1))ᶜ :=
   isConnected_compl_chart_unitInterval_image p e.smooth.continuousOn hinj hsource
-
-
 
 theorem nat_card_connectedComponents_compl_chart_circle (p : M)
     {γ : sphere (0 : EuclideanSpace ℝ (Fin 2)) 1 → M}

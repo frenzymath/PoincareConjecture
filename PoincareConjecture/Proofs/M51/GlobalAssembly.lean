@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M51.GlobalControlledExtension
 import PoincareConjecture.Proofs.M51.NormalizedAssembly
 import PoincareConjecture.Proofs.M51.GivenPrefixStage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,8 +36,6 @@ variable (S : RepairedControlledSchedulesData.{u})
 
 include A P F50 d hd losses count
 
-
-
 theorem givenPrefixAssembly
     (delta : ℝ → ℝ)
     (hcut : ∀ j t, t ∈ surgeryEpochEntry j → 0 ≤ t →
@@ -63,8 +52,6 @@ theorem givenPrefixAssembly
       pref.delta_eq pref.schedule_agreement hcut
     exact ⟨Q.controlledExtension P.m13 F50 d hd losses delta
       pref.delta_eq pref.schedule_agreement hcut⟩
-
-
 
 theorem normalizedFlowAssembly
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

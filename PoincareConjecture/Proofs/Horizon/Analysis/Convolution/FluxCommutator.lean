@@ -1,8 +1,3 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.RescaledKernel
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.KernelDerivative
 import Mathlib.Analysis.Calculus.MeanValue
@@ -17,8 +12,6 @@ namespace Poincare.Analysis.Convolution
 section NormedGroup
 
 variable {E : Type*} [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
-
-
 
 theorem abs_convolution_le_of_bound
     (mu : Measure E) [mu.IsAddHaarMeasure]
@@ -45,8 +38,6 @@ end NormedGroup
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
 
 theorem abs_flux_commutator_rescaled_le
     (mu : Measure E) [mu.IsAddHaarMeasure]
@@ -87,8 +78,6 @@ theorem abs_flux_commutator_rescaled_le
       add_le_add (abs_derivative_convolution_commutator_rescaled_le mu hq hf hB hρ hρc hr v x)
         hcor
     _ = _ := by ring
-
-
 
 theorem abs_mollified_flux_commutator_le
     (mu : Measure E) [mu.IsAddHaarMeasure] [mu.IsNegInvariant]

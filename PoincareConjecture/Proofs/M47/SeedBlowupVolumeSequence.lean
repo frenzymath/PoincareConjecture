@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedBlowupVolume
 import PoincareConjecture.Proofs.M47.BlowupControlsSequence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_blowup_sequence_terminal_volume
     (F : ℕ → SurgeryFlowData.{u}) (W : ∀ n, M33RegularHistoryWindow (F n))

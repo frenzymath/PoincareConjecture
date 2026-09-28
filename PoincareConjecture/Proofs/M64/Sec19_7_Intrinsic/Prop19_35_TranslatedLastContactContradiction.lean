@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConstructedNoShortThreeArcRegion
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,12 +8,6 @@ open Set
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_translated_last_contact_region_contradiction
     (N : IntrinsicAnnulus) {base sigma eta : ℝ → AnnulusCoordinates}

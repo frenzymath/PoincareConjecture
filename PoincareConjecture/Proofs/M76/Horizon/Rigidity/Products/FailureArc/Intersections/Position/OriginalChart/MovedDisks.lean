@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -12,9 +10,6 @@ namespace Geometry
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (ℝ × ℝ)
-
-
-
 
 theorem PolyhedralPLInCharts.exists_moved_clipped_planar_disk
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -74,4 +69,3 @@ theorem PolyhedralPLInCharts.exists_moved_clipped_planar_disk
   exact hopen.preimage hbackcont
 
 end Geometry
-

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousLinearMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 def affineLeafLinearEquiv (J : F →L[ℝ] E) (Q0 Q : E →L[ℝ] F)
     (h0 : Function.RightInverse J Q0) (hQ : Function.RightInverse J Q) :
@@ -46,9 +34,6 @@ namespace ContinuousAffineMap
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem hasFDerivAt_affineLeafMap_zeroSection (a : F →ᴬ[ℝ] E)
     {Q : F → E →L[ℝ] F} (x0 x : F) (hQ : DifferentiableAt ℝ Q x) :
     HasFDerivAt (a.affineLeafMap Q x0)
@@ -71,9 +56,6 @@ theorem hasFDerivAt_affineLeafMap_zeroSection (a : F →ᴬ[ℝ] E)
   intro z
   simp [ContinuousLinearMap.coprod_apply]
   abel
-
-
-
 
 theorem isInvertible_fderiv_affineLeafMap_zeroSection (a : F →ᴬ[ℝ] E)
     {Q : F → E →L[ℝ] F} (x0 x : F) (hQ : DifferentiableAt ℝ Q x)

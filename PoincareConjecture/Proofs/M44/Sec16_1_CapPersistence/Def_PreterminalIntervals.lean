@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M33.RegularHistory
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PinchingBound
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalarTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u
 
 namespace PoincareConjecture.M44
 
-
-
-
 theorem slice_nonempty_of_later (F : SurgeryFlowData.{u}) {s t : ℝ}
     (hs : s ∈ F.time_domain) (ht : t ∈ F.time_domain) (hst : s ≤ t)
     [Nonempty (F.slice t).carrier] : Nonempty (F.slice s).carrier := by
@@ -31,9 +19,6 @@ theorem slice_nonempty_of_later (F : SurgeryFlowData.{u}) {s t : ℝ}
   let hempty : IsEmpty (F.slice s).carrier := ⟨fun x => h ⟨x⟩⟩
   obtain ⟨x⟩ := (inferInstance : Nonempty (F.slice t).carrier)
   exact (F.extinction_permanent s t hs ht hst hempty).false x
-
-
-
 
 theorem curvature_unbounded_before_surgery (F : SurgeryFlowData.{u})
     {T : ℝ} (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]
@@ -68,9 +53,6 @@ theorem curvature_unbounded_before_surgery (F : SurgeryFlowData.{u})
   obtain ⟨t, ht, x, hx⟩ := F.maximal_intervals a T haDomain hab.2.2 hab.2.1
     hinterval hfree (Or.inl hT) L s hs
   exact ⟨t, ⟨(le_max_right a s).trans_lt ht.1, ht.2⟩, x, hx⟩
-
-
-
 
 theorem event_preterminal_surgery_free (P : M44CapPersistencePredecessors.{u})
     (F : SurgeryFlowData.{u}) (hpinch : SurgeryFlowPinched F)

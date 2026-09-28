@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalPeriodicCutRectangle
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PeriodNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -46,8 +38,6 @@ private theorem unitSquareCorner_projection (i : Fin 4) : projection 1 (unitSqua
   fin_cases i <;> simp [unitSquareCorner]
 
 include hbound
-
-
 
 theorem nonempty_sourceSquareMap_of_source_reversal
     (hrev : ∀ i : Fin 4, sm (A.bridgeBegin (A.arcPairing i)) =

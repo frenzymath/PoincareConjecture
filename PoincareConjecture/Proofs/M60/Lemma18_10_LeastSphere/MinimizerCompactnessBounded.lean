@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessBoundedLocal
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "e" => EuclideanSpace.basisFun (Fin 2) ℝ
 
-
-
 theorem suPlaneHarmonic_affine (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hh : SUPlaneHarmonic g f) (a : LoopPlane) (s : ℝ) :
     SUPlaneHarmonic g (fun z => f (a + s • z)) := by
@@ -38,9 +34,6 @@ theorem suPlaneHarmonic_affine (g : RiemannianMetric n M)
   rw [show (∑ i : Fin 2, covDerivAlong Gamma U
     (fun y => fderiv ℝ U y (e i)) (e i) (a + s • z)) = 0 from he, smul_zero] at h
   exact h
-
-
-
 
 theorem suBoundedGradient_sphereLimit [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M)

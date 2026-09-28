@@ -1,19 +1,10 @@
 import Mathlib.Analysis.Normed.Module.Basic
 
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_radial_injOn_of_positive_rescale
     {E X : Type*} [AddCommGroup E] [Module ℝ E]
@@ -26,10 +17,6 @@ theorem m64_radial_injOn_of_positive_rescale
     ⟨div_nonneg ht.1 hB.le, (div_le_one hB).mpr ht.2⟩
     (by simpa only [smul_smul, div_mul_cancel₀ _ hB.ne'] using heq)
   exact (div_left_inj' hB.ne').mp hscaled
-
-
-
-
 
 theorem m64_radial_same_direction_endpoint_eq
     {E X : Type*} [AddCommGroup E] [Module ℝ E]
@@ -49,10 +36,6 @@ theorem m64_radial_same_direction_endpoint_eq
       simpa only [hscaled, one_smul] using he.symm)
     have h : s = c := (div_eq_one_iff_eq hc.ne').mp heq
     simpa only [h] using hv
-
-
-
-
 
 theorem m64_radial_noncanonical_prefix_ne
     {E X : Type*} [AddCommGroup E] [Module ℝ E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.CompatibleEndIntegral
 import Mathlib.Algebra.BigOperators.Fin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
 
 theorem exists_compatibleEnd_neighbor_bound
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

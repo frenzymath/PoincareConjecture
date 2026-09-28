@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Curve.Velocity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Length
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem continuousOn_speed_of_contMDiffOn (g : RiemannianMetric n M)
     {γ : ℝ → M} {I : Set ℝ} (hI : IsOpen I)
@@ -30,7 +28,6 @@ theorem continuousOn_speed_of_contMDiffOn (g : RiemannianMetric n M)
   have hh := (contMDiffAt_totalSpace.mp h).2
   exact Real.continuous_sqrt.continuousAt.comp_continuousWithinAt
     hh.continuousAt.continuousWithinAt
-
 
 theorem toReal_edist_le_integral_speed (g : RiemannianMetric n M)
     {γ : ℝ → M} {I : Set ℝ} {a b : ℝ}

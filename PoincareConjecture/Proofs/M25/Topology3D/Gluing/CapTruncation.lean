@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 import PoincareConjecture.Proofs.M25.Mathlib.IntervalReparametrization
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificate_exists_lowerCut_diffeomorph
     {M : Type u} [TopologicalSpace M]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCoreGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.SectorComplements
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +19,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem core_contribution_eq_core_of_ne_zero (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (q : S)
     (hq : meshVertexAngleContribution g (chartAt Plane (T.chart R : S)).symm
@@ -41,8 +33,6 @@ theorem core_contribution_eq_core_of_ne_zero (g : RiemannianMetric 2 S)
   rw [← heq]
   exact T.core_contribution_at_used_vertex g R u v hv
 
-
-
 theorem core_germ_of_collar_germ (R : T.decomposition.regions) {q : Plane}
     (hq : q ∈ (T.refined.mesh R).toPlaneComplex.support) (A : Set Plane)
     (hcollar : (chartAt Plane (T.chart R : S)).symm ⁻¹'
@@ -56,7 +46,6 @@ theorem core_germ_of_collar_germ (R : T.decomposition.regions) {q : Plane}
   change ((T.refined.mesh R).toPlaneComplex.support z) = ¬interior _ z at hz
   rw [hi] at hz
   exact hz
-
 
 theorem core_halfspace_germ_of_collar_germ (R : T.decomposition.regions) {q : Plane}
     (hq : q ∈ (T.refined.mesh R).toPlaneComplex.support)
@@ -73,7 +62,6 @@ theorem core_halfspace_germ_of_collar_germ (R : T.decomposition.regions) {q : Pl
   have he : z ∈ (T.refined.mesh R).toPlaneComplex.support ↔ ¬l z < 0 := propext_iff.mp hz
   exact he.trans not_lt
 
-
 theorem core_reflex_germ_of_collar_convex_germ (R : T.decomposition.regions)
     (c : AffineBasis (Fin 3) ℝ Plane)
     (hq : c 0 ∈ (T.refined.mesh R).toPlaneComplex.support)
@@ -83,7 +71,6 @@ theorem core_reflex_germ_of_collar_convex_germ (R : T.decomposition.regions)
     (T.refined.mesh R).toPlaneComplex.support =ᶠ[𝓝 (c 0)]
       (interior {z | 0 ≤ c.coord 1 z ∧ 0 ≤ c.coord 2 z})ᶜ :=
   T.core_germ_of_collar_germ R hq _ hcollar
-
 
 theorem core_convex_germ_of_collar_reflex_germ (R : T.decomposition.regions)
     (c : AffineBasis (Fin 3) ℝ Plane)
@@ -97,7 +84,6 @@ theorem core_convex_germ_of_collar_reflex_germ (R : T.decomposition.regions)
   rwa [compl_interior_reflexSector] at h
 
 omit [T2Space S] in
-
 
 theorem enclosing_refinement_monochromatic_of_scaled_contact
     (R : T.decomposition.regions) (b : AffineBasis (Fin 3) ℝ Plane)
@@ -113,7 +99,6 @@ theorem enclosing_refinement_monochromatic_of_scaled_contact
       (List.mem_append_right _ hk)) a
 
 omit [T2Space S] in
-
 
 theorem core_mesh_convex_sector_fan (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (c : AffineBasis (Fin 3) ℝ Plane)
@@ -145,7 +130,6 @@ theorem core_mesh_convex_sector_fan (g : RiemannianMetric 2 S)
 
 omit [T2Space S] in
 
-
 theorem core_mesh_reflex_sector_fan (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (c : AffineBasis (Fin 3) ℝ Plane)
     (h1 : ∃ k ∈ T.decomposition.fittedCoreRefinementLines T.chart T.cut T.graphs
@@ -176,7 +160,6 @@ theorem core_mesh_reflex_sector_fan (g : RiemannianMetric 2 S)
 
 omit [T2Space S] in
 
-
 theorem core_contribution_at_convex_sector (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (c : AffineBasis (Fin 3) ℝ Plane)
     (h1 : ∃ k ∈ T.decomposition.fittedCoreRefinementLines T.chart T.cut T.graphs
@@ -200,7 +183,6 @@ theorem core_contribution_at_convex_sector (g : RiemannianMetric 2 S)
   exact h
 
 omit [T2Space S] in
-
 
 theorem core_contribution_at_reflex_sector (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (c : AffineBasis (Fin 3) ℝ Plane)
@@ -226,7 +208,6 @@ theorem core_contribution_at_reflex_sector (g : RiemannianMetric 2 S)
 
 set_option maxHeartbeats 800000 in
 omit [T2Space S] in
-
 
 theorem core_contribution_at_new_canonical_vertex (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions)
@@ -254,7 +235,6 @@ theorem core_contribution_at_new_canonical_vertex (g : RiemannianMetric 2 S)
   exact hw
 
 omit [T2Space S] in
-
 
 theorem core_contribution_at_straight_canonical_vertex (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions)

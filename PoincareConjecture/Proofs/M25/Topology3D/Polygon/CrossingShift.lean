@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CrossingLocal
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem segmentRayParity_eventually_eq
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -35,8 +23,6 @@ theorem segmentRayParity_eventually_eq
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 theorem segmentRayParity_eq_one_horizontal_left (X H : E →ₗ[ℝ] ℝ)
     {a b q v : E} (hq : q ∈ segment ℝ a b)
     (hband : heightCrossing (H a) (H b) (H q)) (hvX : X v = 1) (hvH : H v = 0)
@@ -51,8 +37,6 @@ theorem segmentRayParity_eq_one_horizontal_left (X H : E →ₗ[ℝ] ℝ)
   rw [hm, map_sub, map_smul, hvX, smul_eq_mul, mul_one]
   linarith
 
-
-
 theorem segmentRayParity_eq_zero_horizontal_right (X H : E →ₗ[ℝ] ℝ)
     {a b q v : E} (hab : H a ≠ H b) (hq : q ∈ segment ℝ a b)
     (hvX : X v = 1) (hvH : H v = 0) {t : ℝ} (ht : 0 ≤ t) :
@@ -65,8 +49,6 @@ theorem segmentRayParity_eq_zero_horizontal_right (X H : E →ₗ[ℝ] ℝ)
   apply segmentRayParity_eq_zero_of_right X H
   rw [hm, map_add, map_smul, hvX, smul_eq_mul, mul_one]
   linarith
-
-
 
 theorem exists_mem_segment_height_avoiding_finite (H : E →ₗ[ℝ] ℝ)
     {a b : E} (hab : H a ≠ H b) {s : Set ℝ} (hs : s.Finite) :

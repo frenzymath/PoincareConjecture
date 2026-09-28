@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Segments
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
 
 theorem triangle_zero_unique_of_no_zero_edges (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ)
@@ -36,8 +25,6 @@ theorem triangle_zero_unique_of_no_zero_edges (K : SimplicialComplex ℝ E)
   rcases hw with rfl | rfl
   · exact hwnot ⟨hqK, t, ht, htc, hqt, hq⟩
   · exact hwnot ⟨hvK, t, ht, htc, hvt, hv⟩
-
-
 
 theorem triangleSliceGraph_carrier (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

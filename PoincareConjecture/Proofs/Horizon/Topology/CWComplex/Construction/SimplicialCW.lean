@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.SimplexGeomet
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Topology.CWComplex.Classical.Finite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -17,8 +9,6 @@ open Set Metric Topology
 universe u
 
 namespace Poincare.Topology
-
-
 
 theorem exists_simplexCharacteristicMap_subtype {E : Type u}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -79,8 +69,6 @@ theorem exists_simplexCharacteristicMap_subtype {E : Type u}
   · exact hinverse.comp continuous_subtype_val.continuousOn (fun _ hy => hy)
   · rw [himage _ Subset.rfl, hball]
   · rw [himage _ sphere_subset_closedBall, hsphere]
-
-
 
 theorem exists_finite_simplicialCW {E : Type u} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [FiniteDimensional ℝ E]

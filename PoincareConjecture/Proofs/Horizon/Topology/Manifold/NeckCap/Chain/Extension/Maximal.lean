@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Singlet
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cover
 import Mathlib.Order.Zorn
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -71,8 +61,6 @@ end BalancedNeckChain
 namespace NeckOnlyCover
 
 open BalancedNeckChain
-
-
 
 theorem exists_maximal_selected_chain (H : NeckOnlyCover g) :
     ∃ C : BalancedNeckChain g H.epsilon,

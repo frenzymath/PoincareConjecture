@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_FullAvoidance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M12 Proofs.M46
-
-
 
 theorem seedRetained_avoids_early_cap
     {F : GeneralizedRicciFlowData.{u}} {G : FlowBoxRicciGeometry F}
@@ -69,8 +59,6 @@ theorem seedRetained_avoids_early_cap
       (pathPositiveDensity_tail_integrable hM12 p (ha.trans_le hr.1) hr.2.le hb.2)
       (hroot.trans_lt hentry)
     exact (not_lt_of_ge hbudget) hweighted
-
-
 
 theorem seedRetained_avoids_cap_birth
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

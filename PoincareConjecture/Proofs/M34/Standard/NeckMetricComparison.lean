@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparisonCoordinates
 import PoincareConjecture.Proofs.M34.Mathlib.WeightedMatrixPairing
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
 
-
-
 noncomputable def roundCylinderMetricBilinear (z : RoundCylinderSpace) : V →L[ℝ] V →L[ℝ] ℝ :=
   let A : V →L[ℝ] E₃ :=
     (mfderiv (𝓡 2) (𝓡 3) (fun q : UnitTwoSphere => (q : E₃)) z.1).comp
@@ -38,8 +27,6 @@ noncomputable def roundCylinderMetricBilinear (z : RoundCylinderSpace) : V →L[
       (innerSL ℝ : E₃ →L[ℝ] E₃ →L[ℝ] ℝ) A A +
     (ContinuousLinearMap.mul ℝ ℝ).bilinearComp
       (ContinuousLinearMap.snd ℝ E₂ ℝ) (ContinuousLinearMap.snd ℝ E₂ ℝ)
-
-
 
 theorem roundCylinderMetricBilinear_apply (z : RoundCylinderSpace) (v w : V) :
     roundCylinderMetricBilinear z v w = EvolvingRoundCylinderMetric 0 z v w := rfl
@@ -56,8 +43,6 @@ private theorem bilinear_apply_eq_sum (B : V →L[ℝ] V →L[ℝ] ℝ) (v : V) 
   apply Finset.sum_congr rfl
   intro j _
   ring
-
-
 
 theorem roundCylinderMetricBilinear_apply_self (z : RoundCylinderSpace) (v : V) :
     roundCylinderMetricBilinear z v v =
@@ -85,9 +70,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
-
 
 theorem pullback_inner_error {z : RoundCylinderSpace}
     (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (v : RoundCylinderTangent z) :
@@ -124,9 +106,6 @@ theorem pullback_inner_error {z : RoundCylinderSpace}
     ![v.1 0, v.1 1, v.2] N.epsilon_pos.le hsq
   rw [← bilinear_apply_eq_sum, ← roundCylinderMetricBilinear_apply_self] at herr
   exact herr
-
-
-
 
 theorem pullback_inner_comparison {z : RoundCylinderSpace}
     (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (v : RoundCylinderTangent z) :

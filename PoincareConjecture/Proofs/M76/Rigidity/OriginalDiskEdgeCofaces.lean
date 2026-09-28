@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskParameter
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +15,6 @@ local notation "D" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_rim_edge_triangle_coface
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)
@@ -81,10 +69,6 @@ theorem exists_rim_edge_triangle_coface
   have hyint := L.mem_interior_space_of_paired_facet hqc htL hvL htcL hvcL
     (Finset.image_subset_image hst) (Finset.image_subset_image hsv) hneL hy
   exact (hqfront (intrinsicInterior_subset hy)).2 hyint
-
-
-
-
 
 theorem exists_interior_edge_triangle_cofaces
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

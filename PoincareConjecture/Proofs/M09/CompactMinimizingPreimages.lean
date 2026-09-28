@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.BoundedMinimizingVectors
 import PoincareConjecture.Proofs.M09.CompactMinimizers
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

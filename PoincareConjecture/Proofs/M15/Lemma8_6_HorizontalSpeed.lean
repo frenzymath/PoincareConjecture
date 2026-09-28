@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M04.TensorNormBounds
 import PoincareConjecture.Proofs.M15.Lemma8_6_HorizontalEnergy
 import PoincareConjecture.Proofs.M15.Mathlib.WeightedSpeed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M15
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem abs_horizontalRicci_le_curvatureNorm
     (p : G.Point) (v : G.Horizontal p) :
@@ -45,8 +34,6 @@ theorem abs_horizontalRicci_le_curvatureNorm
     (n : ℝ) * horizontalCurvatureNorm G.leafwise p *
       (G.slices t).metricOnPoints.inner x w w at h
   rwa [hmetric] at h
-
-
 
 theorem squareRootPath_speed_le
     (D : SpacetimeHorizontalConnection G.leafwise)

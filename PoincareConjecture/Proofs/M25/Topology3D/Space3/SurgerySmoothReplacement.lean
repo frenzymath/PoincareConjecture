@@ -1,28 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryOverlap
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem surgeryNorthMap_mfderiv_injective
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)
@@ -41,9 +25,6 @@ theorem surgeryNorthMap_mfderiv_injective
   rw [mfderiv_comp q (hcentral _) (hN.mdifferentiableAt (by simp))]
   exact (collar_central_mfderiv_injective ψ hψ _).comp
     (surgeryNorthChart_mfderiv_injective R e he hi hq)
-
-
-
 
 theorem surgeryReplacementMap_smooth_closedEmbedding
     (a : ℝ → ℝ) (b : E2 → ℝ)

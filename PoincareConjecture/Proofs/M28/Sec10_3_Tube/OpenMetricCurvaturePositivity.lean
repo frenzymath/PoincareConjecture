@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.OperatorRicci
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M28
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem intrinsicOpenMetric_nonnegativeCurvatureOperator_iff
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     (D : LeviCivitaData g) (DU : LeviCivitaData (intrinsicOpenMetric g U))
@@ -33,9 +21,6 @@ theorem intrinsicOpenMetric_nonnegativeCurvatureOperator_iff
     (f := (Subtype.val : U → M)) isOpen_univ
     (contMDiff_subtype_val (I := 𝓡 3) (U := U)).contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ x)
-
-
-
 
 theorem intrinsicOpenMetric_nonnegativeSectionalCurvature_of_operator
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

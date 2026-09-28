@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Domains.CompactSubdomain
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -65,7 +53,6 @@ private theorem PLDomain.exists_compact_side_preserving_intersection
     exact (e i).piecewiseAffine_compatible_restrOpen_right B (hcompat i) hV
   · exact fun y hy => hBD y hy.1
   · exact fun y hy => (hfrontV y hy.2).trans (hBW y hy.1)
-
 
 private theorem compress_disk_in_marked_face_model
     {X V α : Type*} [TopologicalSpace X] [T2Space X]
@@ -163,7 +150,6 @@ private theorem compress_disk_in_marked_face_model
     exact ⟨z,(hHm 1 ⟨z,hz⟩).mp ((hH1 ⟨z,hz⟩).symm ▸ hs),rfl⟩
   · rintro _ ⟨z,hz,rfl⟩
     exact ⟨mem_image_of_mem k (hd.1 hz),(hH1 ⟨z,hd.1 hz⟩) ▸ (hHm 1 ⟨z,hd.1 hz⟩).mpr hz⟩
-
 
 theorem exists_original_relative_marked_disk_motion
     {X α : Type*} [TopologicalSpace X] [T2Space X]
@@ -289,4 +275,3 @@ theorem exists_original_relative_marked_disk_motion
     hbase hmark hd q hq hqi hqN hqS
 
 end PoincareConjecture.M76
-

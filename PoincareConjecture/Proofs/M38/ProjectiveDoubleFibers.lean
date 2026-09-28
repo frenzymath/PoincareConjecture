@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveDoublePeriod
 import PoincareConjecture.Proofs.M38.CylinderDeckRelation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M38
 variable {A : GeneralizedSliceCarrier.{u}} (C : SmoothProjectiveDoubleModel A.carrier)
   (f g : RoundCylinderSpace → A.carrier)
 
-
 theorem projectiveDoubleProjection4_three (z : UnitTwoSphere) :
     projectiveDoubleProjection4 C f g (z, 3) = C.collar (-z, 0) := by
   rw [projectiveDoubleProjection4_fundamental C f g (by norm_num), projectiveDoubleCycle_three]
@@ -34,7 +24,6 @@ private theorem projection_neg_shift (z : UnitTwoSphere) (t : ℝ) :
   simp only [one_smul] at h
   have harg : -t + 4 = 4 - t := by ring
   simpa only [harg] using h.symm
-
 
 theorem projectiveDoubleProjection4_reflection
     (hfr : ∀ p, f (-p.1, -p.2) = f p) (hgr : ∀ p, g (-p.1, -p.2) = g p)
@@ -77,7 +66,6 @@ theorem projectiveDoubleProjection4_reflection
   rw [hne, he, projectiveDoubleProjection4_translate, projectiveDoubleProjection4_translate]
   exact hfund p.1 r hr
 
-
 theorem projectiveDoubleProjection4_eq_of_deck
     (hfr : ∀ p, f (-p.1, -p.2) = f p) (hgr : ∀ p, g (-p.1, -p.2) = g p)
     {x y : RoundCylinderSpace} (h : CylinderDeckRelated 4 x y) :
@@ -94,8 +82,6 @@ theorem projectiveDoubleProjection4_eq_of_deck
       · simpa only [zsmul_eq_mul, sub_eq_add_neg, add_comm] using h.2
     rw [he, projectiveDoubleProjection4_translate]
     exact projectiveDoubleProjection4_reflection C f g hfr hgr y
-
-
 
 theorem projectiveDoubleProjection4_cases (x : RoundCylinderSpace) :
     (∃ p ∈ univ ×ˢ Ioo (-1 : ℝ) 1,
@@ -133,8 +119,6 @@ theorem projectiveDoubleProjection4_cases (x : RoundCylinderSpace) :
       refine ⟨(x.1, r - 4), ⟨mem_univ _, by constructor <;> linarith [hr.2]⟩,
         hq.trans (projectiveDoubleCycle_last C f g hr₃), hx.trans ?_⟩
       exact ⟨1, Or.inl ⟨rfl, by dsimp; norm_num⟩⟩
-
-
 
 theorem projectiveDoubleProjection4_deck_of_eq
     (hfi : f '' (univ ×ˢ Ioo (-1 : ℝ) 1) = C.first_region)
@@ -193,7 +177,6 @@ theorem projectiveDoubleProjection4_deck_of_eq
         (by norm_num) (by norm_num) (hpx.symm.trans (he.trans hqy))
       have hangle : z = w := congrArg Prod.fst hzw
       exact hxr.trans (hangle ▸ hyr.symm)
-
 
 theorem projectiveDoubleProjection4_fibers
     (hfi : f '' (univ ×ˢ Ioo (-1 : ℝ) 1) = C.first_region)
