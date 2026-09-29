@@ -1,3 +1,16 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright (c) 2025 Sébastien Gouëzel. All rights reserved.
+Source: https://github.com/leanprover-community/mathlib4
+Mathlib/Geometry/Manifold/Riemannian/Basic.lean
+Comparison revision: 0df444a360eaa60ab8c11dca51a86af692955474.
+Modifications: The local Riemannian distance estimate is adapted to vary both endpoints in a convex
+chart set.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Definitions
 
 set_option autoImplicit false

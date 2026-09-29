@@ -13,6 +13,9 @@ Copyright (c) 2026 Lean FRO, LLC. All rights reserved.
 Copyright (c) 2026 The DifferentialGeometry contributors.
 Copyright (c) 2026 The PoincareLib contributors.
 Copyright (c) 2026 The Tau Ceti contributors. All rights reserved.
+Copyright 2026 Scott Armstrong and Julia Kempe.
+Copyright (c) 2025 Yizheng Zhu. All rights reserved.
+Copyright (c) 2025 Sébastien Gouëzel. All rights reserved.
 
 Additional author notices: Kim Morrison; ClassificationOfSurfaces contributors;
 The Tau Ceti contributors.
@@ -27,3 +30,7 @@ assign a license to other material in this repository.
 Adaptations include changes to module paths, namespaces, imports, theorem
 interfaces, proof organization, and comments. The delivery source tree uses
 the PoincareConjecture module prefix.
+
+DeGiorgi material was incorporated through DifferentialGeometry's adapted
+version. File-level notices and MODIFICATIONS.md identify the source files,
+comparison revisions, and scope of the adaptations, including partial reuse.

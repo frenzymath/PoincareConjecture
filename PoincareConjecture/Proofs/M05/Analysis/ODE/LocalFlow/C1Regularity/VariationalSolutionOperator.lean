@@ -1,3 +1,16 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright 2026 The DifferentialGeometry contributors
+Source: https://github.com/qinz1yang/differential-geometry
+DifferentialGeometry/Analysis/ODE/Flow/C1Regularity/VariationalSolutionOperator.lean
+Comparison revision: 1b535dd102b94cc42b107cca27059687888f08b3.
+Modifications: Imports, module paths, and namespaces were adapted to this PoincareConjecture
+development.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.Defs
 
 noncomputable section

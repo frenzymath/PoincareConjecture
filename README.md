@@ -46,6 +46,9 @@ no placeholders.
 
 ## Source
 
+See [NOTICE](NOTICE) and [MODIFICATIONS.md](MODIFICATIONS.md) for upstream
+copyright notices, adapted source files, and descriptions of modifications.
+
 The formal statements are the smooth and topological forms of Morgan--Tian
 Corollary 0.2. The development uses the standard three-sphere
 `Metric.sphere (0 : EuclideanSpace ℝ (Fin 4)) 1` as its target.
