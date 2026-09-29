@@ -1,3 +1,16 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright (c) 2026 ClassificationOfSurfaces contributors. All rights reserved.
+Source: https://github.com/mccorvie/classification-of-surfaces
+JordanCurve/Counting.lean
+Comparison revision: e3c7230fe78d7b056a415d9ecae6f77887046b32.
+Modifications: Imports, module paths, and namespaces were adapted to this PoincareConjecture
+development.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Topology.Connected.Clopen
 

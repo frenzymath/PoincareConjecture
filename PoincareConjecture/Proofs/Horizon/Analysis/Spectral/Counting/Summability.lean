@@ -1,3 +1,16 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright 2026 The DifferentialGeometry contributors
+Source: https://github.com/qinz1yang/differential-geometry
+DifferentialGeometry/Analysis/Spectral/Intrinsic/Garding/EigenvalueTailSummableFromCounting.lean
+Comparison revision: 1b535dd102b94cc42b107cca27059687888f08b3.
+Modifications: The dyadic summability proof is adapted to an arbitrary index type and finite-subset
+counting.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecificLimits.Normed

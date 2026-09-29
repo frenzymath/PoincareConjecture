@@ -1,3 +1,16 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright (c) 2026 ClassificationOfSurfaces contributors. All rights reserved.
+Source: https://github.com/mccorvie/classification-of-surfaces
+ClassificationOfSurfaces/Moise/PolygonalPolyhedron.lean
+Comparison revision: e3c7230fe78d7b056a415d9ecae6f77887046b32.
+Modifications: The chamber-selection argument is extended to arbitrary bounded open sets with finite
+line boundary, including domains with holes.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Compact
 
 set_option autoImplicit false

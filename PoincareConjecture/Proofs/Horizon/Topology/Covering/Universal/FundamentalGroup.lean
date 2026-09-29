@@ -1,3 +1,16 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright (c) 2026 The Tau Ceti contributors. All rights reserved.
+Source: https://github.com/TauCetiProject/TauCeti
+TauCeti/AlgebraicTopology/FundamentalGroup/Basic.lean
+Comparison revision: d7ac608e0c97f71e9e0dc210d26a470d974368d7.
+Modifications: Imports, module paths, and namespaces were adapted to this PoincareConjecture
+development.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 module
 
 public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected

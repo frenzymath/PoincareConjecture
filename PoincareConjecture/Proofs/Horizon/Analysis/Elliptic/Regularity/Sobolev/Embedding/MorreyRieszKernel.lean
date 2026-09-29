@@ -1,3 +1,21 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright 2026 The DifferentialGeometry contributors
+Copyright 2026 Scott Armstrong and Julia Kempe
+Source: https://github.com/qinz1yang/differential-geometry
+DifferentialGeometry/Analysis/Sobolev/Euclidean/Embedding/MorreyRieszKernel.lean
+Comparison revision: 1b535dd102b94cc42b107cca27059687888f08b3.
+Additional source: https://github.com/scottnarmstrong/DeGiorgi
+DeGiorgi/Poincare.lean
+Comparison revision: 4c1b3077d3782b24065184df4ba59501b2e56fc7.
+Modifications: Imports, module paths, and namespaces were adapted to this PoincareConjecture
+development. The inherited radial integral argument generalizes the DeGiorgi power exponent.
+DeGiorgi material was incorporated through DifferentialGeometry.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.BallRepresentation
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Approximation
 

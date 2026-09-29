@@ -1,3 +1,21 @@
+/-
+Provenance and modification notice (recorded 2026-09-29).
+Notices for the adapted portions:
+Copyright 2026 The DifferentialGeometry contributors
+Copyright 2026 Scott Armstrong and Julia Kempe
+Source: https://github.com/qinz1yang/differential-geometry
+DifferentialGeometry/External/DeGiorgi/SobolevSpace/WeakDerivatives.lean
+Comparison revision: 1b535dd102b94cc42b107cca27059687888f08b3.
+Additional source: https://github.com/scottnarmstrong/DeGiorgi
+DeGiorgi/SobolevSpace/WeakDerivatives.lean
+Comparison revision: 4c1b3077d3782b24065184df4ba59501b2e56fc7.
+Modifications: Imports, module paths, and namespaces were adapted to this PoincareConjecture
+development.
+DeGiorgi material was incorporated through DifferentialGeometry.
+License: Apache-2.0; see LICENSES/Apache-2.0.txt and NOTICE.
+See MODIFICATIONS.md for the reviewed file mapping and scope of this notice.
+-/
+
 import Mathlib
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.WholeSpace
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
