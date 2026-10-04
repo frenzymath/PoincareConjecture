@@ -1,0 +1,86 @@
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Action.SpeedDistance
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Tensor.LocalMinimumHessian
+import PoincareLib.Analysis.Parabolic.DerivativeEstimates.UpperSupportComparison
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedVolume.Metric.Hessian.LaplacianLinearity
+import PoincareLib.Geometry.RicciFlow.Generalized.Noncollapse.Cylinder.CurvatureContractions
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.Contractions
+import PoincareLib.Geometry.RicciFlow.Local.Curvature.Calculus.CurvatureTrace
+import PoincareLib.Geometry.RicciFlow.Local.Curvature.Calculus.CurvatureTrilinear
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Identities.CurvatureAlgebra
+import PoincareLib.Geometry.RicciFlow.MetricComparison.LocalCurvature
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.DistanceSupport.Native
+import PoincareLib.Geometry.Riemannian.ScalarOperators.Uniqueness
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.TangentIsometry
+import PoincareLib.Geometry.Riemannian.Homothety.Connection.Transport
+import PoincareLib.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Fields.ScalarChainRule
+import PoincareLib.Geometry.RicciFlow.Curvature.Evolution.Scalar.SpatialCoefficients
+import PoincareLib.Geometry.RicciFlow.Curvature.Evolution.Scalar.Coefficients
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Tensor.HessianTrace
+import PoincareLib.Geometry.RicciFlow.Local.Metric.MetricCompactBounds
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.Cutoff.CappedDistance
+import PoincareLib.Geometry.Riemannian.Homothety.Length
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.Transport
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Tensor.TensorEvaluationBound
+import PoincareLib.Geometry.RicciFlow.Surgery.StandardCap.Uniqueness.ConnectionCompatibility
+
+namespace PoincareMT.Proofs.M09
+export PoincareMT.ReducedLength (selectedMetric_dist_le_of_speed_le localMin_secondDeriv_nonneg)
+end PoincareMT.Proofs.M09
+
+namespace PoincareMT.M04
+export PoincareMT.RicciFlowAnalysis (compact_subset_min_velocity_nonnegative_of_upper_support)
+export PoincareMT.RicciFlowAnalysis (contMDiffOn_mvfderiv_spatial continuousOn_flow_ricciNormSq)
+export PoincareMT.RicciFlowAnalysis (shiCappedDistance continuousOn_shiCappedDistance_flow
+  shiCappedDistance_eq_of_mem_ball shiCappedDistance_eq_of_le_edist)
+export PoincareMT.RicciFlowAnalysis (curvature_self tangentNorm_comparison_at_of_curvature_bound
+  exists_shi_native_distance_upper_support)
+export PoincareMT.RicciFlowAnalysis (scalarGradientSq laplacian_comp
+  continuousOn_flow_tensorTrace continuousOn_flow_timeDependentLaplacian)
+end PoincareMT.M04
+
+namespace PoincareMT.Proofs.M09
+export PoincareMT.ReducedLength (scalar_abs_le_curvatureTensorNorm)
+end PoincareMT.Proofs.M09
+
+namespace PoincareMT.M10
+export PoincareMT.ReducedVolume (laplacian_const_scalar)
+end PoincareMT.M10
+
+namespace PoincareMT.M13
+export PoincareMT.Homothety (ricciLinear_apply ricci_eq_sum_basis scalarCurvature_eq_sum_basis)
+export PoincareMT.Homothety (exists_pathELength_lt edist_le_pathELength homothety_edist
+  homothety_curvatureTensor_eq scaleLeviCivitaData_connection)
+end PoincareMT.M13
+
+namespace PoincareMT.Proofs.M13
+export PoincareMT.Homothety (ricciLinear_apply ricci_eq_sum_basis scalarCurvature_eq_sum_basis)
+export PoincareMT.Homothety (homothetyTangentIsometry)
+export PoincareMT.Homothety (diffeomorph_mfderiv_isInvertible)
+export PoincareMT.Homothety (homothetyTangentIsometry_apply curvatureTensorLinear_apply)
+export PoincareMT.Homothety (scaleSmoothMetric_tangentNorm inv_sqrt_mul_inv_sqrt)
+end PoincareMT.Proofs.M13
+
+namespace PoincareMT.M13
+export PoincareMT.Homothety (homothetyTangentIsometry diffeomorph_mfderiv_isInvertible)
+export PoincareMT.Homothety (homothetyTangentIsometry_apply curvatureTensorLinear_apply)
+export PoincareMT.Homothety (scaleSmoothMetric_tangentNorm inv_sqrt_mul_inv_sqrt)
+end PoincareMT.M13
+
+namespace PoincareMT.Proofs.M03
+export PoincareMT.RicciFlow.Local (curvature_pair_skew)
+export PoincareMT.RicciFlow.Local (curvatureOnFields_swap)
+export PoincareMT.RicciFlow.Local (exists_pos_uniform_bilinear_bounds)
+end PoincareMT.Proofs.M03
+
+namespace PoincareMT.Proofs.M09
+export PoincareMT.ReducedLength (scalarCurvature_contMDiff)
+end PoincareMT.Proofs.M09
+
+namespace PoincareMT.M04
+export PoincareMT.LeviCivitaData (laplacian_eq)
+end PoincareMT.M04
+
+namespace PoincareMT
+noncomputable abbrev RoundCylinderMetric : RoundCylinderTwoTensor := EvolvingRoundCylinderMetric 0
+end PoincareMT

@@ -1,0 +1,10 @@
+import PoincareLib.Topology.Manifold.ThreeDimensional.Triangulation.Polyhedral.FiniteOrderComplexPivots
+import PoincareLib.Topology.Manifold.Smoothing.Imports.Topology.FiniteOrderComplex
+
+/-! Source-name compatibility for the unchanged Mapher smoothing proofs. -/
+
+namespace PoincareMT.Proofs.M02.Topology
+
+export Poincare.Topology (affineIndependent_of_chain_coordinate_pivots chain_weighted_coordinates_unique affineIndependent_of_chain_support_pivots exists_chain_coordinate_pivot_of_strict_supports affineIndependent_of_strict_supports chain_representatives_injective_of_strict_supports)
+
+end PoincareMT.Proofs.M02.Topology

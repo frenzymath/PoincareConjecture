@@ -1,0 +1,66 @@
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Identities.CurvatureSymmetries
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Tensors.RicciRegularity
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Tensors.TensorDerivativeClosure
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.Paths.PiecewiseEnergy
+import PoincareLib.Geometry.RicciFlow.Generalized.ReducedGeometry.SourceNames.CurvatureCalculus
+import PoincareLib.Geometry.RicciFlow.MetricComparison.LocalCurvature
+import PoincareLib.Geometry.RicciFlow.Positivity.PointwiseFlatness
+import PoincareLib.Geometry.RicciFlow.Positivity.Ricci.NullReaction
+import PoincareLib.Geometry.RicciFlow.Positivity.Sectional.MinimumDiffusion
+import PoincareLib.Geometry.RicciFlow.Positivity.Sectional.Rayleigh
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.LGeometry.Path.ReferenceEnergy
+import PoincareLib.Geometry.RicciFlow.Rescaling.Construction
+import PoincareLib.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Spacetime.GeneralizedBoxes
+import PoincareLib.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Spacetime.GeneralizedCylinderMetric
+import PoincareLib.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Spacetime.GeneralizedCylinderRestriction
+import PoincareLib.Geometry.RicciFlow.Volume.Surgery.Measure.Calibration
+import PoincareLib.Geometry.Riemannian.Connection.Uniqueness
+import PoincareLib.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
+import PoincareLib.Geometry.Riemannian.Curvature.LocalIsometryInvariants
+import PoincareLib.Geometry.Riemannian.Curvature.Scalar.Trace
+import PoincareLib.Geometry.Riemannian.Homothety.Connection.Scaling
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.ContractionTransport
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.Contractions
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.Multilinear
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.TangentIsometry
+import PoincareLib.Geometry.Riemannian.Homothety.Curvature.Transport
+import PoincareLib.Geometry.Riemannian.Homothety.Length
+import PoincareLib.Geometry.Riemannian.Homothety.Metric
+import PoincareLib.Geometry.Riemannian.Homothety.Volume
+import PoincareLib.Geometry.Spacetime.Rescaling.Atlas.Construction
+
+/-! Source-name exports for unchanged imported proof bodies. -/
+
+namespace PoincareMT.M04
+export PoincareMT.RicciFlowAnalysis
+  (continuousOn_segmentPathSpeed covariantTensorDerivative_metricGramEvaluation curvatureTensor_cyclic curvatureTensor_pair_exchange curvatureTensor_swap_first curvatureTensor_swap_last isSmoothCovariantTensor_covariantTensorDerivative isSmoothCovariantTensor_ricciEvaluation metricGram metricGramEvaluation metric_comparison_at_of_curvature_bound nonneg_ricci_of_nonnegativeSectionalAt pathELength_eq_ofReal_integral_segmentPathSpeed ricciReaction_nonneg_of_nonnegativeRicciAt_null segmentPathSpeed tangentNorm_comparison_at_of_curvature_bound)
+end PoincareMT.M04
+
+namespace PoincareMT.M08
+export PoincareMT.LGeometry
+  (curveVelocity_continuousOn_open)
+end PoincareMT.M08
+
+namespace PoincareMT.M10
+export PoincareMT.SurgeryVolume.Measure
+  (euclideanHausdorff_isAddHaarMeasure euclideanHausdorff_unitBall_lt_top euclideanHausdorff_unitBall_pos)
+end PoincareMT.M10
+
+namespace PoincareMT.M13
+export PoincareMT.Homothety
+  (curvatureTensorLinear edist_le_pathELength homothetyTangentIsometry homothetyTangentIsometry_apply homothety_ball_image homothety_curvatureTensor_eq homothety_edist homothety_nonnegative_operator_iff homothety_pathELength homothety_ricci_eq homothety_scalarCurvature_eq homothety_volume_image ricciLinear scaleLeviCivitaData scaleSmoothMetric scaleSmoothMetric_inner)
+end PoincareMT.M13
+
+namespace PoincareMT.M13
+export PoincareMT.ParabolicRescaling
+  (ordinaryParabolicRescaling interval_relatively_open timeHomeomorph identity_metricHomothety)
+end PoincareMT.M13
+
+namespace PoincareMT.Proofs.M12
+export PoincareMT.EpochExtension.Spacetime
+  (FlowBoxRicciGeometry boxInterval cylinderClockHomeomorph cylinderPhysicalInterval flowBoxRicciGeometry flowInterval rawCylinderMetric rawCylinderMetric_eq rawCylinderTransport)
+end PoincareMT.Proofs.M12
+
+namespace PoincareMT.LeviCivitaData
+alias horizon_curvatureTensor_eq := curvatureTensor_eq
+end PoincareMT.LeviCivitaData

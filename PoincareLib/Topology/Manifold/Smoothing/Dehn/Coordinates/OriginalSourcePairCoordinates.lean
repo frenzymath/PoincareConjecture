@@ -1,0 +1,100 @@
+import PoincareLib.Topology.Manifold.Smoothing.Dehn.Simplicial.OriginalFaceComparisonTransport
+import PoincareLib.Topology.Manifold.Smoothing.Polyhedral.General.EmbeddedSubcomplexCarriers
+
+/-!
+# The common coordinate of an actual ordered source pair
+
+Use the whole successor and prefix agreements of the retained
+motion. Its proved active support and actual coordinate inverse
+put both final points in the original paired chart domains and
+their common value in the full free comparison intersection.
+See Dehn032, sections6--8, and Hudson1969, Lemma4.6.
+-/
+
+set_option autoImplicit false
+
+open Set Geometry
+
+namespace Geometry.OriginalPLTower
+
+local notation "V2" => (Fin 2 → ℝ)
+local notation "V3" => (Fin 3 → ℝ)
+
+variable {M ι : Type*} [TopologicalSpace M]
+  {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
+  {f : V2 → M} {r : M → ℝ} {C : Set M}
+
+/-- Every actual ordered source pair has one common coordinate
+inside the actual support, both original chart domains and the
+entire free comparison intersection. All support and domain facts
+are derived from the same produced motion. See Dehn032, section7. -/
+theorem FaceMotionData.original_pair_chart_coordinates
+    {s t : Stage e S f r C} {step : Step s t}
+    {K K₀ K₁ : SimplicialComplex ℝ V2} (hK₀ : K₀ ≤ K)
+    {face : Finset V2} (hface : face ∈ K.faces)
+    (hsucc : K₁.space = K₀.space ∪ convexHull ℝ (face : Set V2))
+    {j jfinal : V2 → t.Carrier} (hji : InjOn j K.space)
+    {Q : OpenPartialHomeomorph t.Carrier V3}
+    (hjQ : MapsTo j (convexHull ℝ (face : Set V2)) Q.source)
+    {B : OpenPartialHomeomorph s.Carrier V3}
+    (hval : ∀ z, Q z = B (step.projection (step.inclusion z)))
+    (hmaps : MapsTo (step.projection ∘ step.inclusion) Q.source B.source)
+    {J : SimplicialComplex ℝ V3} {U : K.faces → Set t.Carrier}
+    {R Fmark : Set M} {boundary : Bool}
+    (motion : FaceMotionData step K K₀ K₁ j Q B J U R Fmark boundary)
+    (hold : EqOn jfinal j K₀.space)
+    (hnext : EqOn jfinal (motion.ambient 1 ∘ j) K₁.space)
+    (old : K₀.faces) {x y : V2}
+    (hx : x ∈ convexHull ℝ (face : Set V2)) (hxold : x ∉ K₀.space)
+    (hy : y ∈ convexHull ℝ (old.val : Set V2))
+    (hpair : step.projection (step.inclusion (jfinal x)) =
+      step.projection (step.inclusion (jfinal y))) :
+    jfinal x ∈ Q.source ∧ step.projection (step.inclusion (jfinal y)) ∈ B.source ∧
+      Q (jfinal x) = B (step.projection (step.inclusion (jfinal y))) ∧
+      Q (jfinal x) ∈ motion.support.space ∧
+      Q (jfinal x) ∈ motion.coordinates.map 1 '' motion.source.space ∧
+      Q (jfinal x) ∉ motion.fixedSource.space ∧
+      Q (jfinal x) ∈ (motion.targets old).space := by
+  have hxnext : x ∈ K₁.space := hsucc.symm.subset (Or.inr hx)
+  have hxQ := hjQ hx
+  have hxC : Q (j x) ∈ motion.support.space :=
+    interior_subset (motion.active_supported x hxnext hxold)
+  have hvalue : Q (jfinal x) = motion.coordinates.map 1 (Q (j x)) :=
+    motion.coordinate_of_successor_agreement hnext hxnext hxQ hxC
+  have hwC : Q (jfinal x) ∈ motion.support.space := by
+    rw [hvalue]
+    exact (motion.coordinates.carrier 1).subset
+      (mem_image_of_mem (motion.coordinates.map 1) hxC)
+  have hfinalpoint : jfinal x = Q.symm (motion.coordinates.map 1 (Q (j x))) :=
+    (hnext hxnext).trans (motion.chart_formula 1 hxQ)
+  have hfinalQ : jfinal x ∈ Q.source := by
+    rw [hfinalpoint]
+    apply Q.map_target
+    apply motion.support_upper
+    rwa [← hvalue]
+  have hyB : step.projection (step.inclusion (jfinal y)) ∈ B.source := by
+    rw [← hpair]
+    exact hmaps hfinalQ
+  have hcommon : Q (jfinal x) = B (step.projection (step.inclusion (jfinal y))) := by
+    rw [hval, hpair]
+  refine ⟨hfinalQ, hyB, hcommon, hwC, ?_, ?_, ?_⟩
+  · refine ⟨Q (j x), ?_, hvalue.symm⟩
+    rw [motion.source_space]
+    exact ⟨⟨j x, ⟨mem_image_of_mem j hxnext, hxQ⟩, rfl⟩, hxC⟩
+  · intro hwfixed
+    have hfix : motion.coordinates.map 1 (Q (jfinal x)) = Q (jfinal x) :=
+      motion.coordinates.fixed_protected 1 (Q (jfinal x)) hwfixed
+    have hsame : Q (j x) = Q (jfinal x) := (motion.coordinates.map 1).injective
+      (hvalue.symm.trans hfix.symm)
+    rw [motion.protected_space] at hwfixed
+    obtain ⟨⟨v, ⟨⟨xold, hxold', rfl⟩, hjoldQ⟩, hcoord⟩, _⟩ := hwfixed
+    have hjx : j x = j xold := Q.injOn hxQ hjoldQ (hsame.trans hcoord.symm)
+    have hxx : x = xold := hji (K.convexHull_subset_space hface hx)
+      (SimplicialComplex.space_subset_of_le hK₀ hxold') hjx
+    exact hxold (hxx.symm ▸ hxold')
+  · rw [motion.targets_space_of_prefix_agreement hold old]
+    exact ⟨⟨step.projection (step.inclusion (jfinal y)),
+      ⟨mem_image_of_mem ((step.projection ∘ step.inclusion) ∘ jfinal) hy, hyB⟩,
+      hcommon.symm⟩, hwC⟩
+
+end Geometry.OriginalPLTower

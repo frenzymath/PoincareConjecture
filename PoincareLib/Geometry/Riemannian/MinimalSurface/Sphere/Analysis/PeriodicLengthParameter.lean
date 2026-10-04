@@ -1,0 +1,74 @@
+import PoincareLib.Geometry.Riemannian.MinimalSurface.Sphere.Analysis.CurveLengthParameter
+import Mathlib.Algebra.Ring.Periodic
+import Mathlib.Analysis.Convex.Topology
+
+/-!
+# Periodicity of natural length parameters
+
+Morgan-Tian Definition 18.17, printed p. 430, zero-area boundary collars.
+Signed variation of a periodic curve advances by its period length.
+The natural curve repeats on the scalar image, which is convex for a
+Lipschitz original curve. Constant curves are included.
+-/
+
+set_option autoImplicit false
+
+open Set
+open scoped NNReal
+
+namespace PoincareMT.M60
+
+/-- Translating both endpoints by a period leaves signed variation
+unchanged. Source: MT Definition 18.17, p. 430, periodic length derivation. -/
+theorem variationOnFromTo_add_period {E : Type*} [PseudoEMetricSpace E]
+    {f : ℝ → E} {T : ℝ} (hp : Function.Periodic f T) (a b : ℝ) :
+    variationOnFromTo f univ (a + T) (b + T) = variationOnFromTo f univ a b := by
+  let tau := fun t : ℝ => t + T
+  have himage : tau '' univ = univ :=
+    image_univ_of_surjective (fun y => ⟨y - T, sub_add_cancel y T⟩)
+  have hcomp : f ∘ tau = f := funext hp
+  have h := variationOnFromTo.comp_eq_of_monotoneOn f tau
+    ((monotone_id.add_const T).monotoneOn univ) (mem_univ a) (mem_univ b)
+  rw [himage, hcomp] at h
+  exact h.symm
+
+/-- The signed length parameter advances by the length of one period.
+No positivity of the period or its length is needed for this identity.
+Source: MT Definition 18.17, p. 430, periodic length derivation. -/
+theorem lengthParameter_add_period {E : Type*} [PseudoEMetricSpace E]
+    {f : ℝ → E} {T : ℝ} (hf : LocallyBoundedVariationOn f univ)
+    (hp : Function.Periodic f T) (t : ℝ) :
+    variationOnFromTo f univ 0 (t + T) =
+      variationOnFromTo f univ 0 t + variationOnFromTo f univ 0 T := by
+  have h := variationOnFromTo.add hf (mem_univ 0) (mem_univ T) (mem_univ (t + T))
+  have hshift := variationOnFromTo_add_period hp 0 t
+  rw [zero_add] at hshift
+  rw [hshift] at h
+  exact h.symm.trans (add_comm _ _)
+
+/-- The natural curve repeats after one period length on the scalar
+image where its factorization is exact. Source: MT Definition 18.17,
+p. 430, periodic length derivation. -/
+theorem naturalParameterization_add_periodLength {E : Type*} [EMetricSpace E]
+    {f : ℝ → E} {T : ℝ} (hf : LocallyBoundedVariationOn f univ)
+    (hp : Function.Periodic f T) {s : ℝ}
+    (hs : s ∈ range (variationOnFromTo f univ 0)) :
+    naturalParameterization f univ 0 (s + variationOnFromTo f univ 0 T) =
+      naturalParameterization f univ 0 s := by
+  obtain ⟨t, rfl⟩ := hs
+  rw [← lengthParameter_add_period hf hp]
+  have heq (x : ℝ) : naturalParameterization f univ 0 (variationOnFromTo f univ 0 x) = f x :=
+    edist_eq_zero.mp (edist_naturalParameterization_eq_zero hf (mem_univ 0) (mem_univ x))
+  rw [heq, heq, hp]
+
+/-- The image of a Lipschitz length parameter is convex, so scalar
+interpolation stays in the unit-Lipschitz natural-curve domain. Source:
+MT Definition 18.17, p. 430, periodic length derivation. -/
+theorem convex_range_lengthParameter {E : Type*} [PseudoEMetricSpace E]
+    {f : ℝ → E} {C : ℝ≥0} (hf : LipschitzWith C f) :
+    Convex ℝ (range (variationOnFromTo f univ 0)) := by
+  have hc := (lipschitzOnWith_univ.mp
+    (lipschitzOnWith_variationOnFromTo hf.lipschitzOnWith (mem_univ 0))).continuous
+  exact (isPreconnected_range hc).ordConnected.convex
+
+end PoincareMT.M60

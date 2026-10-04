@@ -1,0 +1,85 @@
+import PoincareLib.Geometry.RicciFlow.Generalized.BoundedDistance.Predecessors.Necks.Geometry.CentralSphere
+import PoincareLib.Topology.Manifold.NeckCap.Geometry.Neck.Single.SingleNeckCylinder
+
+/-!
+# The one-neck chain and tube certificate
+
+Morgan--Tian Definition A.12, p. 504, permits a finite chain with a single
+index. Lemma A.13, p. 505, includes this base case. We retain the actual
+source neck, its exact epsilon, its carrier and its embedded central sphere.
+-/
+
+set_option autoImplicit false
+
+open scoped Manifold ContDiff Bundle ENNReal
+
+universe u
+
+namespace PoincareMT.EpsilonNeck
+
+variable {M : Type u} [TopologicalSpace M]
+  [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
+  [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
+
+/-- The identity sign witnesses that a neck agrees with itself up to reversal
+(Def. A.12, p. 504). -/
+theorem sameUpToReversal_refl : N.SameUpToReversal N := by
+  refine ⟨rfl, rfl, rfl, rfl, rfl, 1, Or.inl rfl, ?_⟩
+  intro z hz
+  simp only [one_mul]
+
+private theorem no_adjacent_singleton {i : ℤ}
+    (hi : i ∈ (ChainShape.finite 0 0).active)
+    (hj : i + 1 ∈ (ChainShape.finite 0 0).active) : False := by
+  simp only [ChainShape.active, Set.mem_Icc] at hi hj
+  omega
+
+/-- The chain consisting of the given neck at the single active index zero
+(A.12, p. 504; base case of A.13, p. 505). -/
+def singletonChain : BalancedNeckChain g N.epsilon where
+  shape := .finite 0 0
+  neck := fun _ => N
+  source_necks := {N}
+  selected := fun _ _ => ⟨N, rfl, N.sameUpToReversal_refl⟩
+  active_nonempty := ⟨0, le_rfl, le_rfl⟩
+  epsilon_eq := fun _ _ => rfl
+  centers_distinct := by
+    intro i hi j hj hij
+    simp only [ChainShape.active, Set.mem_Icc] at hi hj
+    omega
+  adjacent_overlap := fun _ hi hj => (no_adjacent_singleton hi hj).elim
+  overlap_contains_quarters := fun _ hi hj => (no_adjacent_singleton hi hj).elim
+  overlap_within_three_quarters := fun _ hi hj => (no_adjacent_singleton hi hj).elim
+  later_disjoint_negative_end := by
+    intro i hi j hj hij
+    simp only [ChainShape.active, Set.mem_Icc] at hi hj
+    omega
+  balanced_center_distance := fun _ hi hj => (no_adjacent_singleton hi hj).elim
+
+/-- One sufficiently small neck certifies a tube containing any specified
+subset of its carrier (one-neck case of A.13, p. 505). -/
+noncomputable def singletonTube {X : Set M} (hε : N.epsilon ≤ 1 / 200)
+    (hX : X ⊆ N.carrier) : EpsilonTubeCertificate g X where
+  epsilon := N.epsilon
+  epsilon_pos := N.epsilon_pos
+  epsilon_le_threshold := hε
+  carrier := N.carrier
+  carrier_open := N.carrier_open
+  contains_X := hX
+  chain := N.singletonChain
+  carrier_eq_chain_union := by
+    ext x
+    constructor
+    · intro hx
+      exact Set.mem_iUnion.mpr ⟨⟨0, le_rfl, le_rfl⟩, hx⟩
+    · intro hx
+      obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hx
+      exact hi
+  cylinder := N.m25_openCylinderModel
+  central_sphere_isotopy := by
+    intro i hi
+    change SmoothSphereIsotopicIn N.carrier N.central_sphere N.m25_openCylinderModel.middleSphere
+    rw [N.m25_openCylinderModel_middleSphere]
+    exact N.m25_central_sphere_isotopic_self
+
+end PoincareMT.EpsilonNeck

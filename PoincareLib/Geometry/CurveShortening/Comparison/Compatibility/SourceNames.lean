@@ -1,0 +1,63 @@
+import PoincareLib.Geometry.CurveShortening.Deformation.Compatibility.SourceNames
+import PoincareLib.Geometry.RicciFlow.Generalized.ReducedGeometry.SourceNames.LGeometry
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.QuadraticRicci
+import PoincareLib.Geometry.RicciFlow.Positivity.Ricci.Rayleigh
+import PoincareLib.Geometry.RicciFlow.Curvature.Evolution.Tensor.FlowRiemannRegularity
+import PoincareLib.Geometry.RicciFlow.Curvature.Evolution.Tensor.FlowTensorRegularity
+import PoincareLib.Geometry.RicciFlow.Curvature.Energy.Regularity
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Tensors.TensorDerivativeClosure
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Tensors.RiemannRegularity
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Identities.CurvatureAlgebra
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Identities.CurvatureSymmetries
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Identities.ScalarHessian
+import PoincareLib.Geometry.RicciFlow.Curvature.Calculus.Identities.ScalarContractions
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.Coordinates.Normal
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.Coordinates.Connection
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Coordinates.InverseChartVector
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Coordinates.SquareChartPairing
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Coordinates.SquareChartConnection
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Variation.Fields.FrozenFrame
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Tensor.FrameForms
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Smoothing.Charts.Perturbation
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Smoothing.Charts.CompactMargin
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Smoothing.Euclidean.Blend
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Smoothing.Euclidean.Approximation
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Smoothing.Local.Approximation
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Distance.LocalSmoothLipschitz
+
+/-! Source-name exports for the unchanged Mapher comparison and ramp proofs. -/
+
+namespace PoincareMT.M04
+export PoincareMT.RicciFlowAnalysis
+  (abs_ricci_le_curvatureTensorNorm
+   contMDiffOn_flow_covariantTensorDerivative contMDiffOn_flow_curvatureDerivativeEnergy
+   contMDiffOn_flow_iteratedCovariantTensorDerivative contMDiffOn_flow_ricciEvaluation
+   contMDiffOn_flow_riemannEvaluation continuousOn_flow_ricciRayleigh_trivialization
+   covariantTensorDerivativeOnFields covariantTensorDerivativeOnFields_eq
+   curvature_self hessian_symm_on isSmoothCovariantTensor_covariantTensorDerivative
+   isSmoothCovariantTensor_hessian isSmoothCovariantTensor_riemannEvaluation
+   ricci_covariantDerivative_symm ricci_symm shiChartChristoffel_smooth)
+end PoincareMT.M04
+
+namespace PoincareMT.Proofs.M09
+export PoincareMT.ReducedLength
+  (chartMetricPairing_smooth chartVectorField_koszul
+   extensionMap extensionMap_self extensionMap_smooth
+   frozenConnectionEndomorphism extensionTensor_derivative
+   frameTensorForm frameTensorForm_apply frameTensorForm_smooth
+   inverseChartDifferential_bijective)
+export PoincareMT.ReducedLengthMinimum.Variation.Geometry
+  (chartVectorField_bracket chartVectorField_param_smooth
+   mvfderiv_chartVectorField tangentChartPhase_continuousOn)
+end PoincareMT.Proofs.M09
+
+namespace PoincareMT.M40
+export PoincareMT.SurgeryComparison.Transport
+  (chartPerturb chartPerturb_eq_of_zero chartPerturb_of_mem
+   contMDiffAt_chartPerturb_of_mem cutoffBlend cutoffBlend_dist_le
+   cutoffBlend_eq_left cutoffBlend_eq_right cutoffBlend_lipschitzOn
+   exists_lipschitzOn_nhds_of_contMDiffAt
+   exists_radius_normalizedConvolution_dist_lt_uniform normalizedConvolution
+   normalizedConvolution_contDiff)
+export PoincareMT.SurgeryComparison.Topology (exists_pos_uniform_mapsTo_of_edist_lt)
+end PoincareMT.M40

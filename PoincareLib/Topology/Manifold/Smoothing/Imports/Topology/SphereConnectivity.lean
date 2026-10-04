@@ -1,0 +1,9 @@
+import PoincareLib.Topology.Homotopy.Sphere.SphereConnectivity
+
+/-! Source-name compatibility for the unchanged Mapher smoothing proofs. -/
+
+namespace PoincareMT.Proofs.M02
+
+export Poincare.Topology (exists_contDiff_approx_preserving_value exists_sphere_point_not_normalized_range sphere_genLoop_homotopic_const_of_avoids sphere_genLoop_homotopic_const_of_dim_lt sphere_homotopyGroup_subsingleton_of_dim_lt sphere_simplyConnectedSpace_of_two_lt_finrank)
+
+end PoincareMT.Proofs.M02
