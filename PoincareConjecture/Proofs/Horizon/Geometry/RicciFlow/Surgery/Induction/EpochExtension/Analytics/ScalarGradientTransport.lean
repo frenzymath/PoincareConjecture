@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M48.ScalarGradientTransport
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.RegularHistory
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Control.Basic
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.Tensors.TensorMetricTrace

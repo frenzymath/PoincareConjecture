@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceSelectedCrossingHeight
-
-set_option autoImplicit false

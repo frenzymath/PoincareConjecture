@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Pullback
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence

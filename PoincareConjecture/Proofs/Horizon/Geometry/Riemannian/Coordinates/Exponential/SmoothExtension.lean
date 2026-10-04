@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.GeodesicFlow

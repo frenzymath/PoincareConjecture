@@ -1,5 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Pullback
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transitions

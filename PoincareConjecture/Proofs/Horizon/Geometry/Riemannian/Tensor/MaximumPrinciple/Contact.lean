@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Contact
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators

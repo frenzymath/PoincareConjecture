@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.RotationFamily
-import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.SmallKillingDefect
-import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.DefectHeatTestBound
-import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.RegularRotationHeat

@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.Horizon.Compat.M33SphereNonempty
-import PoincareConjecture.Definitions.M32HornSelection

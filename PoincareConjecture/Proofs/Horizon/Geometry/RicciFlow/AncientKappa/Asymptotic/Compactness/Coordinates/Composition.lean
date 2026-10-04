@@ -1,1 +1,0 @@
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Composition

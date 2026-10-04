@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacobi.CurvatureSymmetry
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.CurvatureTrace

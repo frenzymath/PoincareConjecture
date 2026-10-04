@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Domain
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.PrecompactVariation

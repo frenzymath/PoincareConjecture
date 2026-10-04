@@ -1,5 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Coverage
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.CutTime
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.MinimizingGeodesic
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed

@@ -1,2 +1,0 @@
-import PoincareConjecture.Definitions.M14Exponential
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.PathCalculus

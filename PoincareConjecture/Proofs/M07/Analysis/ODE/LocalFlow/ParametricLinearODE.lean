@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.ParametricLinearODE
-import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.ParametricLinearODE.ParameterDerivative

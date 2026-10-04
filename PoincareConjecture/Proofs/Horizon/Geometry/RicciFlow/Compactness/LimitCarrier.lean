@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.LimitCarrier
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Producer
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Exhaustion
-import PoincareConjecture.Proofs.Horizon.Topology.Sequences.Diagonal

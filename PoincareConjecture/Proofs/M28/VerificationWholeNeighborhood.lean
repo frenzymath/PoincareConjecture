@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallWholeNeighborhoodProducer
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceWholeNeckBackwardData
-
-set_option autoImplicit false

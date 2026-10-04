@@ -1,3 +1,0 @@
-import PoincareConjecture.Definitions.M15Noncollapsing
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.Exponential
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Calibrated

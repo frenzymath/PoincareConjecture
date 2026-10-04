@@ -1,2 +1,0 @@
-import PoincareConjecture.Definitions.M28BoundedDistance
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.BoundedDistance

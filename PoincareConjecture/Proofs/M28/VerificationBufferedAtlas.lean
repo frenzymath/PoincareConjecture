@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M28.Mathlib.FiniteBufferedChartCover
-
-set_option autoImplicit false

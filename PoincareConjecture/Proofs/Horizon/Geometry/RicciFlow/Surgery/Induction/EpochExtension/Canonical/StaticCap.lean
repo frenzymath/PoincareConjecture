@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M48.StaticCap
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.StaticNeck
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.StaticTopology

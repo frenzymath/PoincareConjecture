@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M05.Analysis.Parabolic.SupportTransport
-import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.ConvexSupport
-import Mathlib.Analysis.InnerProductSpace.LinearMap

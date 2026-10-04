@@ -1,6 +1,0 @@
-import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayConeTriangle
-import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayEndpoint
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedMetricEndRayData
-import PoincareConjecture.Proofs.M28.Sec10_5_Angles.SelectedEndRayChordLimits
-
-set_option autoImplicit false

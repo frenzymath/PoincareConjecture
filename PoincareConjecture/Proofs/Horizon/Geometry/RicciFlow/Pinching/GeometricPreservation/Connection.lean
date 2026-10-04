@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.Connection
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.GeometricPreservation.Transport
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SecondBianchi

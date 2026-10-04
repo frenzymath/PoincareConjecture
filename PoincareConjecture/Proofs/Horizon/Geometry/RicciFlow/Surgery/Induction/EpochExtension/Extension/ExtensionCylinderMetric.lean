@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M48.ExtensionCylinderMetric
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Extension.ExtensionCylinder
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Cylinders.SurgeryCylinderSource

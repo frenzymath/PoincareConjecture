@@ -1,9 +1,0 @@
-import PoincareConjecture.Proofs.M04.ScalarEvolution
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.Tensors.RicciRegularity
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Scalar.Coefficients
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvolution
-import Mathlib.Analysis.Calculus.TangentCone.Real
-import Mathlib.Analysis.Calculus.ContDiff.Deriv
-import Mathlib.Geometry.Manifold.ContMDiffMFDeriv

@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M54.Mathlib.PathMaps
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
