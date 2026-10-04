@@ -15,7 +15,20 @@ Their propositions are defined in
 [`PoincareConjecture/Statement.lean`](PoincareConjecture/Statement.lean), and
 the final assembly is in
 [`PoincareConjecture/Proofs/Main.lean`](PoincareConjecture/Proofs/Main.lean).
-The default build checks every Lean file under `PoincareConjecture`.
+The default build checks every Lean file under `PoincareConjecture` and `PoincareLib`.
+
+The subject-organized `PoincareLib` is imported from
+[`frenzymath/Poincare-Conjecture`](https://github.com/frenzymath/Poincare-Conjecture/tree/432c38f2aa5a30efb13871292d17b4a3309a496a/PoincareConjecture/PoincareLib).
+Use `import PoincareLib` to access its endpoints:
+
+```lean
+PoincareMT.smoothPoincareSkeleton
+PoincareMT.topologicalPoincareSkeleton
+```
+
+Their final assembly is exposed by
+[`PoincareLib/Topology/Manifold/Poincare.lean`](PoincareLib/Topology/Manifold/Poincare.lean).
+See [MODIFICATIONS.md](MODIFICATIONS.md#poincarelib-import) for the exact source and attribution.
 
 ## Build
 
@@ -39,8 +52,8 @@ the official comparator configuration is
 Follow the Linux sandbox setup and invocation in
 [`Comparator/README.md`](Comparator/README.md). The configuration enables both
 Lean's kernel and Nanoda and permits only `propext`, `Classical.choice`, and
-`Quot.sound`. Comparator checks the independently stated endpoint types and
-their production proofs. The two `sorry` placeholders in `Challenge.lean` are
+`Quot.sound`. Comparator checks the independently stated endpoint types against
+the imported `PoincareLib` proofs. The two `sorry` placeholders in `Challenge.lean` are
 the statements to be checked; the production proof and `Solution.lean` contain
 no placeholders.
 

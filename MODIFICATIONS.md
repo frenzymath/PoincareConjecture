@@ -1,9 +1,32 @@
 # Source modifications and attribution
 
-This notice update restores file-level attribution for adapted portions of the
-development. Existing notices are preserved. The only Lean changes in this PR
-are comments: imports, namespaces, declarations, statements and proof tokens
-remain unchanged. The Apache-2.0 license is retained in
+## PoincareLib import
+
+The Lean files in `PoincareLib/` and `PoincareLib.lean` are copied byte-for-byte from
+[`frenzymath/Poincare-Conjecture` at `432c38f2aa5a30efb13871292d17b4a3309a496a`](https://github.com/frenzymath/Poincare-Conjecture/tree/432c38f2aa5a30efb13871292d17b4a3309a496a/PoincareConjecture).
+The import contains only the Lean library and its root module; the source
+website, blueprint, archives, library Markdown notes and run artifacts are not
+part of this delivery.
+
+All per-file copyright, source and modification notices are retained. The
+source's [modification record](https://github.com/frenzymath/Poincare-Conjecture/blob/432c38f2aa5a30efb13871292d17b4a3309a496a/PoincareConjecture/MODIFICATIONS.md),
+[file-level attribution ledger](https://github.com/frenzymath/Poincare-Conjecture/blob/432c38f2aa5a30efb13871292d17b4a3309a496a/archive/PoincareConjecture/provenance/2026-09-29/reviewed-files.json),
+and [retained licenses and notices](https://github.com/frenzymath/Poincare-Conjecture/tree/432c38f2aa5a30efb13871292d17b4a3309a496a/archive/PoincareConjecture/provenance/2026-09-29/licenses)
+record the upstream provenance. Applicable Apache-2.0 terms and upstream notices
+are retained locally in `LICENSES/Apache-2.0.txt`, `NOTICE`, and the Lean files.
+
+Integration registers `PoincareLib` as a default Lake library and directs
+`Comparator/Solution.lean` to its `PoincareMT` endpoints. The adapter reuses
+the existing Mathlib-only `PoincareConjecture.Statement` definitions. Challenge,
+Comparator configuration, toolchain and dependency pins are unchanged.
+The import preparation does not claim a fresh Lean build or Comparator run.
+
+## Earlier attribution update
+
+The earlier notice update restored file-level attribution for adapted portions
+of the development. Its Lean changes were comments only: imports, namespaces,
+declarations, statements and proof tokens remained unchanged.
+The Apache-2.0 license is retained in
 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt); see also [NOTICE](NOTICE).
 
 ## Sources
@@ -169,7 +192,7 @@ the local header. Existing mathematical comments and authorship notices remain.
 | [PoincareConjecture/Proofs/Horizon/Topology/Plane/Meshes/Subdivision/Fine.lean](PoincareConjecture/Proofs/Horizon/Topology/Plane/Meshes/Subdivision/Fine.lean) | [ClassificationOfSurfaces/Moise/FineSubdivision.lean](https://github.com/mccorvie/classification-of-surfaces/blob/e3c7230fe78d7b056a415d9ecae6f77887046b32/ClassificationOfSurfaces/Moise/FineSubdivision.lean) | Imports, module paths and namespaces adapted. |
 | [PoincareConjecture/Proofs/Horizon/Topology/Plane/Meshes/Subdivision/Lines.lean](PoincareConjecture/Proofs/Horizon/Topology/Plane/Meshes/Subdivision/Lines.lean) | [ClassificationOfSurfaces/Moise/LineSubdivision.lean](https://github.com/mccorvie/classification-of-surfaces/blob/e3c7230fe78d7b056a415d9ecae6f77887046b32/ClassificationOfSurfaces/Moise/LineSubdivision.lean) | Imports, module paths and namespaces adapted. |
 
-## Verification of this update
+## Verification of the attribution update
 
 Comment-aware token comparison retains literals, imports, namespace commands
 and every proof token when comparing the base revision with this PR. All
