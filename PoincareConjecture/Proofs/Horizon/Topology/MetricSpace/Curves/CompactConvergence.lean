@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Curves.CompactConvergence
-import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.Curves.ArcLength
-import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
-import Mathlib.Topology.MetricSpace.UniformConvergence

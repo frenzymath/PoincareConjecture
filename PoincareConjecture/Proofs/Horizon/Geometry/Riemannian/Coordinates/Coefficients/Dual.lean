@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.Dual
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.InverseEstimate
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidean

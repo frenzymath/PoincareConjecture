@@ -1,2 +1,0 @@
-import PoincareConjecture.Definitions.M18AsymptoticSoliton
-import PoincareConjecture.Proofs.Horizon.Compat.M18AsymptoticSoliton

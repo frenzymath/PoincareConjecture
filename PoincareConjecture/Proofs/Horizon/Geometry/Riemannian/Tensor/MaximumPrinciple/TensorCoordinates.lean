@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.CarrierContact
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.TensorCoordinates
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Chart
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.LaplacianRegularity

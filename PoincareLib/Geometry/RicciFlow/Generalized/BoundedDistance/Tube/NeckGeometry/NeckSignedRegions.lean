@@ -1,0 +1,93 @@
+import PoincareLib.Geometry.RicciFlow.Generalized.BoundedDistance.GeometryImports
+import PoincareLib.Geometry.RicciFlow.Generalized.BoundedDistance.Persistence.CapTopology.NeckCollar
+
+/-!
+# Signed regions in the original neck coordinates
+
+Morgan--Tian, Proposition A.11, pp. 503--504. A sign records which actual
+old end the source path uses. These sets retain the original coordinate
+map; negative sign merely exchanges the two numerical interval bounds.
+-/
+
+set_option autoImplicit false
+
+open Set
+open scoped Manifold ContDiff Topology
+
+universe u
+
+namespace PoincareMT.M28
+
+variable {M : Type u} [TopologicalSpace M]
+  [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
+  [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
+
+/-- An interval in the signed original axial coordinate. No replacement
+neck or altered coordinate map is constructed. -/
+def neckSignedRegion (N : EpsilonNeck g) (sigma a b : ℝ) : Set M :=
+  {x | x ∈ N.carrier ∧ a < sigma * (N.coordinate_inverse x).2 ∧
+    sigma * (N.coordinate_inverse x).2 < b}
+
+/-- Positive sign retains the literal old neck region. -/
+theorem neckSignedRegion_one (N : EpsilonNeck g) (a b : ℝ) :
+    neckSignedRegion N 1 a b = N.region a b := by
+  ext x
+  simp only [neckSignedRegion, EpsilonNeck.region, mem_ofPred_eq, one_mul]
+
+/-- Negative sign exchanges and negates the literal interval endpoints. -/
+theorem neckSignedRegion_neg_one (N : EpsilonNeck g) (a b : ℝ) :
+    neckSignedRegion N (-1) a b = N.region (-b) (-a) := by
+  ext x
+  simp only [neckSignedRegion, EpsilonNeck.region, mem_ofPred_eq, neg_one_mul,
+    lt_neg, neg_lt]
+  exact ⟨fun h => ⟨h.1, h.2.2, h.2.1⟩, fun h => ⟨h.1, h.2.2, h.2.1⟩⟩
+
+/-- The signed original coordinate is still in the same open axial strip. -/
+theorem neck_signed_axis_mem (N : EpsilonNeck g) {sigma : ℝ}
+    (hsigma : sigma = 1 ∨ sigma = -1) {x : M} (hx : x ∈ N.carrier) :
+    sigma * (N.coordinate_inverse x).2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ := by
+  have h := (N.coordinate_inverse_mem x hx).2
+  rcases hsigma with rfl | rfl
+  · simpa only [one_mul] using h
+  · constructor <;> nlinarith [h.1, h.2]
+
+/-- Signed interval regions are actually open in the ambient manifold. -/
+theorem isOpen_neckSignedRegion (N : EpsilonNeck g) (sigma a b : ℝ) :
+    IsOpen (neckSignedRegion N sigma a b) := by
+  have h : ContinuousOn (fun x => sigma * (N.coordinate_inverse x).2) N.carrier :=
+    continuousOn_const.mul
+      (continuous_snd.comp_continuousOn N.coordinate_inverse_smooth.continuousOn)
+  exact h.isOpen_inter_preimage N.carrier_open isOpen_Ioo
+
+/-- A signed interval in the actual strip is preconnected, by the
+already-proved literal neck-region theorem. -/
+theorem isPreconnected_neckSignedRegion (N : EpsilonNeck g) {sigma a b : ℝ}
+    (hsigma : sigma = 1 ∨ sigma = -1)
+    (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹) :
+    IsPreconnected (neckSignedRegion N sigma a b) := by
+  rcases hsigma with rfl | rfl
+  · rw [neckSignedRegion_one]
+    exact N.isPreconnected_region ha hb
+  · rw [neckSignedRegion_neg_one]
+    exact N.isPreconnected_region (by linarith) (by linarith)
+
+/-- Membership in the literal old sphere slice is exactly its signed
+height equation, provided the point is in the actual old carrier. -/
+theorem mem_neck_slice_iff_signed_axis (N : EpsilonNeck g) {sigma a : ℝ}
+    (hsigma : sigma = 1 ∨ sigma = -1)
+    (ha : sigma * a ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
+    {x : M} (hx : x ∈ N.carrier) :
+    x ∈ range (fun p : UnitTwoSphere => N.coordinate_map (p, sigma * a)) ↔
+      sigma * (N.coordinate_inverse x).2 = a := by
+  constructor
+  · rintro ⟨p, rfl⟩
+    rw [N.coordinate_inverse_coordinate_map ⟨mem_univ _, ha⟩]
+    rcases hsigma with rfl | rfl <;> ring
+  · intro heq
+    have haxis : (N.coordinate_inverse x).2 = sigma * a := by
+      rcases hsigma with rfl | rfl <;> nlinarith
+    refine ⟨(N.coordinate_inverse x).1, ?_⟩
+    rw [← haxis]
+    exact N.coordinate_map_coordinate_inverse hx
+
+end PoincareMT.M28

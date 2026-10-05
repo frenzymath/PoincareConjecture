@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity

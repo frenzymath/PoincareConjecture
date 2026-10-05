@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M33.RegularHistory
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.RegularHistory

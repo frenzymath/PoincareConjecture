@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Dual

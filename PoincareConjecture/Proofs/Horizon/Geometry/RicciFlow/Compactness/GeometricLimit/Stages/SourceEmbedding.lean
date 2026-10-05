@@ -1,5 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceSeparation
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.BoundaryEscape
-import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
-import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Embedding

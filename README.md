@@ -4,18 +4,33 @@ This repository contains a Lean 4 and Mathlib formalization of the smooth and
 topological Poincare theorems following Morgan and Tian's *Ricci Flow and the
 Poincare Conjecture*.
 
-The public endpoint theorems are:
+The implementation is the subject-organized `PoincareLib`, imported from
+[`frenzymath/Poincare-Conjecture`](https://github.com/frenzymath/Poincare-Conjecture/tree/432c38f2aa5a30efb13871292d17b4a3309a496a/PoincareConjecture/PoincareLib).
+It replaces the previous chapter- and milestone-organized proof tree.
+Use `import PoincareLib` to access its endpoints:
+
+```lean
+PoincareMT.smoothPoincareSkeleton
+PoincareMT.topologicalPoincareSkeleton
+```
+
+Their final assembly is exposed by
+[`PoincareLib/Topology/Manifold/Poincare.lean`](PoincareLib/Topology/Manifold/Poincare.lean).
+The existing `import PoincareConjecture` entry point remains available with
+thin wrappers for its two public theorem names:
 
 ```lean
 PoincareConjecture.smoothPoincareSkeleton
 PoincareConjecture.topologicalPoincareSkeleton
 ```
 
-Their propositions are defined in
-[`PoincareConjecture/Statement.lean`](PoincareConjecture/Statement.lean), and
-the final assembly is in
-[`PoincareConjecture/Proofs/Main.lean`](PoincareConjecture/Proofs/Main.lean).
-The default build checks every Lean file under `PoincareConjecture`.
+Only the Mathlib-only
+[`PoincareConjecture/Statement.lean`](PoincareConjecture/Statement.lean) and the
+endpoint wrappers in
+[`PoincareConjecture/Proofs/Main.lean`](PoincareConjecture/Proofs/Main.lean)
+remain under the old module prefix. Both wrappers use the `PoincareLib` proofs.
+The default build checks `PoincareLib` and these compatibility modules.
+See [MODIFICATIONS.md](MODIFICATIONS.md#poincarelib-import) for the exact source and attribution.
 
 ## Build
 
@@ -39,8 +54,8 @@ the official comparator configuration is
 Follow the Linux sandbox setup and invocation in
 [`Comparator/README.md`](Comparator/README.md). The configuration enables both
 Lean's kernel and Nanoda and permits only `propext`, `Classical.choice`, and
-`Quot.sound`. Comparator checks the independently stated endpoint types and
-their production proofs. The two `sorry` placeholders in `Challenge.lean` are
+`Quot.sound`. Comparator checks the independently stated endpoint types against
+the imported `PoincareLib` proofs. The two `sorry` placeholders in `Challenge.lean` are
 the statements to be checked; the production proof and `Solution.lean` contain
 no placeholders.
 

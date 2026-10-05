@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
-import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction

@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.CompactRepresentatives
-import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Basic
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.UniformDistance
-import Mathlib.Topology.Compactness.LocallyCompact

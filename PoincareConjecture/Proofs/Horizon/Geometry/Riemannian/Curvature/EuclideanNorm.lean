@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Euclidean
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormContinuity
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.ScalarJets

@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.LocalControl
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Subsequence
-import PoincareConjecture.Proofs.Horizon.Topology.Order.TimeInterval

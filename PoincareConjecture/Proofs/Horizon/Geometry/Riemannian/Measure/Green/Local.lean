@@ -1,5 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.Local
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.CoordinateGreen
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChartSupport
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChangeOfVariables
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Coordinates

@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M28.Sec10_6_Cone.CenteredNeckRadiusFloor
-import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedRayScalarRadius
-
-set_option autoImplicit false

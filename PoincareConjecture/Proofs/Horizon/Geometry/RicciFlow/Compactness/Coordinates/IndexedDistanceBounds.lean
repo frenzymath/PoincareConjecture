@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.IndexedDistanceBounds
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.Rescaling

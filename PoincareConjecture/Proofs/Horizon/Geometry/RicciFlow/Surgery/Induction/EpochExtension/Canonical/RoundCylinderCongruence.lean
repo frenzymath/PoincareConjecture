@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M48.RoundCylinderCongruence
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder

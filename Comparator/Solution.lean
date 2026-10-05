@@ -1,4 +1,7 @@
-import PoincareConjecture.Proofs.Main
+import PoincareConjecture.Statement
+import PoincareLib.Topology.Manifold.Poincare
+
+/-! Elaborate the public statements in their Mathlib-only module before loading proof instances. -/
 
 set_option autoImplicit false
 
@@ -7,9 +10,9 @@ universe u
 namespace PoincareConjecture.ComparatorTargets
 
 theorem smoothPoincareSkeleton : SmoothPoincare.{u} := by
-  exact PoincareConjecture.smoothPoincareSkeleton.{u}
+  exact PoincareMT.smoothPoincareSkeleton.{u}
 
 theorem topologicalPoincareSkeleton : TopologicalPoincare.{u} := by
-  exact PoincareConjecture.topologicalPoincareSkeleton.{u}
+  exact PoincareMT.topologicalPoincareSkeleton.{u}
 
 end PoincareConjecture.ComparatorTargets

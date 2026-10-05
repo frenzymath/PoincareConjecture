@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M02
-import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Conclusion
-import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Homology.H2
-import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Homotopy

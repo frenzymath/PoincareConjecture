@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.LocalRealization
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.SpatialJets

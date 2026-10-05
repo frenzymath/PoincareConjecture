@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.IntrinsicMinimizer
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactConfinement
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.PathVariation
-import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.Curves.CompactMetricMinimizer

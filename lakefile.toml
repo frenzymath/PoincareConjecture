@@ -1,6 +1,6 @@
 name = "poincareConjecture"
 version = "0.1.0"
-defaultTargets = ["PoincareConjecture"]
+defaultTargets = ["PoincareConjecture", "PoincareLib"]
 
 [[require]]
 name = "mathlib"
@@ -20,6 +20,10 @@ rev = "3927ad383f208ae977c340a91c48ac9b497d2097"
 [[lean_lib]]
 name = "PoincareConjecture"
 globs = ["PoincareConjecture", "PoincareConjecture.+"]
+
+[[lean_lib]]
+name = "PoincareLib"
+globs = ["PoincareLib", "PoincareLib.+"]
 
 [[lean_lib]]
 name = "Challenge"

@@ -1,0 +1,10 @@
+import PoincareLib.Topology.Manifold.ThreeDimensional.Triangulation.Flags.AffineSectionFlags
+import PoincareLib.Topology.Manifold.Smoothing.Imports.Topology.FiniteFlagCoordinates
+
+/-! Source-name compatibility for the unchanged Mapher smoothing proofs. -/
+
+namespace PoincareMT.Proofs.M02.Topology
+
+export Poincare.Topology (finiteCoordinateSupport mem_finiteCoordinateSupport affineCoordinateSection AffineSectionFace affineSectionCenter affineSectionCenter_spec finiteCoordinateSupport_nonempty exists_affine_section_face_residual exists_affine_section_flag convex_affineCoordinateSection affineSectionFlagMap_range affineSectionFlagHomeomorph)
+
+end PoincareMT.Proofs.M02.Topology

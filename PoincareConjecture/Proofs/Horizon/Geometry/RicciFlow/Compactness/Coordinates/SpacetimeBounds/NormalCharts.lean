@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.NormalCharts
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.TimeDerivative
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.IndexedCovering

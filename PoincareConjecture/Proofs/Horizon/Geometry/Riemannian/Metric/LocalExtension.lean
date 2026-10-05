@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.EuclideanConstruction
-import Mathlib.Geometry.Manifold.BumpFunction

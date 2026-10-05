@@ -1,5 +1,0 @@
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialSideNoncompact
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedPositiveSection
-import PoincareConjecture.Proofs.M28.Sec10_3_Tube.PositiveAmbientComponent
-
-set_option autoImplicit false

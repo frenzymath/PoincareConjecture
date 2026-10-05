@@ -1,4 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.RayComparison
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialComparison
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.ScalarComparison
-import Mathlib.Analysis.Calculus.ContDiff.Deriv

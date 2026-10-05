@@ -1,0 +1,10 @@
+import PoincareLib.Topology.Manifold.ThreeDimensional.Triangulation.Flags.FiniteFlagCoordinates
+import PoincareLib.Topology.Manifold.Smoothing.Imports.Topology.FiniteOrderComplexPivots
+
+/-! Source-name compatibility for the unchanged Mapher smoothing proofs. -/
+
+namespace PoincareMT.Proofs.M02.Topology
+
+export Poincare.Topology (weights_zero_of_nonnegative_coordinates nonnegative_chain_weighted_sum_unique finiteOrderComplexMap_injective_of_supports finiteOrderComplex_space_isCompact finiteOrderComplexMap_homeomorph_range_of_supports)
+
+end PoincareMT.Proofs.M02.Topology

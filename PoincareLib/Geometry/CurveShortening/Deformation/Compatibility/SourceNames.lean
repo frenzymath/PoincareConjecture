@@ -1,0 +1,60 @@
+import PoincareLib.Geometry.CurveShortening.Deformation.Compatibility.MetricBounds
+import PoincareLib.Geometry.Riemannian.MinimalSurface.Sphere.Compatibility.ShortLoops
+import PoincareLib.Geometry.RicciFlow.Generalized.ReducedGeometry.SourceNames.ReducedLength
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Coordinates.ChartVelocity
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Coordinates.TangentPhaseZero
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Exponential.FamilyPhase
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.ODE.TimeDependentFlow
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.ODE.OpenODEUniqueness
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.ParametricFieldSum
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.ChartVectorField
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.ChartCurveExtension
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.SmoothTangentChartPhase
+import PoincareLib.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.VelocityChainRules
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.Frames.Parallel
+import PoincareLib.Geometry.RicciFlow.Curvature.Energy.Bochner
+import PoincareLib.Geometry.RicciFlow.Surgery.StandardCap.Existence.Imports.Geometry.Riemannian.Curvature.IntrinsicCalculus
+import PoincareLib.Geometry.RicciFlow.Curvature.Estimates.Shi.Paths.Energy
+import PoincareLib.Geometry.RicciFlow.MetricComparison.LocalCurvature
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Smoothing.Charts.Distance
+import PoincareLib.Geometry.RicciFlow.Surgery.Comparison.Distance.VectorNorm
+
+/-! Source names for the unchanged Mapher deformation construction. -/
+
+namespace PoincareMT.Proofs.M58
+export PoincareMT.LoopSpace (contMDiffAt_loop_extension freeLoopLength_nonneg loopOfExtension)
+end PoincareMT.Proofs.M58
+
+namespace PoincareMT
+alias m01_edist_image_le_pathELength := normalization_edist_image_le_pathELength
+end PoincareMT
+
+namespace PoincareMT.Proofs.M09
+export PoincareMT.ReducedLength
+  (tangentBundle_t2Space chartVectorField_coordinate_velocity hasDerivAt_chart_curve
+   curvePhase inverseTangentChartPhase inverseTangentChartPhase_contMDiffOn
+   familyPhase familyPhase_contMDiffOn exists_local_smooth_timeDependent_flow openODE_eventuallyEq)
+export PoincareMT.ReducedLengthMinimum.Variation.Geometry
+  (chartVectorField_smooth chartVectorField_differential chartVectorField_at_inverse
+   tangentChartPhase_contMDiffOn tangentChartPhase_inverse curveVelocity_comp_initial_line
+   curveVelocityWithin_inverseChart
+   parametricField_lift_smooth)
+end PoincareMT.Proofs.M09
+
+namespace PoincareMT.M04
+export PoincareMT.RicciFlowAnalysis
+  (isSmoothCovariantTensor_ricciEvaluation contMDiff_tensorNorm_sq
+   curvatureTensor_swap_first curvatureTensor_swap_last
+   shiChartChristoffel shiChartField shiChartField_at_inverse shiChartField_duality
+   shiChartField_smooth shiChartMetric shiChartMetric_at_source shiChartMetric_pos
+   shiChart_mfderiv_isInvertible tangentNorm_comparison_at_of_curvature_bound)
+export PoincareMT.RicciFlowAnalysis
+  (pathSpeed pathSpeed_nonneg continuous_pathSpeed pathELength_eq_ofReal_integral_pathSpeed)
+end PoincareMT.M04
+
+namespace PoincareMT.M40
+export PoincareMT.SurgeryComparison.Transport
+  (mfderiv_enorm_le_vector_target normalizedSmoothChart normalizedSmoothChart_contMDiffOn
+   normalizedSmoothChart_exists_lipschitz_ball normalizedSmoothChart_mfderiv_apply
+   normalizedSmoothChart_source)
+end PoincareMT.M40

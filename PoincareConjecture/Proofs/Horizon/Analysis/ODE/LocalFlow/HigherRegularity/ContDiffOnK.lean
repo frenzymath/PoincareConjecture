@@ -1,2 +1,0 @@
-import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.ContDiffOnK
-import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.C1Regularity.ContDiffOnOne

@@ -1,3 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.RicciContraction
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Derivative
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricTrace

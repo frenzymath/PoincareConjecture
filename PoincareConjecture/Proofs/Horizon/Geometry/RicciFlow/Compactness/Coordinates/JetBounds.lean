@@ -1,5 +1,0 @@
-import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.JetBounds
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.Ellipticity
-import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.DerivativeControl
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Pullback
-import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
